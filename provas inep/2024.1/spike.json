@@ -1,0 +1,215 @@
+{
+  "idEstacao": "INEP_2024_1_EST5_MEDICINA_FAMILIA_COMUNIDADE_ADENOCARCINOMA",
+  "tituloEstacao": "Protocolo SPIKES",
+  "numeroDaEstacao": 5,
+  "especialidade": "MEDICINA DA FAMÍLIA E COMUNIDADE",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "Comunicação de más notícias",
+    "Câncer de colo de útero",
+    "Adenocarcinoma",
+    "Protocolo SPIKES",
+    "Medicina da Família e Comunidade",
+    "Atenção primária"
+  ],
+  "nivelDificuldade": "Difícil",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultório médico"
+      ]
+    },
+    "descricaoCasoCompleta": "Você irá atender Antônia, de 42 anos, que veio à consulta na unidade básica de saúde (UBS) trazendo o RESULTADO DA BIÓPSIA CERVICAL. O resultado do exame mostra ADENOCARCINOMA INVASIVO. A paciente está apreensiva, querendo saber, do(a) médico(a), qual é o resultado do exame.",
+    "tarefasPrincipais": [
+      "Utilizar habilidades profissionais para comunicação do diagnóstico à paciente;",
+      "Orientar a paciente sobre o prognóstico e o seguimento."
+    ],
+    "avisosImportantes": [
+      "NÃO SERÁ NECESSÁRIO REALIZAR ANAMNESE E NEM EXAME FÍSICO NESTA ESTAÇÃO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Antônia.\nTenho 42 anos.\nSou casada.\nSou manicure."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Vim para saber o resultado da minha biópsia do colo do útero."
+      },
+      {
+        "contextoOuPerguntaChave": "CONHECIMENTO SOBRE A CONDIÇÃO",
+        "informacao": "Eu sei que tem alguma coisa errada, porque às vezes tenho uns sangramentos fora da menstruação. Eu tenho medo de ser câncer. Quero saber tudo sobre a minha saúde."
+      },
+      {
+        "contextoOuPerguntaChave": "PRESENÇA DE ACOMPANHANTE",
+        "informacao": "Vim sozinha e não me importo de receber a notícia assim."
+      }
+    ],
+    "impressos": [],
+    "perguntasAtorSimulado": [
+      {
+        "contexto": "Após a comunicação do diagnóstico",
+        "pergunta": "E agora, doutor(a)? O que vai acontecer? Qual é o próximo passo?"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST5_MFC_ADENOCARCINOMA_2024V1_1",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 42 anos recebe diagnóstico de adenocarcinoma invasivo de colo de útero em consulta na UBS. O foco da estação é a habilidade de comunicação para dar más notícias de forma empática e clara, e a proposição de conduta adequada, referenciando a paciente para o especialista.",
+      "focoPrincipalDetalhado": [
+        "Utilizar habilidades de comunicação para comunicar o diagnóstico de câncer de forma simples, clara e humanizada.",
+        "Acolher os sentimentos da paciente após a notícia.",
+        "Traçar um plano de acompanhamento, explicando a necessidade de referenciamento.",
+        "Colocar-se à disposição para dar suporte e seguimento na atenção primária."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est5_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) cumprimenta a paciente simulada;\n(2) identifica-se;\n(3) dirige-se a ela pelo nome, pelo menos uma vez.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas duas ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza apenas uma ação ou não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Conecta-se à paciente:\n(1) estabelece contato visual; e,\n(2) mantém postura empática e interessada ao longo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma das ações.", "pontos": 0.12},
+          "inadequado": {"criterio": "Não realiza qualquer uma das ações.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta ativamente a fala da paciente simulada sem interrompê-la.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza a ação.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não realiza a ação.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível com a paciente simulada, evitando termos técnicos de difícil compreensão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Utiliza linguagem acessível.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não utiliza linguagem acessível.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Pergunta se a paciente gostaria da presença de alguém durante o atendimento.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Pergunta o que a paciente sabe sobre sua condição de saúde (OU situação de saúde OU sobre sua doença OU sobre seu diagnóstico OU sobre o resultado do seu exame).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Pergunta se a paciente quer saber sobre detalhes da doença (OU o quanto quer saber sobre a doença OU quais detalhes sobre a doença quer saber OU se quer informações adicionais da doença OU se quer saber mais sobre seu estado de saúde).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Informa que irá falar de más notícias, fazendo um preâmbulo para minimizar o impacto da transmissão da má notícia, ex.: \"lamento lhe dizer, mas vou lhe dar uma notícia difícil\"; \"sinto muito, mas não trago boas notícias\".",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa de maneira empática.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não informa de maneira empática.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Informa o resultado da biópsia de maneira adequada, com linguagem acessível.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não informa.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Manifesta compreensão dos sentimentos da paciente após ela receber o diagnóstico de câncer de colo de útero.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Manifesta compreensão.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não manifesta compreensão.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Trata a situação de maneira sensível:\n(1) oferece conforto à paciente e valida seu sofrimento;\n(2) inspira esperança na paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Informa à paciente sobre a necessidade de encaminhamento para especialista focal (oncologista, em ambulatório/hospital).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa à paciente.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não informa à paciente.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Evita erros ao longo de sua comunicação, tais como:\n(1) minimizar a gravidade da situação;\n(2) apresentar/enfatizar/valorizar o \"lado bom\";\n(3) não informar que é câncer ou dizer que não sabe se é câncer;\n(4) adiar a verbalização do diagnóstico para outra consulta ou delegá-la para outro(a) profissional.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Evita os quatro erros.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Comete qualquer um dos quatro erros.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Encerra a consulta de forma empática e responsável:\n(1) coloca-se à disposição para sanar dúvidas;\n(2) oferta seguimento na UBS.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

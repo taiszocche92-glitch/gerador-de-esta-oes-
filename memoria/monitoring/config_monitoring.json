@@ -1,0 +1,78 @@
+{
+    "monitoring_system": {
+        "versao": "4.0-monitoring",
+        "tipo": "real_time_analytics",
+        "configuracao": {
+            "intervalo_coleta": 30,
+            "retenção_dados": "30_dias",
+            "alertas_ativos": true,
+            "dashboard_atualizado": "tempo_real"
+        },
+        "metricas_coletadas": {
+            "sistema": [
+                "memoria_usada",
+                "tempo_resposta",
+                "taxa_erro",
+                "uptime",
+                "requests_por_minuto",
+                "tokens_economizados"
+            ],
+            "versionamento": [
+                "versoes_criadas",
+                "rollbacks_realizados",
+                "tamanho_total_versoes",
+                "frequencia_snapshots"
+            ],
+            "aprendizado": [
+                "feedback_recebido",
+                "categoria_mais_comum",
+                "acuracia_categorizacao",
+                "aprendizados_aplicados"
+            ],
+            "hybrid_memory": [
+                "arquivos_carregados",
+                "tempo_inicializacao",
+                "reducao_tokens_real",
+                "cache_hits"
+            ]
+        },
+        "alertas_configurados": {
+            "memoria_alta": {
+                "threshold": "85%",
+                "acao": "log_warning"
+            },
+            "tempo_resposta_alto": {
+                "threshold": "5000ms",
+                "acao": "log_warning"
+            },
+            "erro_sistema": {
+                "threshold": "5_erros_5min",
+                "acao": "alert_admin"
+            },
+            "espaco_versoes": {
+                "threshold": "100MB",
+                "acao": "cleanup_old_versions"
+            }
+        },
+        "dashboard_widgets": [
+            "status_overview",
+            "performance_metrics",
+            "version_history",
+            "learning_stats",
+            "token_savings",
+            "error_logs"
+        ]
+    },
+    "data_retention": {
+        "logs_sistema": "7_dias",
+        "metricas_performance": "30_dias",
+        "historico_versoes": "90_dias",
+        "aprendizados": "indefinido"
+    },
+    "exportacao_dados": {
+        "formato": "json",
+        "compressao": true,
+        "backup_automatico": true,
+        "local_backup": "memoria/monitoring/backups/"
+    }
+}

@@ -1,0 +1,305 @@
+{
+  "idEstacao": "INEP_2022_1_EST_MFC_LEISHMANIOSE_TEGUMENTAR",
+  "tituloEstacao": "Leishmaniose Tegumentar",
+  "numeroDaEstacao": 16,
+  "especialidade": "MEDICINA DA FAMÍLIA E COMUNIDADE",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["leishmaniose", "tegumentar", "úlcera", "bordas", "indolor", "antimonial", "glucantime", "notificação", "endêmica"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultórios",
+        "Laboratório de análises clínicas",
+        "Sala de coleta de exames laboratoriais"
+      ]
+    },
+    "descricaoCasoCompleta": "Você realizará o atendimento de um paciente de 30 anos, com consulta agendada, previamente hígido, com vacinação atualizada e rastreamento negativo para Infecções sexualmente transmissíveis e para hipertensão arterial.",
+    "tarefasPrincipais": [
+      "Ler a ficha do paciente, apresentada a seguir",
+      "Realizar o atendimento do paciente",
+      "Definir o diagnóstico clínico-epidemiológico",
+      "Orientar o plano terapêutico",
+      "Cumprir as medidas de prevenção e controle"
+    ],
+    "avisosImportantes": [
+      "O PACIENTE SIMULADO NÃO DEVE SER TOCADO DURANTE O ATENDIMENTO"
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é João.\nTenho 30 anos.\nSou casado.\nSou pedreiro.\nSou procedente do interior de Minas Gerais.\nMoro com a minha esposa e filha."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Vim porque apareceu essa ferida aqui na minha perna."
+      },
+      {
+        "contextoOuPerguntaChave": "EVOLUÇÃO DA FERIDA",
+        "informacao": "Início: A ferida começou pequena a dois meses atrás e depois veio aumentando de tamanho.\nCaracterísticas: Lesão que não sangra, não dói, não coça e não sai pus.\nPreocupações: Será que é câncer Dr(a)?\nTratamento tentado: Eu mesmo fui na farmácia e comprei uma pomada e estou passando na ferida e também estou passando um chá que a minha mãe indicou, até já fizeram benzedeira aqui, mas nada resolveu."
+      },
+      {
+        "contextoOuPerguntaChave": "FATORES DESENCADEANTES",
+        "informacao": "Não consegue identificar fatores específicos que tenham desencadeado o aparecimento da ferida."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Dr(a) eu sempre venho aqui no posto de saúde para controlar a pressão e esta tudo certo, até já me fizeram teste pro AIDS, Hepatites, Sífilis e disseram que está tudo certo.\nCirurgias prévias: Nega.\nInternações: Nega.\nAlergias: Nega.\nMedicamentos em uso contínuo: Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: Negar.\nEtilismo: Negar.\nDrogas ilícitas: Negar."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Pai: Minha família é bem saudável Dr(a).\nMãe: Minha esposa também."
+      },
+      {
+        "contextoOuPerguntaChave": "CONDIÇÕES DA MORADIA",
+        "informacao": "Moro em uma casa grande, com um quintalzão, inclusive está até na hora que carpir."
+      },
+      {
+        "contextoOuPerguntaChave": "SITUAÇÃO VACINAL",
+        "informacao": "Calendário de vacinas em dia."
+      },
+      {
+        "contextoOuPerguntaChave": "LESÕES EM COABITANTES",
+        "informacao": "Não que eu saiba Dr(a)."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR",
+        "informacao": "Caso receba o diagnóstico sem que o candidato solicite exames, questione se somente com essa consulta seria suficiente para dar o diagnóstico ou se seriam necessários exames.\nApós o candidato solicitar sorologia para Leishmaniose, perguntar se esse exame demora muito para ficar pronto.\nApós receber a conduta terapêutica, perguntar se essa medicação é muito forte.\nPERGUNTA 1: Dr(a) eu posso fazer alguma coisa com esse ferida?, tenho medo de sujar e contaminar ela.\nPERGUNTA 2: Dr(a), antes da pandemia, ia sempre um agente de saúde lá em casa, será que ele pode ir lá em casa dar uma olhada?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est16_ficha_paciente",
+        "tituloImpresso": "FICHA DO PACIENTE",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS DO ACOLHIMENTO",
+              "itens": [
+                {"chave": "Motivo da consulta", "valor": "Ferida na perna esquerda"},
+                {"chave": "Sintomas associados", "valor": "Paciente nega febre, mal estar e dor"}
+              ]
+            },
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Temperatura axilar", "valor": "36°C"},
+                {"chave": "Peso", "valor": "75 kg"},
+                {"chave": "Índice de massa corporal", "valor": "23 kg/m²"},
+                {"chave": "Pressão arterial", "valor": "120 × 75 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "75 bpm"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est16_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Bom estado geral, acianótico, anictérico e afebril"}
+              ]
+            },
+            {
+              "tituloSecao": "APARELHO CARDIOVASCULAR",
+              "itens": [
+                {"chave": "Exame cardiovascular", "valor": "Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros ou turgência jugular"}
+              ]
+            },
+            {
+              "tituloSecao": "APARELHO RESPIRATÓRIO",
+              "itens": [
+                {"chave": "Exame respiratório", "valor": "Murmúrio vesicular bem distribuído. Sem ruídos adventícios"}
+              ]
+            },
+            {
+              "tituloSecao": "ABDOME",
+              "itens": [
+                {"chave": "Exame abdominal", "valor": "Normotenso, normotimpânico, indolor à palpação superficial e profunda. Ruídos hidroaéreos presentes. Sem visceromegalias"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est16_imagem_ferida",
+        "tituloImpresso": "IMAGEM DA FERIDA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "caminhoImagem": "https://app-penserevalida.com/wp-content/uploads/2023/03/leish.png",
+          "laudo": "Úlcera única na região da perna esquerda com bordas bem definidas e elevadas, base limpa, sem secreção purulenta, indolor à palpação, compatível com leishmaniose tegumentar."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST16_MFC_LEISHMANIOSE_TEGUMENTAR_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Homem de 30 anos, pedreiro, procedente do interior de Minas Gerais, apresenta úlcera única na perna esquerda há dois meses, com bordas definidas e indolor, compatível com leishmaniose tegumentar. Reside em área rural com quintal extenso, nega sintomas sistêmicos e possui histórico de controle regular de pressão arterial com exames de rastreamento negativos.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada sobre contexto socioepidemiológico e características da lesão",
+        "Exame físico específico com descrição adequada das características da úlcera",
+        "Diagnóstico clínico-epidemiológico de leishmaniose tegumentar",
+        "Prescrição de tratamento adequado com antimonial pentavalente e orientações sobre prevenção"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est16_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) Cumprimenta o paciente simulado;\n(2) identifica-se;\n(3) dirige-se ao paciente simulado pelo nome, pelo menos uma vez;\n(4) pergunta e\n(5) ouve com atenção o motivo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as cinco ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza de duas a quatro ações", "pontos": 0.25},
+          "inadequado": {"criterio": "realiza apenas uma ação ou não realiza nenhuma ação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Estabelece contato visual e mantém postura empática ao longo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas ações", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "realiza apenas uma das ações", "pontos": 0.15},
+          "inadequado": {"criterio": "não realiza nenhuma das ações", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta a fala do paciente simulado, sem interrompê-lo.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza integralmente a ação", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não realiza a ação ou não a realiza integralmente", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível para com o paciente simulado, evitando termos técnicos de difícil compreensão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "usa linguagem acessível", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não utiliza linguagem acessível", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Responde às perguntas do paciente simulado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "responde as perguntas", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não responde as perguntas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Pergunta sobre o contexto socioepidemiológico do paciente simulado:\n(1) residência em área de provável transmissão da doença;\n(2) existência de coabitantes, colegas de trabalho e vizinhos com lesão semelhante;\n(3) presença de animais no domicílio, local de trabalho e no peridomicílio;\n(4) viagem recente a áreas endêmicas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre os quatro itens especificados", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "pergunta sobre apenas dois dos itens especificados", "pontos": 1.0},
+          "inadequado": {"criterio": "pergunta sobre apenas um dos itens especificados ou não pergunta nenhum dos itens especificados", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Descreve as características da lesão:\n(1) úlcera única,\n(2) bordas definidas ou elevadas ou delimitadas ou infiltradas; e\n(3) indolor.",
+        "pontuacoes": {
+          "adequado": {"criterio": "descreve as três características especificadas", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "descreve apenas duas das características especificadas", "pontos": 0.5},
+          "inadequado": {"criterio": "não descreve nenhuma das características especificadas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Pergunta sobre a existência de lesão em mucosas (boca ou nariz).",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta se há lesão em mucosas (boca ou nariz)", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta sobre lesões em mucosas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Realiza o diagnóstico clínico-epidemiológico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "estabelece o diagnóstico clínico-epidemiológico de Leishmaniose tegumentar", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Suspeita de Leishmaniose tegumentar, mas diz que só pode estabelecer o diagnóstico diante dos exames complementares para pesquisa de Leishmania: parasitológico, molecular, imunológico ou histopatológico", "pontos": 0.75},
+          "inadequado": {"criterio": "não estabelece diagnóstico de leishmaniose", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Solicita:\n(1) prova da função renal\n(2) prova da função hepática; e\n(3) eletrocardiograma antes de iniciar a farmacoterapia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita os três exames", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita os três exames", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Indica o tratamento com antimonial pentavalente (Glucantime) (não é necessário dizer a dose).",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica o tratamento correto", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica o tratamento correto", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Notifica o caso de leishmaniose tegumentar.",
+        "pontuacoes": {
+          "adequado": {"criterio": "notifica o caso", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não notifica o caso", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Indica a necessidade de abordagem comunitária:\n(1) avaliação de novos casos pelo agente comunitário de saúde (ACS);\n(2) atuação do agente de combate de endemias (ACE)/zoonose.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica a atuação dos dois agentes", "pontos": 0.75},
+          "parcialmenteAdequado": {"criterio": "indica a atuação de apenas um dos agentes", "pontos": 0.5},
+          "inadequado": {"criterio": "não indica a atuação de nenhum dos agentes", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est16_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Explica as medidas de prevenção e controle:\n(1) usar repelentes;\n(2) evitar a exposição ao mosquito no anoitecer e à noite;\n(3) usar mosquiteiros ou telas;\n(4) limpar quintais e terrenos;\n(5) fazer a destinação correta do lixo;\n(6) limpar os abrigos de animais domésticos;\n(7) manter os animais domésticos distantes do intradomicílio à noite.",
+        "pontuacoes": {
+          "adequado": {"criterio": "explica três ou mais das medidas especificadas", "pontos": 0.75},
+          "parcialmenteAdequado": {"criterio": "explica apenas duas das medidas especificadas", "pontos": 0.25},
+          "inadequado": {"criterio": "explica apenas uma medida ou não explica nenhuma das medidas especificadas", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

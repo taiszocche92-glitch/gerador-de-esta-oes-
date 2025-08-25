@@ -1,0 +1,286 @@
+{
+  "idEstacao": "INEP_2022_1_EST_CR_QUEIMADURA_INALACAO_FUMACA",
+  "tituloEstacao": "Queimadura e Inalação de Fumaça",
+  "numeroDaEstacao": 18,
+  "especialidade": "CIRURGIA GERAL",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["queimadura", "inalação", "fumaça", "regra dos 9", "reposição volêmica", "Parkland", "entubação", "transferência"],
+  "nivelDificuldade": "Alto",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária",
+      "tipoAtendimento": "Ambulatorial e Hospitalar",
+      "infraestruturaUnidade": [
+        "Setor de radiologia convencional e ultrassonografia",
+        "Laboratório de análises clínicas",
+        "Banco de sangue",
+        "Laringoscópio",
+        "Oxímetro",
+        "Unidade ventilatória manual autoinflável (ambu)",
+        "Leitos de internação",
+        "Centro cirúrgico"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente, previamente hígida, de 20 anos, trazida pelos bombeiros, vítima de queimaduras decorrentes de incêndio.",
+    "tarefasPrincipais": [
+      "Realizar o atendimento da paciente, verbalizando os achados e as condutas",
+      "Solicitar a realização de exames que julgar necessários",
+      "Definir a extensão da superfície corporal queimada",
+      "Adotar a conduta terapêutica necessária"
+    ],
+    "avisosImportantes": [
+      "A paciente simulada não deve ser tocada durante o atendimento"
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "DADOS PESSOAIS",
+        "informacao": "Maria, 20 anos, solteira, vendedora."
+      },
+      {
+        "contextoOuPerguntaChave": "LOCAL DO ACIDENTE",
+        "informacao": "Estava na festa de aniversário da minha sobrinha, quando começaram uns efeitos especiais do show e o local começou a pegar fogo."
+      },
+      {
+        "contextoOuPerguntaChave": "TEMPO DE EXPOSIÇÃO",
+        "informacao": "Demorei uns 20 minutos até reunir meus filhos e sair do local."
+      },
+      {
+        "contextoOuPerguntaChave": "INALAÇÃO DE FUMAÇA",
+        "informacao": "Sim, inalei bastante fumaça."
+      },
+      {
+        "contextoOuPerguntaChave": "AGENTE",
+        "informacao": "Fogo normal."
+      },
+      {
+        "contextoOuPerguntaChave": "LESÕES ADICIONAIS",
+        "informacao": "Não caí nem bati a cabeça."
+      },
+      {
+        "contextoOuPerguntaChave": "CADERNETA DE VACINAS OU VACINA ANTITETÂNICA",
+        "informacao": "Não trouxe e não sei se tomei."
+      },
+      {
+        "contextoOuPerguntaChave": "QUALQUER PERGUNTA ADICIONAL",
+        "informacao": "NÃO CONSTA NO SCRIPT."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est18_sinais_vitais",
+        "tituloImpresso": "SINAIS VITAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "90 × 60 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "112 bpm"},
+                {"chave": "Frequência respiratória", "valor": "40 irpm"},
+                {"chave": "Temperatura", "valor": "36,1 °C"},
+                {"chave": "Saturação arterial de oxigênio (O2)", "valor": "82%"},
+                {"chave": "Peso", "valor": "50 kg"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est18_exame_fisico_geral",
+        "tituloImpresso": "EXAME FÍSICO GERAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Desidratada ++/4+, corada, acianótica, afebril"},
+                {"chave": "Queimaduras", "valor": "Queimadura de segundo grau no corpo. vibrissas nasais, hiperemia e edema de orofaringe"},
+                {"chave": "Abdome e aparelho cardiovascular", "valor": "sem anormalidades"},
+                {"chave": "Aparelho respiratório", "valor": "paciente taquipneica, com murmúrio vesicular diminuído globalmente, sem ruídos adventícios"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est18_superficie_corporal_queimada",
+        "tituloImpresso": "SUPERFÍCIE CORPORAL QUEIMADA - REGRA DOS 9",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "caminhoImagem": "https://app.penserevalida.com/impressos/old/1696015382.png",
+          "laudo": "Atenção: dirija-se à câmera!\nVerbaliza, de forma clara, olhando para a câmera, a resposta da pergunta a seguir:\n\nQUAL A SUPERFÍCIE CORPORAL QUEIMADA?"
+        }
+      },
+      {
+        "idImpresso": "est18_calculo_reposicao_volemica",
+        "tituloImpresso": "CÁLCULO DA REPOSIÇÃO VOLÊMICA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS DO PACIENTE",
+              "itens": [
+                {"chave": "Peso da paciente", "valor": "50 kg"}
+              ]
+            },
+            {
+              "tituloSecao": "PERGUNTAS PARA VERBALIZAÇÃO",
+              "itens": [
+                {"chave": "Instrução", "valor": "ATENÇÃO: DIRIJA-SE À CÂMERA!\nVERBALIZE, DE FORMA CLARA, OLHANDO PARA A CÂMERA, AS RESPOSTAS DAS PERGUNTAS A SEGUIR:"},
+                {"chave": "Pergunta 1", "valor": "Qual o tipo de líquido a ser infundido?"},
+                {"chave": "Pergunta 2", "valor": "Qual o volume indicado para reposição volêmica nas primeiras 8 h?"},
+                {"chave": "Pergunta 3", "valor": "Qual o volume indicado para reposição volêmica nas 16 horas seguintes?"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est18_questionamento_chefe_equipe",
+        "tituloImpresso": "QUESTIONAMENTO DO CHEFE DE EQUIPE",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "QUESTIONAMENTO",
+              "itens": [
+                {"chave": "Pergunta do Chefe de Equipe", "valor": "A PACIENTE DEVERÁ SER TRANSFERIDA?"},
+                {"chave": "Instrução", "valor": "ATENÇÃO: DIRIJA-SE À CÂMERA!\nVERBALIZE E JUSTIFIQUE, DE FORMA CLARA, OLHANDO PARA A CÂMERA, A RESPOSTA DA PERGUNTA."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST18_CR_QUEIMADURA_INALACAO_FUMACA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Paciente de 20 anos vítima de queimaduras em incêndio com inalação de fumaça, apresentando queimaduras de segundo grau em 37% da superfície corporal, sinais de comprometimento respiratório (saturação 82%, taquipneia) e hipovolemia. Requer entubação orotraqueal, reposição volêmica segundo fórmula de Parkland e transferência para centro especializado.",
+      "focoPrincipalDetalhado": [
+        "Avaliação primária com ênfase em via aérea e respiração em paciente com inalação de fumaça",
+        "Cálculo da superfície corporal queimada pela regra dos 9 (37%)",
+        "Reposição volêmica segundo fórmula de Parkland para grandes queimados",
+        "Indicação de entubação orotraqueal e transferência para centro de referência"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est18_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Identifica-se e identifica adequadamente a paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza os dois comandos", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza somente um comando", "pontos": 0.2},
+          "inadequado": {"criterio": "não realiza nenhum dos comandos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre as características do acidente: (1) local; (2) tempo de exposição; (3) inalação de fumaça; e (4) agente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre todos os itens", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "pergunta sobre apenas dois ou três itens", "pontos": 0.25},
+          "inadequado": {"criterio": "pergunta apenas sobre um item ou não pergunta nenhum dos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Solicita a realização de exame dos sinais vitais, indicando: (1) PA; (2) FC; (3) FR; e (4) oximetria/saturação de O2.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita a necessidade de realização do exame dos sinais vitais, indicando todos os itens", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "solicita a necessidade de realização do exame, indicando apenas dois ou três itens", "pontos": 0.5},
+          "inadequado": {"criterio": "solicita a necessidade de realização do exame, indicando apenas um item, ou não solicita a necessidade do exame", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Indica oxigenoterapia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica a oxigenoterapia", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica oxigenoterapia", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita a realização do exame físico do aparelho respiratório, descrevendo pelo menos a inspeção ou ausculta pulmonar.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita o exame adequadamente", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita o exame", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Indica a entubação orotraqueal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "faz a indicação", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não faz a indicação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Verbaliza a necessidade de realização do exame físico para avaliar a superfície corporal queimada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "verbaliza a necessidade de realização do exame físico, citando a retirada de toda a vestimenta e acessórios", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "somente verbaliza a realização do exame, sem citar a retirada da vestimenta", "pontos": 0.5},
+          "inadequado": {"criterio": "não verbaliza a necessidade do exame físico para avaliar a superfície corporal queimada", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Calcula corretamente a superfície corporal queimada, segundo a regra dos 9 (37%) e verbaliza esse resultado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "calcula corretamente a área queimada, verbalizando o resultado", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não calcula corretamente a área queimada ou não verbaliza o resultado", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Prescreve corretamente a reposição volêmica de acordo com a fórmula de Parkland.",
+        "pontuacoes": {
+          "adequado": {"criterio": "1.850 mL nas primeiras 8 horas e 1.850 mL nas 16 horas seguintes", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não prescreve corretamente", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica cobertura da área queimada com curativo oclusivo.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica corretamente a cobertura da área queimada", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica a cobertura da área queimada", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est18_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Verbaliza a necessidade de transferência da paciente simulada para centro de referência.",
+        "pontuacoes": {
+          "adequado": {"criterio": "verbaliza a necessidade de transferência", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não verbaliza a necessidade de transferência", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

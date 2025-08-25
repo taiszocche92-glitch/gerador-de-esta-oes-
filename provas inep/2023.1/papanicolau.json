@@ -1,0 +1,210 @@
+{
+  "idEstacao": "INEP_2023_1_EST4_GINECOLOGIA_OBSTETRICIA_COLETA_CITOLOGIA",
+  "tituloEstacao": "Coleta de Citologia Oncótica",
+  "numeroDaEstacao": 4,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "papanicolau",
+    "citologia oncótica",
+    "prevenção",
+    "câncer de colo de útero",
+    "ginecologia",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultórios",
+        "Laboratório de análises clínicas"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente de 27 anos de idade, sem queixas específicas, veio para avaliação ginecológica.",
+    "tarefasPrincipais": [
+      "Realizar propedêutica ginecológica completa;",
+      "Responder as indagações da paciente;",
+      "Orientar sobre exames preventivos de câncer;",
+      "Proceder à coleta do exame citológico do colo do útero de forma completa."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO.",
+      "A COLETA DA CITOLOGIA SERÁ REALIZADA NO MANEQUIM DE PELVE.",
+      "APÓS A COLETA O(A) CHEFE DE ESTAÇÃO FORNECERÁ UM NOVO MATERIAL PARA REALIZAR O ESFREGAÇO NA LÂMINA.",
+      "VOCÊ DEVE VERBALIZAR cada parte do exame que está realizando e DEMONSTRAR as partes desse exame que lhe forem solicitadas."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Diane.\nTenho 27 anos.\nSou casada.\nTrabalho como padeira."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Eu vim para uma consulta de rotina, para fazer exames de prevenção do câncer."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS E OBSTÉTRICOS",
+        "informacao": "Data da última menstruação: Terminou há uma semana.\nAntecedentes obstétricos: Tive uma gestação, parto normal, e tenho um filho de 3 anos.\nAntecedentes mamários: Amamentei meu filho por seis meses. Não percebi nenhuma alteração na mama. Já fiz o exame físico das mamas recentemente e estava tudo bem.\nMétodos contraceptivos: Faço uso de pílulas anticoncepcionais.\nVida sexual: Tenho relações apenas com o meu marido.\nSintomas vaginais: Não estou com corrimento ou qualquer outra secreção."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGicos",
+        "informacao": "Doenças crônicas: Não tenho problemas de saúde.\nExames preventivos: Nunca fiz o exame preventivo do câncer do colo do útero. Não fiz antes porque não temos casos de câncer nas mulheres da minha família."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÕES AO ATOR",
+        "informacao": "Eu realmente preciso fazer esse exame preventivo? Tenho medo de sentir dor.\nQual foi o resultado do meu exame?\nMinha irmã tem 22 anos e já tem vida sexual ativa há 4 anos, ela também precisa fazer esse exame?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est4_esquema_colo_utero",
+        "tituloImpresso": "ESQUEMA DO COLO DO ÚTERO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://storage.googleapis.com/assistly/images/2023_1_prova_habilidades_clinicas_page_24_image_1.png",
+          "laudo": "ESQUEMA DO COLO UTERINO MOSTRANDO O ORIFÍCIO CERVICAL EXTERNO."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST4_GO_CITOLOGIA_2023V1_04",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "A Estação 4 de Ginecologia e Obstetrícia abordou o caso de uma paciente de 27 anos de idade, G1P1, em uso de anticoncepcional oral, que busca consulta ginecológica de rotina e nunca realizou exame preventivo do câncer do colo uterino.",
+      "focoPrincipalDetalhado": [
+        "Acolher a paciente adequadamente;",
+        "Realizar todos os passos da coleta da citologia do colo uterino, utilizando o material disponibilizado;",
+        "Verbalizar cada passo do exame;",
+        "Responder adequadamente as perguntas da paciente sobre a necessidade e periodicidade do exame."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est4_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) apresenta-se adequadamente;\n(2) cumprimenta e identifica a paciente simulada, falando seu nome.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.1},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Realiza anamnese ginecológica, perguntando:\n(1) data da última menstruação;\n(2) antecedentes obstétricos;\n(3) antecedentes mamários;\n(4) métodos contraceptivos;\n(5) vida sexual;\n(6) presença de corrimento vaginal ou secreção vaginal alterada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta quatro ou mais itens.", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "Pergunta três ou dois itens.", "pontos": 0.625},
+          "inadequado": {"criterio": "Pergunta apenas um item OU não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Indica os exames corretos, de acordo com a idade da paciente:\n(1) exame de coleta de citologia;\n(2) exame físico da mama.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica os dois exames.", "pontos": 0.75},
+          "parcialmenteAdequado": {"criterio": "Indica apenas um dos exames.", "pontos": 0.375},
+          "inadequado": {"criterio": "Não indica exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Preparativos para o exame, TRATO COM A PACIENTE:\n(1) verbaliza para a paciente que começará o exame ginecológico;\n(2) orienta sobre possíveis desconfortos durante o exame;\n(3) senta-se (ou verbaliza que irá se sentar) para realizar o exame.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza os três preparativos.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Realiza dois preparativos.", "pontos": 0.5},
+          "inadequado": {"criterio": "Realiza apenas um preparativo OU não realiza preparativo algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Preparativos para o exame, MATERIAIS:\n(1) coloca, na lâmina de vidro, as iniciais da paciente com lápis preto no local adequado;\n(2) acende o foco e o posiciona para visualizar o colo uterino;\n(3) coloca luvas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 0.75},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações.", "pontos": 0.375},
+          "inadequado": {"criterio": "Realiza apenas uma ação OU não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Introdução adequada do espéculo no manequim:\n(1) realiza inclinação para a introdução do espéculo;\n(2) introduz completamente o espéculo;\n(3) abre o espéculo.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações e verbaliza.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações e verbaliza.", "pontos": 0.5},
+          "inadequado": {"criterio": "Realiza uma ação e verbaliza OU não realiza ação alguma OU não verbaliza as ações.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Realiza a coleta de material ECTOCERVICAL:\n(1) pega a espátula de Ayre do lado que não está chanfrado;\n(2) faz o movimento de rotação girando 360 graus;\n(3) deposita o material de forma linear na lâmina.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações.", "pontos": 0.75},
+          "inadequado": {"criterio": "Realiza apenas uma ação OU não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Realiza a coleta de material da ENDOCÉRVICE:\n(1) pega a escova endocervical e a coloca na endocérvice;\n(2) faz o movimento rotatório girando pelo menos duas vezes;\n(3) deposita o material da escova ao lado do material depositado anteriormente, sem sobrepor.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas duas ações.", "pontos": 0.75},
+          "inadequado": {"criterio": "Realiza uma ação OU não realiza ação alguma. (Coletar endocérvice antes da ectocérvice é inadequado).", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Retirada adequada do espéculo no manequim:\n(1) comunica a retirada do espéculo;\n(2) fecha o espéculo antes de retirar;\n(3) realiza inclinação para a retirada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações e verbaliza.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações e verbaliza.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza uma ação e verbaliza OU não realiza ação alguma OU não verbaliza.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Refere a necessidade de realizar toque vaginal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Refere.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não refere.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Explica que o resultado do exame deverá ser resgatado pela paciente na consulta de retorno.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Explica.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não explica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Fornece orientações, conforme o INCA-MS, sobre a coleta de citologia:\n(1) idade, a partir dos 25 anos;\n(2) periodicidade, após dois exames normais deve ser coletado a cada 3 anos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas orientações.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Realiza uma orientação.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não realiza orientação alguma.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

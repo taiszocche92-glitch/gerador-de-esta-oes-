@@ -1,0 +1,240 @@
+{
+  "idEstacao": "INEP_2022_1_EST04_GINECOLOGIA_OBSTETRICIA_DESPRENDIMENTO_PREMATURO_PLACENTA",
+  "tituloEstacao": "Desprendimento Prematuro de Placenta",
+  "numeroDaEstacao": 4,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["desprendimento prematuro placenta", "gestante", "dor abdominal", "sangramento vaginal", "hipertonia uterina", "sofrimento fetal", "cesárea urgência", "ginecologia e obstetrícia", "atenção secundária"],
+  "nivelDificuldade": "Difícil",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Consultórios",
+        "Laboratório de análises clínicas"
+      ]
+    },
+    "descricaoCasoCompleta": "Uma gestante de 35 anos, visivelmente pálida, comparece para atendimento no pronto socorro de uma maternidade, apresentando queixa de dor e desejando avaliação.",
+    "tarefasPrincipais": [
+      "Realizar anamnese",
+      "Solicitar os exames que julgar necessários",
+      "Responder aos questionamentos da paciente simulada",
+      "Citar hipótese diagnóstica",
+      "Realizar as condutas necessárias",
+      "Estabelecer a orientação final à paciente simulada",
+      "ATENÇÃO! VOCÊ DEVERÁ, OBRIGATORIAMENTE, REALIZAR AS TAREFAS NA SEQUÊNCIA DESCRITA ACIMA."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Simone.\nTenho 35 anos.\nSou casada.\nTrabalho em um ginásio."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr(a). eu estou com muita dor na barriga e sangramento vaginal.\nTudo começou há duas horas, estava fazendo o almoço quando começou."
+      },
+      {
+        "contextoOuPerguntaChave": "SANGRAMENTO VAGINAL",
+        "informacao": "Característica: É um sangue vermelho escuro\nInício: Há duas horas\nSintomas associados: Dor abdominal intensa"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Às vezes, minha pressão fica alta\nMedicamentos em uso contínuo: Estou tomando remédio para pressão direitinho e tomo vitaminas, mas não lembro o nome das medicações"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES OBSTÉTRICOS",
+        "informacao": "Idade gestacional: Estou com 8 meses de gestação\nGestas, partos e abortos prévios: G2P1A0\nIntercorrências na primeira gestação: Ocorreu tudo bem\nUltrassonografia: Fiz uma ultrassonografia na semana passada que indica 32 semanas de idade gestacional, com o bebê na posição de nascer"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Desconheço antecedentes familiares relevantes"
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR",
+        "informacao": "Caso o candidato pergunte se a paciente está acompanhada: Estou sozinha, meu marido me deixou aqui e foi ficar com a nossa outra filha em casa.\nPerguntas da paciente: O que eu tenho, doutor(a), meu filho corre perigo?\nQuais outras possíveis causas desse sangramento?\nEu posso ir em casa rapidinho? Acho melhor eu ir pessoalmente avisar meu marido."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est4_sinais_vitais",
+        "tituloImpresso": "SINAIS VITAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "90 × 60 mmHg"},
+                {"chave": "Temperatura", "valor": "36 °C"},
+                {"chave": "Frequência cardíaca", "valor": "100 bpm"},
+                {"chave": "Frequência respiratória", "valor": "20 irpm"},
+                {"chave": "Saturação periférica de oxigênio (SatO2)", "valor": "98%"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_exame_obstetrico",
+        "tituloImpresso": "EXAME OBSTÉTRICO ABDOMINAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME OBSTÉTRICO",
+              "itens": [
+                {"chave": "Altura uterina", "valor": "32 cm, feto com apresentação cefálica, posição longitudinal, dorso à direita, útero hipertônico"},
+                {"chave": "Batimentos cardíacos fetais", "valor": "85 batimentos por minuto"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_exame_ginecologico",
+        "tituloImpresso": "EXAME GINECOLÓGICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME GINECOLÓGICO",
+              "itens": [
+                {"chave": "Exame especular", "valor": "presença de grande quantidade de sangue no interior do canal vaginal"},
+                {"chave": "Toque vaginal", "valor": "sangramento vermelho-escuro no dedo de luva, com coágulos em grande quantidade; colo uterino posterior, pérvio para 2 cm"}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST04_GO_DESPRENDIMENTO_PREMATURO_PLACENTA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Gestante de 35 anos, G2P1A0, com 32 semanas de gestação, apresentando quadro de dor abdominal súbita e sangramento vaginal vermelho-escuro há 2 horas, com sinais de hipertonia uterina e bradicardia fetal (85 bpm), compatível com desprendimento prematuro de placenta e sofrimento fetal agudo, necessitando de intervenção obstétrica imediata.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada sobre características da dor abdominal e sangramento vaginal",
+        "Investigação de antecedentes obstétricos e movimentos fetais",
+        "Interpretação adequada dos exames físicos obstétricos e ginecológicos",
+        "Diagnóstico de desprendimento prematuro de placenta e sofrimento fetal com indicação de cesárea de urgência"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est4_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\ncumprimenta e se apresenta à paciente simulada.\n\nAdequado: cumprimenta a paciente simulada e se apresenta.\nParcialmente adequado: realiza apenas uma das atividades.\nInadequado: não realiza nenhuma das duas atividades.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cumprimenta a paciente simulada e se apresenta", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza apenas uma das atividades", "pontos": 0.25},
+          "inadequado": {"criterio": "não realiza nenhuma das duas atividades", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre os sintomas de dor e sangramento, como:\n(1) início e duração;\n(2) características da dor; e\n(3) aspecto do sangramento.\n\nAdequado: pergunta sobre dois ou mais sintomas.\nParcialmente adequado: pergunta sobre apenas um dos sintomas.\nInadequado: não pergunta sobre as características dos sintomas de dor e sangramento.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre dois ou mais sintomas", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "pergunta sobre apenas um dos sintomas", "pontos": 0.5},
+          "inadequado": {"criterio": "não pergunta sobre as características dos sintomas de dor e sangramento", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre os movimentos fetais.\n\nAdequado: pergunta sobre os movimentos fetais.\nInadequado: não pergunta sobre os movimentos fetais.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre os movimentos fetais", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta sobre os movimentos fetais", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre o tempo de gestação (ou data da última menstruação ou idade gestacional).\n\nAdequado: pergunta.\nInadequado: não pergunta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita o cartão de pré-natal ou cartão da gestante.\n\nAdequado: solicita o cartão de pré-natal ou cartão da gestante.\nInadequado: não solicita o cartão de pré-natal ou cartão da gestante.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita o cartão de pré-natal ou cartão da gestante", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita o cartão de pré-natal ou cartão da gestante", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Indica a necessidade de realizar o exame obstétrico abdominal.\n\nAdequado: indica a necessidade de exame obstétrico abdominal.\nInadequado: não indica o exame obstétrico abdominal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica a necessidade de exame obstétrico abdominal", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica o exame obstétrico abdominal", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Indica a necessidade de realizar exame ginecológico (ou toque vaginal ou exame especular).\n\nAdequado: indica a necessidade de realizar o exame.\nInadequado: não indica a realização do exame.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica a necessidade de realizar o exame", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica a realização do exame", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Cita descolamento prematuro de placenta (ou desprendimento prematuro da placenta) e sofrimento fetal agudo (ou sofrimento fetal) como diagnósticos.\n\nAdequado: cita os dois diagnósticos.\nParcialmente adequado: cita apenas um dos diagnósticos.\nInadequado: não cita nenhum dos diagnósticos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita os dois diagnósticos", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "cita apenas um dos diagnósticos", "pontos": 1.0},
+          "inadequado": {"criterio": "não cita nenhum dos diagnósticos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Cita diagnósticos diferenciais, como:\n(1) placenta prévia;\n(2) ruptura de seio marginal;\n(3) rotura de vasa prévia;\n(4) Rotura uterina\n\nAdequado: cita dois ou mais diagnósticos diferenciais.\nParcialmente adequado: cita até um diagnóstico diferencial.\nInadequado: não cita nenhum dos diagnósticos diferenciais uterina.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita dois ou mais diagnósticos diferenciais", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "cita até um diagnóstico diferencial", "pontos": 0.5},
+          "inadequado": {"criterio": "não cita nenhum dos diagnósticos diferenciais uterina", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica a necessidade imediata de interrupção da gravidez (cesariana de urgência).\n\nAdequado: indica a interrupção da gravidez (cesariana de urgência).\nInadequado: não indica interrupção da gravidez (cesariana de urgência).",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica a interrupção da gravidez (cesariana de urgência)", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica interrupção da gravidez (cesariana de urgência)", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Orienta a mãe sobre o:\n(1) risco fetal e\n(2) a necessidade de internação na UTI neonatal.\n\nAdequado: realiza as duas orientações.\nParcialmente adequado: realiza apenas uma orientação.\nInadequado: não orienta a paciente ou a orienta incorretamente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas orientações", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "realiza apenas uma orientação", "pontos": 0.5},
+          "inadequado": {"criterio": "não orienta a paciente ou a orienta incorretamente", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "idEstacao": "INEP_2024_2_EST4_GINECOLOGIA_E_OBSTETRICIA_PLACENTA_PREVIA",
+  "tituloEstacao": "Placenta Prévia Centro-Total",
+  "numeroDaEstacao": 4,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "placenta prévia",
+    "sangramento na gestação",
+    "hemorragia obstétrica",
+    "ginecologia e obstetrícia",
+    "atenção terciária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção terciária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Laboratório de análises clínicas",
+        "Setor de diagnóstico de imagem: aparelhos de ecografia e exames radiológicos convencionais (Raio X)",
+        "Unidade de internação hospitalar"
+      ]
+    },
+    "descricaoCasoCompleta": "Mulher grávida comparece à Emergência de uma maternidade com queixa de sangramento vaginal.",
+    "tarefasPrincipais": [
+      "Realizar anamnese da paciente.",
+      "Solicitar o exame físico e ginecológico da paciente verbalizando, de forma completa, os parâmetros, pertinentes à queixa da paciente, que deverão ser verificados.",
+      "Solicitar os exames complementares, de forma completa, pertinentes à queixa da paciente.",
+      "Verbalizar a hipótese diagnóstica principal e QUATRO diagnósticos diferenciais para o quadro clínico.",
+      "Orientar a conduta relativa ao caso clínico.",
+      "Responder às perguntas da paciente de forma completa, justificando os motivos das orientações."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Amanda.\nTenho 36 anos.\nSou divorciada.\nTrabalho na secretaria de uma escola."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou com 30 semanas de gravidez e estou tendo um sangramento pela vagina."
+      },
+      {
+        "contextoOuPerguntaChave": "SANGRAMENTO VAGINAL",
+        "informacao": "Início: Começou há umas 3 semanas, mais ou menos.\nEvolução: No começo era pouco, só uma vez por semana. Mas na última semana sangrou mais e por mais tempo. Hoje piorou muito.\nDuração do episódio atual: Sangrei um sangue vivo, sem parar, por umas 3 horas. Tinha uns pedaços escuros também. Parou faz umas 7 horas, aí vim correndo pra cá.\nFatores de melhora ou piora: Não percebi nada que melhore ou piore."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Dor: Não, não sinto dor.\nContrações: Não sinto contrações.\nMovimentos fetais: Sim, sinto meu bebê mexer normalmente."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECO-OBSTÉTRICOS",
+        "informacao": "Gestações: Esta é minha terceira gravidez.\nPartos: Tive um parto cesáreo há 7 anos. Minha filha nasceu a termo, tudo correu bem.\nAbortos: Tive um aborto há 3 anos.\nVida Sexual: Não estou com parceiro fixo e não tenho relações sexuais desde que descobri a gravidez.\nContracepção: Usava camisinha, mas às vezes esquecia."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Não tenho nenhum problema de saúde.\nCirurgias prévias: Só a cesárea.\nAlergias: Não tenho alergias.\nMedicamentos em uso contínuo: Tomo só sulfato ferroso.\nVacinas: Estão todas em dia.\nTipo Sanguíneo: Meu sangue é B negativo."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não consta no script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est4_cartao_prenatal",
+        "tituloImpresso": "IMPRESSO - CARTÃO DE PRÉ NATAL",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Cartao_Pre_Natal.png?alt=media&token=8096f868-80e5-4a6c-9486-74760a95786a",
+          "laudo": "Cartão da gestante de Amanda, com 5 consultas de pré-natal registradas até 25 semanas. Exames normais/não reagentes, vacinas atualizadas e em uso de sulfato ferroso."
+        }
+      },
+      {
+        "idImpresso": "est4_ecografia",
+        "tituloImpresso": "IMPRESSO - ECOGRAFIA OBSTÉTRICA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "IG: 28 SEMANAS E 4 DIAS",
+              "itens": [
+                {"chave": "Feto", "valor": "Gestação tópica única, feto cefálico, com dorso anterior."},
+                {"chave": "Líquido amniótico", "valor": "Em quantidade normal."},
+                {"chave": "Peso fetal", "valor": "No percentil 50 para a idade gestacional."},
+                {"chave": "Batimento cardíaco fetal (BCF)", "valor": "145 batimentos por minuto."},
+                {"chave": "Placenta", "valor": "Presença de placenta de implantação centro-total, recobrindo totalmente o orifício interno do colo uterino."},
+                {"chave": "Acretismo", "valor": "Ausência de sinais de acretismo placentário."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO / GINECOLÓGICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "112x78 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "92 batimentos por minuto"},
+                {"chave": "Frequência respiratória", "valor": "16 incursões respiratórias por minuto"},
+                {"chave": "Temperatura axilar", "valor": "36,6°C"},
+                {"chave": "Saturação de oxigênio", "valor": "98% em ar ambiente"},
+                {"chave": "Mucosas", "valor": "Descoradas 2+/4+"},
+                {"chave": "Frequência cardíaca fetal (BCF)", "valor": "150 batimentos por minuto"},
+                {"chave": "Estática fetal", "valor": "Feto em apresentação cefálica, dorso à direita."},
+                {"chave": "Palpação uterina", "valor": "Tônus normal."},
+                {"chave": "Dinâmica uterina", "valor": "Ausência de contrações."},
+                {"chave": "Exame especular", "valor": "Ausência de sangramento se exteriorizando pelo orifício externo do colo, porém com presença de pequena quantidade de coágulos escurecidos em fundo de saco vaginal. Orifício cervical aparentemente fechado."},
+                {"chave": "Toque vaginal", "valor": "Não realizado."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_labs",
+        "tituloImpresso": "IMPRESSO - EXAMES LABORATORIAIS",
+        "tipoConteudo": "tabela",
+        "conteudo": {
+          "cabecalhos": ["Exame", "Resultado", "Valores de referência"],
+          "linhas": [
+            {"celulas": ["Hemácias (contagem)", "3,7x10¹²/L", "3,8-4,8x10¹²/L"]},
+            {"celulas": ["Hemoglobina (Hb)", "10,0 g/dL", "12,0-16,0 g/dL"]},
+            {"celulas": ["Hematócrito (Hct)", "32 %", "36,0-46,0%"]},
+            {"celulas": ["Plaquetas", "180.000 mm³", "150.000-450.000/mm³"]},
+            {"celulas": ["Coagulograma", "sem alterações", "11-14,5 segundos"]},
+            {"celulas": ["Creatinina", "0,9 mg/dL", "0,5-1,0 mg/dL"]},
+            {"celulas": ["Ureia", "20 mg/dL", "17-42 mg/dL"]},
+            {"celulas": ["Tipagem Sanguínea", "B Negativo", ""]},
+            {"celulas": ["Coombs Indireto", "Negativo", ""]}
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {
+        "momento": "Após o participante explicar o diagnóstico.",
+        "pergunta": "O que eu tenho, doutor(a)?"
+      },
+      {
+        "momento": "Após a orientação de conduta.",
+        "pergunta": "Preciso ficar internada?"
+      },
+      {
+        "momento": "Após a orientação de conduta.",
+        "pergunta": "Preciso tomar algum remédio?"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST4_GO_PP_2024V2_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Gestante de 36 anos, com 30 semanas, apresentando sangramento na segunda metade da gestação, caracterizando um quadro de placenta prévia centro-total.",
+      "focoPrincipalDetalhado": [
+        "Conduzir um caso de sangramento na segunda metade da gravidez, em uma paciente que não tem rede de apoio para situações de emergência, bem como dificuldade de acesso ao hospital.",
+        "Realizar anamnese completa e mostrar intenção de realizar exame físico com foco nos dados mais relevantes, prestando, a posteriori, informações adequadas sobre hipótese diagnóstica, conduta, necessidade de internação ou não e orientações gerais quanto ao quadro."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est4_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) Cumprimenta a paciente e/ou fala o seu nome; e,\n(2) Pergunta mais algum elemento de identificação da anamnese como idade, ou profissão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.2},
+          "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.1},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre sinais e sintomas:\n(1) Tempo (início);\n(2) Evolução (ou frequência ao longo do tempo);\n(3) Quantidade;\n(4) Duração deste sangramento de hoje;\n(5) Associação a dor;\n(6) Associação a contrações;\n(7) Fatores desencadeantes;\n(8) Fatores amenizadores; e,\n(9) Presença de movimentos fetais.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta cinco ou mais sinais e sintomas.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta três ou quatro sinais e sintomas.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um ou dois, ou não pergunta sinal ou sintoma algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Solicita o cartão de pré-natal da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre histórico gestacional:\n(1) quantidade de gestações prévias;\n(2) quais foram os tipos de partos (cesarianos ou normais); e,\n(3) histórico de abortamentos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta os três itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um item ou não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita o exame físico / ginecológico da paciente informando os seguintes parâmetros:\n(1) Frequência cardíaca materna;\n(2) Pressão arterial.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os dois parâmetros.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Solicita um parâmetro.", "pontos": 0.2},
+          "inadequado": {"criterio": "Não solicita parâmetro algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita o exame físico / ginecológico da paciente informando os seguintes parâmetros:\n(1) Coloração OU Ectoscopia de mucosas;\n(2) Estática fetal/posição/Leopold.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os dois parâmetros.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Solicita um parâmetro.", "pontos": 0.2},
+          "inadequado": {"criterio": "Não solicita parâmetro algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita o exame físico / ginecológico da paciente informando os seguintes parâmetros:\n(1) Frequência cardíaca fetal (BCF);\n(2) Exame especular - características do sangramento.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os dois parâmetros.", "pontos": 0.6},
+          "parcialmenteAdequado": {"criterio": "Solicita um parâmetro.", "pontos": 0.3},
+          "inadequado": {"criterio": "Não solicita parâmetro algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Solicita o exame físico / ginecológico da paciente informando os seguintes parâmetros:\n(1) Tônus uterino;\n(2) Contrações uterinas (dinâmica uterina).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os dois parâmetros.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Solicita um parâmetro.", "pontos": 0.2},
+          "inadequado": {"criterio": "Não solicita parâmetro algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Solicita a realização de exame de toque vaginal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Não solicita OU contraindica.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Define a hipótese diagnóstica como placenta prévia centro-total ou placenta prévia total.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Define o diagnóstico completo.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Menciona apenas o termo placenta prévia.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não define o diagnóstico de placenta prévia, ou especifica incorretamente.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Solicita exames complementares essenciais para decidir a conduta para o quadro:\n(1) Hemograma;\n(2) Função renal (Ureia e/ou Creatinina);\n(3) Coagulograma;\n(4) Tipagem sanguínea.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os quatro exames.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Solicita três exames.", "pontos": 0.25},
+          "inadequado": {"criterio": "Solicita um ou dois exames ou não solicita exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Formula diagnósticos diferenciais:\n(1) Vasa prévia;\n(2) Ruptura de seio marginal;\n(3) Pólipo cervical;\n(4) Cervicite;\n(5) Tumores de colo;\n(6) Ectropia cervical;\n(7) Descolamento prematuro da placenta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Formula quatro ou mais diagnósticos diferenciais.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Formula dois ou três diagnósticos diferenciais.", "pontos": 0.25},
+          "inadequado": {"criterio": "Formula um diagnóstico ou não formula diagnóstico algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Indica a internação da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Indica o uso de corticoide para a maturidade fetal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item15",
+        "itemNumeroOficial": "15",
+        "descricaoItem": "Indica o uso de imunoglobulina anti-D.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item16",
+        "itemNumeroOficial": "16",
+        "descricaoItem": "Indica que a via de Parto (se mantendo a placenta centro total) deverá ser cesariana.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "idEstacao": "INEP_2025_1_EST7_CIRURGIA_GERAL_URETEROLITIASE",
+  "tituloEstacao": "Ureterolitíase",
+  "numeroDaEstacao": 7,
+  "especialidade": "CIRURGIA GERAL",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "ureterolitíase",
+    "litíase urinária",
+    "cólica renal",
+    "cirurgia geral",
+    "atenção terciária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção terciária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Setor de radiologia",
+        "Laboratório de análises clínicas",
+        "Centro cirúrgico"
+      ]
+    },
+    "descricaoCasoCompleta": "Você atenderá uma mulher de 24 anos que apresenta dor em abdome.",
+    "tarefasPrincipais": [
+      "Realizar anamnese;",
+      "Solicitar e interpretar exame físico;",
+      "Solicitar e interpretar exames complementares pertinentes ao caso;",
+      "Formular e verbalizar a hipótese diagnóstica definitiva;",
+      "Orientar o plano terapêutico mais indicado ao quadro clínico."
+    ],
+    "avisosImportantes": [
+      "A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Mariana.\nTenho 24 anos.\nSou solteira.\nSou estudante."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou com uma dor muito forte no lado direito da barriga, começou de repente há umas 24 horas."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA DOENÇA ATUAL - DOR ABDOMINAL",
+        "informacao": "Início: Súbito, há cerca de 24 horas.\nLocalização: Lado direito da barriga (flanco direito).\nIntensidade: Muito intensa, nota 9 de 10.\nTipo: É como uma cólica que vai e volta.\nIrradiação: A dor vai para a virilha e para a parte de dentro da coxa.\nFatores de piora: Não consigo ficar parada, nem me mexer.\nFatores de melhora: Tomei dipirona, mas não melhorou."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Sintomas urinários: Notei sangue na urina quando a dor começou. Não senti dor ou ardência para urinar, nem vontade de ir ao banheiro toda hora, nem cheiro forte na urina.\nSintomas gastrointestinais: Sinto náuseas, mas não vomitei.\nSintomas ginecológicos: Não tive corrimento ou secreção vaginal, nem dor na relação sexual."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Não tenho nenhuma doença.\nEventos similares: Já senti uma dor parecida, mas bem mais fraca.\nInfecção urinária: Nunca tive.\nCirurgias ou traumas: Nunca operei nem sofri trauma."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA GINECOLÓGICA E SEXUAL",
+        "informacao": "Parceiro: Tenho parceiro fixo e uso preservativo.\nGestações: Nunca engravidei.\nÚltima menstruação: Terminou há 7 dias.\nISTs: Não tenho antecedentes."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: Não pratico regularmente.\nAlimentação: Tenho uma alimentação saudável, mas quase não bebo água.\nTabagismo: Não fumo.\nEtilismo: Não bebo."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Não há histórico de doenças na família."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est7_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "AVALIAÇÃO GERAL",
+              "itens": [
+                {"chave": "Estado Geral", "valor": "Regular estado geral, desidratada +/4+, normocorada, acianótica."}
+              ]
+            },
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Frequência cardíaca", "valor": "110 batimentos por minuto"},
+                {"chave": "Pressão arterial", "valor": "110 mmHg x 70 mmHg"},
+                {"chave": "Frequência respiratória", "valor": "20 incursões respiratórias por minuto"},
+                {"chave": "Temperatura", "valor": "37,0°C"},
+                {"chave": "IMC", "valor": "22 kg/m²"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME ABDOMINAL",
+              "itens": [
+                {"chave": "Avaliação", "valor": "Abdome plano, flácido, indolor à palpação profunda em todos os quadrantes, sem tumorações palpáveis. Sinais de Blumberg, Rovsing e Giordano negativos."}
+              ]
+            },
+            {
+              "tituloSecao": "OUTROS SISTEMAS",
+              "itens": [
+                {"chave": "Avaliação", "valor": "Aparelhos respiratório, cardiovascular e ginecológico: sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est7_exames_laboratoriais",
+        "tituloImpresso": "IMPRESSO - EXAMES LABORATORIAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "HEMOGRAMA E MARCADORES INFLAMATÓRIOS",
+              "itens": [
+                {"chave": "Hemoglobina (Hb)", "valor": "13.5 g/dL (Ref: 13,0-17,0 g/dL)"},
+                {"chave": "Hematócrito (Hct)", "valor": "40,2% (Ref: 40-50%)"},
+                {"chave": "Leucócitos", "valor": "10.500/mm³ (Ref: 4.000-11.000/mm³)"},
+                {"chave": "Plaquetas", "valor": "240.000/mm³ (Ref: 150.000-450.000/mm³)"},
+                {"chave": "Proteína C reativa", "valor": "7 mg/dL (Ref: ≤ 8 mg/dL)"}
+              ]
+            },
+            {
+              "tituloSecao": "FUNÇÃO RENAL E ELETRÓLITOS",
+              "itens": [
+                {"chave": "Creatinina", "valor": "1,5 mg/dL (Ref: 0,7-1,3 mg/dL)"},
+                {"chave": "Ureia", "valor": "58 mg/dL (Ref: 10-40 mg/dL)"},
+                {"chave": "Sódio", "valor": "138 mEq/L (Ref: 135-145 mEq/L)"},
+                {"chave": "Potássio", "valor": "5,1 mEq/L (Ref: 3,5-5,0 mEq/L)"}
+              ]
+            },
+            {
+              "tituloSecao": "OUTROS",
+              "itens": [
+                {"chave": "Beta-HCG", "valor": "negativo"}
+              ]
+            },
+            {
+              "tituloSecao": "ROTINA DE URINA",
+              "itens": [
+                {"chave": "COR", "valor": "amarela"},
+                {"chave": "ASPECTO", "valor": "límpido"},
+                {"chave": "DENSIDADE", "valor": "1025 (Ref: 1002 a 1030)"},
+                {"chave": "pH", "valor": "5,0 (Ref: 5,0 a 8,0)"},
+                {"chave": "LEUCÓCITOS", "valor": "2.000 p/ml (Ref: até 20.000 p/ml)"},
+                {"chave": "HEMÁCIAS", "valor": "75.000 p/ml (Ref: até 13.000 p/ml)"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est7_ultrassom_abdome",
+        "tituloImpresso": "IMPRESSO - ULTRASSOM DE ABDOME",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/example_us.png",
+          "laudo": "Hidronefrose à direita, sem evidência de fator obstrutivo identificável pelo método de imagem. Sem outros achados anormais."
+        }
+      },
+      {
+        "idImpresso": "est7_tomografia_abdome",
+        "tituloImpresso": "IMPRESSO - TOMOGRAFIA DE ABDOME SEM CONTRASTE",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/example_ct.png",
+          "laudo": "Hidronefrose à direita, visualizando-se cálculo de 10 mm em junção ureterovesical. Sem outros achados anormais."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST7_CG_URETEROLITIASE_2025V1_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher jovem de 24 anos procura emergência com dor súbita e intensa em flanco direito com irradiação, associada a hematúria. A investigação diagnóstica com exames de imagem confirma ureterolitíase. O caso foca no manejo da dor, diagnóstico e encaminhamento.",
+      "focoPrincipalDetalhado": [
+        "Anamnese detalhada da dor e sintomas associados para diagnóstico diferencial.",
+        "Solicitação e interpretação de exames laboratoriais (urina, função renal) e de imagem (TC como padrão-ouro).",
+        "Formulação do diagnóstico definitivo de ureterolitíase.",
+        "Indicação de analgesia adequada e encaminhamento urgente para urologia."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est7_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) identifica-se;\n(2) pergunta o nome e cumprimenta a paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.2},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.1},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre características da dor:\n(1) tempo de início;\n(2) localização;\n(3) irradiação;\n(4) tipo;\n(5) intensidade;\n(6) fatores agravantes;\n(7) fatores atenuantes.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta sobre cinco ou mais itens.", "pontos": 0.8},
+          "parcialmenteAdequado": {"criterio": "Pergunta sobre três ou quatro itens.", "pontos": 0.4},
+          "inadequado": {"criterio": "Pergunta sobre dois ou menos itens.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre manifestações associadas relevantes para o estabelecimento do diagnóstico:\n(1) náuseas e(ou) vômitos;\n(2) febre;\n(3) disúria;\n(4) hematúria.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga os quatro itens.", "pontos": 0.8},
+          "parcialmenteAdequado": {"criterio": "Investiga dois ou três itens.", "pontos": 0.4},
+          "inadequado": {"criterio": "Não investiga ou investiga apenas um item.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre queixas e antecedentes ginecológicos:\n(1) corrimento vaginal;\n(2) histórico de IST;\n(3) atividade sexual desprotegida;\n(4) data da última menstruação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga os quatro itens.", "pontos": 0.8},
+          "parcialmenteAdequado": {"criterio": "Investiga três itens.", "pontos": 0.4},
+          "inadequado": {"criterio": "Investiga dois ou menos itens.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita os exames laboratoriais:\n(1) hemograma;\n(2) PCR e(ou) VHS;\n(3) creatinina e(ou) ureia;\n(4) sódio e(ou) potássio;\n(5) rotina de urina / sumário de urina / urina tipo 1;\n(6) beta-HCG.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita cinco ou seis itens.", "pontos": 1.4},
+          "parcialmenteAdequado": {"criterio": "Solicita quatro itens.", "pontos": 0.7},
+          "inadequado": {"criterio": "Solicita três ou menos itens.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita exames de imagem:\n(1) tomografia computadorizada / tomografia de abdome com/sem contraste ou tomografia computadorizada / tomografia / TC de rins e vias urinárias;\n(2) ultrassom/USG/ecografia de abdome ou ultrassom/USG/ecografia de rins e vias urinárias.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita ambos os itens ou solicita apenas o item 1.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Solicita apenas o item 2 ou solicita apenas \"tomografia com contraste\".", "pontos": 0.5},
+          "inadequado": {"criterio": "Não solicita nenhum dos itens.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Define hipótese diagnóstica: ureterolitíase/litíase urinária.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Define.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não define.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Indica analgesia com anti-inflamatórios não esteroidais ou opioides (observação: serão considerados os nomes genéricos das medicações).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Encaminha, em caráter de urgência, para avaliação de especialista em urologia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Encaminha.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não encaminha ou encaminha de forma eletiva.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Fornece orientações para prevenção de novos episódios:\n(1) aumento da ingesta hídrica;\n(2) baixa ingesta de sódio;\n(3) baixa ingesta de oxalato de cálcio (café; chá preto; chocolate; Coca-Cola etc.);\n(4) manutenção do índice de massa corporal em valores normais.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta três ou quatro itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Orienta apenas dois itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não orienta ou orienta apenas um item.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

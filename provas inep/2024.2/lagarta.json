@@ -1,0 +1,270 @@
+{
+  "idEstacao": "INEP_2024_2_EST5_MEDICINA_DA_FAMILIA_E_COMUNIDADE_ERUCISMO",
+  "tituloEstacao": "Erucismo (Acidente com Lagarta Lonomia)",
+  "numeroDaEstacao": 5,
+  "especialidade": "MEDICINA DA FAMÍLIA E COMUNIDADE",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "erucismo",
+    "lonomia",
+    "acidente com lagarta",
+    "dor em queimação",
+    "medicina da família e comunidade",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial - unidade básica de saúde (UBS)",
+      "infraestruturaUnidade": [
+        "Consultório médico e salas de procedimentos e observação."
+      ]
+    },
+    "descricaoCasoCompleta": "Você é médico(a) em uma UBS em uma cidade de médio porte localizada na região metropolitana de uma grande capital brasileira. Você atenderá uma mulher com 40 anos de idade com queixa de dor de cabeça, mal estar geral e dor intensa em queimação na pele do braço direito.",
+    "tarefasPrincipais": [
+      "Realizar a anamnese dirigida à queixa principal da paciente.",
+      "Solicitar exame físico do membro afetado.",
+      "Verbalizar e explicar o diagnóstico.",
+      "Pactuar plano de cuidado com a paciente usando método clínico centrado na pessoa.",
+      "Avaliar a necessidade de adoção de outras medidas sanitárias."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Camila.\nTenho 40 anos.\nSou casada.\nTrabalho como cuidadora de idosos."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou com uma dor muito forte, uma queimação no meu braço direito, além de dor de cabeça e enjoo."
+      },
+      {
+        "contextoOuPerguntaChave": "SOBRE O ACIDENTE COM LAGARTA",
+        "informacao": "Aconteceu hoje de manhã, enquanto eu estava podando umas árvores no meu quintal. De repente, senti essa dor forte e súbita no braço. Vi que uma lagarta tinha encostado em mim. Lavei o local com água e coloquei gelo, mas a dor só piorou."
+      },
+      {
+        "contextoOuPerguntaChave": "DOR NO BRAÇO DIREITO",
+        "informacao": "Início: Há umas 5 horas.\nTipo/Característica: É uma queimação muito intensa.\nLocalização: É mais forte no local da lesão, mas está se espalhando pelo braço todo. O local está bem sensível ao toque.\nIntensidade: Nota 8 de 10.\nFatores de melhora ou piora: Não achei nada que melhore, parece que só piora com o tempo."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Mal-estar geral: Sim, estou sentindo.\nCefaleia: Sim, estou com dor de cabeça.\nNáuseas: Sim, sinto enjoo.\nOutros sintomas: Não, fora isso não sinto mais nada."
+      },
+      {
+        "contextoOuPerguntaChave": "MEDICAÇÕES DE ALÍVIO UTILIZADAS",
+        "informacao": "Não tomei nenhum remédio."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Não tenho nenhum problema de saúde."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: Não fumo.\nEtilismo: Não bebo.\nDrogas ilícitas: Não uso."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não consta no script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est5_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "",
+              "itens": [
+                {"chave": "Pressão Arterial", "valor": "128 x 95 mmHg"},
+                {"chave": "Frequência Cardíaca", "valor": "98 batimentos por minuto"},
+                {"chave": "Frequência Respiratória", "valor": "38 incursões respiratórias por minuto"},
+                {"chave": "Abdome", "valor": "Normotenso e indolor à palpação."},
+                {"chave": "Ausculta", "valor": "Cardíaca e respiratória inalteradas."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est5_exame_lesao",
+        "tituloImpresso": "IMPRESSO - EXAME DA LESÃO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "Braço direito",
+              "itens": [
+                {"chave": "Achados", "valor": "Lesões puntiformes, eritematosas, edemaciadas e dolorosas nos pontos de inoculação das cerdas e adenomegalia regional dolorosa. Bolhas e necrose cutânea superficial não visualizadas."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est5_imagem_lagarta",
+        "tituloImpresso": "IMPRESSO - IMAGEM DA LAGARTA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Lagarta_Lonomia.jpg?alt=media&token=489c063f-9175-4c6d-978d-69e1c15f4039",
+          "laudo": "Imagem de lagartas do gênero Lonomia."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {
+        "momento": "Após o participante verbalizar o diagnóstico.",
+        "pergunta": "Como está o meu braço? O que eu tenho é grave?"
+      },
+      {
+        "momento": "Durante a explicação da conduta.",
+        "pergunta": "Como vamos tratar o meu braço?"
+      },
+      {
+        "momento": "Ao ser informada sobre o encaminhamento.",
+        "pergunta": "Por que devo ser internada? Estou correndo risco de vida?"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST5_MFC_ERUC_2024V2_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 40 anos procura UBS com dor intensa em queimação no braço direito, cefaleia e mal-estar, após contato com lagarta (erucismo), classificado como acidente moderado/grave.",
+      "focoPrincipalDetalhado": [
+        "Ouvir a história do acidente da paciente e expressar o raciocínio clínico-epidemiológico.",
+        "Verbalizar o diagnóstico, incluindo o grau de risco de erucismo (ou acidente ou envenenamento com lagarta), utilizando técnicas de medicina centrada na pessoa (MCCP).",
+        "Estabelecer medidas urgentes de cuidado para o controle da dor e a necessidade de encaminhamento para unidade de emergência hospitalar.",
+        "Notificar o acidente com lagarta."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est5_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) cumprimenta a paciente simulada;\n(2) identifica-se; e,\n(3) dirige-se a ela pelo nome, pelo menos uma vez.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas duas ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza apenas uma ação ou não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Demonstra empatia com a paciente:\n(1) estabelece contato visual; e,\n(2) mantém postura atenta e interessada ao longo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.15},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta ativamente a fala da paciente, sem interrompê-la.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza a ação.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não realiza a ação.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível com a paciente simulada, evitando termos técnicos de difícil compreensão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Utiliza linguagem acessível.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não utiliza linguagem acessível.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Pergunta se a paciente teve contato direto com:\n(1) animais ou insetos;\n(2) produtos químicos;\n(3) plantas alergênicas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta os três itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Pergunta um ou dois itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Pergunta sobre as características da dor:\n(1) tempo desde o início do quadro;\n(2) tipo de dor;\n(3) localização e irradiação;\n(4) intensidade ou graduação;\n(5) fatores de melhoria;\n(6) fatores de agravamento; e,\n(7) uso de medicamentos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta cinco ou mais características.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta três ou quatro características.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta uma ou duas características ou não pergunta característica alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Pergunta sobre as características das manifestações locais:\n(1) evolução da lesão cutânea desde o início do quadro; e,\n(2) linfoadenopatia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta sobre as duas manifestações locais.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta sobre uma manifestação local.", "pontos": 0.25},
+          "inadequado": {"criterio": "Não pergunta manifestação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Pergunta sobre manifestações sistêmicas:\n(1) cefaleia;\n(2) mal-estar;\n(3) náuseas ou vômito ou dor abdominal; e,\n(4) gengivorragia ou equimoses espontâneas ou traumáticas ou epistaxe ou hematúria ou hematêmese ou hemoptise.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta quatro manifestações.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta três manifestações.", "pontos": 0.75},
+          "inadequado": {"criterio": "Pergunta uma ou duas manifestações ou não pergunta sobre manifestação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Verbaliza o diagnóstico de acidente com lagarta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Verbaliza acidente com animal peçonhento.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica ou propõe a prescrição de:\n(1) analgésico;\n(2) anti-histamínico sistêmico;\n(3) infiltração local com anestésico do tipo lidocaína 2% sem vasoconstritor.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza duas ou mais ações.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Explica à paciente:\n(1) Sobre a necessidade de encaminhamento para serviço hospitalar de referência para soroterapia de acidentes por animais peçonhentos;\n(2) A potencial gravidade ou risco de morte pelo acidente lonômico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Explica os dois itens.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Explica um item.", "pontos": 1.0},
+          "inadequado": {"criterio": "Não explica item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est5_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Notifica o caso.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Notifica.", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não notifica.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

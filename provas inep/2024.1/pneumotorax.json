@@ -1,0 +1,298 @@
+{
+    "idEstacao": "INEP_2024_1_EST2_CIRURGIA_GERAL_PNEUMOTORAX",
+    "tituloEstacao": "Pneumotórax Hipertensivo",
+    "numeroDaEstacao": 2,
+    "especialidade": "CIRURGIA GERAL",
+    "tempoDuracaoMinutos": 10,
+    "palavrasChave": [
+      "Politrauma",
+      "ATLS",
+      "Pneumotórax hipertensivo",
+      "Drenagem torácica",
+      "Cirurgia Geral",
+      "Urgência e emergência"
+    ],
+    "nivelDificuldade": "Difícil",
+    "instrucoesParticipante": {
+      "cenarioAtendimento": {
+        "nivelAtencao": "Atenção secundária à saúde",
+        "tipoAtendimento": "Urgência e emergência",
+        "infraestruturaUnidade": [
+          "Setor de radiologia convencional",
+          "Laboratório de análises clínicas",
+          "Leitos de internação",
+          "Centro cirúrgico",
+          "Banco de sangue"
+        ]
+      },
+      "descricaoCasoCompleta": "Você está de plantão na emergência de um hospital de médio porte e vai atender uma paciente de 25 anos de idade, vítima de trauma automobilístico do tipo colisão frontal contra um poste de concreto, sem cinto de segurança. A paciente se apresenta sonolenta, gemente, desorientada em tempo e espaço. Escala de coma de Glasgow 13. Ao exame físico, mostrou-se hipocorada (+/4+), taquipneica (27 irpm), taquicárdica (FC=110 bpm), apresentando dor em tórax anterior.",
+      "tarefasPrincipais": [
+        "Realizar o atendimento da paciente vítima de politrauma, de acordo com o Protocolo de Suporte Avançado de Vida no Trauma;",
+        "Identificar as alterações no exame físico;",
+        "Adotar a(s) conduta(s) terapêutica(s) necessária(s) ao caso, conforme o protocolo;",
+        "Verbalizar a realização de procedimentos médicos, preconizados pelo protocolo, necessários ao caso.",
+        "Utilizar habilidades profissionais para comunicação do diagnóstico à paciente."
+      ],
+      "avisosImportantes": [
+        "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE;",
+        "A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO;",
+        "CONSIDERE QUE A PACIENTE SIMULADA ESTÁ DEITADA EM UMA PRANCHA RÍGIDA;",
+        "OS INSUMOS ILUSTRADOS REPRESENTAM ALGUNS DOS MATERIAIS DISPONÍVEIS PARA O ATENDIMENTO;",
+        "HÁ NA ESTAÇÃO TODOS OS MATERIAIS NECESSÁRIOS AO ATENDIMENTO DA PACIENTE."
+      ]
+    },
+    "materiaisDisponiveis": {
+      "informacoesVerbaisSimulado": [
+        {
+          "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+          "informacao": "Meu nome é Bianca.\nTenho 25 anos.\nSou solteira.\nSou advogada."
+        },
+        {
+          "contextoOuPerguntaChave": "SOBRE O ACIDENTE",
+          "informacao": "Não me recordo direito do que aconteceu após a colisão do carro, lembro-me apenas de ver os bombeiros e de chegar ao hospital."
+        },
+        {
+          "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+          "informacao": "Sinto-me um pouco tonta.\nSinto uma dor no lado direito do peito."
+        },
+        {
+          "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+          "informacao": "Doenças crônicas: Nego.\nCirurgias prévias: Nego.\nInternações: Nego.\nAlergias: Nego.\nMedicamentos em uso contínuo: Nego."
+        },
+        {
+          "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+          "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+        }
+      ],
+      "impressos": [
+        {
+          "idImpresso": "est2_exame_fisico",
+          "tituloImpresso": "IMPRESSO – EXAME FÍSICO",
+          "tipoConteudo": "lista_chave_valor_secoes",
+          "conteudo": {
+            "secoes": [
+              {
+                "tituloSecao": "SINAIS VITAIS",
+                "itens": [
+                  {"chave": "Pressão arterial", "valor": "120 x 90 mmHg"},
+                  {"chave": "Frequência cardíaca", "valor": "125 bpm"},
+                  {"chave": "Frequência respiratória", "valor": "32 irpm"}
+                ]
+              },
+              {
+                "tituloSecao": "EXAME DIRECIONADO",
+                "itens": [
+                  {"chave": "Aparelho cardiovascular", "valor": "Turgência jugular, bulhas normofonéticas sem sopros."},
+                  {"chave": "Aparelho respiratório", "valor": "Murmúrio vesicular abolido à direita com hipertimpanismo."},
+                  {"chave": "Exame neurológico", "valor": "Glasgow 13, pupilas isocóricas e fotorreagentes."}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idImpresso": "est2_abocath",
+          "tituloImpresso": "IMPRESSO - ABOCATH/JELCOS",
+          "tipoConteudo": "imagemComLaudo",
+          "conteudo": {
+            "urlImagem": "https://i.imgur.com/8zW3a8A.jpeg",
+            "laudo": "Cateteres intravenosos periféricos (Abocath/Jelco) disponíveis nos calibres 14g, 16g, 18g, 20g, 22g."
+          }
+        },
+        {
+          "idImpresso": "est2_dreno_torax",
+          "tituloImpresso": "IMPRESSO - SISTEMA DE DRENAGEM TÓRACICA FECHADA",
+          "tipoConteudo": "imagemComLaudo",
+          "conteudo": {
+            "urlImagem": "https://i.imgur.com/dC3fB0E.jpeg",
+            "laudo": "Sistema de drenagem torácica fechada em selo d'água."
+          }
+        }
+      ],
+      "perguntasAtorSimulado": [
+        {
+          "contexto": "A qualquer momento, se o participante estabilizar a paciente",
+          "pergunta": "Doutor(a), o que aconteceu? O que eu tenho?"
+        },
+        {
+          "contexto": "Ao final do atendimento",
+          "pergunta": "Eu vou precisar ser transferida para outro hospital?"
+        }
+      ]
+    },
+    "padraoEsperadoProcedimento": {
+      "idChecklistAssociado": "PEP_EST2_CG_PNEUMOTORAX_2024V1_1",
+      "sinteseEstacao": {
+        "resumoCasoPEP": "Mulher de 25 anos, vítima de trauma automobilístico (colisão frontal sem cinto), chega ao PS sonolenta (GCS 13), taquicárdica, taquipneica, com dor torácica. Exame físico revela murmúrio vesicular abolido à direita com hipertimpanismo e turgência jugular, caracterizando um pneumotórax hipertensivo.",
+        "focoPrincipalDetalhado": [
+          "Realizar o atendimento inicial ao politraumatizado seguindo o protocolo ABCDE.",
+          "Identificar o pneumotórax hipertensivo a partir dos achados do exame físico.",
+          "Indicar e descrever a técnica correta da punção torácica de alívio (toracocentese descompressiva).",
+          "Indicar e descrever a técnica correta da drenagem torácica fechada em selo d'água."
+        ]
+      },
+      "itensAvaliacao": [
+        {
+          "idItem": "pep_est2_item01",
+          "itemNumeroOficial": "1",
+          "descricaoItem": "Avalia as vias aéreas e verbaliza que as vias áreas estão pérvias.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 0.4},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item02",
+          "itemNumeroOficial": "2",
+          "descricaoItem": "Verbaliza a necessidade de colocar a máscara de oxigênio.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza o uso de máscara de O2.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Verbaliza a necessidade de iniciar fornecimento de oxigênio, mas não cita a máscara.", "pontos": 0.15},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item03",
+          "itemNumeroOficial": "3",
+          "descricaoItem": "Verbaliza que o colar cervical não deve ser removido OU verbaliza manutenção do colar cervical OU verbaliza retirada do colar com estabilização manual da coluna, avaliação breve e posterior fechamento do colar.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item04",
+          "itemNumeroOficial": "4",
+          "descricaoItem": "Realiza a avaliação clínica primária segundo o ABCDE, verbalizando:\nA: vias aéreas e coluna cervical;\nB: ventilação/respiração - Avaliação do aparelho respiratório;\nC: circulação - PA, FC e aparelho cardiovascular;\nD: exame neurológico - nível de consciência (sonolenta, desorientada e glasgow 13);\nE: Exposição - a paciente está coberta e sem lesões externas.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza corretamente os dados do caso clínico na sequência correta.", "pontos": 0.9},
+            "parcialmenteAdequado": {"criterio": "Verbaliza só os dados ou só a sequência.", "pontos": 0.45},
+            "inadequado": {"criterio": "Não verbaliza corretamente ou não verbaliza na sequência.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item05",
+          "itemNumeroOficial": "5",
+          "descricaoItem": "Verbaliza o diagnóstico de pneumotórax hipertensivo.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 1.0},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item06",
+          "itemNumeroOficial": "6",
+          "descricaoItem": "Escolhe o cateter (jelco ou abocath) n.º 14 OU n.º 16 OU n.º 18 para realização da punção do tórax OU toracocentese de alívio.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Escolhe.", "pontos": 0.8},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não escolhe.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item07",
+          "itemNumeroOficial": "7",
+          "descricaoItem": "Verbaliza que a punção deve ser realizada no quinto, OU no quarto, espaço intercostal, linha axilar média OU anterior à linha axilar média.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 1.4},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item08",
+          "itemNumeroOficial": "8",
+          "descricaoItem": "Indica que deverá ser realizada drenagem torácica fechada (OU drenagem pleural fechada OU toracostomia fechada OU drenagem torácica em selo d'água) após a realização da punção de descompressão.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Indica.", "pontos": 0.8},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item09",
+          "itemNumeroOficial": "9",
+          "descricaoItem": "Descreve a drenagem no quinto/quarto espaço intercostal, entre a linha anterior e a linha axilar média.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Descreve.", "pontos": 1.4},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não descreve.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item10",
+          "itemNumeroOficial": "10",
+          "descricaoItem": "Solicita radiografia de tórax após a punção ou a drenagem.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Solicita.", "pontos": 0.5},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item11",
+          "itemNumeroOficial": "11",
+          "descricaoItem": "Solicita monitorização da paciente indicando os seguintes parâmetros:\n1. frequência cardíaca;\n2. pressão arterial;\n3. oximetria OU saturação de oxigênio;\n4. diurese OU sondagem vesical; e,\n5. Eletrocardiograma",
+          "pontuacoes": {
+            "adequado": {"criterio": "Solicita a monitorização indicando 3 ou mais itens.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Solicita a monitorização indicando apenas 2 itens.", "pontos": 0.15},
+            "inadequado": {"criterio": "Não solicita a monitorização ou solicita a monitorização indicando apenas 1 item.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item12",
+          "itemNumeroOficial": "12",
+          "descricaoItem": "Após os procedimentos de punção e/ou drenagem, verbaliza a reavaliação do aparelho respiratório OU verbaliza que será repetido o exame de \"B\" OU verbaliza que será repetido o \"ABCDE\".",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 0.5},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item13",
+          "itemNumeroOficial": "13",
+          "descricaoItem": "Após os procedimentos de punção e/ou drenagem, verbaliza a reavaliação do exame do aparelho cardiovascular OU verbaliza que será repetido o exame de \"C\" OU verbaliza que será repetido o \"ABCDE\".",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item14",
+          "itemNumeroOficial": "14",
+          "descricaoItem": "Solicita acesso venoso indicando os seguintes parâmetros:\n1. cateter calibre n.º 14 ou n.º 16 OU nº 18;\n2. veia periférica OU acesso venoso em membro superior;\n3. 1 ou 2 litros;\n4. ringuer lactato ou soro fisiológico ou cristalóide OU solução fisiológica.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Solicita a realização de acesso venoso indicando corretamente os quatro parâmetros.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Solicita a realização de acesso venoso e indica corretamente 2 ou 3 parâmetros", "pontos": 0.15},
+            "inadequado": {"criterio": "Não solicita a realização de acesso venoso ou solicita a realização de acesso venoso indicando três itens ou menos.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item15",
+          "itemNumeroOficial": "15",
+          "descricaoItem": "Verbaliza a exposição e o controle do ambiente:\n1. a necessidade de expor toda a paciente, OU retirando o lençol OU retirar roupa;\n2. a necessidade de prevenção de hipotermia",
+          "pontuacoes": {
+            "adequado": {"criterio": "Verbaliza os dois itens.", "pontos": 0.3},
+            "parcialmenteAdequado": {"criterio": "Verbaliza um item.", "pontos": 0.15},
+            "inadequado": {"criterio": "Não verbaliza item algum", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est2_item16",
+          "itemNumeroOficial": "16",
+          "descricaoItem": "Verbaliza que, no momento, NÃO será necessária remoção da paciente.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Conforme item 14.6 do Edital, a pontuação correspondente ao item será atribuída a todos os participantes, inclusive aos que não tenham interposto recurso.", "pontos": 0.2},
+            "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+            "inadequado": {"criterio": "Não se aplica.", "pontos": 0.0}
+          }
+        }
+      ],
+      "pontuacaoTotalEstacao": 10.0
+    }
+  }

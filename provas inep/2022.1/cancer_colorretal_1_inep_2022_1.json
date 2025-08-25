@@ -1,0 +1,302 @@
+{
+  "idEstacao": "INEP_2022_1_EST01_CIRURGIA_GERAL_CANCER_COLORRETAL",
+  "tituloEstacao": "Câncer Colorretal 1",
+  "numeroDaEstacao": 1,
+  "especialidade": "CIRURGIA GERAL",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["câncer colorretal", "sangramento retal", "colonoscopia", "adenocarcinoma", "estadiamento", "cirurgia geral", "atenção terciária"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção terciária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Setor de radiologia com radiologia convencional, tomografia computadorizada e ressonância magnética",
+        "Setor de endoscopia",
+        "Laboratório de análises clínicas",
+        "Leitos de internação de alta complexidade",
+        "Centro cirúrgico",
+        "Unidade de Terapia Intensiva (UTI)"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente de 55 anos encaminhado de uma cidade pequena do interior, com queixa de sangramento retal vivo há 6 meses.",
+    "tarefasPrincipais": [
+      "Realizar anamnese do paciente",
+      "Solicitar / realizar exames físicos necessários à avaliação do caso",
+      "Solicitar exames complementares pertinentes ao caso clínico",
+      "Relacionar os resultados dos exames às hipóteses diagnósticas",
+      "Verbalizar o diagnóstico, sua classificação de gravidade e elaborar a conduta terapêutica"
+      
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Jonas.\nTenho 55 anos.\nSou casado.\nSou empreendedor."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou fazendo cocô com sangue."
+      },
+      {
+        "contextoOuPerguntaChave": "SANGRAMENTO RETAL",
+        "informacao": "Aspecto/cor: vermelho vivo.\nIntensidade: moderada.\nFrequência: todos os dias.\nDuração: há uns 6 meses."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Diarreia: nega.\nConstipação: estou um pouco constipado, nunca fui assim.\nDor abdominal e característica/tipo: sim, tipo cólica.\nDistensão abdominal: sim.\nTenesmo: sim.\nPerda de peso não intencional: perdi uns 7 kg nesses últimos 6 meses.\nAstenia e anorexia: sim, estou bem cansado e sem fome."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: hipertensão arterial.\nCirurgias prévias: nega.\nInternações: nega.\nAlergias: nega.\nMedicamentos em uso contínuo: losartana 25 mg 12/12 horas."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Pai: Meu pai teve um AVC.\nMãe: Minha mãe faleceu com câncer de estômago."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: fumo 1 maço por dia desde os 20 anos.\nEtilismo: bebo nos finais de semana, whisky.\nDrogas ilícitas: nega.\nDieta: como muita carne vermelha.\nAtividade física: sedentário."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR: (ex: Resposta a perguntas não previstas, Dúvidas do ator sobre medicamentos, exames, condutas, etc., Perguntar após o atendimento se o candidato realizar a anamnese/exame fisico/conduta/tratamento/etc.)",
+        "informacao": "Dr (a), como vai ser o meu tratamento?\nÉ grave? Eu vou morrer?\nComo que eu peguei isso?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est1_exame_fisico_geral",
+        "tituloImpresso": "EXAME FÍSICO GERAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "110 × 80 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "98 bpm"},
+                {"chave": "Frequência respiratória", "valor": "12 irpm"},
+                {"chave": "Temperatura", "valor": "37,1 °C"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO",
+              "itens": [
+                {"chave": "Estado Geral", "valor": "Regular estado geral, hidratado, hipocorado (2/4), eutrófico, acianótico, anictérico, afebril, sem linfonodomegalias"},
+                {"chave": "Abdome", "valor": "plano, sem dor à palpação superficial e profunda em todo o abdome. RHA normais, sem visceromegalias"},
+                {"chave": "Aparelho respiratório e cardiovascular", "valor": "sem anormalidades"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est1_exame_proctologico",
+        "tituloImpresso": "EXAME PROCTOLÓGICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME PROCTOLÓGICO",
+              "itens": [
+                {"chave": "Inspeção Estática", "valor": "presença de plicoma anal posterior"},
+                {"chave": "Inspeção Dinâmica", "valor": "visualização de dois mamilos hemorroidários, um no quadrante posterior direito (5h) e outro na posição lateral esquerda (9h) que se exteriorizam aos esforços, com redução espontânea"},
+                {"chave": "Toque Retal", "valor": "esfíncter normotônico, mucosa retal normal, sem tumorações palpáveis, próstata de tamanho e consistência normais. Percebe-se sangue vermelho-vivo no dedo da luva ao término do toque retal"},
+                {"chave": "Anuscopia", "valor": "presença de mamilos hemorroidários descritos na inspeção dinâmica. Mucosa retal de aspecto normal, mas com restos de sangue vermelho-vivo na luz do reto"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est1_exames_laboratoriais",
+        "tituloImpresso": "EXAMES LABORATORIAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "HEMOGRAMA",
+              "itens": [
+                {"chave": "Hemoglobina", "valor": "9,0 mg/dL (VR: 12 – 16 mg/dL)"},
+                {"chave": "Hematócrito", "valor": "27% (VR: 35 – 45%)"},
+                {"chave": "Leucócitos", "valor": "5.110 (VR: 4.500 – 11.000)"},
+                {"chave": "Plaquetas", "valor": "251.000 (VR: 150.000 – 450.000)"}
+              ]
+            },
+            {
+              "tituloSecao": "OUTROS EXAMES",
+              "itens": [
+                {"chave": "Demais exames laboratoriais", "valor": "normais"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est1_colonoscopia",
+        "tituloImpresso": "COLONOSCOPIA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "textoDescritivo": "Exame endoscópico do cólon com achados de lesão neoplásica em sigmoide.",
+          "laudo": "Conclusão do Exame: Reto sem alterações. Presença de lesão polipoide séssil e ulcerada, com sinais de sangramento recente, localizada no sigmoide, medindo 3 cm no maior diâmetro. Restante do exame sem alterações até o íleo terminal. Colhidas biópsias da lesão."
+        }
+      },
+      {
+        "idImpresso": "est1_biopsia",
+        "tituloImpresso": "BIOPSIA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "textoDescritivo": "Resultado do exame anatomopatológico da biópsia colhida durante colonoscopia.",
+          "laudo": "Resultado da Biópsia: Adenocarcinoma bem diferenciado do sigmoide."
+        }
+      },
+      {
+        "idImpresso": "est1_exames_estadiamento",
+        "tituloImpresso": "EXAMES DE ESTADIAMENTO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "textoDescritivo": "Exames de imagem para estadiamento da neoplasia colorretal.",
+          "laudo": "Tomografia computadorizada de abdome total: presença de lesão polipoide localizada na parede anterior do sigmoide, com sinais de invasão da parede até a serosa. Linfonodos regionais sem alterações. Demais órgãos visualizados sem alterações.\nTomografia de tórax: sem alterações.\nRessonância magnética de pelve: presença de lesão polipoide localizada na parede anterior do sigmoide, com sinais de invasão até a serosa. Linfonodos regionais sem alterações. Demais órgãos visualizados sem alterações.\nCEA (antígeno carcinoembriogênico): 1,2 ng/mL (normal até 5,5 ng/mL)."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST01_CR_CANCER_COLORRETAL_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Homem de 55 anos com sangramento retal vivo há 6 meses, perda ponderal, alteração do hábito intestinal e sintomas constitucionais. Exame físico revela doença hemorroidária associada, mas colonoscopia evidencia adenocarcinoma bem diferenciado do sigmoide com estadiamento T3N0M0. Importante ressaltar a coexistência de patologia benigna (hemorroidas) com neoplasia maligna.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada com investigação detalhada das características do sangramento e sintomas associados",
+        "Exame físico completo incluindo exame proctológico",
+        "Solicitação e interpretação de exames complementares para diagnóstico diferencial",
+        "Diagnóstico de câncer colorretal com estadiamento adequado",
+        "Conduta terapêutica oncológica com encaminhamento cirúrgico"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est1_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Identifica-se e identifica adequadamente o paciente.\n\nAdequado: realiza todos os comandos.\nParcialmente adequado: realiza somente um comando.\nInadequado: não realiza nenhum dos comandos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza todos os comandos", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza somente um comando", "pontos": 0.25},
+          "inadequado": {"criterio": "não realiza nenhum dos comandos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre as características do sangramento: (1) aspecto; (2) intensidade; (3) frequência; (4) duração.\n\nAdequado: pergunta sobre todas as características.\nParcialmente adequado: pergunta apenas duas ou três características.\nInadequado: pergunta apenas uma ou não pergunta nenhuma das características.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre todas as características", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "pergunta apenas duas ou três características", "pontos": 0.5},
+          "inadequado": {"criterio": "pergunta apenas uma ou não pergunta nenhuma das características", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Realiza anamnese, perguntando sobre sintomas associados digestivos: (1) ritmo intestinal OU diarreia E constipação; (2) dor tipo cólica; (3) distensão abdominal; (4) tenesmo; e consumptivos:(5) perda de peso; (6) astenia; (7) anorexia.\n\nAdequado: pergunta sobre todas as possibilidades (4 sintomas digestivos e 3 sintomas consumptivos).\nParcialmente adequado: pergunta apenas dois ou três sintomas digestivos e apenas dois sintomas consumptivos.\nInadequado: não pergunta nenhum dos itens ou somente um dos sintomas consumptivos e/ou um dos sintomas digestivos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre todas as possibilidades (4 sintomas digestivos e 3 sintomas consumptivos)", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "pergunta apenas dois ou três sintomas digestivos e apenas dois sintomas consumptivos", "pontos": 0.5},
+          "inadequado": {"criterio": "não pergunta nenhum dos itens ou somente um dos sintomas consumptivos e/ou um dos sintomas digestivos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita a realização do exame físico: (1) exame físico geral; e (2) exame proctológico.\n\nAdequado: solicita a realização dos dois exames.\nParcialmente adequado: solicita a realização de apenas um dos exames.\nInadequado: não solicita a realização de nenhum dos exames físicos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita a realização dos dois exames", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "solicita a realização de apenas um dos exames", "pontos": 0.75},
+          "inadequado": {"criterio": "não solicita a realização de nenhum dos exames físicos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita exames complementares laboratoriais como plano diagnóstico (especifica pelo menos o hemograma).\n\nAdequado: solicita.\nInadequado: não solicita",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita a colonoscopia ou a retossigmoidoscopia.\n\nAdequado: solicita a colonoscopia.\nParcialmente adequado: solicita a retossigmoidoscopia.\nInadequado: não solicita colonoscopia nem retossigmoidoscopia",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita a colonoscopia", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "solicita a retossigmoidoscopia", "pontos": 0.75},
+          "inadequado": {"criterio": "não solicita colonoscopia nem retossigmoidoscopia", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita o resultado da biópsia.\n\nAdequado: solicita.\nInadequado: não solicita.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Verbaliza as hipóteses diagnósticas associadas ao paciente em questão: (1) câncer colorretal/ adenocarcinoma de cólon; e (2) doença hemorroidária.\n\nAdequado: verbaliza as duas hipóteses diagnósticas.\nParcialmente adequado: dá somente o diagnóstico de câncer.\nInadequado: não dá o diagnóstico de câncer ou dá somente o diagnóstico de doença hemorroidária.",
+        "pontuacoes": {
+          "adequado": {"criterio": "verbaliza as duas hipóteses diagnósticas", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "dá somente o diagnóstico de câncer", "pontos": 0.5},
+          "inadequado": {"criterio": "não dá o diagnóstico de câncer ou dá somente o diagnóstico de doença hemorroidária", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Solicita os exames de estadiamento/imagem: (1) TC de tórax; (2) TC de abdome total, ou TC de abdome superior e TC de pelve, ou TC de abdome superior e RM de pelve; (3) CEA.\n\nAdequado: solicita os três itens corretamente.\nParcialmente adequado: solicita apenas 1 exame de imagem, com ou sem o CEA.\nInadequado: não solicita nenhum item de imagem, ou só solicita o CEA, ou solicita apenas o PET TC. -PET TC não faz parte de exames de rotina para estadiamento.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita os três itens corretamente", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "solicita apenas 1 exame de imagem, com ou sem o CEA", "pontos": 0.25},
+          "inadequado": {"criterio": "não solicita nenhum item de imagem, ou só solicita o CEA, ou solicita apenas o PET TC", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Explica sobre a potencial gravidade do quadro.\n\nAdequado: explica.\nInadequado: não explica",
+        "pontuacoes": {
+          "adequado": {"criterio": "explica", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não explica", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Indica tratamento do câncer colorretal.\n\nAdequado: informa possibilidade de cirurgia/encaminhamento do paciente ao cirurgião\nInadequado: não indica nenhum tratamento adequado ou somente indica tratamento para a doença hemorroidária.",
+        "pontuacoes": {
+          "adequado": {"criterio": "informa possibilidade de cirurgia/encaminhamento do paciente ao cirurgião", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica nenhum tratamento adequado ou somente indica tratamento para a doença hemorroidária", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Explica que, após a cirurgia, o paciente poderá precisar de tratamento complementar (adjuvante).\n\nAdequado: fala sobre a possibilidade de quimioterapia.\nInadequado: não fala sobre o assunto.",
+        "pontuacoes": {
+          "adequado": {"criterio": "fala sobre a possibilidade de quimioterapia", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não fala sobre o assunto", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

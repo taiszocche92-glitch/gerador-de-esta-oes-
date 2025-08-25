@@ -1,0 +1,310 @@
+{
+  "idEstacao": "INEP_2022_1_EST_CM_GOTA",
+  "tituloEstacao": "Gota",
+  "numeroDaEstacao": 1,
+  "especialidade": "CLÍNICA MÉDICA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["gota", "artrite gotosa", "hiperuricemia", "tornozelo", "ácido úrico", "diabetes", "álcool", "anti-inflamatório", "colchicina", "atenção secundária"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Ambulatorial e hospitalar",
+      "infraestruturaUnidade": [
+        "Laboratório de análise clínica",
+        "Laboratório de imagem (radiologia e ecografia)"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente de 52 anos com queixa de dor no tornozelo esquerdo há 1 dia.",
+    "tarefasPrincipais": [
+      "Realizar anamnese",
+      "Solicitar e interpretar o exame físico",
+      "Solicitar e interpretar exames complementares",
+      "Indicar hipóteses diagnósticas",
+      "Indicar terapêutica inicial",
+      "Orientar mudanças de hábitos de vida"
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "DADOS PESSOAIS",
+        "informacao": "Ricardo, 52 anos de idade."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou com muita dor no tornozelo esquerdo."
+      },
+      {
+        "contextoOuPerguntaChave": "CARACTERÍSTICAS DA DOR",
+        "informacao": "Início: começou ontem.\nIntensidade: é uma dor muito forte (8/10).\nIrradiação: nega.\nFatores de melhora: não consta no script.\nFatores de piora: quando tento caminhar dói mais.\nOutras articulações afetadas: não."
+      },
+      {
+        "contextoOuPerguntaChave": "TRAUMATISMO LOCAL",
+        "informacao": "Se perguntado por traumatismo local: Responder que não."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ASSOCIADOS",
+        "informacao": "Calor local: sim.\nEdema: sim.\nVermelhidão: sim.\nFebre: estou me sentindo um pouco quente.\nNegar outros sinais e sintomas perguntados."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS",
+        "informacao": "Doenças: tenho diabetes.\nMedicamentos: metformina.\nAlergias: nega."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS",
+        "informacao": "Álcool: tomo 3 latas de cerveja por dia.\nConsumo excessivo de proteínas/carnes vermelhas: como muita carne vermelha e embutidos."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Se perguntado por problemas similares na família: Que eu saiba não."
+      },
+      {
+        "contextoOuPerguntaChave": "LIBERAÇÃO DE IMPRESSO",
+        "informacao": "Se o candidato solicitar radiografia de tornozelo e/ou pé OU ecografia do tornozelo esquerdo, liberar o IMPRESSO 4."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est_gota_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "140 × 90 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "95 bpm"},
+                {"chave": "Frequência respiratória", "valor": "12 irpm"},
+                {"chave": "Saturação de oxigênio (SatO2)", "valor": "97% em ar ambiente"},
+                {"chave": "Temperatura axilar", "valor": "37,8 °C"}
+              ]
+            },
+            {
+              "tituloSecao": "ESTADO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Bom estado geral, corado, hidratado, anictérico, acianótico, febril. Claudica durante deambulação. Sobe na maca com dificuldade, protegendo tornozelo esquerdo"}
+              ]
+            },
+            {
+              "tituloSecao": "SISTEMAS",
+              "itens": [
+                {"chave": "Aparelho respiratório e cardiovascular", "valor": "sem alterações"},
+                {"chave": "Abdominal", "valor": "Abdome globoso, indolor, sem visceromegalias. Sem linfonodos palpáveis"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME ARTICULAR",
+              "itens": [
+                {"chave": "Tornozelo esquerdo", "valor": "Quente ao toque, hiperemia e edema intensos até dorso do pé esquerdo, pele íntegra, sem porta de entrada, regiões interdigitais normais"},
+                {"chave": "Tornozelo direito", "valor": "Sem alterações"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est_gota_laboratorio",
+        "tituloImpresso": "LABORATÓRIO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "HEMOGRAMA",
+              "itens": [
+                {"chave": "Hemoglobina", "valor": "14 g/dL (VR: 13,3 a 16,7 g/dL)"},
+                {"chave": "Leucócitos", "valor": "7.500 mm³ (VR: 3.700 a 9.500 mm³)"},
+                {"chave": "Segmentados", "valor": "4.500 mm³ (VR: 1.700 a 6.100 mm³)"},
+                {"chave": "Plaquetas", "valor": "220.000 mm³ (VR: 150.000 a 450.000 mm³)"}
+              ]
+            },
+            {
+              "tituloSecao": "MARCADORES INFLAMATÓRIOS",
+              "itens": [
+                {"chave": "PCR", "valor": "20 mg/dL (VR < 5 mg/dL)"}
+              ]
+            },
+            {
+              "tituloSecao": "ENZIMAS HEPÁTICAS",
+              "itens": [
+                {"chave": "TGO", "valor": "40 U/L (VR < 34 U/L)"},
+                {"chave": "TGP", "valor": "40U/L (VR: 10 a 49 U/L)"}
+              ]
+            },
+            {
+              "tituloSecao": "FUNÇÃO RENAL",
+              "itens": [
+                {"chave": "Ureia", "valor": "40 mg/dL (VR < 19 a 49 mg/dL)"},
+                {"chave": "Creatinina", "valor": "1,0 mg/dL (VR: 0,70 a 1,20 mg/dL)"}
+              ]
+            },
+            {
+              "tituloSecao": "ÁCIDO ÚRICO",
+              "itens": [
+                {"chave": "Ácido úrico", "valor": "10 mg/dL (VR < 7 mg/dL)"}
+              ]
+            },
+            {
+              "tituloSecao": "PERFIL GLICÊMICO",
+              "itens": [
+                {"chave": "Glicemia de jejum", "valor": "115 mg/dL (VR: 70 a 99 mg/dL)"},
+                {"chave": "Hemoglobina glicada", "valor": "5,7% (VR: 4,5 a 5,6%)"}
+              ]
+            },
+            {
+              "tituloSecao": "PERFIL LIPÍDICO",
+              "itens": [
+                {"chave": "Colesterol total", "valor": "220 mg/dL (VR < 190 mg/dL)"},
+                {"chave": "HDL", "valor": "30 mg/dL (VR > 40 mg/dL)"},
+                {"chave": "LDL", "valor": "150 mg/dL (VR < 110 mg/dL)"},
+                {"chave": "Triglicérides", "valor": "200 mg/dL (VR < 150 mg/dL)"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est_gota_exame_urina",
+        "tituloImpresso": "EXAME DE URINA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME DE URINA",
+              "itens": [
+                {"chave": "pH", "valor": "5,5"},
+                {"chave": "Proteínas", "valor": "ausentes"},
+                {"chave": "Cilindros", "valor": "ausentes"},
+                {"chave": "Glicose", "valor": "ausente"},
+                {"chave": "Leucócitos", "valor": "2 por campo"},
+                {"chave": "Nitrito", "valor": "negativo"},
+                {"chave": "Bactérias", "valor": "raras"},
+                {"chave": "Cristais", "valor": "oxalato de cálcio 3+"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est_gota_exame_imagem",
+        "tituloImpresso": "EXAME DE IMAGEM",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "RADIOGRAFIA DE PÉ E TORNOZELO ESQUERDOS",
+              "itens": [
+                {"chave": "Laudo", "valor": "Presença de erosões tipo saca-bocado na 1ª metatarsofalangeana. Demais estruturas normais."}
+              ]
+            },
+            {
+              "tituloSecao": "ECOGRAFIA DE TORNOZELO ESQUERDO",
+              "itens": [
+                {"chave": "Laudo", "valor": "Edema de partes moles com sinal de duplo contorno na articulação; erosões na 1ª metatarsofalangeana."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST_CM_GOTA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Paciente masculino de 52 anos, diabético, com hábitos de consumo regular de álcool e dieta rica em proteínas, apresentando quadro de monoartrite aguda no tornozelo esquerdo há 1 dia, com dor intensa (8/10), sinais flogísticos locais e febre baixa. Exames laboratoriais evidenciam hiperuricemia significativa (10 mg/dL) e PCR elevado, com exames de imagem demonstrando erosões características tipo saca-bocado na primeira metatarsofalangeana, compatível com artrite gotosa aguda.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada sobre características da dor articular e fatores de risco para gota",
+        "Investigação de antecedentes pessoais, hábitos alimentares e consumo de álcool",
+        "Interpretação adequada dos exames laboratoriais com ênfase na hiperuricemia",
+        "Diagnóstico de artrite por gota e estabelecimento de diagnósticos diferenciais",
+        "Prescrição de tratamento anti-inflamatório para fase aguda",
+        "Orientação sobre mudanças de hábitos de vida e prevenção de novos episódios"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est_gota_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Cumprimenta o paciente, (1) apresentando-se e (2) perguntando os dados do paciente.\n\nAdequado: realiza os dois itens.\nParcialmente adequado: realiza apenas um item.\nInadequado: não realiza nenhum item.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza os dois itens", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza apenas um item", "pontos": 0.25},
+          "inadequado": {"criterio": "não realiza nenhum item", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Realiza anamnese.\nQuestiona sobre:\n(1) Características da dor;\n(2) Febre ou calafrios.\n\nAdequado: questiona os dois itens.\nParcialmente adequado: questiona apenas um item.\nInadequado: não questiona nenhum dos itens.",
+        "pontuacoes": {
+          "adequado": {"criterio": "questiona os dois itens", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "questiona apenas um item", "pontos": 0.5},
+          "inadequado": {"criterio": "não questiona nenhum dos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre antecedentes pessoais e familiares:\n(1) Ingesta de bebida alcoólica;\n(2) Medicamentos;\n(3) Dieta hiperproteica (ou dieta rica em proteínas);\n(4) Trauma;\n(5) Episódio prévio semelhante de artrite em articulação ou articulações MMII;\n(6) Síndrome metabólica ou comorbidades associadas (diabetes, hipertensão, dislipidemia);\n(7) História familiar de doença ou comorbidade semelhante.\n\nAdequado: pergunta 5 ou mais itens.\nParcialmente adequado: pergunta apenas 3 ou 4 itens.\nInadequado: pergunta apenas 2 ou menos itens.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta 5 ou mais itens", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "pergunta apenas 3 ou 4 itens", "pontos": 1.0},
+          "inadequado": {"criterio": "pergunta apenas 2 ou menos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Interpreta exames laboratoriais.\n\nAdequado: identifica hiperuricemia (ou ácido úrico elevado ou aumento do ácido úrico).\nInadequado: não identifica hiperuricemia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "identifica hiperuricemia (ou ácido úrico elevado ou aumento do ácido úrico)", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não identifica hiperuricemia", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita exames de imagem: radiografia de tornozelo e/ou pé, ou ecografia do tornozelo esquerdo.\n\nAdequado: solicita um dos exames.\nInadequado: não solicita nenhum dos exames.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita um dos exames", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita nenhum dos exames", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Hipótese diagnóstica.\n\nAdequado: cita o diagnóstico de artrite por gota (gota, artrite gotosa, monoartrite gotosa ou crise gotosa).\nParcialmente adequado: cita um dos diagnósticos diferenciais (artrite séptica, celulite ou erisipela), sem citar gota.\nInadequado: não cita nenhum dos diagnósticos mencionados.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita o diagnóstico de artrite por gota (gota, artrite gotosa, monoartrite gotosa ou crise gotosa)", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "cita um dos diagnósticos diferenciais (artrite séptica, celulite ou erisipela), sem citar gota", "pontos": 1.0},
+          "inadequado": {"criterio": "não cita nenhum dos diagnósticos mencionados", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Proposta medicamentosa para tratamento inicial: uso de anti-inflamatórios não esteroidais e/ou corticoide e/ou colchicina.\n\nAdequado: cita pelo menos uma das opções.\nInadequado: não cita nenhuma das opções.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita pelo menos uma das opções", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não cita nenhuma das opções", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est_gota_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Proposta terapêutica para estilo de vida após a crise aguda:\n(1) Orientação dietética (restringir sódio, carne vermelha, embutidos, frutos do mar e bebida alcoólica);\n(2) Recomendação de atividade física regular.\n\nAdequado: propõe as duas orientações.\nParcialmente adequado: propõe uma das orientações apenas.\nInadequado: não propõe orientações.",
+        "pontuacoes": {
+          "adequado": {"criterio": "propõe as duas orientações", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "propõe uma das orientações apenas", "pontos": 0.5},
+          "inadequado": {"criterio": "não propõe orientações", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

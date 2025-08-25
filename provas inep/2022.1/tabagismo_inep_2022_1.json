@@ -1,0 +1,277 @@
+{
+  "idEstacao": "INEP_2022_1_EST_PR_TABAGISMO",
+  "tituloEstacao": "Tabagismo",
+  "numeroDaEstacao": 20,
+  "especialidade": "MEDICINA DA FAMILIA E COMUNIDADE (PREVENTIVA)",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["tabagismo", "cessação", "teste Fagerström", "dependência nicotínica", "bupropiona", "adesivos nicotina", "motivação", "contemplação"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção Primária",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultório de unidade básica de saúde"
+      ]
+    },
+    "descricaoCasoCompleta": "Você atenderá uma paciente de 46 anos, com consulta agendada, que manifesta desejo de parar de fumar.\n\nDados do acolhimento coletados pela técnica de enfermagem:\nMotivo da consulta: Desejo de parar de fumar.\nTemperatura axilar: 36 °C.\nPeso: 53 kg.\nÍndice de massa corporal: 22 kg/m².\nPressão arterial: 120 × 75 mmHg.\nFrequência cardíaca: 75 bpm.",
+    "tarefasPrincipais": [
+      "Abordar adequadamente a pessoa em uso de tabaco",
+      "Avaliar o grau de dependência nicotínica da paciente",
+      "Orientar adequadamente a paciente quanto às intervenções comportamentais com base em sua fase de prontidão à mudança",
+      "Indicar tratamento medicamentoso e/ou não medicamentoso adequado"
+    ],
+    "avisosImportantes": [
+      "A PACIENTE SIMULADA NÃO DEVE SER TOCADA DURANTE O ATENDIMENTO"
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "DADOS PESSOAIS",
+        "informacao": "Maria, 46 anos, Procedente do Rio Grande do Sul, operadora de telemarketing."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr(a), eu vim aqui hoje porque eu desejo e preciso parar de fumar, eu sou uma mulher saudável, mas meus dentes estão amarelados, percebo um cheiro ruim na minha boca, mas o pior de tudo é que eu sou operadora de telemarketing e a minha colega de trabalho recebeu um diagnóstico de Câncer de pulmão e aí eu fiquei com muito medo, porque eu também fumo e achei melhor parar de fumar."
+      },
+      {
+        "contextoOuPerguntaChave": "FEBRE",
+        "informacao": "Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "TOSSE",
+        "informacao": "Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "DIFICULDADE PARA SUBIR ESCADAS",
+        "informacao": "Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "DOENÇAS CRÔNICAS",
+        "informacao": "Fiz exames a 6 meses, minha pressão esta normal, não tenho açúcar no sangue e nem gordura."
+      },
+      {
+        "contextoOuPerguntaChave": "ALERGIA MEDICAMENTOSA",
+        "informacao": "Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTE CARDIOVASCULAR",
+        "informacao": "Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "TENTATIVAS PRÉVIAS EM PARAR DE FUMAR",
+        "informacao": "Não, porque eu gosto muito de fumar, tenho muito prazer de fumar e nunca pensei antes em parar, essa é a minha primeira tentativa."
+      },
+      {
+        "contextoOuPerguntaChave": "PRAZER NO ATO DE FUMAR",
+        "informacao": "Quando estou fumando eu gosto muito, não quero parar, só comecei a pensar nisso pela situação da minha amiga."
+      },
+      {
+        "contextoOuPerguntaChave": "RESPOSTAS TESTE FAGERSTROM",
+        "informacao": "Qual período fuma mais?: No período da manhã, assim que levanto (dentro de 5 min.).\nSente incômodo de não pode fumar no trabalho ou em locais fechados: Sim, me sinto incomodada em qualquer lugar que não posso fumar.\nQual cigarro que mais gosta de fumar?: A primeira coisa que me vem à mente ao acordar é o cigarro, e já o fumo logo em seguida.\nQuantos cigarros fuma por dia?: Sempre uma carteira (20 cigarros).\nQual período do dia fuma mais?: No período da manhã.\nVocê fuma mesmo quando está doente?: Não, nesse caso não fumo."
+      },
+      {
+        "contextoOuPerguntaChave": "PLANEJAMENTO DE DATA PARA DEIXAR DE FUMAR",
+        "informacao": "Não, eu comecei a pensar nisso recentemente, por isso que eu vim aqui, me disseram que eu poderia ter uma ajuda para parar de fumar, já que eu tenho muitas dúvidas e medos, tenho medo de que quando eu tente, eu comece a ficar irritada, sem conseguir dormir, medo de engordar."
+      },
+      {
+        "contextoOuPerguntaChave": "INTERESSE EM MARCAR DATA",
+        "informacao": "Sim."
+      },
+      {
+        "contextoOuPerguntaChave": "MEDIDAS INICIAIS PARA PARAR DE FUMAR",
+        "informacao": "Quais seriam essas medidas?"
+      },
+      {
+        "contextoOuPerguntaChave": "QUESTIONAMENTO SOBRE ADESIVOS DE NICOTINA",
+        "informacao": "Mas Dr(a), se eu preciso me livrar da nicotina que o cigarro me traz como que você me indica seguir usando a nicotina?"
+      },
+      {
+        "contextoOuPerguntaChave": "INTERESSE EM PARTICIPAR DO CAPS AD",
+        "informacao": "Como faço para participar?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est20_teste_fagerstrom",
+        "tituloImpresso": "TESTE DE FAGERSTROM",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "caminhoImagem": "https://app-penserevalida.com/wp-content/uploads/2023/03/fa.png",
+          "laudo": "Teste de Fagerstrom para avaliação do grau de dependência nicotínica."
+        }
+      },
+      {
+        "idImpresso": "est20_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "ESTADO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Bom estado geral, acianótica, anictérica e afebril."}
+              ]
+            },
+            {
+              "tituloSecao": "APARELHO CARDIOVASCULAR",
+              "itens": [
+                {"chave": "Ausculta cardíaca", "valor": "Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros ou turgência jugular."}
+              ]
+            },
+            {
+              "tituloSecao": "APARELHO RESPIRATÓRIO",
+              "itens": [
+                {"chave": "Ausculta pulmonar", "valor": "Murmúrio vesicular bem distribuído. Sem ruídos adventícios."},
+                {"chave": "Saturação de oxigênio", "valor": "96% em ar ambiente (oximetria)."}
+              ]
+            },
+            {
+              "tituloSecao": "ABDOME",
+              "itens": [
+                {"chave": "Abdome", "valor": "Normotenso, normotimpânico, indolor à palpação superficial e profunda. Ruídos hidroaéreos presentes. Sem visceromegalias."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST20_PR_TABAGISMO_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Paciente de 46 anos, operadora de telemarketing, procura atendimento com desejo de parar de fumar motivada pelo diagnóstico de câncer de pulmão de uma colega. Primeira tentativa de cessação tabágica. Necessita avaliação do grau de dependência nicotínica e orientações sobre abordagem comportamental e farmacológica para cessação do tabagismo.",
+      "focoPrincipalDetalhado": [
+        "Abordagem empática e motivacional para cessação do tabagismo",
+        "Aplicação e interpretação do teste de Fagerström para avaliação da dependência nicotínica",
+        "Identificação da fase de prontidão para mudança (contemplação/preparação)",
+        "Orientação sobre tratamento medicamentoso disponível no SUS e medidas não farmacológicas"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est20_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "(1) Cumprimenta a paciente simulada;\n(2) Identifica-se;\n(3) Dirige-se à paciente simulada pelo nome, pelo menos uma vez;\n(4) Pergunta e\n(5) Ouve com atenção o motivo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as cinco ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas a quatro ações", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza apenas uma ação ou não realiza nenhuma ação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Estabelece contato visual e mantém postura empática ao longo da consulta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma das ações", "pontos": 0.15},
+          "inadequado": {"criterio": "Não realiza nenhuma das ações", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta a fala da paciente simulada, sem interrompê-la.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza integralmente a ação", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "Não realiza integralmente a ação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível para com a paciente simulada, evitando termos técnicos de difícil compreensão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Usa linguagem acessível", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "Não utiliza linguagem acessível", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Evita atitude paternalista (condescendente) e \"alarmista\".",
+        "pontuacoes": {
+          "adequado": {"criterio": "Evita as duas atitudes", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "Assume qualquer uma das duas atitudes", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Investiga o histórico de saúde da paciente simulada:\n(1) Antecedentes de ansiedade e depressão;\n(2) Uso de outras drogas;\n(3) Uso de medicamentos;\n(4) Presença de sintomas respiratórios;\n(5) Realização de atividades físicas;\n(6) Uso de métodos anticonceptivos;\n(7) Presença de comorbidades.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga quatro ou mais características", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Investiga duas a três características apenas", "pontos": 0.5},
+          "inadequado": {"criterio": "Investiga apenas uma ou nenhuma das características mencionadas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Investiga a motivação para a cessação do tabagismo e verbaliza o grau de motivação (contemplação/preparação para ação) da paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza os dois procedimentos", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas um procedimento", "pontos": 0.75},
+          "inadequado": {"criterio": "Não realiza nenhum dos procedimentos mencionados", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Avalia o grau de dependência nicotínica:\n(1) Aplica o teste de Fagerström;\n(2) Identifica e\n(3) Interpreta o grau de dependência da paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza os três procedimentos", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Aplica o teste, mas não cumpre ou cumpre parcialmente os demais procedimentos mencionados", "pontos": 0.75},
+          "inadequado": {"criterio": "Não realiza nenhum dos procedimentos mencionados", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Informa os benefícios para a cessação do tabagismo:\n(1) Melhora do hálito e/ou do odor corporal;\n(2) Redução da pressão arterial;\n(3) Melhora do olfato;\n(4) Melhora do paladar;\n(5) Diminuição do risco de infarto;\n(6) Diminuição do risco de câncer;\n(7) Diminuição do risco de desenvolvimento de doenças cerebrovasculares (AVE);\n(8) Diminuição do risco de desenvolvimento de doenças respiratórias (Enfisema, DPOC);\n(9) Diminuição de risco de adoecimento respiratório ou desenvolvimento do tabagismo pela filha.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa quatro ou mais benefícios", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Informa de dois a três benefícios apenas", "pontos": 0.5},
+          "inadequado": {"criterio": "Informa apenas um ou nenhum dos benefícios", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Convida a paciente simulada para participar de atividade em grupo de cessação de tabagismo na UBS.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Faz o convite", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "Não faz o convite", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Recomenda medidas não farmacológicas à paciente simulada:\n(1) Fazer atividade física;\n(2) Ter alimentação saudável;\n(3) Fazer atividades que evitem o ganho de peso nesta fase; e\n(4) Evitar situações estressantes;\n(5) Mudanças comportamentais (como por exemplo: eliminar cinzeiros, isqueiros, adiar o primeiro cigarro do dia).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Recomenda três ou mais ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Recomenda uma ou duas ações", "pontos": 0.25},
+          "inadequado": {"criterio": "Não faz nenhuma das recomendações mencionadas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est20_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "(1) Indica o tratamento medicamentoso disponível no SUS (Bupropiona, adesivos de nicotina ou goma de nicotina) e\n(2) Orienta sobre possíveis efeitos adversos da medicação, como, por exemplo:\n1. Boca seca;\n2. Insônia;\n3. Tontura;\n4. Cefaleia;\n5. Aumento da PA;\n6. Dispepsia;\n7. Náuseas e vômitos;\n8. Enxaqueca;\n9. Dor abdominal;\n10. Constipação;\n11. Irritação na pele;\n12. Manchas nos dentes; e\n13. Perda de peso.\n\nObservação: Para pontuar no primeiro item basta indicar um dos medicamentos; para pontuar no segundo item (efeitos adversos), o(a) participante deve mencionar pelo menos 2 dos efeitos adversos mencionados.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Faz as duas indicações", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Faz uma das indicações apenas", "pontos": 1.0},
+          "inadequado": {"criterio": "Não faz nenhuma das indicações", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

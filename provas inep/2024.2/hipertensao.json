@@ -1,0 +1,260 @@
+{
+  "idEstacao": "INEP_2024_2_EST8_PEDIATRIA_HIPERTENSAO_INFANTIL",
+  "tituloEstacao": "Hipertensão Arterial em Consulta Pediátrica",
+  "numeroDaEstacao": 8,
+  "especialidade": "PEDIATRIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "hipertensão infantil",
+    "aferição de pressão arterial",
+    "puericultura",
+    "pediatria",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial - unidade básica de saúde (UBS)",
+      "infraestruturaUnidade": [
+        "Consultório médico."
+      ]
+    },
+    "descricaoCasoCompleta": "Você é um médico que está atendendo no consultório de uma UBS e vai receber uma menina com 3 anos e 4 meses de idade, numa consulta de rotina, acompanhada pela mãe.",
+    "tarefasPrincipais": [
+      "Realizar anamnese voltada para o controle da pressão arterial da criança.",
+      "Realizar a técnica da aferição da pressão arterial em membro superior da criança e verbalizar cada um dos passos que você executar.",
+      "Analisar e interpretar valores obtidos de pressão arterial da criança.",
+      "Classificar a pressão arterial de acordo com valores obtidos.",
+      "Definir conduta clínica adequada a partir dos valores obtidos."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Carla, tenho 22 anos, sou casada. Essa é minha filha, Laura, com 3 anos e 4 meses."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Viemos para uma consulta de rotina. A enfermeira já mediu a altura e o peso dela, está tudo na caderneta. Só falta checar a pressão. Ela acabou de pegar no sono, por isso coloquei ela na maca."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA DOENÇA ATUAL E SINTOMAS",
+        "informacao": "Ela não tem nenhum problema de saúde, nenhuma queixa. Não tem dor, febre, cansaço, vômito ou diarreia."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Nascimento: Ela não teve nenhuma intercorrência, nasceu de parto normal, com peso bom, não precisou de UTI."
+      },
+      {
+        "contextoOuPerguntaChave": "CONDIÇÕES PRÉ-EXAME",
+        "informacao": "Ela fez xixi antes de entrar na consulta e depois ficou quietinha no meu colo, não pulou nem correu."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não consta no script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est8_caderneta",
+        "tituloImpresso": "IMPRESSO - CADERNETA DE SAÚDE DA CRIANÇA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Caderneta_Puericultura.png?alt=media&token=c4217117-640a-4a6c-9a1b-f8a4e69b56f8",
+          "laudo": "Laura, 3 anos e 4 meses / Peso: 14,5 Kg / Comprimento: 98 cm. Gráficos de peso e estatura para idade mostrando desenvolvimento dentro da normalidade."
+        }
+      },
+      {
+        "idImpresso": "est8_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "Laura, 3 anos 4 meses.",
+              "itens": [
+                {"chave": "Exame Físico", "valor": "Exame físico geral e exame segmentar sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est8_circunferencia_braco",
+        "tituloImpresso": "IMPRESSO - CIRCUNFERÊNCIA DO BRAÇO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Circunferencia_Braco.png?alt=media&token=487d2194-d476-4d2b-b5d1-931032338167",
+          "laudo": "Considere a circunferência do braço: 18 centímetros."
+        }
+      },
+      {
+        "idImpresso": "est8_manguitos",
+        "tituloImpresso": "IMPRESSO - BRAÇADEIRA E MANGUITO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Manguitos_Ped.png?alt=media&token=5b306124-118e-4f1e-873b-741a31d27978",
+          "laudo": "Opções de manguitos:\n1: largura: 6 cm, comprimento: 12 cm\n2: largura: 9 cm, comprimento: 18 cm\n3: largura: 10 cm, comprimento: 24 cm\n4: largura: 13 cm, comprimento: 30 cm"
+        }
+      },
+      {
+        "idImpresso": "est8_pa_aferida",
+        "tituloImpresso": "IMPRESSO - PRESSÃO ARTERIAL AFERIDA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "Laura, 3 anos 4 meses.",
+              "itens": [
+                {"chave": "Pressão arterial (membro superior direito)", "valor": "1ª aferição: 110x68 mmHg.\n2ª aferição: 108x66 mmHg.\n3ª aferição: 110x68 mmHg."},
+                {"chave": "Pressão arterial média (3 aferições)", "valor": "109x67 mmHg."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est8_tabela_pa",
+        "tituloImpresso": "IMPRESSO - TABELA DE PRESSÕES",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Tabela_PA_Ped.png?alt=media&token=381a1727-b088-466d-886d-1c1ac769062b",
+          "laudo": "Tabela de percentis de pressão arterial para sexo feminino, por idade e percentil de estatura."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {
+        "momento": "Após o participante aferir a pressão.",
+        "pergunta": "E então, doutor(a), como está a pressão dela?"
+      },
+      {
+        "momento": "Após o participante classificar a pressão.",
+        "pergunta": "O que isso significa?"
+      },
+      {
+        "momento": "Após o participante definir a conduta.",
+        "pergunta": "E o que a gente precisa fazer agora?"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST8_PED_HA_2024V2_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Criança de 3 anos e 4 meses, em consulta de rotina, na qual se realiza a aferição da pressão arterial, com detecção de valores elevados para a idade e estatura.",
+      "focoPrincipalDetalhado": [
+        "Demonstrar o conhecimento básico das principais patologias, condições e fatores de risco associados à hipertensão infantil através da anamnese direcionada.",
+        "Demonstrar o domínio da técnica de aferição da pressão arterial em crianças e das ferramentas necessárias para interpretação dos dados obtidos.",
+        "Ser capaz de classificar a pressão arterial obtida de acordo com as Diretrizes Brasileiras vigentes e orientar a mãe com base nesses conhecimentos."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est8_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) identifica-se;\n(2) cumprimenta a mãe de maneira adequada/cordial;\n(3) mantém contato visual durante sua apresentação com a mãe;\n(4) pergunta o nome da mãe e o nome da criança.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as quatro ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ou três ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza uma ação OU não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre o motivo da consulta e as queixas principais (dor, febre, cansaço, cefaleia, etc.).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta três queixas.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta duas queixas.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta uma queixa OU não pergunta queixa alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Questiona sobre os fatores de risco para hipertensão na infância (prematuridade, baixo peso, cardiopatia, nefropatia, etc.).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza quatro fatores.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Verbaliza dois ou três fatores.", "pontos": 0.25},
+          "inadequado": {"criterio": "Verbaliza um fator OU não verbaliza fator algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre a condição da paciente antes de medição da PA:\n(1) ficou sentada e/ou tranquila antes do exame;\n(2) esvaziou a bexiga antes da consulta;\n(3) correu, pulou ou fez alguma atividade física na última hora.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza duas condições.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Verbaliza uma condição.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não verbaliza sobre as condições ou verbaliza alguma outra condição.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Explica o exame para a mãe da criança simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Explica.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não explica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Posicionamento / preparo da paciente:\n(1) verbaliza que o braço deve ficar ao nível do coração;\n(2) verbaliza que a palma da mão deverá ficar voltada para cima;\n(3) retira a camiseta ou solicita que a mãe retire;\n(4) verbaliza que a medida é preferencialmente no braço direito;\n(5) verbaliza que o paciente deve estar deitado ou sentado, com pernas descruzadas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza três ações.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações corretamente.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não realiza ação alguma ou realiza apenas uma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Escolha do tamanho do manguito:\n(1) Mede e/ou verbaliza a distância do acrômio ao olécrano;\n(2) Identifica e/ou descreve o ponto médio;\n(3) Mede e/ou verbaliza a circunferência do braço;\n(4) Seleciona o manguito correto (nº 2).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza quatro ações corretamente.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas a três ações corretamente.", "pontos": 0.75},
+          "inadequado": {"criterio": "Realiza uma ou nenhuma ação corretamente.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Verbaliza e/ou faz o posicionamento inicial do esfigmomanômetro e do estetoscópio para aferição da pressão:\n(1) coloca o manguito corretamente no braço (2 a 3 cm acima da fossa cubital);\n(2) posiciona a campânula ou o diafragma do estetoscópio sobre a artéria braquial.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza os dois procedimentos.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Realiza um ou nenhum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Interpreta os valores pressóricos obtidos como alterados / elevados para a idade da criança.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Interpreta como pressão alterada/elevada ou hipertensão estágio 1.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não interpreta ou interpreta incorretamente.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est8_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Conduta final:\n(1) não fecha o diagnóstico de hipertensão ainda;\n(2) orienta medidas não farmacológicas (peso, dieta, atividade física);\n(3) solicita retorno para nova medida de pressões em 1 a 2 semanas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ações.", "pontos": 0.5},
+          "inadequado": {"criterio": "Realiza uma ou nenhuma ação.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

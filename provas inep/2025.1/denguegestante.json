@@ -1,0 +1,296 @@
+{
+  "idEstacao": "INEP_2025_1_EST4_GINECOLOGIA_E_OBSTETRICIA_DENGUE_GESTACIONAL",
+  "tituloEstacao": "Dengue em Paciente Gestante",
+  "numeroDaEstacao": 4,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "dengue",
+    "gestante",
+    "febre",
+    "ginecologia e obstetrícia",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultório ginecológico"
+      ]
+    },
+    "descricaoCasoCompleta": "Você é um médico atuando em uma unidade básica de saúde (UBS) e atenderá uma paciente chamada Vera, de 25 anos, secundigesta, com idade gestacional de 15 semanas e 2 dias. Ela comparece à consulta com relato de febre há cerca de 5 dias e dor no corpo todo.",
+    "tarefasPrincipais": [
+      "Realizar anamnese relacionada à queixa principal da paciente;",
+      "Solicitar os exames pertinentes ao caso;",
+      "Formular e verbalizar a hipótese diagnóstica;",
+      "Classificar o quadro quanto à gravidade;",
+      "Indicar a conduta adequada."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Vera.\nTenho 25 anos.\nSou casada.\nSou balconista."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou aqui por causa de febre há uns 5 dias e uma dor no corpo todo. Estou grávida."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA DOENÇA ATUAL - FEBRE E DOR",
+        "informacao": "Início: há cerca de 5 dias.\nCaracterísticas da febre: recorrente.\nCaracterísticas da dor: no corpo todo, dor de cabeça e dor atrás do olho. Também sinto dor nas juntas.\nAcompanhantes: manchas na pele desde ontem, cansaço e fraqueza.\nFatores de melhora: não tomei nenhum remédio com medo de prejudicar a gravidez."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Olho vermelho ou com secreção: Não.\nSensação de desmaio: Não.\nSangramento da gengiva: Não.\nDor abdominal forte: Não.\nEpisódio de vômito: Não.\nSintomas gripais (coriza, tosse, dor de garganta): Não."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Nenhuma, sou bem saudável.\nMedicamentos em uso contínuo: Apenas sulfato ferroso por causa da gravidez."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA EPIDEMIOLÓGICA",
+        "informacao": "Moro perto de pessoas com sintomas parecidos."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est4_cartao_prenatal",
+        "tituloImpresso": "IMPRESSO - CARTÃO DE PRÉ NATAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS DA GESTANTE",
+              "itens": [
+                {"chave": "NOME", "valor": "VERA"},
+                {"chave": "IDADE", "valor": "25 ANOS"},
+                {"chave": "GESTAÇÕES", "valor": "G2 PV1 A0"},
+                {"chave": "ABO", "valor": "O+"},
+                {"chave": "MEDICAÇÃO EM USO", "valor": "SULFATO FERROSO"}
+              ]
+            },
+            {
+              "tituloSecao": "CONSULTA (HÁ 3 SEMANAS)",
+              "itens": [
+                {"chave": "IDADE GESTACIONAL", "valor": "12s 2d"},
+                {"chave": "IMC (kg/m²)", "valor": "25"},
+                {"chave": "PA (mmHg)", "valor": "110x70"}
+              ]
+            },
+            {
+                "tituloSecao": "INFORMAÇÕES ADICIONAIS",
+                "itens": [
+                  {"chave": "EXAME DE PRÉ-NATAL", "valor": "NORMAIS/NÃO REAGENTES"},
+                  {"chave": "ANTECEDENTES CLÍNICOS OBST.", "valor": "GESTAÇÃO ANTERIOR SEM INTERCORRÊNCIA"},
+                  {"chave": "VACINAS", "valor": "ATUALIZADAS"}
+                ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "AVALIAÇÃO GERAL",
+              "itens": [
+                {"chave": "Estado Geral", "valor": "Normocorada, hidratada, anictérica e acianótica."}
+              ]
+            },
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Temperatura axilar", "valor": "39,2°C"},
+                {"chave": "Pressão arterial", "valor": "110 mmHg x 70 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "98 batimentos por minuto"},
+                {"chave": "Saturação de O₂", "valor": "98% de oxigênio em ar ambiente"}
+              ]
+            },
+            {
+              "tituloSecao": "AVALIAÇÃO OBSTÉTRICA E GINECOLÓGICA",
+              "itens": [
+                {"chave": "Abdome", "valor": "Altura uterina de 15 cm; BCF de 154 BPM."},
+                {"chave": "Exame ginecológico", "valor": "Sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est4_prova_laco",
+        "tituloImpresso": "IMPRESSO - PROVA DO LAÇO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/example.png",
+          "laudo": "Presença de 25 petéquias."
+        }
+      },
+      {
+        "idImpresso": "est4_teste_ns1",
+        "tituloImpresso": "IMPRESSO - TESTE DO ANTÍGENO NS1",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "RESULTADO",
+              "itens": [
+                {"chave": "Paciente", "valor": "Vera"},
+                {"chave": "Resultado do teste do antígeno NS1", "valor": "POSITIVO."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST4_GINOBST_DENGUE_2025V1_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Gestante de 25 anos, com 15 semanas e 2 dias, apresenta febre e dor no corpo há 5 dias. O caso evolui para o diagnóstico de Dengue, necessitando de classificação de risco e manejo adequado para a condição gestacional.",
+      "focoPrincipalDetalhado": [
+        "Anamnese focada em sinais de alarme de dengue e sintomas associados.",
+        "Solicitação e interpretação de exames pertinentes (prova do laço, NS1, hemograma).",
+        "Diagnóstico de Dengue e classificação de risco (Grupo B).",
+        "Elaboração de conduta terapêutica e de monitoramento para gestante com dengue."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est4_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta a paciente e(ou) fala o seu nome;\n(2) pergunta o motivo da consulta ou a queixa principal da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.3},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.15},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre os seguintes sintomas e sinais:\n(1) dores articulares;\n(2) hiperemia ocular;\n(3) olho com secreção (conjuntivite);\n(4) cefaleia;\n(5) adinamia;\n(6) mialgias;\n(7) dor retro-orbitária;\n(8) anorexia;\n(9) sensação de desmaio;\n(10) sangramento da gengiva;\n(11) dor abdominal forte;\n(12) diarreia;\n(13) vômitos;\n(14) sintomas gripais (coriza, tosse, dor de garganta).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta sobre sete ou mais itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Pergunta sobre quatro a seis itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Pergunta sobre três ou menos itens.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre medicações em uso.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.3},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita exame físico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.3},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita hemograma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.3},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita teste de antígeno NS1 para dengue.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita teste do antígeno NS1 para dengue, teste NS1 ou teste do antígeno NS1 ou teste rápido NS1.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Solicita apenas teste de antígeno.", "pontos": 0.2},
+          "inadequado": {"criterio": "Não solicita ou solicita teste rápido, sorologia, IgM ou outros testes.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Formula o diagnóstico: dengue.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Formula o diagnóstico de dengue.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Formula o diagnóstico de arbovirose.", "pontos": 1.0},
+          "inadequado": {"criterio": "Não define dengue nem arbovirose.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Classifica como dengue - grupo B.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Classifica.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não classifica corretamente.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Indica as seguintes condutas terapêuticas:\n(1) paracetamol ou dipirona;\n(2) reidratação oral.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica os dois itens.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Indica apenas o item (2).", "pontos": 1.0},
+          "inadequado": {"criterio": "Não indica o item (2) OU não indica medicamento algum OU indica uso de AINE/AAS.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica realização de hemograma diariamente, até 48 h após fim da febre.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica realização de hemograma diariamente, até 48 h após fim da febre.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Indica realização de hemograma sem especificar a frequência.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não indica realização de hemograma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Orienta os sinais de alarme:\n(1) dor abdominal intensa (referida ou à palpação) contínua;\n(2) vômitos persistentes;\n(3) acúmulo de líquidos (ascite, derrame pleural, derrame pericárdico);\n(4) hipotensão postural e(ou) lipotimia;\n(5) hepatomegalia > 2 cm abaixo do rebordo costal;\n(6) sangramento de mucosa;\n(7) letargia e(ou) irritabilidade;\n(8) aumento progressivo do hematócrito.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Cita 4 ou mais sinais de alarme.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Cita apenas 2 ou 3 sinais de alarme.", "pontos": 0.75},
+          "inadequado": {"criterio": "Cita apenas 1 ou menos sinais de alarme.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Menciona que fará a notificação do caso ao SINAN.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Menciona.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não menciona ou menciona que notificará para outro que não seja o SINAN.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

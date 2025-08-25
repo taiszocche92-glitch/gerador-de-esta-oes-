@@ -1,0 +1,245 @@
+{
+  "idEstacao": "INEP_2022_2_EST04_MEDICINA_FAMILIA_COMUNIDADE_HERPES_ZOSTER",
+  "tituloEstacao": "Herpes Zoster",
+  "numeroDaEstacao": 4,
+  "especialidade": "MEDICINA DA FAMÍLIA E COMUNIDADE",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["herpes zoster", "atenção primária", "dor", "dermátomo", "medicina preventiva"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultórios",
+        "Apoio laboratorial diagnóstico de urgência"
+      ]
+    },
+    "descricaoCasoCompleta": "Homem de 35 anos comparece à Unidade Básica de Saúde (UBS) queixando-se de dor nas costas.",
+    "tarefasPrincipais": [
+      "Realizar anamnese do paciente.",
+      "Solicitar investigação laboratorial, se necessário.",
+      "Definir o diagnóstico clínico-laboratorial.",
+      "Orientar o plano terapêutico e as medidas de controle."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO: O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Marcos.\nTenho 35 anos.\nSou casado.\nSou repositor no mercadinho do bairro."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr(a) estou sentindo uma dor aqui nas minhas costas que está me incomodando muito e não estou conseguindo trabalhar direito."
+      },
+      {
+        "contextoOuPerguntaChave": "DOR",
+        "informacao": "Início: Tem 2 dias.\nIrradiação: a dor caminha pela costela em direção ao abdômen do lado direito.\nIntensidade: 8/10.\nCaracterística: queimante.\nFrequência: primeiro episódio.\nSintomas associados: Nega outros sintomas associados."
+      },
+      {
+        "contextoOuPerguntaChave": "ALTERAÇÕES URINÁRIAS E DEFECATÓRIAS",
+        "informacao": "Percebi que a minha urina esta mais escura que o habitual mas as fezes estão normais."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Nega.\nCirurgias prévias: Nega.\nInternações: Nega.\nAlergias: Nega.\nMedicamentos em uso contínuo: Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: Nega atividade física regular.\nTabagismo: Nega.\nEtilismo: Nega.\nDrogas ilícitas: Nega.\nSono: Normal.\nAlimentação: Confesso que bebo pouca água.\nIngesta hídrica: Confesso que bebo pouca água."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Moro com meu esposo e filho.\nSintomas nos conviventes da casa: Eles estão sem sintomas."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR",
+        "informacao": "Quando receber o diagnóstico, questionar se não poderia ser outra coisa.\nCaso o candidato abra para perguntas: Meu esposo e filho precisam ter algum cuidado especial para não pegar isso?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est4_ectoscopia",
+        "tituloImpresso": "ECTOSCOPIA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "imagemUrl": "https://app-penserevalida.com/wp-content/uploads/2023/02/baixados-3.jpg",
+          "laudo": "OLHE PARA A CÂMERA E DESCREVA O EXAME - Ectoscopia"
+        }
+      },
+      {
+        "idImpresso": "est4_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS VITAIS",
+              "itens": [
+                {"chave": "Peso", "valor": "70 Kg"},
+                {"chave": "Índice de Massa Corporal", "valor": "28 Kg/m²"},
+                {"chave": "Pressão arterial", "valor": "125/72 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "98 batimentos por minuto"},
+                {"chave": "Temperatura axilar", "valor": "38°C"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Bom estado geral, acianótico e anictérico"}
+              ]
+            },
+            {
+              "tituloSecao": "APARELHOS E SISTEMAS",
+              "itens": [
+                {"chave": "Aparelho cardiovascular", "valor": "ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros ou turgência jugular"},
+                {"chave": "Aparelho respiratório", "valor": "murmúrio vesicular bem distribuído. Sem ruídos adventícios"},
+                {"chave": "Abdome", "valor": "normotenso, normotimpânico, indolor à palpação superficial e profunda. Ruídos hidroaéreos presentes. Sem visceromegalias"}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST04_MFC_HERPES_ZOSTER_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Homem de 35 anos com dor nas costas de característica queimante, irradiando pela costela em direção ao abdômen direito, associada a febre e alteração da coloração da urina, quadro compatível com herpes zoster.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada para caracterização da dor e investigação de sintomas associados",
+        "Exame físico específico com atenção à descrição das características da lesão cutânea",
+        "Diagnóstico clínico de herpes zoster e estabelecimento de diagnósticos diferenciais",
+        "Prescrição de tratamento adequado com medicações sintomáticas e antivirais"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est4_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta o paciente simulado;\n(2) identifica-se;\n(3) dirige-se ao paciente simulado pelo nome, pelo menos uma vez;\n(4) pergunta o motivo da consulta;\n(5) ouve o paciente com atenção.\n\nAdequado: realiza as cinco ações.\nParcialmente adequado: realiza de duas a quatro ações.\nInadequado: realiza uma ação ou não realiza ação alguma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as cinco ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza de duas a quatro ações", "pontos": 0.25},
+          "inadequado": {"criterio": "realiza uma ação ou não realiza ação alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Postura:\n(1) estabelece contato visual e\n(2) mantém postura empática ao longo da consulta.\n\nAdequado: realiza as duas ações.\nParcialmente adequado: realiza apenas uma das ações.\nInadequado: não realiza ação alguma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas ações", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "realiza apenas uma das ações", "pontos": 0.15},
+          "inadequado": {"criterio": "não realiza ação alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta a fala do paciente simulado sem interrompê-lo.\n\nAdequado: realiza integralmente a ação.\nInadequado: não realiza a ação ou não realiza a ação integralmente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza integralmente a ação", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não realiza a ação ou não realiza a ação integralmente", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível ao paciente simulado, evitando termos técnicos de difícil compreensão.\n\nAdequado: utiliza linguagem acessível.\nInadequado: não utiliza linguagem acessível.",
+        "pontuacoes": {
+          "adequado": {"criterio": "utiliza linguagem acessível", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não utiliza linguagem acessível", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Responde às perguntas do paciente simulado.\n\nAdequado: responde às perguntas.\nInadequado: não responde às perguntas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "responde às perguntas", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não responde às perguntas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Explora as características da dor:\n(1) tempo de início e duração;\n(2) localização e irradiação;\n(3) qualidade/tipo;\n(4) intensidade e evolução;\n(5) fatores desencadeantes e atenuantes, e\n(6) manifestações concomitantes.\n\nAdequado: pergunta sobre as seis características da dor.\nParcialmente adequado: pergunta quatro a cinco características da dor.\nInadequado: pergunta sobre uma a três características da dor ou não pergunta sobre característica alguma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre as seis características da dor", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "pergunta quatro a cinco características da dor", "pontos": 1.0},
+          "inadequado": {"criterio": "pergunta sobre uma a três características da dor ou não pergunta sobre característica alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Investiga sintomas associados:\n(1) respiratórios;\n(2) geniturinários;\n(3) gastrintestinais;\n(4) sistêmicos (febre, mal-estar).\n\nAdequado: investiga os quatro grupos de sintomas associados.\nParcialmente adequado: investiga dois a três grupos de sintomas associados.\nInadequado: investiga um grupo de sintomas associados ou não investiga grupo de sintomas associados algum.",
+        "pontuacoes": {
+          "adequado": {"criterio": "investiga os quatro grupos de sintomas associados", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "investiga dois a três grupos de sintomas associados", "pontos": 0.5},
+          "inadequado": {"criterio": "investiga um grupo de sintomas associados ou não investiga grupo de sintomas associados algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Pergunta sobre a existência de lesões em mucosas (boca, genitália ou ânus).\n\nAdequado: pergunta se há lesões em mucosas.\nInadequado: não pergunta sobre lesões em mucosas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta se há lesões em mucosas", "pontos": 0.50},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta sobre lesões em mucosas", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Descreve as características da lesão:\n(1) placa eritematosa;\n(2) associação com lesões vesiculares;\n(3) obedece ao trajeto de um dermátomo.\n\nAdequado: descreve as três características da lesão.\nParcialmente adequado: descreve duas características da lesão.\nInadequado: descreve uma característica da lesão ou não descreve característica alguma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "descreve as três características da lesão", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "descreve duas características da lesão", "pontos": 0.75},
+          "inadequado": {"criterio": "descreve uma característica da lesão ou não descreve característica alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Realiza diagnóstico de Herpes Zoster.\n\nAdequado: realiza o diagnóstico.\nInadequado: não realiza o diagnóstico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza o diagnóstico", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não realiza o diagnóstico", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Cita os principais diagnósticos diferenciais para o caso:\n(1) pielonefrite;\n(2) nova varíola ou monkeypox;\n(3) varicela;\n(4) lombalgia mecânica/DORT;\n(5) urolitíase.\n\nAdequado: cita os cinco principais diagnósticos diferenciais.\nParcialmente adequado: cita dois a quatro principais diagnósticos diferenciais.\nInadequado: cita um dos principais diagnósticos diferenciais ou não cita diagnóstico diferencial algum.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita os cinco principais diagnósticos diferenciais", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "cita dois a quatro principais diagnósticos diferenciais", "pontos": 0.5},
+          "inadequado": {"criterio": "cita um dos principais diagnósticos diferenciais ou não cita diagnóstico diferencial algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est4_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Indica tratamento:\n(1) medicações sintomáticas (analgésico/antitérmico e/ou anti-inflamatório);\n(2) antiviral oral (Aciclovir, Fanciclovir, Valaciclovir).\n\nAdequado: indica ambos os tratamentos.\nParcialmente adequado: indica um dos tratamentos.\nInadequado: não indica tratamento algum.\n\nAtenção: A indicação de anti-histamínicos e/ou posologia do antiviral não afeta a pontuação nesta questão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica ambos os tratamentos", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "indica um dos tratamentos", "pontos": 0.4},
+          "inadequado": {"criterio": "não indica tratamento algum", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "idEstacao": "INEP_2022_2_EST03_PEDIATRIA_FEBRE_SEM_SINAIS_LOCALIZATORIOS",
+  "tituloEstacao": "Febre Sem Sinais Localizatórios",
+  "numeroDaEstacao": 3,
+  "especialidade": "PEDIATRIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["febre", "recém-nascido", "neonatal", "pediatria", "atenção secundária"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Setor de radiologia convencional e ultrassonografia",
+        "Laboratório de análises clínicas",
+        "Banco de sangue",
+        "Leitos de internação",
+        "Centro cirúrgico"
+      ]
+    },
+    "descricaoCasoCompleta": "Recém-nascido, com 25 dias de vida foi trazido pela mãe ao Pronto-socorro. A mãe está preocupada, porque notou que seu bebê está com febre.",
+    "tarefasPrincipais": [
+      "Ler a ficha do recém-nascido afixada à mesa.",
+      "Fazer a anamnese dirigida à mãe.",
+      "Interpretar o exame físico (não será necessário examinar diretamente o bebê simulado).",
+      "Solicitar e verbalizar exames complementares, se necessário.",
+      "Explicar à mãe a condição do recém-nascido e o manejo inicial.",
+      "ATENÇÃO: VOCÊ DEVERÁ, OBRIGATORIAMENTE, REALIZAR AS TAREFAS NA SEQUÊNCIA DESCRITA ACIMA"
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DA MÃE",
+        "informacao": "Meu nome é Ana Clara.\nTenho 24 anos."
+      },
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DA CRIANÇA",
+        "informacao": "Meu filho se chama Ruan.\nEle tem 25 dias de vida."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr(a), eu trouxe meu filho porque ele está com febre."
+      },
+      {
+        "contextoOuPerguntaChave": "FEBRE",
+        "informacao": "Início: Há dois dias.\nConstatação: 38°C.\nIngesta de medicações: Não.\nFrequência e evolução: Melhora um pouco depois que eu dou banho, mas logo volta.\nSudorese, escalofrios e convulsões: Nega."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Não, Dr(a), não apresentou nenhuma outra alteração."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS",
+        "informacao": "Todas as informações constam na caderneta de saúde."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR: (Dúvidas da mãe)",
+        "informacao": "Pergunta 1: O que ele tem, Dr(a)?.\nPergunta 2: Ele vai ficar internado?."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est3_triagem_enfermagem",
+        "tituloImpresso": "TRIAGEM DA ENFERMAGEM",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS VITAIS",
+              "itens": [
+                {"chave": "Idade", "valor": "25 dias"},
+                {"chave": "Temperatura axilar", "valor": "38,5°C"},
+                {"chave": "Frequência cardíaca", "valor": "170 batimentos por minuto"},
+                {"chave": "Frequência respiratória", "valor": "40 incursões respiratórias por minuto"},
+                {"chave": "Saturação de oxigênio", "valor": "99% em ar ambiente"},
+                {"chave": "Peso", "valor": "4.500 g"},
+                {"chave": "Escala de dor (0-10)", "valor": "zero"},
+                {"chave": "Classificação de risco", "valor": "AMARELO"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_caderneta_saude",
+        "tituloImpresso": "CADERNETA DA SAÚDE DA CRIANÇA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS DA GESTAÇÃO",
+              "itens": [
+                {"chave": "Consultas pré-natais", "valor": "8 consultas"},
+                {"chave": "Ultrassom morfológico", "valor": "sem alterações"}
+              ]
+            },
+            {
+              "tituloSecao": "DADOS MATERNOS",
+              "itens": [
+                {"chave": "Idade", "valor": "24 anos"},
+                {"chave": "Gestações", "valor": "G1P1A0"},
+                {"chave": "Intercorrências", "valor": "sem intercorrências e medicamentos durante a gestação, exceto vitaminas e sulfato ferroso"},
+                {"chave": "Testes sorológicos", "valor": "inocentes"}
+              ]
+            },
+            {
+              "tituloSecao": "DADOS DO PARTO",
+              "itens": [
+                {"chave": "Tipo de parto", "valor": "vaginal"},
+                {"chave": "Idade gestacional", "valor": "38 semanas e 6 dias"}
+              ]
+            },
+            {
+              "tituloSecao": "DADOS DO RECÉM-NASCIDO",
+              "itens": [
+                {"chave": "Peso do nascimento", "valor": "3.500g"},
+                {"chave": "Comprimento", "valor": "51 cm"},
+                {"chave": "Perímetro cefálico", "valor": "35,5 cm"},
+                {"chave": "APGAR", "valor": "9/10/10"},
+                {"chave": "Amamentação", "valor": "Amamentado na 1ª hora"},
+                {"chave": "Ortolani", "valor": "negativo"},
+                {"chave": "Teste reflexo vermelho", "valor": "normal"},
+                {"chave": "Teste de pezinho", "valor": "em análise"},
+                {"chave": "Teste auditivo (EOA)", "valor": "normal"},
+                {"chave": "Teste de coraçãozinho", "valor": "normal"},
+                {"chave": "Peso de alta hospitalar (2º Dia)", "valor": "3.380 g"},
+                {"chave": "Vacinas recebidas", "valor": "BCG, Hepatite B Vírus 1ª dose"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS ANTROPOMÉTRICOS",
+              "itens": [
+                {"chave": "Idade", "valor": "25 dias"},
+                {"chave": "Peso", "valor": "4,5 Kg (Z escore 0)"},
+                {"chave": "Comprimento", "valor": "55 cm (Z escore 0)"},
+                {"chave": "PC", "valor": "37 cm (Z escore 0)"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Bom estado geral, corado, hidratado, acianótico, anictérico, febril (38,5 graus C), eupneico, sem desconforto respiratório, sem linfonodomegalia, ativo, reativo"},
+                {"chave": "Mamada observada", "valor": "adequada durante a consulta"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO ESPECÍFICO",
+              "itens": [
+                {"chave": "Respiratório", "valor": "Murmúrios vesiculares presentes bilateralmente, sem ruídos adventícios"},
+                {"chave": "Cardiovascular", "valor": "Bulhas rítmicas, normofonéticas, em dois tempos, sem sopros"},
+                {"chave": "Abdome", "valor": "Globoso, flácido, levemente distendido, sem visceromegalias, mínima hérnia umbilical (anel umbilical aprox. 0,5 cm), ruídos hidroaéreos presentes"},
+                {"chave": "Membros inferiores", "valor": "Sem edemas, boa perfusão periférica, tempo de enchimento capilar menor que 3 segundos"},
+                {"chave": "Fontanelas", "valor": "Anterior e posterior normotensas"},
+                {"chave": "Períneo", "valor": "Testículos presentes no saco escrotal, fimose fisiológica"},
+                {"chave": "Coluna", "valor": "Sem alterações"},
+                {"chave": "Pele", "valor": "Mancha mongólica na região das nádegas, sem outros achados"},
+                {"chave": "Otoscopia e oroscopia", "valor": "Sem alterações"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_laboratorio1",
+        "tituloImpresso": "EXAMES LABORATORIAIS 1",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "imagemUrl": "https://app-penserevalida.com/wp-content/uploads/2023/03/Captura-de-Tela-2201-e1677804097534.png",
+          "laudo": "INTERPRETE OS ACHADOS DO LABORATORIO"
+        }
+      },
+      {
+        "idImpresso": "est3_laboratorio2",
+        "tituloImpresso": "EXAMES LABORATORIAIS 2",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "imagemUrl": "https://app-penserevalida.com/wp-content/uploads/2023/03/Captura-de-Tela-2202-e1677804196643.png",
+          "laudo": "INTERPRETE OS ACHADOS DO LABORATORIO"
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST03_PE_FEBRE_SEM_SINAIS_LOCALIZATORIOS_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Recém-nascido de 25 dias de vida com febre há dois dias, apresentando bom estado geral sem sinais localizatórios de infecção, caracterizando quadro de febre sem sinais localizatórios que requer investigação e manejo adequado em ambiente hospitalar.",
+      "focoPrincipalDetalhado": [
+        "Anamnese dirigida à mãe sobre características da febre e sintomas associados",
+        "Interpretação adequada do exame físico de recém-nascido febril",
+        "Solicitação de exames complementares para investigação de foco infeccioso",
+        "Diagnóstico de febre sem sinais localizatórios e conduta de internação com antibioticoterapia empírica"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est3_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) Identifica-se;\n(2) Cumprimenta a mãe de maneira adequada/cordial;\n(3) Mantém contato visual;\n(4) Pergunta o nome da mãe e da criança.\n\nAdequado: se realiza quatro itens corretamente.\nParcialmente adequado: se realiza dois ou mais itens corretamente.\nInadequado: se não realiza um ou nenhum item.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza quatro itens corretamente", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza dois ou mais itens corretamente", "pontos": 0.25},
+          "inadequado": {"criterio": "não realiza um ou nenhum item", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Realiza anamnese:\n(1) Pergunta sinais e sintomas associados à queixa principal;\n(2) Pergunta sobre os dados antenatais (gestação) ou dados perinatais (dados do RN) ou solicita a caderneta de saúde da criança/caderneta de vacinas/caderneta de imunização;\n(3) Pergunta sobre antecedentes familiares;\n(4) Pergunta sobre a situação epidemiológica.\n\nAdequado: se realiza os quatro itens corretamente.\nParcialmente adequado: se realiza dois ou mais itens corretamente.\nInadequado: se não realiza um ou nenhum item.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza os quatro itens corretamente", "pontos": 3.0},
+          "parcialmenteAdequado": {"criterio": "realiza dois ou mais itens corretamente", "pontos": 1.5},
+          "inadequado": {"criterio": "não realiza um ou nenhum item", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Interpreta o exame físico: febre sem outras alterações.\n\nAdequado: se solicita e interpreta corretamente.\nInadequado: se não solicita ou não interpreta corretamente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita e interpreta corretamente", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita ou não interpreta corretamente", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita exames complementares:\n(1) Hemograma;\n(2) Proteína C-Reativa ou procalcitonina;\n(3) Hemocultura;\n(4) Exame de urina (rotina de urina, urina tipo 1, parcial de urina, sumário de urina, EAS ou similares);\n(5) Urocultura;\n(6) Coleta de líquido cefalorraquidiano (líquor/LCR);\n(7) Pesquisa de vírus respiratórios em nasofaringe (Sars-Cov-2; influenza; VSR).\n\nAdequado: se perguntado seis ou sete itens.\nParcialmente adequado: se perguntado de três a cinco itens.\nInadequado: se perguntado três itens ou menos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "perguntado seis ou sete itens", "pontos": 2.5},
+          "parcialmenteAdequado": {"criterio": "perguntado de três a cinco itens", "pontos": 1.25},
+          "inadequado": {"criterio": "perguntado três itens ou menos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Formula a hipótese diagnóstica de febre sem sinais localizatórios.\n\nAdequado: se formula corretamente as hipóteses diagnósticas.\nInadequado: não formula ou formula outras hipóteses, como: febre; febre a ser esclarecida; febre de origem obscura; febre de origem indeterminada; sepse; sepse neonatal tardia; bacteremia oculta; infecção do trato urinário oculta; pneumonia oculta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "formula corretamente as hipóteses diagnósticas", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não formula ou formula outras hipóteses", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Indica necessidade de internação do recém-nascido.\n\nAdequado: se indica.\nInadequado: se não indica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Indica a proposta terapêutica (antibioticoterapia empírica, parenteral, endovenosa ou intramuscular, ampicilina cefotaxima ou ampicilina ceftriaxona).\n\nAdequado: se indica.\nInadequado: não indica ou indica antibioticoterapia via oral ou indica outro esquema de antibióticos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica ou indica antibioticoterapia via oral ou indica outro esquema de antibióticos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Realiza adequadamente tarefas, conforme solicitado nas orientações ao (à) participante.\n\nAdequado: realiza todas as tarefas propostas na ordem solicitada, podendo comunicar a decisão da internação a qualquer momento da consulta.\nInadequado: não realiza as tarefas propostas na ordem solicitada, independentemente do momento de comunicar a decisão da internação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza todas as tarefas propostas na ordem solicitada", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não realiza as tarefas propostas na ordem solicitada", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

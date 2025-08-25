@@ -1,0 +1,55 @@
+{
+    "sistema_memoria": {
+        "versao": "3.1-versionamento",
+        "tipo": "local_files_com_firestore_backup_versionado",
+        "estrutura": {
+            "referencias_base": "memoria/referencias_base.md",
+            "gabarito_template": "gabaritoestacoes.json",
+            "contexto_otimizado": {
+                "fase1": "memoria/contexto_otimizado/fase1_analise_planejamento.md",
+                "fase2": "memoria/contexto_otimizado/fase2_roteiros_anamnese.md",
+                "fase3": "memoria/contexto_otimizado/fase3_impressos_exames.md",
+                "fase4": "memoria/contexto_otimizado/fase4_checklist_pep.md"
+            },
+            "aprendizados_usuario": "memoria/aprendizados_usuario.jsonl",
+            "sistema_versoes": "memoria/versoes/config_versoes.json",
+            "diretorio_versoes": "memoria/versoes/"
+        },
+        "reducao_tokens": {
+            "sistema_anterior": "35000-40000 tokens",
+            "sistema_atual": "7000-11000 tokens",
+            "economia": "82% de redução (inclui gabarito local + versionamento)"
+        },
+        "regras_carregamento": {
+            "sempre_carregar": [
+                "referencias_base"
+            ],
+            "carregar_por_fase": {
+                "1": [
+                    "fase1_analise_planejamento"
+                ],
+                "2": [
+                    "fase1_analise_planejamento",
+                    "fase2_roteiros_anamnese"
+                ],
+                "3": [
+                    "fase2_roteiros_anamnese",
+                    "fase3_impressos_exames",
+                    "gabarito_template"
+                ],
+                "4": [
+                    "fase3_impressos_exames",
+                    "fase4_checklist_pep"
+                ]
+            },
+            "sempre_adicionar": [
+                "aprendizados_usuario"
+            ]
+        },
+        "backup_firestore": {
+            "colecao": "agent_config",
+            "documento": "backup_memoria_local",
+            "sincronizacao": "weekly"
+        }
+    }
+}

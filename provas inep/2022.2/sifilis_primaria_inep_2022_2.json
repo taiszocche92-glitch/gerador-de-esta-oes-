@@ -1,0 +1,284 @@
+{
+  "idEstacao": "INEP_2022_2_EST_GO_SIFILIS_PRIMARIA",
+  "tituloEstacao": "Sífilis Primária",
+  "numeroDaEstacao": 17,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["sífilis", "primária", "úlcera", "cancro", "treponêmico", "VDRL", "penicilina", "IST"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Unidade Básica de Saúde",
+      "infraestruturaUnidade": [
+        "Laboratório de análises clínicas",
+        "Sala de medicação"
+      ]
+    },
+    "descricaoCasoCompleta": "Mulher de 28 anos comparece à Unidade Básica de Saúde (UBS), com queixa ginecológica.",
+    "tarefasPrincipais": [
+      "Realizar anamnese da paciente (ATENÇÃO: é necessário concluir a anamnese antes de prosseguir com as demais tarefas).",
+      "Solicitar, se necessário, exames complementares relacionados à queixa principal da paciente.",
+      "Citar a principal hipótese diagnóstica e os possíveis diagnósticos diferenciais.",
+      "Indicar o tratamento.",
+      "Fornecer orientações gerais e específicas, com base na principal hipótese diagnóstica.",
+      "Esclarecer as dúvidas da paciente, se houver."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "DADOS PESSOAIS",
+        "informacao": "Jenifer, tenho 28 anos sou estudante e estou solteira."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Apareceu uma ferida nas minhas partes íntimas."
+      },
+      {
+        "contextoOuPerguntaChave": "SOBRE A FERIDA",
+        "informacao": "Tempo de evolução: 10 dias.\nDor: não sente dor espontânea nem quando toca a lesão.\nQuantidade de lesões: apenas uma.\nSecreção: não tem secreção.\nPrurido ou ardência: nega."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ASSOCIADOS",
+        "informacao": "Negar qualquer outro sintoma perguntado."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS",
+        "informacao": "Uso de medicamentos: nega.\nAlergias: nega."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS",
+        "informacao": "Álcool, cigarro e drogas: não consta no script."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS",
+        "informacao": "Menarca e sexarca: não consta no script.\nVida sexual: ativa, com vários parceiros.\nPreservativo: Uso irregular de preservativo."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est17_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "120 × 70 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "70 batimentos por minuto"},
+                {"chave": "Frequência respiratória", "valor": "15 incursões respiratórias por minuto"},
+                {"chave": "Temperatura axilar", "valor": "36,5 C"},
+                {"chave": "Saturação do oxigênio", "valor": "98% em ar ambiente"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Mucosas", "valor": "coradas"},
+                {"chave": "Aparelho cardiovascular", "valor": "sem alterações"},
+                {"chave": "Aparelho respiratório", "valor": "sem alterações"},
+                {"chave": "Abdome", "valor": "sem alterações"},
+                {"chave": "Mamas", "valor": "sem alterações"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est17_inspecao_genital",
+        "tituloImpresso": "INSPEÇÃO GENITAL",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://app-penserevalida.com/2.0/wp-content/uploads/2023/04/IMG_0674.jpeg",
+          "laudoDescricao": "Presença de úlcera única, de aproximadamente 2 cm, localizada em grande lábio esquerdo e indolor à palpação.\n\nOLHE PARA A CÂMERA E DESCREVA O EXAME."
+        }
+      },
+      {
+        "idImpresso": "est17_exame_especular",
+        "tituloImpresso": "EXAME ESPECULAR",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "ACHADOS DO EXAME ESPECULAR",
+              "itens": [
+                {"chave": "Colo", "valor": "normoepitelizado sem lesões"},
+                {"chave": "Secreção vaginal", "valor": "sem alterações"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est17_toque_vaginal",
+        "tituloImpresso": "TOQUE VAGINAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "ACHADOS DO TOQUE VAGINAL",
+              "itens": [
+                {"chave": "Anexos", "valor": "livres"},
+                {"chave": "Útero", "valor": "em anteroversoflexão móvel, indolor"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est17_laboratorio_sorologia",
+        "tituloImpresso": "LABORATÓRIO/SOROLOGIA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "TESTE TREPONÊMICO",
+              "itens": [
+                {"chave": "FTAbs", "valor": "positivo (Referência: negativo)"}
+              ]
+            },
+            {
+              "tituloSecao": "TESTE NÃO TREPONÊMICO",
+              "itens": [
+                {"chave": "VDRL", "valor": "1:64 (Referência: NÃO REAGENTE)"}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST17_GO_SIFILIS_PRIMARIA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 28 anos, estudante, solteira, com queixa de aparecimento de ferida nas partes íntimas há 10 dias. Apresenta úlcera única, indolor, de aproximadamente 2 cm em grande lábio esquerdo. Vida sexual ativa com múltiplos parceiros e uso irregular de preservativo. Exames sorológicos confirmam sífilis com FTAbs positivo e VDRL 1:64, compatível com sífilis primária.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada com investigação das características da lesão ulcerada genital",
+        "Avaliação de consultas ginecológicas anteriores e comportamento sexual de risco",
+        "Exame ginecológico completo com inspeção genital, especular e toque vaginal",
+        "Solicitação e interpretação de exames para sífilis e outras infecções sexualmente transmissíveis",
+        "Diagnóstico de sífilis primária e estabelecimento de diagnósticos diferenciais",
+        "Prescrição de tratamento adequado com penicilina benzatina e orientações sobre parceiros"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est17_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) identifica-se e\n(2) cumprimenta a paciente simulada.\n\nAdequado: realiza as duas ações.\nInadequado: realiza uma ação ou não realiza ação alguma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "realiza uma ação ou não realiza ação alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre as características da úlcera:\n(1) dor;\n(2) quantidade de lesões;\n(3) tempo da lesão;\n(4) prurido ou ardência;\n(5) secreção;\n(6) presença de linfonodos associados.\n\nAdequado: pergunta sobre três ou mais itens.\nParcialmente adequado: pergunta sobre dois itens.\nInadequado: não pergunta ou pergunta apenas sobre um item.\n\nAtenção: O(A) participante só pontuará se as perguntas forem feitas durante a anamnese inicial.\n\nO(A) participante não pontuará caso já tenha recebido os impressos relativos ao exame físico/ginecológico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre três ou mais itens", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "pergunta sobre dois itens", "pontos": 0.5},
+          "inadequado": {"criterio": "não pergunta ou pergunta apenas sobre um item", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Questiona sobre consultas ginecológicas anteriores. (realização de \"preventivo\", \"papanicolau\", colpocitologia oncótica ou USTV anterior).\n\nAdequado: questiona.\nInadequado: não questiona.",
+        "pontuacoes": {
+          "adequado": {"criterio": "questiona", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não questiona", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita exame físico/ginecológico.\n\nAdequado: solicita.\nInadequado: não solicita.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita exame para sífilis (treponêmico ou não treponêmico).\n\nAdequado: solicita.\nInadequado: não solicita.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita outros exames para infecções sexualmente transmissíveis:\n(1) HIV;\n(2) clamídia;\n(3) hepatite B;\n(4) hepatite C;\n(5) herpes;\n(6) gonorreia;\n(7) HTLV.\n\nAdequado: solicita pelo menos quatro itens.\nParcialmente adequado: solicita três itens.\nInadequado: solicita dois ou menos itens.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita pelo menos quatro itens", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "solicita três itens", "pontos": 0.5},
+          "inadequado": {"criterio": "solicita dois ou menos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Cita os principais diagnósticos diferenciais como:\n(1) donovanose;\n(2) cancro mole;\n(3) herpes genital;\n(4) linfogranuloma venéreo;\n(5) doença de Behçet;\n(6) úlcera pós-infecciosa (Lipschutz).\n\nAdequado: cita dois ou mais itens.\nParcialmente adequado: cita um item.\nInadequado: não cita item algum.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita dois ou mais itens", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "cita um item", "pontos": 0.5},
+          "inadequado": {"criterio": "não cita item algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Estabelece o diagnóstico de sífilis recente/sífilis primária.\n\nAdequado: estabelece o diagnóstico de sífilis recente/sífilis primária.\nParcialmente adequado: estabelece apenas o diagnóstico de sífilis, sem especificar sífilis recente/sífilis primária.\nInadequado: não estabelece o diagnóstico ou cita fase incorreta da sífilis (tardia/latente/secundária/terciária).",
+        "pontuacoes": {
+          "adequado": {"criterio": "estabelece o diagnóstico de sífilis recente/sífilis primária", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "estabelece apenas o diagnóstico de sífilis, sem especificar sífilis recente/sífilis primária", "pontos": 0.75},
+          "inadequado": {"criterio": "não estabelece o diagnóstico ou cita fase incorreta da sífilis (tardia/latente/secundária/terciária)", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Prescreve penicilina benzatina: 2,4 milhões UI em dose única via intramuscular (1,2 milhões UI em cada glúteo).\n\nAdequado: prescreve o medicamento com dose e via de administração corretas.\nParcialmente adequado: prescreve o medicamento adequado, mas sem mencionar a dose adequada ou com a dose e/ou via de administração incorretas.\nInadequado: não prescreve o medicamento adequado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "prescreve o medicamento com dose e via de administração corretas", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "prescreve o medicamento adequado, mas sem mencionar a dose adequada ou com a dose e/ou via de administração incorretas", "pontos": 0.75},
+          "inadequado": {"criterio": "não prescreve o medicamento adequado", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Informa a necessidade de tratamento das parcerias sexuais.\n\nAdequado: informa.\nInadequado: não informa.",
+        "pontuacoes": {
+          "adequado": {"criterio": "informa", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não informa", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est17_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Notifica o caso de sífilis.\n\nAdequado: notifica.\nInadequado: não notifica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "notifica", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não notifica", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

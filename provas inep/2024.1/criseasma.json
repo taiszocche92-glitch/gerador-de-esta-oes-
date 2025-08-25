@@ -1,0 +1,221 @@
+{
+  "idEstacao": "INEP_2024_1_EST6_CLINICA_MEDICA_ASMA",
+  "tituloEstacao": "Exacerbação de Asma",
+  "numeroDaEstacao": 6,
+  "especialidade": "CLÍNICA MÉDICA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "Asma",
+    "Dispneia",
+    "Sibilos",
+    "Espirometria",
+    "Dispositivo inalatório",
+    "Clínica Médica",
+    "Atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Laboratório de análises clínicas",
+        "Unidade portátil para radiografia"
+      ]
+    },
+    "descricaoCasoCompleta": "Você é um médico atuante em uma unidade básica de saúde (UBS) e deverá atender a uma paciente de 32 anos que vai à consulta com queixa de falta de ar e tosse há 5 dias.",
+    "tarefasPrincipais": [
+      "Realizar anamnese da paciente;",
+      "Interpretar exames complementares, verbalizando as alterações relevantes para o caso;",
+      "Estabelecer e comunicar hipótese diagnóstica;",
+      "Orientar e demonstrar o uso de dispositivo inalatório na paciente;",
+      "Orientar medidas não farmacológicas para a prevenção de crises."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE!",
+      "A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Rita.\nTenho 32 anos.\nSou casada.\nSou professora do ensino fundamental."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou com falta de ar e uma tosse seca há 5 dias."
+      },
+      {
+        "contextoOuPerguntaChave": "TOSSE E FALTA DE AR",
+        "informacao": "Início: Há 5 dias.\nCaracterísticas da tosse: É seca.\nPadrão temporal: Piora à noite e de madrugada, chego a acordar com dificuldade para respirar.\nSintomas associados: Sinto um 'chiado' no peito.\nFatores de melhora: Não identifiquei nada que melhore.\nFatores de piora: Ocorre principalmente à noite."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Nego doenças, mas já tive quadros parecidos várias vezes desde a infância. O último foi há 6 meses e passou rápido.\nMedicamentos em uso contínuo: Não uso nada agora, mas na infância fazia nebulizações.\nUso de dispositivo inalatório: Na última crise me deram um desses, mas não sei como usar."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA E EXPOSIÇÃO AMBIENTAL",
+        "informacao": "Tabagismo: Não fumo.\nEtilismo: Não bebo.\nExposição ambiental em casa: Não tenho animais de estimação nem tapetes. Limpo a casa uma vez por semana, tenho cortinas e durmo com um cobertor. Não guardo objetos na cama.\nExposição ambiental no trabalho: Na escola onde trabalho tem mofo e bolor."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Mãe: Tinha problemas respiratórios.\nPai: Não sei de doenças."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est6_exame_fisico",
+        "tituloImpresso": "IMPRESSO - EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS E ANTROPOMETRIA",
+              "itens": [
+                {"chave": "Temperatura axilar", "valor": "36,3 °C"},
+                {"chave": "Altura", "valor": "1,65 m"},
+                {"chave": "Peso", "valor": "56 kg"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME GERAL E DIRECIONADO",
+              "itens": [
+                {"chave": "Estado Geral", "valor": "Bom estado geral, com fácies atípica, eupneica, acianótica, anictérica, afebril, normocorada e hidratada; consciente e orientada."},
+                {"chave": "Aparelho Respiratório", "valor": "Tórax de conformação habitual, sem assimetrias. Expansibilidade preservada e simétrica. Frêmito toracovocal bem distribuído. Som claro pulmonar à percussão. Murmúrio vesicular presente e bem distribuído em toda a extensão pulmonar; presença de sibilos expiratórios esparsos em ambos os hemitórax."},
+                {"chave": "Restante do exame", "valor": "Sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est6_exames_laboratoriais",
+        "tituloImpresso": "IMPRESSO - EXAMES LABORATORIAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "Hemograma",
+              "itens": [
+                {"chave": "Leucócitos", "valor": "8.873 /mm³ (VR: 4.500 a 11.000/mm³)"},
+                {"chave": "Eosinófilos", "valor": "670,4 /mm³ (VR: 30 a 460/mm³)"},
+                {"chave": "Observações", "valor": "Hemácias normocíticas e normocrômicas. Demais parâmetros sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est6_espirometria",
+        "tituloImpresso": "IMPRESSO – ESPIROMETRIA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/3i4Y2tC.png",
+          "laudo": "Tabela de resultados: FVC pré 1,99L, pós 2,33L (+17%). FEV1 pré 1,54L, pós 1,88L (+22%). FEV1/FVC pré 77,1%, pós 80,8%. \nInterpretação: Distúrbio ventilatório obstrutivo leve, com variação significativa de VEF1 e CVF após uso de broncodilatador (salbutamol 400 mcg). Com normalização funcional."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {"contexto": "Durante a consulta", "pergunta": "Doutor(a), o que eu tenho?"},
+      {"contexto": "Ao receber os exames", "pergunta": "Tem alguma alteração nesses exames?"},
+      {"contexto": "Após o diagnóstico", "pergunta": "Você pode me ensinar a usar essa bombinha? Me mostra como se faz?"},
+      {"contexto": "No final da consulta", "pergunta": "O que eu posso fazer para evitar ter essas crises de novo?"}
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST6_CM_ASMA_2024V1_1",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 32 anos com queixa de dispneia e tosse há 5 dias, piora noturna e história prévia de quadros semelhantes. O objetivo é diagnosticar exacerbação de asma, interpretar exames (hemograma com eosinofilia e espirometria com resposta a broncodilatador), e orientar sobre o uso do dispositivo inalatório e prevenção de crises.",
+      "focoPrincipalDetalhado": [
+        "Diagnosticar adequadamente quadro de exacerbação de asma.",
+        "Correlacionar os achados dos exames (eosinofilia, distúrbio obstrutivo reversível) ao quadro clínico.",
+        "Orientar e demonstrar a utilização correta do dispositivo inalatório.",
+        "Orientar medidas não farmacológicas para prevenção de crises."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est6_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) identifica-se; e,\n(2) pergunta o nome e cumprimenta a paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.25},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre os sintomas associados relevantes para o estabelecimento de diagnósticos diferenciais:\n(1) febre OU calafrios;\n(2) dor torácica OU dor no peito OU dor ao respirar;\n(3) expectoração OU secreção OU purulência OU catarro;\n(4) cianose OU pele azulada OU pele arroxeada;\n(5) sintomas gripais (rinorreia, secreção nasal, espirros);\n(6) dispneia paroxística noturna OU despertar noturno por falta de ar;\n(7) edema de membros inferiores OU inchaço nas pernas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga quatro itens ou mais.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Investiga dois ou três itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Investiga um item OU não investiga item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre fatores desencadeantes, agravantes e atenuantes:\n(1) uso de medicamentos;\n(2) contato com animais domésticos OU com algum animal OU com pelos de animais;\n(3) ambiente com mofo ou com fungo ou poeira OU piora no local de trabalho;\n(4) tabagismo;\n(5) atividade física; e,\n(6) mudança climática OU certas estações do ano OU exposição a frio ou a calor.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga três itens ou mais.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Investiga dois itens.", "pontos": 0.75},
+          "inadequado": {"criterio": "Investiga um item OU não investiga item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Interpreta corretamente os achados do hemograma, identificando a eosinofilia, ou identificando o aumento dos eosinófilos, e a associa ao quadro.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Identifica.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não identifica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Interpreta o achado da espirometria: reversibilidade do distúrbio obstrutivo OU distúrbio obstrutivo com resposta ao broncodilatador/prova broncodilatadora.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Interpreta.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não interpreta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Comunica o diagnóstico de asma (ou de \"bronquite asmática\" ou de \"asma brônquica\" ou de \"crise de asma\" ou de \"crise asmática).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Comunica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não comunica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Orienta e demonstra o uso do dispositivo inalatório corretamente:\n(1) agitar o dispositivo;\n(2) expirar completamente (esvaziar o pulmão OU soltar o ar do pulmão);\n(3) posicionar o dispositivo próximo ou diretamente na boca (entre os dentes);\n(4) disparar o dispositivo e inalar lenta e profundamente, de forma coordenada;\n(5) prender a respiração (o fôlego) durante 5 a 10 segundos;\n(6) orientar a lavar a boca após o uso do dispositivo.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta e demonstra, na sequência correta, todas as etapas.", "pontos": 3.0},
+          "parcialmenteAdequado": {"criterio": "Orienta e demonstra, na sequência correta, da etapa 2 a etapa 5 OU apenas orienta, sem demonstrar, todas as etapas na sequência descrita OU apenas demonstra, sem orientar, todas as etapas na sequência descrita.", "pontos": 2.0},
+          "inadequado": {"criterio": "Não demonstra e não orienta alguma das etapas de 2 a 5 ou fez a demonstração com o dispositivo tampado.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Orienta medidas não farmacológicas para a prevenção de crise, tais como evitar contato com:\n(1) mofo OU fungo;\n(2) poeira doméstica / pó/ ácaros (em carpetes, cortinas, tapetes) OU orienta limpar a casa com pano úmido ao invés de varrer;\n(3) irritantes inespecíficos (tais como produtos de limpeza, perfume, tintas e solventes, fumaça, pólen, poluição do ar);\n(4) animais, pelo de animais domésticos, epitélio ou penas objetos de pelúcia ou roupas com pelos quando há sensibilização;\n(5) fumaça de cigarros (eletrônicos e convencionais);\n(6) orienta manter ambientes arejados ou janelas abertas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta três itens ou mais.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Orienta um ou dois itens.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não orienta item algum.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

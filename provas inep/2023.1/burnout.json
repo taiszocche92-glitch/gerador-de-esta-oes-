@@ -1,0 +1,286 @@
+{
+  "idEstacao": "INEP_2023_1_EST10_MEDICINA_FAMILIA_COMUNIDADE_BURNOUT",
+  "tituloEstacao": "Síndrome de Burnout (Esgotamento Profissional)",
+  "numeroDaEstacao": 10,
+  "especialidade": "MEDICINA DA FAMÍLIA E COMUNIDADE",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "burnout",
+    "esgotamento profissional",
+    "saúde do trabalhador",
+    "saúde mental",
+    "medicina da família e comunidade",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Difícil",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultório médico em uma Unidade Básica de Saúde"
+      ]
+    },
+    "descricaoCasoCompleta": "Você trabalha em uma Unidade Básica de Saúde (UBS) e realizará o atendimento, em consulta agendada, de uma mulher de 32 anos de idade, queixando-se de cansaço intenso e falta de energia.",
+    "tarefasPrincipais": [
+      "Demonstrar habilidades de comunicação e profissionalismo;",
+      "Acolher adequadamente a demanda da paciente;",
+      "Realizar a abordagem integral da pessoa em seu contexto;",
+      "Estabelecer o diagnóstico explicando as características do quadro clínico;",
+      "Pactuar com a paciente o plano de cuidados;",
+      "Verificar a necessidade de registrar e/ou notificar órgão competente."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Fernanda.\nTenho 32 anos.\nSou solteira.\nSou professora de escola infantil pública há dez anos."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou me sentindo com um cansaço sem fim, falta de energia e com a sensação de que estou acabada."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA DOENÇA ATUAL",
+        "informacao": "Exaustão emocional: Sinto um cansaço extremo, parece que não tenho mais energia para o trabalho, que exige demais de mim. De vez em quando sinto um peso no pescoço e uma dorzinha na coluna.\nDespersonalização: Antes eu tinha esperança nas crianças, hoje não tenho paciência e nem me importo com elas como antes. Faço minhas atividades de qualquer jeito, sem prazer, estou desmotivada.\nAutodepreciação: Estou me sentindo muito fracassada, não vejo resultado em nada do que faço na escola, sinto-me muito incompetente e não consigo me concentrar nas aulas.\nSintomas associados: Às vezes sinto um aperto na cabeça, um peso e ando muito esquecida. Não sinto palpitações, coração acelerado ou falta de ar. Não tenho sintomas digestivos ou psicóticos. Engordei uns 2 a 3 quilos nos últimos meses.\nIdeação suicida: Estou cansada e desanimada, mas não penso em me machucar ou em suicídio. Gosto de viver e penso muito na minha filha."
+      },
+      {
+        "contextoOuPerguntaChave": "FATORES DESENCADEANTES",
+        "informacao": "Ambiente de trabalho: Desde o início da pandemia, passei por uma sobrecarga no trabalho. Tive que aprender a usar novas tecnologias e me senti culpada porque algumas crianças não conseguiam acompanhar as aulas por falta de acesso à internet. A minha chefia mudou, e a chefe atual é muito rígida e crítica com todos. A relação com as colegas de trabalho piorou, nos distanciamos e o trabalho aumentou depois que parte da equipe foi demitida.\nRotina de trabalho: Trabalho de segunda a sexta, levo uma hora e meia para ir e uma hora e meia para voltar. Almoço na escola e fico lá o dia inteiro. Sempre levo trabalho para casa."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: Não realizo.\nSono: Durmo bem, mas de vez em quando tenho pesadelos com o trabalho.\nAlimentação: Tenho comido muito lanche na rua, por causa da correria.\nLazer e Social: Quando chego em casa, ainda tenho as tarefas da casa e da minha filha. Nos finais de semana, estou com tão pouca energia que só penso em ficar em casa. Não tenho mais contato com as minhas amigas.\nEtilismo/Tabagismo/Drogas: Não bebo, não fumo e não uso outras drogas."
+      },
+      {
+        "contextoOuPerguntaChave": "REDE DE APOIO",
+        "informacao": "Anda com pouca fé."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÕES AO ATOR",
+        "informacao": "Eu tenho algo grave? O que eu tenho?\nPor que o(a) senhor(a) chegou a esse diagnóstico? Precisa de algum exame para confirmar?\nO que eu posso fazer para melhorar?\nA equipe da UBS pode me ajudar?\nEu vou precisar mesmo pegar um atestado e me afastar do trabalho? Peguei uma folga para vir à consulta, mas estou com medo de não dar conta do meu trabalho.\nExiste alguma lei que possa me ajudar quanto ao afastamento ou à permanência no trabalho?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est10_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS E ANTROPOMETRIA",
+              "itens": [
+                {"chave": "Peso", "valor": "64 kg"},
+                {"chave": "Frequência cardíaca", "valor": "90 batimentos por minuto"},
+                {"chave": "Pressão arterial", "valor": "119x68 mmHg"},
+                {"chave": "Temperatura axilar", "valor": "36,9°C"},
+                {"chave": "IMC", "valor": "26 Kg/m²"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME GERAL",
+              "itens": [
+                {"chave": "Geral", "valor": "Bom estado geral, corada, acianótica, anictérica e afebril. Pele hidratada."},
+                {"chave": "Aparelho Cardiovascular", "valor": "Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sopros não audíveis, sem turgência jugular."},
+                {"chave": "Aparelho Respiratório", "valor": "Murmúrio vesicular bem distribuído. Sem ruídos adventícios."},
+                {"chave": "Abdome", "valor": "Normotenso, normotimpânico, indolor à palpação superficial e profunda. Ruídos hidroaéreos presentes. Sem visceromegalias."},
+                {"chave": "Região cervical", "valor": "Palpação sem nodulações ou tumefações; tireoide de tamanho e consistência normais."},
+                {"chave": "Aparelho musculoesquelético", "valor": "Ausência de deformidades articulares e ausência de dor à palpação."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST10_MFC_BURNOUT_2023V1_10",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "A Estação 10 de Medicina da Família e Comunidade abordou o caso de uma mulher de 32 anos que sente cansaço intenso e falta de energia, apresentando exaustão emocional, autodepreciação e despersonalização, para identificar uma situação de esgotamento mental (burnout) advindo do trabalho.",
+      "focoPrincipalDetalhado": [
+        "Acolher a paciente e orientá-la quanto a angústias, dúvidas e demandas apresentadas.",
+        "Confirmar o diagnóstico de esgotamento mental (burnout) advindo do trabalho, descartando os riscos iminentes de vida.",
+        "Propor ações de cuidado clínico e de vigilância em saúde direcionadas à trabalhadora, incluindo abordagem com equipe multiprofissional."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est10_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta a paciente simulada;\n(2) identifica-se;\n(3) dirige-se à paciente simulada pelo nome, pelo menos uma vez;\n(4) pergunta sobre o motivo da consulta;\n(5) ouve com atenção o relato inicial da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as cinco ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza quatro, três ou duas ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza uma ação OU não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Contato visual e linguagem não verbal:\n(1) estabelece contato visual;\n(2) mantém linguagem não verbal adequada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma das ações.", "pontos": 0.15},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Escuta, ao longo da consulta, a fala da paciente simulada sem interrompê-la.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza a ação.", "pontos": 0.25},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não realiza a ação.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Usa linguagem acessível com a paciente simulada, evitando termos técnicos de difícil compreensão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Usa linguagem acessível.", "pontos": 0.25},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não usa linguagem acessível.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Age com postura empática:\n(1) compartilha confiança com a paciente simulada;\n(2) não banaliza / naturaliza / desacredita / miniminiza o adoecimento / sofrimento da paciente simulada;\n(3) não julga a paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza os três itens.", "pontos": 0.75},
+          "parcialmenteAdequado": {"criterio": "Realiza dois itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Realiza um item OU não realiza item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Investiga a relação laboral como origem dos sintomas relatados.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não investiga.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Verbaliza a possível associação entre as queixas da paciente e o trabalho.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Pergunta sobre a existência de rede de apoio social (familiar ou espiritual ou religiosa ou vizinhança ou amizades).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.75},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Identifica as três características da Síndrome de Burnout:\n(1) exaustão emocional;\n(2) despersonalização;\n(3) autodepreciação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Identifica as três características.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Identifica duas características.", "pontos": 0.75},
+          "inadequado": {"criterio": "Identifica uma característica ou não identifica característica alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Aborda ideação suicida OU de autoextermínio.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Aborda.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não aborda.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Estabelece o diagnóstico de esgotamento mental relacionado ao trabalho (OU Síndrome de Burnout OU Síndrome de Esgotamento Profissional).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Estabelece o diagnóstico correto relacionando ao trabalho.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Estabelece o diagnóstico de esgotamento mental OU esgotamento físico e mental sem especificar a relação com o trabalho.", "pontos": 0.15},
+          "inadequado": {"criterio": "Não estabelece o diagnóstico correto.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Aconselha hábitos saudáveis de vida:\n(1) atividades de lazer com família e amigos;\n(2) atividade física regular;\n(3) cultivar hobbies;\n(4) manter bom padrão de sono;\n(5) alimentação saudável.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Aconselha quatro ou cinco hábitos.", "pontos": 1.20},
+          "parcialmenteAdequado": {"criterio": "Aconselha dois ou três hábitos.", "pontos": 0.60},
+          "inadequado": {"criterio": "Aconselha um hábito OU não aconselha hábito algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Indica acompanhamento nos dispositivos da rede de atenção à saúde: Núcleo de Atenção em Saúde da Família (NASF) OU Centro de Atenção Psicossocial (CAPS) OU Centro de Referência em Saúde do Trabalhador (CEREST) OU Equipes Multidisciplinares (eMulti).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Aconselha acompanhamento psicológico OU encaminhamento para psicólogo da UBS.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Aconselha.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não aconselha.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item15",
+        "itemNumeroOficial": "15",
+        "descricaoItem": "Informa sobre o direito a afastamento do trabalho/ atestado médico/auxílio doença.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não Informa.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item16",
+        "itemNumeroOficial": "16",
+        "descricaoItem": "Informa a necessidade ou realiza emissão da Comunicação de Acidente de Trabalho (CAT) ou Comunicação Interna de Acidente de Trabalho (CIAT).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa.", "pontos": 0.4},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não informa.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est10_item17",
+        "itemNumeroOficial": "17",
+        "descricaoItem": "Notifica ao SINAN.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Notifica ao SINAN.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Notifica sem especificar o órgão.", "pontos": 0.2},
+          "inadequado": {"criterio": "Não notifica.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

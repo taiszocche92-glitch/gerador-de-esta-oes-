@@ -1,0 +1,300 @@
+{
+  "idEstacao": "INEP_2024_1_EST3_PEDIATRIA_ESTENOSEPILORO",
+  "tituloEstacao": "Estenose Hipertrófica do Piloro",
+  "numeroDaEstacao": 3,
+  "especialidade": "PEDIATRIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "Vômitos em jato",
+    "Alcalose metabólica",
+    "Estenose de piloro",
+    "Pediatria",
+    "Atenção secundária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Setor de radiologia",
+        "Laboratório de análises clínicas",
+        "Setor de internação de especialidades",
+        "Farmácia clínica com qualquer medicamento e terapia necessários"
+      ]
+    },
+    "descricaoCasoCompleta": "Você é um(a) médico(a) que está de plantão no pronto-socorro de um hospital secundário e irá atender a um lactente de 40 dias, do sexo masculino, que foi encaminhado pela unidade básica de saúde (UBS) por apresentar vômitos.",
+    "tarefasPrincipais": [
+      "Realizar anamnese;",
+      "Interpretar o exame físico e a justificativa do encaminhamento da UBS associando os achados ao quadro clínico;",
+      "Solicitar exames complementares (serão pontuados os cinco primeiros exames laboratoriais e o primeiro exame de imagem citados) associando os achados ao quadro clínico;",
+      "Definir a hipótese diagnóstica, orientando a conduta mais indicada ao quadro clínico;",
+      "Explicar a condição da criança à mãe, mencionando os fatores de risco para o quadro."
+    ],
+    "avisosImportantes": []
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "O nome do meu filho é Renato da Silva.\nEle tem 40 dias de vida."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Eu vim porque meu filho começou a vomitar tudo que mama há 2 dias, e parece que está piorando."
+      },
+      {
+        "contextoOuPerguntaChave": "VÔMITOS",
+        "informacao": "Início: Há 2 dias.\nCaracterísticas: O vômito é em jato, forte, e parece leite talhado. Não tem cor amarela ou verde.\nFrequência: Está cada vez mais frequente, acontece depois de quase todas as mamadas.\nSintomas associados ao vômito: Ele chora muito depois de vomitar, parece que ainda está com fome."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Estado geral: Ele está mais sonolento, com a boca seca. A moleira dele chegou a ficar funda mais cedo, mas na UBS disseram que voltou ao normal depois do soro.\nDiurese: Ele está fazendo xixi, mas notei que está mais escuro, um amarelo mais forte.\nFebre: Não teve febre.\nOutros: Nego outros sintomas."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças prévias: Nenhuma.\nInternações: Nenhuma.\nCirurgias: Nenhuma.\nAlergias: Nenhuma.\nMedicamentos em uso contínuo: Nenhum."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRICO DO NASCIMENTO E FAMILIAR",
+        "informacao": "Nascimento: Nasceu de parto normal, com 38 semanas. Ele é meu primeiro filho.\nTestes neonatais: Todos normais.\nVacinas: Recebeu BCG e Hepatite B na maternidade.\nAntecedentes familiares: Desconheço problemas parecidos na família."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est3_encaminhamento",
+        "tituloImpresso": "IMPRESSO - ENCAMINHAMENTO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "JUSTIFICATIVA DO ENCAMINHAMENTO",
+              "itens": [
+                {"chave": "Descrição", "valor": "Encaminho para avaliação o paciente Renato da Silva, de 40 dias de vida, com quadro de vômitos incoercíveis e desidratação leve. O paciente não responde à medicação antiemética e necessita de avaliação e de exames complementares para diagnóstico. Foi realizada, na unidade, acesso venoso e reposição hídrica com soro fisiológico 30 mL/kg para correr em 4 horas. Grato. Aguardo contrarreferência."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_caderneta",
+        "tituloImpresso": "IMPRESSO - CADERNETA DE SAÚDE DA CRIANÇA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS DO PACIENTE",
+              "itens": [
+                {"chave": "Nome", "valor": "Renato da Silva"},
+                {"chave": "Antecedentes gestacionais", "valor": "gestação não planejada, mas com acompanhamento gestacional adequado (7 consultas) e sem intercorrências; exames laboratoriais de rotina normais (incluindo sorologias); mãe primigesta."},
+                {"chave": "Parto", "valor": "normal, a termo, com 38 semanas; o peso da criança ao nascimento foi de 2.850g e Apgar de 8 e 9."},
+                {"chave": "Antecedentes perinatais", "valor": "resultado normal de testes (teste do pezinho, da orelhinha, da linguinha, do olhinho e do coraçãozinho); icterícia fisiológica de resolução espontânea; queda do cordão umbilical no 10º dia de vida."},
+                {"chave": "Alimentação", "valor": "leite materno exclusivo."},
+                {"chave": "Vacinas", "valor": "BCG e Hepatite B."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exame_fisico",
+        "tituloImpresso": "IMPRESSO – EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS E ANTROPOMETRIA",
+              "itens": [
+                {"chave": "Peso", "valor": "3.250 g"},
+                {"chave": "Frequência cardíaca", "valor": "125 bpm"},
+                {"chave": "Frequência respiratória", "valor": "40 irpm"},
+                {"chave": "Temperatura axilar", "valor": "37,3 °C"},
+                {"chave": "Saturação de O2", "valor": "98%"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME GERAL",
+              "itens": [
+                {"chave": "Estado Geral", "valor": "Bom estado geral, hidratado, acianótico, anictérico, afebril; sem desconforto respiratório; sem linfonodomegalia; em utilização de acesso venoso periférico."},
+                {"chave": "Aparelho Respiratório", "valor": "Sem alterações."},
+                {"chave": "Aparelho Cardiovascular", "valor": "Sem alterações."},
+                {"chave": "Abdome", "valor": "Semigloboso, flácido, sem visceromegalias, com massa palpável epigástrica não bem caracterizada devido a hipertonia abdominal consequente ao choro intenso da criança; ruídos hidroaéreos presentes."},
+                {"chave": "Membros e Pele", "valor": "Sem alterações."},
+                {"chave": "Otoscopia e Oroscopia", "valor": "Otoscopia sem alterações. Oroscopia com sialorreia, sem outras alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exames_laboratoriais",
+        "tituloImpresso": "IMPRESSO - EXAMES LABORATORIAIS",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "Hemograma",
+              "itens": [
+                {"chave": "Hemoglobina", "valor": "11,2 g/dL (VR: 9,0 a 14,0 g/dL)"},
+                {"chave": "Hematócrito", "valor": "38,5 % (VR: 28 a 42%)"},
+                {"chave": "Leucócitos", "valor": "8.000 /mm³ (VR: 6.000 a 17.500 mm³)"},
+                {"chave": "Plaquetas", "valor": "366.000 /mm³ (VR: 250.000 a 500.000/mm³)"}
+              ]
+            },
+            {
+              "tituloSecao": "Gasometria arterial",
+              "itens": [
+                {"chave": "pH", "valor": "7,48 (VR: 7,35 a 7,45)"},
+                {"chave": "HCO3", "valor": "32 mEq/L (VR: 22 a 26 mEq/L)"},
+                {"chave": "PCO₂", "valor": "30 mmHg (VR: 35 a 45 mmHg)"},
+                {"chave": "BE", "valor": "+6 (VR: -3 a +3)"}
+              ]
+            },
+            {
+              "tituloSecao": "Dosagem de Eletrólitos",
+              "itens": [
+                {"chave": "Sódio (Na)", "valor": "130 mEq/L (VR: 134 a 146 mEq/L)"},
+                {"chave": "Potássio (K)", "valor": "3,1 mEq/L (VR: 3,5 a 6,0 mEq/L)"},
+                {"chave": "Cloro (Cl)", "valor": "92 mEq/L (VR: 98 a 106 mEq/L)"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_usg_piloro",
+        "tituloImpresso": "IMPRESSO - EXAME DE IMAGEM",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/kG5F3gS.jpeg",
+          "laudo": "Dilatação gástrica; espessura do músculo pilórico de 6 mm (serosa à mucosa inclusive); diâmetro transverso de 16 mm (serosa à serosa); comprimento do canal pilórico de 20 mm (da base do bulbo duodenal ao antro gástrico). Sinal do alvo: anel hipoecoico do músculo pilórico hipertrofiado em torno da mucosa ecogênica centralmente localizada. Sinal da cérvice: endentação da camada muscular no antro cheio de líquido, apresentando o canal pilórico alongado e estreitado, formando imagem semelhante ao da cérvice uterina."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {"contexto": "Durante a consulta", "pergunta": "Doutor(a), o que meu filho tem?"},
+      {"contexto": "Após a solicitação de exames", "pergunta": "Por que precisa colher sangue do pulso e não do braço?"},
+      {"contexto": "Após o diagnóstico", "pergunta": "Essa doença é grave? O que causa isso?"},
+      {"contexto": "Após a conduta", "pergunta": "Qual vai ser o tratamento? Ele precisa ficar com esse soro?"}
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST3_PED_ESTENOSEPILORO_2024V1_1",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Lactente de 40 dias, masculino, encaminhado por vômitos incoercíveis e desidratação leve. O objetivo é avaliar o raciocínio clínico para diagnóstico de estenose hipertrófica do piloro, solicitação e interpretação de exames, e proposição de conduta (internação, hidratação e avaliação cirúrgica).",
+      "focoPrincipalDetalhado": [
+        "Realizar anamnese focada nos vômitos e sinais de desidratação.",
+        "Interpretar exames (laboratoriais mostrando alcalose metabólica hipoclorêmica e hipocalêmica, e USG com achados de estenose pilórica).",
+        "Formular a hipótese diagnóstica de estenose hipertrófica do piloro.",
+        "Propor a conduta adequada: internação, correção hidroeletrolítica e encaminhamento para cirurgia."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est3_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) Identifica-se;\n(2) Cumprimenta a mãe de maneira adequada/cordial;\n(3) Mantém contato visual durante sua apresentação;\n(4) Pergunta o nome da mãe e o nome da criança.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as quatro ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza duas ou três ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Realiza uma ação OU não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre o quadro agudo:\n(1) características dos vômitos (resíduos alimentares E/OU vômitos não biliosos E/OU em jato);\n(2) início dos vômitos;\n(3) sinais associados - sonolência OU irritabilidade OU língua seca OU depressão da fontanela OU turgor da pele OU diminuição da diurese OU febre.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta os três itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um item OU não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Verbaliza fatores de risco para estenose do piloro:\n(1) primogenitura;\n(2) antecedentes familiares de estenose de piloro;\n(3) sexo masculino.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza os três fatores.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Verbaliza dois fatores.", "pontos": 0.25},
+          "inadequado": {"criterio": "Verbaliza um fator OU não verbaliza fator algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Associa os achados do exame físico ao quadro clínico:\n(1) lactente hidratado (recebendo hidratação venosa);\n(2) presença massa epigástrica incaracterística ou de oliva pilórica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza os dois itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Verbaliza um item.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não se aplica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita exames laboratoriais pertinentes ao caso clínico:\n(1) hemograma;\n(2) gasometria arterial;\n(3) sódio;\n(4) potássio;\n(5) cloro.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os cinco exames.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Solicita três ou quatro exames.", "pontos": 0.5},
+          "inadequado": {"criterio": "Solicita um ou dois exames OU não solicita exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Associa os achados de exames laboratoriais ao caso clínico:\n(1) hemograma normal;\n(2) gasometria com alcalose metabólica;\n(3) hipocloremia;\n(4) hipocalemia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Associa os quatro itens.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Associa dois ou três itens.", "pontos": 1.0},
+          "inadequado": {"criterio": "Associa um item OU não associa item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita ultrassonografia abdominal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Diagnostica a estenose hipertrófica do piloro ou hipertrofia pilórica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Diagnostica.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não diagnostica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Indica a internação hospitalar.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não indica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica a conduta adequada para o caso:\n(1) hidratação endovenosa para correção pré-operatória do distúrbio ácido-básico e hidroeletrolítico;\n(2) encaminhamento para avaliação cirúrgica e/ou tratamento cirúrgico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica os dois itens.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Indica um item.", "pontos": 1.0},
+          "inadequado": {"criterio": "Não indica item algum OU indica outra conduta.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "idEstacao": "INEP_2022_2_EST_CR_COLECISTITE_AGUDA_LITIASICA",
+  "tituloEstacao": "Colecistite Aguda Litiásica",
+  "numeroDaEstacao": 1,
+  "especialidade": "CIRURGIA GERAL",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": "colecistite, aguda, litiásica, cirurgia, vesícula biliar, abdome agudo, hipocôndrio direito, atenção secundária",
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Setor de radiologia convencional e ultrassonografia",
+        "Laboratório de análises clínicas e banco de sangue",
+        "Leitos de internação e centro cirúrgico"
+      ]
+    },
+    "descricaoCasoCompleta": "Mulher de 32 anos, previamente hígida, com dor abdominal há 1 dia.",
+    "tarefasPrincipais": [
+      "Realizar anamnese da paciente.",
+      "Solicitar e interpretar exames necessários ao caso.",
+      "Estabelecer e comunicar a hipótese diagnóstica e diagnóstico(s) diferencial(is).",
+      "Definir e verbalizar a conduta terapêutica necessária."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Camila.\nTenho 32 anos.\nSou casada.\nSou advogada."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr.(a), eu vim porque estou com muita dor na barriga."
+      },
+      {
+        "contextoOuPerguntaChave": "DOR ABDOMINAL",
+        "informacao": "Iniciou há 8 horas.\nLocalização: dói do lado direito, na parte de cima (hipocôndrio direito).\nIntensidade: 7/10.\nCaracterística: dor tipo cólica.\nIrradiação: fica só aqui do lado direito.\nFatores de piora: não relatado.\nFrequência: já tive algumas dores, mas eu sempre tomava buscopan e melhorava.\nProgressão: piora progressiva.\nEpisódios prévios: episódios anteriores de dor que melhoravam com buscopan.\nSintomas associados: vômitos, febre.\nCatarse e/ou eliminação de flatos/fezes: sem alterações de catarse e eliminação de flatos/fezes."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Náuseas: nega.\nVômitos: sim, 3 episódios de vômitos de cor verde.\nFebre: aumentou a temperatura sim Dr(a), da última vez que medi estava 37,8°C.\nColúria: nega.\nIcterícia: nega.\nInapetência/anorexia: estou sem fome, não como nada desde que começou a doer.\nOutros sintomas: Não consta no script."
+      },
+      {
+        "contextoOuPerguntaChave": "MEDICAÇÕES DE ALÍVIO UTILIZADAS",
+        "informacao": "Tomei buscopan para diminuir a dor, mas não passou."
+      },
+      {
+        "contextoOuPerguntaChave": "FATORES DESENCADEANTES",
+        "informacao": "Outros fatores: Não consta no script."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: nega.\nCirurgias prévias: nega.\nInternações: nega.\nAlergias: nega.\nMedicamentos em uso contínuo: nega."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: não faço atividade física.\nTabagismo: nega.\nEtilismo: nega.\nDrogas ilícitas: nega.\nSono: não informado.\nAlimentação: como bastante fritura e massas."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS/OBSTÉTRICOS",
+        "informacao": "DUM há 3 dias, G3P3A0, em uso de ACO, Papanicolau em dia e sem alterações."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÃO AO ATOR",
+        "informacao": "CASO O(A) CANDIDATO(A) INDIQUE CIRURGIA, INDAGAR: Dr.(a), já que vou precisar operar, quais são as abordagens cirúrgicas disponíveis no meu caso?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est1_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão Arterial", "valor": "110 x 70 mmHg"},
+                {"chave": "Frequência Cardíaca", "valor": "84 bpm"},
+                {"chave": "Frequência Respiratória", "valor": "20 irpm"},
+                {"chave": "Saturação de O2", "valor": "97% AA"},
+                {"chave": "Temperatura axilar", "valor": "37,1°C"},
+                {"chave": "IMC", "valor": "29 kg/m2"},
+                {"chave": "Circunferência abdominal", "valor": "97cm"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO GERAL",
+              "itens": [
+                {"chave": "Ectoscopia", "valor": "regular estado geral, desidratada +/4+, corada, anictérica, acianótica, afebril, eupneica"},
+                {"chave": "Aparelho cardiovascular", "valor": "sem anormalidades"},
+                {"chave": "Aparelho respiratório", "valor": "sem anormalidades"},
+                {"chave": "Abdome", "valor": "plano, normotenso, ruídos hidroaéreos normoativos, pouco distendido. Dor à palpação superficial e profunda em hipocôndrio direito, com interrupção da inspiração por conta da dor. Sem dor à descompressão brusca. Sem massas palpáveis"},
+                {"chave": "Punho percussão de dorso", "valor": "indolor bilateralmente"},
+                {"chave": "Membros Inferiores", "valor": "sem lesões ou edemas"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est1_laboratorio",
+        "tituloImpresso": "LABORATÓRIO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "HEMOGRAMA",
+              "itens": [
+                {"chave": "Hemoglobina", "valor": "13,9 g/dl (Valor de referência: 12 a 16 mg/dl)"},
+                {"chave": "Hematócrito", "valor": "39% (Valor de referência: 35 - 45%)"}
+              ]
+            },
+            {
+              "tituloSecao": "SÉRIE PLAQUETÁRIA",
+              "itens": [
+                {"chave": "Plaquetas", "valor": "251.000 mm/3 (150.000 - 400.000 mm/3)"}
+              ]
+            },
+            {
+              "tituloSecao": "SÉRIE BRANCA",
+              "itens": [
+                {"chave": "Leucócitos", "valor": "12.110/mm3 (Valor de referência: 4.500 - 11.000/mm3)"}
+              ]
+            },
+            {
+              "tituloSecao": "MARCADORES INFLAMATÓRIOS",
+              "itens": [
+                {"chave": "PCR", "valor": "8 mg/dl (Valor de referência: 0-5 mg/dl)"}
+              ]
+            },
+            {
+              "tituloSecao": "ENZIMAS HEPÁTICAS",
+              "itens": [
+                {"chave": "TGO", "valor": "32 U/l (Valor de referência: 0 – 35 U/l)"},
+                {"chave": "TGP", "valor": "28 U/l (Valor de referência: 0-35 U/l)"},
+                {"chave": "FA", "valor": "180 U/l (Valor de referência: 30 – 120 U/l)"},
+                {"chave": "GGT", "valor": "64 U/l (Valor de referência: 1 – 94 U/l)"}
+              ]
+            },
+            {
+              "tituloSecao": "BILIRRUBINAS",
+              "itens": [
+                {"chave": "Bilirrubina total", "valor": "1 mg/dl (Valor de referência (0,3 - 1,0 mg/dl)"},
+                {"chave": "Bilirrubina indireta", "valor": "0,7 mg/dl (Valor de referência: 0,2 - 0,7 mg/dl)"},
+                {"chave": "Bilirrubina direta", "valor": "0,3 mg/dl (Valor de referência: 0,1 - 0,3 mg/dl)"}
+              ]
+            },
+            {
+              "tituloSecao": "ENZIMAS PANCREÁTICAS",
+              "itens": [
+                {"chave": "Amilase", "valor": "70 U/L (Valor de referência: 60 - 180 mg/dl)"},
+                {"chave": "Lipase", "valor": "80 U/L (Valor de referência: 0 - 160 mg/dl)"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est1_ultrassom_abdome",
+        "tituloImpresso": "ULTRASSOM DE ABDOME",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "laudo": "- Fígado de textura e dimensões normais.\n- Vesícula biliar de paredes espessadas com múltiplos cálculos em seu interior, os maiores de 8 mm, promovendo sombra acústica posterior. Presença de líquido perivesicular.\n- Vias biliares intra e extra-hepáticas de calibre normal.\n- A cabeça do pâncreas não foi bem visualizada devido à interposição de gases."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST1_CR_COLECISTITE_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 32 anos com quadro de dor abdominal em hipocôndrio direito há 8 horas, com características de cólica, associada a vômitos e febre. Exame físico evidencia dor à palpação em hipocôndrio direito com sinal de Murphy positivo. Exames laboratoriais mostram leucocitose e PCR elevado. Ultrassom de abdome revela vesícula biliar com paredes espessadas, múltiplos cálculos e líquido perivesicular, compatível com colecistite aguda litiásica.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada com investigação das características da dor abdominal e sintomas associados",
+        "Exame físico abdominal com pesquisa do sinal de Murphy",
+        "Solicitação de exames laboratoriais (hemograma, PCR, enzimas hepáticas, bilirrubinas) e ultrassom de abdome",
+        "Diagnóstico de colecistite aguda litiásica e indicação de tratamento cirúrgico com antibioticoterapia"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est1_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) Identifica-se;\n(2) Cumprimenta a paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas ações", "pontos": 0.2},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "realiza uma ou não realiza ação alguma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre as características da dor:\n(1) Início;\n(2) Localização;\n(3) Irradiação;\n(4) Característica;\n(5) Fatores agravantes/atenuantes;\n(6) Intensidade.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta quatro ou mais itens", "pontos": 0.6},
+          "parcialmenteAdequado": {"criterio": "pergunta dois ou três itens", "pontos": 0.3},
+          "inadequado": {"criterio": "pergunta apenas um item ou não pergunta item algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre sintomas associados:\n(1) Vômito/náusea;\n(2) Alteração de hábito intestinal;\n(3) Anorexia;\n(4) Febre;\n(5) Icterícia;\n(6) Colúria e Acolia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta cinco ou seis itens", "pontos": 0.8},
+          "parcialmenteAdequado": {"criterio": "pergunta três ou quatro itens", "pontos": 0.4},
+          "inadequado": {"criterio": "pergunta dois itens ou menos", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita o exame físico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita os exames complementares laboratoriais:\n(1) Hemograma;\n(2) PCR;\n(3) Bilirrubinas;\n(4) Enzimas hepáticas;\n(5) Amilase;\n(6) Lipase;\n(7) Fosfatase alcalina; e\n(8) GGT.\n\nAtenção:\nO(A) participante só irá pontuar caso cite os exames listados ANTES de receber os IMPRESSOS 2 e/ou 3.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita sete ou oito itens", "pontos": 1.4},
+          "parcialmenteAdequado": {"criterio": "solicita de quatro a seis itens", "pontos": 0.7},
+          "inadequado": {"criterio": "solicita três ou menos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Verbaliza as alterações dos exames laboratoriais:\n(1) Hemograma com leucocitose; e\n(2) PCR aumentado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "verbaliza os dois itens", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "verbaliza um item ou não verbaliza item algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita ultrassom de abdome.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.6},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Cita a hipótese diagnóstica de colecistite aguda litiásica/calculosa.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita o diagnóstico completo", "pontos": 1.8},
+          "parcialmenteAdequado": {"criterio": "cita apenas o diagnóstico de colecistite aguda", "pontos": 0.9},
+          "inadequado": {"criterio": "não cita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Cita os principais diagnósticos diferenciais:\n(1) Pancreatite aguda;\n(2) Cólica biliar/colecistolitíase;\n(3) Cólica nefrética/litíase ou cálculo renal\n(4) Coledocolitiase/colangite.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita três ou quatro itens", "pontos": 1.3},
+          "parcialmenteAdequado": {"criterio": "cita dois itens", "pontos": 0.65},
+          "inadequado": {"criterio": "não cita item algum ou somente um", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica a antibioticoterapia e encaminha a paciente para a realização de colecistectomia em até 72 horas, idealmente.\n\nAtenção: deverá ser verbalizado que o procedimento deverá ser realizado idealmente em até 72h.",
+        "pontuacoes": {
+          "adequado": {"criterio": "indica o tratamento", "pontos": 1.6},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não indica o tratamento", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Cita as opções de abordagens cirúrgicas:\n(1) Videolaparoscopia;\n(2) Cirurgia aberta.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita os dois itens", "pontos": 0.3},
+          "parcialmenteAdequado": {"criterio": "cita um item", "pontos": 0.15},
+          "inadequado": {"criterio": "não cita item algum", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est1_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Realiza a sequência das tarefas indicadas nas orientações ao (à) participante.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não realiza", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

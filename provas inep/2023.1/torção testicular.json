@@ -1,0 +1,218 @@
+{
+  "idEstacao": "INEP_2023_1_EST7_CIRURGIA_GERAL_TORCAO_TESTICULAR",
+  "tituloEstacao": "Torção Testicular",
+  "numeroDaEstacao": 7,
+  "especialidade": "CIRURGIA GERAL",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "escroto agudo",
+    "dor testicular",
+    "torção testicular",
+    "cirurgia geral",
+    "atenção secundária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Aparelho de Raio-x",
+        "Ultrassonografia",
+        "Laboratório de análises clínicas"
+      ]
+    },
+    "descricaoCasoCompleta": "Homem, 21 anos, estudante, procura atendimento na unidade queixando-se de dor testicular à direita.",
+    "tarefasPrincipais": [
+      "Realizar anamnese do paciente;",
+      "Solicitar e interpretar exame físico;",
+      "Estabelecer e comunicar as principais hipóteses diagnósticas (NO MÍNIMO TRÊS);",
+      "Solicitar exame(s) complementar(es), se necessário, descrevendo os achados;",
+      "Estabelecer e comunicar o diagnóstico definitivo;",
+      "Propor a terapêutica definitiva para o caso."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO.",
+      "ATENÇÃO! VOCÊ DEVERÁ, REALIZAR AS TAREFAS NA SEQUÊNCIA DESCRITA ACIMA."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é João.\nTenho 21 anos.\nSou solteiro e estudante."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Doutor(a), eu acordei com uma dor muito forte no saco escrotal, do lado direito."
+      },
+      {
+        "contextoOuPerguntaChave": "DOR TESTICULAR",
+        "informacao": "Início: Há 2 horas, acordei por causa da dor.\nLocalização: No saco escrotal do lado direito.\nIntensidade: Muito forte, nota 8 de 10.\nIrradiação: A dor vai um pouco para cima.\nFatores de piora: Piora quando eu ando.\nFatores de melhora: Não tomei nenhum medicamento para a dor hoje."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Alterações locais: O testículo direito está inchado.\nSintomas gastrointestinais: Estou com vontade de vomitar.\nSintomas urogenitais: Não percebi secreção na uretra, nem pus ou sangue. Nunca tive dor ou ardor para urinar, urina avermelhada, vontade constante de urinar ou urina com mau cheiro.\nSintomas sistêmicos: Não tive febre e não tenho dor lombar."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças prévias: Não tive caxumba, não tenho alergias ou algum outro problema de saúde.\nCirurgias prévias: Nunca fui operado.\nMedicamentos em uso contínuo: Não faço uso de nenhuma medicação."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: Fumo 10 cigarros por dia há 10 anos.\nEtilismo: Não bebo.\nDrogas ilícitas: Não uso.\nVida sexual: Estou há um mês sem relações sexuais."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Pai: É hipertenso e usa medicação."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÕES AO ATOR",
+        "informacao": "Quais doenças podem dar esses sintomas?\nVai ser preciso fazer algum exame para confirmar?\nQual é o meu diagnóstico e o que vamos fazer agora?\nQual é o tratamento?\nQual o prazo que eu tenho para operar? Eu queria fazer a operação na cidade da minha mãe, que fica a 8 horas daqui."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est7_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://storage.googleapis.com/assistly/images/2023_1_prova_habilidades_clinicas_page_35_image_1.png",
+          "laudo": "DIRIJA-SE PARA A CÂMERA E EXPLIQUE OS ACHADOS DO EXAME FÍSICO DA BOLSA ESCROTAL",
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Frequência cardíaca", "valor": "76 batimentos por minuto"},
+                {"chave": "Pressão arterial", "valor": "130x80 mmHg"},
+                {"chave": "Frequência respiratória", "valor": "14 incursões respiratórias por minuto"},
+                {"chave": "Temperatura axilar", "valor": "36,2°C"},
+                {"chave": "Saturação de oxigênio", "valor": "99% em ar ambiente"},
+                {"chave": "IMC", "valor": "25 kg/m²"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME GERAL",
+              "itens": [
+                {"chave": "Geral", "valor": "Paciente em estado geral bom, afebril, acianótico, anictérico e hidratado; alerta e orientado no tempo e espaço. Exame físico dos aparelhos cardiovascular, respiratório e abdominal sem alterações."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est7_usg_doppler_bolsa_escrotal",
+        "tituloImpresso": "ULTRASSONOGRAFIA COM DOPPLER COLORIDO DE BOLSA ESCROTAL",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://storage.googleapis.com/assistly/images/2023_1_prova_habilidades_clinicas_page_36_image_1.png",
+          "laudo": "Laudo: Testículo esquerdo sem alterações. Testículo direito aumentado de tamanho com ausência de fluxo sanguíneo ao Doppler. Espessamento de cordão espermático à direita."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST7_CG_TORCAO_TESTICULAR_2023V1_07",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "A Estação 7 de Cirurgia Geral abordou o caso de um homem de 21 anos de idade, estudante, referindo dor testicular à direita.",
+      "focoPrincipalDetalhado": [
+        "Verbalizar as principais hipóteses diagnósticas diferenciais (torção testicular, orquite e orquiepididimite aguda), confirmando o diagnóstico definitivo após a avaliação do exame físico e de imagem.",
+        "Orientar a(s) conduta(s) pertinente(s) ao caso para tratamento médico, explicando-as ao paciente de forma acessível."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est7_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) apresenta-se;\n(2) cumprimenta e identifica o paciente simulado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.2},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.1},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Realiza anamnese, perguntando sobre as características da dor:\n(1) tempo de início;\n(2) intensidade;\n(3) fatores de alívio ou de piora.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta três características.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Pergunta duas características.", "pontos": 0.5},
+          "inadequado": {"criterio": "Pergunta apenas uma característica OU não pergunta característica alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Questiona sobre as manifestações associadas à dor e/ou relevantes para o diagnóstico diferencial:\n(1) náuseas e/ou vômitos;\n(2) sintomas urinários (disúria, polaciúria, urina fétida);\n(3) dor lombar OU dor abdominal OU dor inguinal;\n(4) febre;\n(5) secreção uretral.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta quatro ou mais itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Pergunta dois ou três itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Pergunta somente um item OU não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita o exame físico e interpreta os achados do exame da bolsa escrotal:\n(1) testículo direito em posição elevada (Sinal de Brunzel) OU pouco horizontalizado (Sinal de Angell);\n(2) testículo direito aumentado de volume;\n(3) hiperemia de hemibolsa-escrotal direita.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita e interpreta os achados descrevendo os três itens.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Solicita e interpreta, descrevendo dois itens.", "pontos": 1.0},
+          "inadequado": {"criterio": "Solicita e não verbaliza achado algum OU solicita e descreve um item OU não solicita o exame físico interpretando ou não os achados.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Verbaliza as principais hipóteses diagnósticas de escroto agudo, aplicáveis ao caso:\n(1) torção testicular torção do cordão espermático;\n(2) orquite aguda / orquiepididimite aguda / epididimite aguda;\n(3) Torção do Apêndice testicular / epididimário.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza os três itens.", "pontos": 1.8},
+          "parcialmenteAdequado": {"criterio": "Verbaliza dois itens.", "pontos": 1.0},
+          "inadequado": {"criterio": "Verbaliza apenas um item OU não verbaliza item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita:\n(1) ultrassonografia (OU ultrassom, OU ecografia, OU US OU USG);\n(2) com doppler (OU doppler colorido);\n(3) de bolsa escrotal (OU região testicular OU escroto OU testicular).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita o exame verbalizando os três itens.", "pontos": 1.3},
+          "parcialmenteAdequado": {"criterio": "Solicita o exame verbalizando apenas os itens 1 e 3.", "pontos": 0.65},
+          "inadequado": {"criterio": "Solicita o exame verbalizando apenas o item 1 e 2 OU solicita o exame verbalizando apenas o item 1 OU solicita qualquer outro exame OU não solicita exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Verbaliza o diagnóstico de torção testicular / torção do cordão espermático.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza.", "pontos": 1.0},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Tratamento do paciente com torção testicular: indica a necessidade da cirurgia de emergência, que deverá acontecer antes de seis horas do início da dor ou cirurgia imediata.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica cirurgia de emergência e explica que deverá ser feito no referido prazo ou indica cirurgia imediata.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Indica a cirurgia de emergência sem especificar o prazo de 6 horas.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não indica cirurgia OU indica a cirurgia sem destacar a emergência (antes das 6 h do início dos sintomas) OU indica qualquer outro tipo de tratamento.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est7_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Execução das tarefas na ordem determinada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Executa as etapas na ordem determinada.", "pontos": 0.2},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não executa as etapas na ordem determinada.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

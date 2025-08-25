@@ -1,0 +1,244 @@
+{
+  "idEstacao": "INEP_2023_1_EST9_GINECOLOGIA_OBSTETRICIA_DIABETES_GESTACIONAL",
+  "tituloEstacao": "Diabetes Mellitus Gestacional",
+  "numeroDaEstacao": 9,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "diabetes gestacional",
+    "pré-natal",
+    "glicemia de jejum",
+    "ginecologia e obstetrícia",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Laboratório de análises clínicas"
+      ]
+    },
+    "descricaoCasoCompleta": "Mulher de 35 anos, casada, gestante, criadora de conteúdo digital, comparece à Unidade Básica de Saúde (UBS), em sua avaliação pré-natal.",
+    "tarefasPrincipais": [
+      "Realizar o atendimento da paciente com anamnese e exame físico;",
+      "Solicitar, se necessário, exames complementares pertinentes ao caso;",
+      "Realizar o diagnóstico;",
+      "Responder e orientar a paciente de forma completa, justificando as orientações;",
+      "Comunicar possíveis complicações decorrentes do quadro;",
+      "Orientar, prescrever e manejar o caso da paciente em relação ao seguimento da sua gestação."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Olívia.\nTenho 35 anos.\nSou casada.\nTrabalho com um canal de comidas na internet."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Vim para a minha consulta de pré-natal para mostrar o resultado de um exame que ficou faltando da última vez. Não tenho nenhuma queixa."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA GESTAÇÃO ATUAL",
+        "informacao": "Idade gestacional: Estou com 14 semanas e 2 dias.\nIntercorrências: Nenhuma, está tudo bem.\nConsultas: Esta é a minha terceira consulta de pré-natal. Esqueci o meu cartão da gestante em casa.\nExames: Todos os outros exames estavam normais. Segui corretamente as orientações de jejum para a colheita do exame."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS E FAMILIARES",
+        "informacao": "Antecedentes obstétricos: É a minha primeira gestação.\nParceria sexual: Estou casada há cinco anos e meu marido é minha única parceria sexual.\nProblemas de saúde/Alergias: Não tenho nenhum.\nDiabetes na família: Não, não temos casos de diabetes na minha família."
+      },
+      {
+        "contextoOuPerguntaChave": "PERGUNTAS/INSTRUÇÕES AO ATOR",
+        "informacao": "Como está o meu exame? Existe algo com que eu deva me preocupar?\nO que o(a) levou a chegar a esse diagnóstico?\nSerá necessário que eu tome algum remédio?\nEu teria que fazer aquele teste de beber o açúcar (teste de tolerância oral a glicose)?\nQuais complicações o diabetes gestacional poderia trazer para mim ou para o meu filho?"
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est9_exame_laboratorial",
+        "tituloImpresso": "EXAME LABORATORIAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "GLICEMIA DE JEJUM",
+              "itens": [
+                {"chave": "Resultado", "valor": "114 mg/mL (Ref: 60 a 100 mg/mL)"}
+              ]
+            }
+          ],
+          "observacao": "Obs.: realizado com oito horas de jejum. Exame realizado hoje."
+        }
+      },
+      {
+        "idImpresso": "est9_exame_fisico_ginecologico",
+        "tituloImpresso": "EXAME FÍSICO / GINECOLÓGICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME FÍSICO",
+              "itens": [
+                {"chave": "Altura", "valor": "1,56 m"},
+                {"chave": "Peso", "valor": "65 kg"},
+                {"chave": "IMC", "valor": "26,71 kg/m²"},
+                {"chave": "Pressão Arterial", "valor": "100x80 mmHg"},
+                {"chave": "Frequência Cardíaca", "valor": "94 batimentos por minuto"},
+                {"chave": "Frequência Respiratória", "valor": "20 incursões respiratórias por minuto"},
+                {"chave": "Temperatura axilar", "valor": "36,5°C"},
+                {"chave": "Saturação de Oxigênio", "valor": "98% em ar ambiente"},
+                {"chave": "Mucosas", "valor": "Coradas"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME GINECOLÓGICO",
+              "itens": [
+                {"chave": "Altura do fundo uterino", "valor": "13 cm"},
+                {"chave": "Batimentos cardíacos fetais", "valor": "125 batimentos por minuto"},
+                {"chave": "Restante do exame", "valor": "Sem alterações."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST9_GO_DIABETES_2023V1_09",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "A Estação 9 de Ginecologia e Obstetrícia abordou o caso de uma mulher de 35 anos, gestante, assintomática, com resultado de glicemia de jejum alterado, buscando orientação sobre a propedêutica clínica.",
+      "focoPrincipalDetalhado": [
+        "Conduzir um caso de gestação inicial em uma mulher que está assintomática e deseja condução adequada do pré-natal.",
+        "Realizar a anamnese completa, analisar os exames, e prestar informações adequadas com relação à propedêutica do caso e complicações possíveis.",
+        "Diagnosticar diabetes gestacional e orientar o manejo inicial."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est9_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) apresenta-se, cumprimentando a paciente e/ou falando seu nome e/ou questionando o nome dela;\n(2) pergunta o motivo da consulta/queixa principal da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ação.", "pontos": 0.25},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta:\n(1) qual foi a data da última menstruação da paciente OU\n(2) pergunta a sua idade gestacional.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Informa que o cartão da gestante deve acompanhá-la em todas as consultas de pré-natal OU informa que a paciente deverá andar sempre com o seu cartão da gestante.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa sobre a importância de se levar sempre o cartão da gestante.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não informa.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita o exame físico OU o exame ginecológico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Menciona que a glicemia de jejum está alterada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Menciona a alteração.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não menciona a alteração no exame.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Questiona se o exame foi adequadamente colhido - com o jejum. (ITEM ANULADO)",
+        "pontuacoes": {
+          "adequado": {"criterio": "Questiona adequação do exame.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não questiona.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Diagnóstico: formula o diagnóstico de diabetes mellitus gestacional ou diabetes na gravidez.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Formula o diagnóstico.", "pontos": 1.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não formula o diagnóstico de diabetes gestacional OU fórmula diagnóstico errado OU diz que o diagnóstico é inconclusivo, que será necessária a realização de outro exame.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Teste de tolerância oral a glicose:\n(1) menciona que o teste de tolerância oral a glicose NÃO precisará ser feito no caso dessa paciente.\n(2) justifica afirmando que o diagnóstico já está estabelecido pelo resultado do exame apresentado.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Apenas menciona a dispensabilidade do teste, sem justificar.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não menciona a dispensabilidade do teste OU orienta que a paciente faça o teste de tolerância oral a glicose.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Informa que o tratamento envolve dieta e atividade física.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta adequadamente o tratamento.", "pontos": 1.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não orienta o tratamento correto OU orienta o tratamento errado OU indica o uso de hipoglicemiantes orais.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Orienta a paciente a realizar\n(1) avaliações de glicemia capilar por glicosimetro (ou teste de glicemia capilar)\n(2) pelo menos três vezes na semana para avaliação de controle de glicemia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta a paciente quanto a avaliação e a periodicidade.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Só orienta que seja realizado o controle com glicosimetro sem falar a periodicidade (pelo menos três vezes na semana) OU propondo periodicidade diferente.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não orienta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Complicações do diabetes gestacional:\n(1) aumento de peso fetal para a idade gestacional;\n(2) trabalho de parto prematuro;\n(3) polidramnio;\n(4) ruptura prematura de membranas;\n(5) hipoglicemia neonatal;\n(6) sepse neonatal;\n(7) obesidade infantil;\n(8) abortamento;\n(9) óbito fetal intra-útero;\n(10) diabetes mellitus tipo 2 materno;\n(11) Desproporção cefalopélvica / tocotraumatismo;\n(12) parto cesariana / parto instrumental;\n(13) Sinais de sofrimento fetal;\n(14) Infecções urinárias.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Cita pelo menos quatro itens listados.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Cita pelo menos dois ou três itens listados.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não cita OU cita apenas um item listado.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Pergunta se a paciente tem mais alguma dúvida.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta.", "pontos": 0.5},
+          "parcialmenteAdequado": null,
+          "inadequado": {"criterio": "Não pergunta.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

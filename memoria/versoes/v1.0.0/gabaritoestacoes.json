@@ -1,0 +1,66 @@
+{
+  "idEstacao": "REVALIDA_FACIL_[ANO]_[SEMESTRE]_EST[NUMERO]_[ESPECIALIDADE]_[IDENTIFICADOR_CASO]",
+  "tituloEstacao": "[NOME_EXATO_DA_CONDIÇÃO_MÉDICA_COM_CONTEXTO]",
+  "numeroDaEstacao": "[NUMERO_INTEIRO]",
+  "especialidade": "[CLÍNICA MÉDICA|CIRURGIA GERAL|PEDIATRIA|GINECOLOGIA E OBSTETRÍCIA|MEDICINA DA FAMÍLIA E COMUNIDADE]",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": "[palavra1, palavra2, palavra3, especialidade, nível atenção]",
+  "nivelDificuldade": "[Fácil|Médio|Difícil]",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "[Atenção primária à saúde|Atenção secundária à saúde|Atenção terciária à saúde]",
+      "tipoAtendimento": "[Ambulatorial|Urgência e emergência|Hospitalar]",
+      "infraestruturaUnidade": []
+    },
+    "descricaoCasoCompleta": "[Descrição ultrassucinta do cenário, papel do médico, paciente e queixa principal. Para estações procedimentais, descreva o ponto de partida. Ex: 'Você acabou de finalizar a anamnese e o exame físico...']",
+    "tarefasPrincipais": [
+      "// As tarefas devem ser claras, diretas e refletir o tipo de estação.",
+      "// Para estações CLÍNICAS: Siga a sequência Anamnese -> Exame Físico -> Exames -> Dx -> Tx.",
+      "// Para estações PROCEDIMENTAIS: Use verbos como 'Realizar a técnica', 'Demonstrar e verbalizar', 'Medir', 'Registrar nos gráficos'.",
+      "// Para estações de COMUNICAÇÃO: Use verbos como 'Utilizar habilidades', 'Comunicar o diagnóstico', 'Acolher', 'Orientar o plano de cuidados'.",
+      "[TAREFA 1]",
+      "[TAREFA 2]",
+      "[TAREFA 3]",
+      "[TAREFA 4]",
+      "[TAREFA 5]"
+    ],
+    "avisosImportantes": [
+      "// Adicionar avisos específicos, como 'NÃO SERÁ NECESSÁRIO REALIZAR ANAMNESE', uso de manequins ou regras de toque."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      "// Pode ser um array vazio `[]` para estações puramente procedimentais onde a interação é mínima."
+    ],
+    "impressos": [
+      "// Incluir resultados de exames (usando 'lista_chave_valor_secoes' ou 'tabela'), ferramentas de trabalho (escalas, gráficos para plotar), ou materiais interativos."
+    ],
+    "perguntasAtorSimulado": [
+      "// Perguntas padronizadas para testar a comunicação em momentos específicos.",
+      {
+        "momento": "[Ex: Após a comunicação do diagnóstico.]",
+        "pergunta": "[Ex: Doutor(a), o que isso significa? É grave?]"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST[NUMERO]_[ESPECIALIDADE_ABREV]_[IDENTIFICADOR]_[ANO]V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "[Resumo técnico do caso para o avaliador.]",
+      "focoPrincipalDetalhado": [
+        "// Listar as 3-4 competências centrais que a estação se propõe a avaliar. Devem estar diretamente ligadas às tarefas."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est[numero]_item_exemplo",
+        "descricaoItem": "[COMPETÊNCIA AVALIADA]\n// A descrição deve ser explícita, detalhada e, sempre que possível, quantitativa.\n// Ex. para PROCEDIMENTO: Realiza a técnica de sutura:\n(1) Utiliza a pinça de dente de rato;\n(2) Utiliza o porta-agulhas para dar o ponto;\n(3) Bordas da ferida bem coaptadas.",
+        "pontuacoes": {
+          "adequado": { "criterio": "[Critério objetivo e quantitativo. Ex: Realiza 5 ou mais etapas corretamente.]", "pontos": 0.0 },
+          "parcialmenteAdequado": { "criterio": "[Critério objetivo. Ex: Realiza 3 ou 4 etapas.]", "pontos": 0.0 },
+          "inadequado": { "criterio": "[Critério objetivo. Ex: Realiza 2 ou menos etapas.]", "pontos": 0 }
+        }
+      }
+    ]
+  }
+}

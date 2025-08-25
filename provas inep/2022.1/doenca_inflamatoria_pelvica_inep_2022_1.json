@@ -1,0 +1,361 @@
+{
+  "idEstacao": "INEP_2022_1_EST03_GINECOLOGIA_OBSTETRICIA_DOENCA_INFLAMATORIA_PELVICA",
+  "tituloEstacao": "Doença Inflamatória Pélvica",
+  "numeroDaEstacao": 3,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["doença inflamatória pélvica", "DIP", "dor abdominal", "corrimento vaginal", "ginecologia", "anexos", "toque vaginal", "antibiótico endovenoso", "complicações", "infertilidade", "atenção secundária"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Hospitalar",
+      "infraestruturaUnidade": [
+        "Consultórios para atendimento",
+        "Laboratório de análises clínicas",
+        "Laboratório de imagem (radiologia e ecografia)"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente de 18 anos encontra-se deitada em uma maca, com queixa de dor.",
+    "tarefasPrincipais": [
+      "Realizar anamnese",
+      "Solicitar exames pertinentes ao caso",
+      "Verbalizar hipótese diagnóstica e pelo menos dois diagnósticos diferenciais",
+      "Solicitar exames complementares, caso necessário",
+      "Propor à paciente o tratamento a ser realizado",
+      "Explicar à paciente pelo menos duas das possíveis complicações da doença",
+      "Dar orientações de seguimento à paciente"
+    ],
+    "avisosImportantes": [
+      "A PACIENTE SIMULADA NÃO DEVE SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Priscila.\nTenho 18 anos.\nSou estudante."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Dr.(a), estou com muita dor na barriga."
+      },
+      {
+        "contextoOuPerguntaChave": "DOR ABDOMINAL",
+        "informacao": "Localização: abaixo do umbigo.\nTempo de evolução: 2 dias.\nIntensidade: 4/10.\nIrradiação: sem irradiação.\nFatores de melhora: tomei diclofenaco e melhorou, mas voltou a doer.\nFatores de piora: Sem fatores de piora."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Corrimento vaginal: Percebi também que estou com um corrimento vaginal amarelo/esverdeado com cheiro forte."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: nega.\nCirurgias prévias: nega.\nAlergias: até hoje não tive nenhuma."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: nega.\nEtilismo: nega.\nDrogas ilícitas: nega."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS",
+        "informacao": "Data da última menstruação: há 8 dias.\nMenarca: aos 10 anos de idade.\nSexarca: aos 14 anos.\nVida sexual: múltiplos parceiros. Refere uso irregular de preservativo.\nPapanicolau: nunca realizado.\nContracepção: contraceptivo oral combinado."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES OBSTÉTRICOS",
+        "informacao": "Nega gestações, partos e abortos."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est3_exame_fisico_geral",
+        "tituloImpresso": "EXAME FÍSICO GERAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "DADOS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "120 × 80 mmHg"},
+                {"chave": "Temperatura", "valor": "37,5 °C"},
+                {"chave": "Frequência cardíaca", "valor": "90 bpm"},
+                {"chave": "Frequência respiratória", "valor": "12 irpm"},
+                {"chave": "Saturação periférica de oxigênio (SatO2)", "valor": "98%"}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME FÍSICO",
+              "itens": [
+                {"chave": "Auscultas cardíaca e pulmonar", "valor": "normais"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exame_fisico_abdominal",
+        "tituloImpresso": "EXAME FÍSICO ABDOMINAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME ABDOMINAL",
+              "itens": [
+                {"chave": "Abdome", "valor": "levemente distendido, ruídos hidroaéreos hipoativos difusamente e normotimpânicos"},
+                {"chave": "Palpação", "valor": "Palpação superficial e profunda com dor de média intensidade em todo o abdome difusamente"}
+              ]
+            },
+            {
+              "tituloSecao": "INSTRUÇÃO ESPECIAL",
+              "itens": [
+                {"chave": "Observação", "valor": "ATENÇÃO: Dirija-se a câmera e indique os demais passos da propedêutica de exame físico abdominal relativos ao caso, verbalizando como deve ser realizado esse procedimento."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_manobra_descompressao_brusca",
+        "tituloImpresso": "MANOBRA DE DESCOMPRESSÃO BRUSCA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "RESULTADO DA MANOBRA",
+              "itens": [
+                {"chave": "Resultado", "valor": "Ao realizar uma compressão forte seguida de descompressão brusca no lado inferior direito do abdome, a paciente simulada demonstra dor mais intensa, emitindo um grito"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exame_ginecologico",
+        "tituloImpresso": "EXAME GINECOLÓGICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "ACHADOS GINECOLÓGICOS",
+              "itens": [
+                {"chave": "Leucorreia", "valor": "amarelada com odor fétido"},
+                {"chave": "Colo uterino", "valor": "hiperemiado com muco turvo"},
+                {"chave": "Útero", "valor": "de volume normal"},
+                {"chave": "Anexos", "valor": "com dor à mobilização bilateral, mais acentuada à direita"},
+                {"chave": "Toque vaginal", "valor": "dor difusa ao toque vaginal e, principalmente, à mobilização do colo"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_exames_laboratoriais_gerais",
+        "tituloImpresso": "EXAMES LABORATORIAIS GERAIS",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "laudo": "OLHE PARA A CÂMERA E DESCREVA O EXAME."
+        }
+      },
+      {
+        "idImpresso": "est3_teste_gravidez",
+        "tituloImpresso": "TESTE DE GRAVIDEZ",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "RESULTADO",
+              "itens": [
+                {"chave": "BHCG", "valor": "negativo"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est3_ecografia_transvaginal",
+        "tituloImpresso": "ECOGRAFIA TRANSVAGINAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "ACHADOS ULTRASSONOGRÁFICOS",
+              "itens": [
+                {"chave": "Útero", "valor": "em anteversoflexão (AVF), com volume de 80 cm³"},
+                {"chave": "Endométrio", "valor": "com espessura de 5 mm"},
+                {"chave": "Ovário direito", "valor": "aumentado de tamanho, medindo 3,0 cm³, com presença de áreas hiperecogênicas vascularizadas, ocupando todo o parênquima ovariano, e área anecoica cística de aproximadamente 2 cm × 2 cm × 1,5 cm e com presença de pequena quantidade de líquido livre em fundo de saco"},
+                {"chave": "Ovário esquerdo", "valor": "de 3,5 cm³, sem alterações morfológicas"}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST03_GO_DOENCA_INFLAMATORIA_PELVICA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Paciente de 18 anos, estudante, com dor abdominal há 2 dias localizada abaixo do umbigo, associada a corrimento vaginal amarelo-esverdeado com odor fétido. Exame físico evidencia dor à palpação abdominal difusa e manobra de descompressão brusca positiva. Exame ginecológico revela leucorreia, colo hiperemiado e dor à mobilização dos anexos bilateral. Ultrassom transvaginal mostra ovário direito aumentado com áreas hiperecogênicas e líquido livre em fundo de saco, compatível com doença inflamatória pélvica.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada sobre características da dor abdominal e corrimento vaginal",
+        "Investigação de antecedentes ginecológicos e comportamento sexual de risco",
+        "Interpretação adequada dos exames físicos abdominal e ginecológico",
+        "Diagnóstico de doença inflamatória pélvica e estabelecimento de diagnósticos diferenciais",
+        "Indicação de internação e tratamento com antibiótico endovenoso",
+        "Orientação sobre complicações e tratamento do parceiro sexual"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est3_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta e\n(2) se apresenta à paciente simulada.\n\nAdequado: realiza os dois itens.\nParcialmente adequado: realiza apenas um dos itens.\nInadequado: não realiza nenhuma dos itens.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza os dois itens", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "realiza apenas um dos itens", "pontos": 0.125},
+          "inadequado": {"criterio": "não realiza nenhuma dos itens", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre:\n(1) características da dor;\n(2) febre; e\n(3) vômitos.\n\nAdequado: pergunta sobre dois ou três sintomas.\nParcialmente adequado: pergunta sobre apenas um sintoma.\nInadequado: não pergunta sobre nenhum sintoma.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre dois ou três sintomas", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "pergunta sobre apenas um sintoma", "pontos": 0.25},
+          "inadequado": {"criterio": "não pergunta sobre nenhum sintoma", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre anticoncepção.\n\nAdequado: pergunta sobre anticoncepção.\nInadequado: não pergunta sobre anticoncepção.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta sobre anticoncepção", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta sobre anticoncepção", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta a data da última menstruação.\n\nAdequado: pergunta a data da última menstruação.\nInadequado: não pergunta a data da última menstruação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta a data da última menstruação", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não pergunta a data da última menstruação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita teste de gravidez.\n\nAdequado: solicita teste de gravidez.\nInadequado: não solicita teste de gravidez.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita teste de gravidez", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não solicita teste de gravidez", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Verbaliza corretamente a manobra de descompressão brusca abdominal (compressão seguida de descompressão).\n\nAdequado: verbaliza a manobra.\nInadequado: não verbaliza a manobra ou verbaliza incorretamente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "verbaliza a manobra", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não verbaliza a manobra ou verbaliza incorretamente", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Refere a necessidade de realizar exame ginecológico (ou exame de toque vaginal ou exame especular).\n\nAdequado: refere a necessidade de realizar o exame.\nInadequado: não refere a necessidade do exame.",
+        "pontuacoes": {
+          "adequado": {"criterio": "refere a necessidade de realizar o exame", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não refere a necessidade do exame", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Realiza o diagnóstico de doença inflamatória pélvica.\n\nAdequado: realiza o diagnóstico correto.\nInadequado: menciona outras hipóteses diagnósticas, ou não realiza o diagnóstico, ou não identifica como diagnóstico a doença inflamatória pélvica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza o diagnóstico correto", "pontos": 1.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "menciona outras hipóteses diagnósticas, ou não realiza o diagnóstico, ou não identifica como diagnóstico a doença inflamatória pélvica", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Cita os diagnósticos diferenciais mais importantes:\n(1) apendicite;\n(2) gestação ectópica;\n(3) cisto de ovário roto; e\n(4) torção ovariana.\n\nAdequado: cita corretamente dois ou mais diagnósticos diferenciais.\nParcialmente adequado: cita corretamente apenas um diagnóstico diferencial.\nInadequado: cita outros diagnósticos diferenciais ou não cita nenhum diagnóstico diferencial.",
+        "pontuacoes": {
+          "adequado": {"criterio": "cita corretamente dois ou mais diagnósticos diferenciais", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "cita corretamente apenas um diagnóstico diferencial", "pontos": 0.5},
+          "inadequado": {"criterio": "cita outros diagnósticos diferenciais ou não cita nenhum diagnóstico diferencial", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Indica internação hospitalar (1) e a justifica corretamente, citando peritonite e/ou abcesso tubo-ovariano (2).\n\nAdequado: realiza as duas tarefas.\nParcialmente adequado: realiza apenas a indicação, sem justificar.\nInadequado: não indica a internação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas tarefas", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "realiza apenas a indicação, sem justificar", "pontos": 0.5},
+          "inadequado": {"criterio": "não indica a internação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Orienta tratamento com antibiótico endovenoso.\n\nAdequado: orienta o tratamento com antibiótico endovenoso.\nInadequado: não orienta o tratamento com antibiótico endovenoso ou orienta o tratamento com antibiótico por via oral.",
+        "pontuacoes": {
+          "adequado": {"criterio": "orienta o tratamento com antibiótico endovenoso", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não orienta o tratamento com antibiótico endovenoso ou orienta o tratamento com antibiótico por via oral", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Orienta o tratamento do parceiro sexual.\n\nAdequado: orienta o tratamento.\nInadequado: não orienta o tratamento.",
+        "pontuacoes": {
+          "adequado": {"criterio": "orienta o tratamento", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não orienta o tratamento", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Refere complicações futuras que podem ocorrer com a paciente:\n(1) infertilidade;\n(2) sinequias intrauterinas;\n(3) dor pélvica crônica;\n(4) gravidez ectópica e\n(5) Perihepatite ou Síndrome de Fitz -Hugh Curtis.\n\nAdequado: refere corretamente duas ou mais complicações.\nParcialmente adequado: refere apenas uma complicação.\nInadequado: refere outras complicações ou não refere nenhuma complicação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "refere corretamente duas ou mais complicações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "refere apenas uma complicação", "pontos": 0.25},
+          "inadequado": {"criterio": "refere outras complicações ou não refere nenhuma complicação", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Refere a necessidade de realização de exames para outras ITS/ISTs/DSTs.\n\nAdequado: refere a necessidade de realização de exame(s) para ITS/ISTs/DSTs.\nInadequado: não refere a necessidade de realização de exame(s).",
+        "pontuacoes": {
+          "adequado": {"criterio": "refere a necessidade de realização de exame(s) para ITS/ISTs/DSTs", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "-", "pontos": "-"},
+          "inadequado": {"criterio": "não refere a necessidade de realização de exame(s)", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est3_item15",
+        "itemNumeroOficial": "15",
+        "descricaoItem": "Orienta, como medida de prevenção, o uso de preservativo e refere que a multiplicidade de parceiros é um fator de risco.\n\nAdequado: orienta sobre o uso de preservativos e refere o número de parceiros como fator de risco.\nParcialmente adequado: apenas orienta sobre o uso de preservativos ou apenas refere o número de parceiros como fator de risco.\nInadequado: não orienta sobre o uso de preservativos e não refere o número de parceiros como fator de risco.",
+        "pontuacoes": {
+          "adequado": {"criterio": "orienta sobre o uso de preservativos e refere o número de parceiros como fator de risco", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "apenas orienta sobre o uso de preservativos ou apenas refere o número de parceiros como fator de risco", "pontos": 0.125},
+          "inadequado": {"criterio": "não orienta sobre o uso de preservativos e não refere o número de parceiros como fator de risco", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

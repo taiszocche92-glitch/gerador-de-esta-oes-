@@ -1,0 +1,300 @@
+{
+  "idEstacao": "INEP_2024_2_EST9_GINECOLOGIA_E_OBSTETRICIA_VIOLENCIA_SEXUAL",
+  "tituloEstacao": "Atendimento à Vítima de Violência Sexual",
+  "numeroDaEstacao": 9,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "violência sexual",
+    "profilaxia pós-exposição",
+    "PEP",
+    "contracepção de emergência",
+    "ginecologia e obstetrícia",
+    "atenção secundária"
+  ],
+  "nivelDificuldade": "Difícil",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção secundária à saúde",
+      "tipoAtendimento": "Urgência e emergência",
+      "infraestruturaUnidade": [
+        "Laboratório de análises clínicas",
+        "Farmácia para fornecimento de medicações",
+        "Equipe de enfermagem e equipe médica",
+        "Equipe de psicologia",
+        "Equipe de segurança"
+      ]
+    },
+    "descricaoCasoCompleta": "Uma mulher procura o serviço de emergência ginecológica após sofrer violência sexual. Está com medo e muito aflita com o acontecido.",
+    "tarefasPrincipais": [
+      "Realizar anamnese da paciente.",
+      "Solicitar, se necessário, exames complementares pertinentes à situação clínica (serão pontuados apenas os 10 primeiros exames complementares mencionados).",
+      "Indicar, se necessário, medicações a serem prescritas.",
+      "Responder às perguntas da paciente de forma completa, justificando os motivos das orientações.",
+      "Encaminhar a paciente, se necessário, para avaliação de outros profissionais.",
+      "Orientar e indicar condutas relativas ao caso clínico de violência sexual."
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Vanessa.\nTenho 28 anos.\nTrabalho como camareira em um hotel."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Eu fui estuprada... Estou com muito medo."
+      },
+      {
+        "contextoOuPerguntaChave": "SOBRE A VIOLÊNCIA SEXUAL",
+        "informacao": "Aconteceu há umas 30 horas, no hotel onde eu trabalho. Foi um hóspede, um homem que eu não conheço. Ele me segurou e ameaçou, mas não me bateu. Não usamos preservativo e ele ejaculou na minha vagina."
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "Sintomas físicos: Não sinto nada fisicamente, não tenho nenhuma queixa ginecológica, não percebi nenhuma lesão no meu corpo e não sinto dor.\nEstado emocional: Estou traumatizada, com muito medo de voltar a trabalhar."
+      },
+      {
+        "contextoOuPerguntaChave": "EXAME FÍSICO",
+        "informacao": "Eu não quero ser examinada, por favor."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECO-OBSTÉTRICOS",
+        "informacao": "Gestações: Nunca engravidei.\nCiclo menstrual: Meu ciclo é regular, a cada 28 dias. Minha última menstruação foi há 10 dias.\nContracepção: Não uso nenhum método contraceptivo.\nVida Sexual: Sou solteira, não mantinha relações sexuais há 3 meses."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Não tenho problemas de saúde.\nCirurgias prévias: Nunca passei por cirurgias.\nAlergias: Não tenho alergias.\nMedicamentos em uso contínuo: Não faço uso de medicamentos."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Etilismo: Não bebo.\nTabagismo: Não fumo.\nDrogas ilícitas: Não uso drogas."
+      },
+      {
+        "contextoOuPerguntaChave": "BOLETIM DE OCORRÊNCIA (BO)",
+        "informacao": "Não registrei boletim de ocorrência. Não sei se quero fazer o registro."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não consta no script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est9_cartao_vacinas",
+        "tituloImpresso": "IMPRESSO - CARTÃO DE VACINAS",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://firebasestorage.googleapis.com/v0/b/revalida-page.appspot.com/o/Cartao_Vacina_VS.png?alt=media&token=4891b921-998e-49b2-9a2e-46141a783789",
+          "laudo": "Cartão de vacinação com esquema completo para Difteria e tétano (dt), Tríplice viral (SCR), Hepatite B e Febre amarela. Quatro doses de vacina para COVID-19. Sem registro de vacina para HPV."
+        }
+      },
+      {
+        "idImpresso": "est9_labs",
+        "tituloImpresso": "IMPRESSO - EXAMES LABORATORIAIS",
+        "tipoConteudo": "tabela",
+        "conteudo": {
+          "cabecalhos": ["Exame", "Resultado", "Valores de referência"],
+          "linhas": [
+            {"celulas": ["Eritrograma", "sem alterações", ""]},
+            {"celulas": ["Leucograma", "sem alterações", ""]},
+            {"celulas": ["Plaquetograma", "sem alterações", ""]},
+            {"celulas": ["Anticorpos Anti-HCV", "0,05", "Não reagente: < 0,90"]},
+            {"celulas": ["Anticorpos Anti HIV 1 e 2", "Não reagente", "Não reagente"]},
+            {"celulas": ["Anti-Treponema Pallidum", "0,08", "Não reagente: < 1,00"]},
+            {"celulas": ["HBsAg", "0,45", "Não reagente: < 0,90"]},
+            {"celulas": ["Anticorpo anti-HBs", "15,25", "Reagente: ≥ 10,00"]},
+            {"celulas": ["HCG", "< 0,2", "Negativo: < 4,9"]},
+            {"celulas": ["TGO (AST)", "20 U/L", "< 34 U/L"]},
+            {"celulas": ["TGP (ALT)", "23 U/L", "10-49 U/L"]}
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": [
+      {
+        "momento": "Durante a consulta.",
+        "pergunta": "Preciso tomar alguma vacina?"
+      },
+      {
+        "momento": "Durante a consulta.",
+        "pergunta": "É obrigatório registrar o B.O. para receber atendimento médico?"
+      },
+      {
+        "momento": "Ao final da consulta, após as orientações.",
+        "pergunta": "Vou precisar usar algum medicamento?"
+      }
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST9_GO_VS_2024V2_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 28 anos procura serviço de emergência ginecológica 30 horas após sofrer violência sexual por desconhecido, sem uso de preservativo e com ejaculação vaginal.",
+      "focoPrincipalDetalhado": [
+        "Acolher e prestar atendimento à paciente em contexto de violência sexual, tranquilizando-a e orientando-a quanto à dispensa do boletim de ocorrência (BO) para a realização do atendimento médico.",
+        "Orientar que registrar o BO é um direito da paciente.",
+        "Prescrever contracepção de emergência.",
+        "Orientar que, no contexto do caso clínico, não será necessário realizar vacinação para Hepatite B, mas sim para HPV.",
+        "Solicitar sorologias (HIV/ Anti HCV / HBS Ag / VDRL ou Teste Rápido para Sífilis).",
+        "Prescrever profilaxia para ISTs (Ceftriaxona + Penicilina Benzatina + Azitromicina) e profilaxia pós-exposição ao HIV (Tenofovir + Lamivudina + dolutegravir).",
+        "Informar a necessidade de Notificação Compulsória.",
+        "Encaminhar a paciente para seguimento com equipe de Psicologia."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est9_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresenta-se:\n(1) cumprimenta a paciente com empatia e/ou fala o seu nome;\n(2) pergunta mais algum elemento de identificação como idade ou profissão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.1},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Realiza uma ação ou não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre a violência sexual:\n(1) tempo transcorrido desde a violência sofrida;\n(2) local onde ocorreu;\n(3) se conhecia o agressor;\n(4) de que maneira foi o abuso (penetração vaginal, oral ou anal ou outra OU uso de preservativo); e,\n(5) se houve algum ferimento ou agressão física.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta os cinco itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta três ou quatro itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um ou dois itens ou não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta sobre história clínica/ginecológica/obstétrica:\n(1) quantidade de gestações prévias;\n(2) data da última menstruação;\n(3) uso de método contraceptivo;\n(4) alergia a medicações;\n(5) medicação de uso contínuo OU comorbidades; e,\n(6) tempo desde a última relação sexual.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta cinco ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta três ou quatro itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um ou dois itens ou não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Orienta que o Boletim de Ocorrência (BO):\n(1) não é necessário para o atendimento médico.\n(2) é um direito da paciente realizar BO.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta os dois itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Orienta um item.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não orienta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Orienta sobre a importância de coleta de material vaginal para fins legais.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não orienta.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita o cartão OU caderneta de vacinas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.25},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita exames laboratoriais para acompanhamento do caso:\n(1) Hemograma;\n(2) Transaminases (TGO/TGP); e,\n(3) Teste de Gravidez ou Beta HCG.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os três exames.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Solicita dois exames.", "pontos": 0.25},
+          "inadequado": {"criterio": "Solicita um exame ou não solicita exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Orienta vacinação de HPV, pois paciente é vítima de violência sexual com menos de 45 anos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Conforme item 14.6 do Edital, a pontuação correspondente ao item será atribuída a todos os participantes.", "pontos": 0},
+          "parcialmenteAdequado": {"criterio": "", "pontos": 0},
+          "inadequado": {"criterio": "", "pontos": 0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Solicita exames séricos:\n(1) HIV (Teste rápido ou Sorologia);\n(2) Sífilis (VDRL ou Teste rápido);\n(3) Anti-HCV; e,\n(4) HBS Ag/Anti-Hbs.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita os quatro exames.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Solicita dois ou três exames.", "pontos": 0.5},
+          "inadequado": {"criterio": "Solicita um exame ou não solicita exame algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Orienta a contracepção de emergência:\n(1) Levonorgestrel 1,5mg ou 2 comprimidos de 0,75mg-via oral.\n(2) Método Yuzpe (anticoncepcional oral com Etinilestradiol 30µg/150µg de levonorgestrel: 4 comprimidos de 12/12h ou 8 comprimidos em dose única).\n(3) inserção de DIU de cobre.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta um dos itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Orienta a contracepção de emergência de forma incompleta.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não orienta contracepção de emergência.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Indica a profilaxia contra ISTs Não Virais:\n(1) Ceftriaxona;\n(2) Azitromicina; e,\n(3) Penicilina Benzatina ou Benzetacil.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica as três medicações.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Indica duas medicações.", "pontos": 0.5},
+          "inadequado": {"criterio": "Indica uma medicação ou não indica medicação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Indica profilaxia contra HIV:\n(1) Tenofovir (TDF);\n(2) Lamivudina [3TC]; e,\n(3) Dolutegravir [DTG].",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica os três medicamentos.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Indica um ou dois medicamentos ou indica de forma incompleta.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não indica medicamento algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Oferece atendimento psicológico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Oferece.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não oferece.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item14",
+        "itemNumeroOficial": "14",
+        "descricaoItem": "Orienta o seguimento médico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Oferece.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não oferece.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item15",
+        "itemNumeroOficial": "15",
+        "descricaoItem": "Verbaliza a necessidade de notificação do caso ao SINAN.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Verbaliza.", "pontos": 0.9},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": null},
+          "inadequado": {"criterio": "Não verbaliza.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

@@ -1,0 +1,270 @@
+   {
+    "idEstacao": "INEP_2024_1_EST1_CLINICA_MEDICA_BUDDCHIARI",
+    "tituloEstacao": "Ascite e Hipertensão Portal: Síndrome de Budd-Chiari",
+    "numeroDaEstacao": 1,
+    "especialidade": "CLÍNICA MÉDICA",
+    "tempoDuracaoMinutos": 10,
+    "palavrasChave": [
+      "Aumento abdominal",
+      "Hipertensão portal",
+      "Ascite",
+      "Síndrome de Budd-Chiari",
+      "Clínica Médica",
+      "Atenção primária"
+    ],
+    "nivelDificuldade": "Médio",
+    "instrucoesParticipante": {
+      "cenarioAtendimento": {
+        "nivelAtencao": "Atenção primária à saúde",
+        "tipoAtendimento": "Ambulatorial",
+        "infraestruturaUnidade": [
+          "Laboratório de Exames Clínicos",
+          "Unidade de Radiologia"
+        ]
+      },
+      "descricaoCasoCompleta": "Você é médico(a) de uma Unidade Básica de Saúde (UBS). Vai atender a paciente Eliana, 26 anos de idade, costureira, com queixa de aumento do volume abdominal.",
+      "tarefasPrincipais": [
+        "realizar a anamnese;",
+        "solicitar o exame físico;",
+        "realizar o exame do abdome no manequim (PALPAÇÃO E PERCUSSÃO), nomeando e descrevendo as manobras realizadas;",
+        "interpretar os achados do exame físico do abdome;",
+        "relacionar os resultados dos exames às hipóteses diagnósticas;",
+        "estabelecer hipótese diagnóstica e definir plano de seguimento."
+      ],
+      "avisosImportantes": [
+        "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE!",
+        "A PACIENTE SIMULADA NÃO DEVERÁ SER TOCADA DURANTE O ATENDIMENTO."
+      ]
+    },
+    "materiaisDisponiveis": {
+      "informacoesVerbaisSimulado": [
+        {
+          "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+          "informacao": "Meu nome é Eliana.\nTenho 26 anos.\nSou casada.\nSou costureira."
+        },
+        {
+          "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+          "informacao": "Vim à consulta porque percebi que minha barriga está inchando e aumentando de tamanho nos últimos 3 meses."
+        },
+        {
+          "contextoOuPerguntaChave": "AUMENTO ABDOMINAL",
+          "informacao": "Início: há 3 meses, progressivo.\nFatores de piora: Não identifiquei.\nFatores de melhora: Não identifiquei.\nInformações adicionais: Achei que poderia ser gravidez, mas já fiz dois testes que deram negativo."
+        },
+        {
+          "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+          "informacao": "Desconforto abdominal: Leve, no lado direito superior da barriga (hipocôndrio direito), que melhora com dipirona.\nOutros sintomas: Nego febre, calafrios, pele amarela, mudança na cor do xixi ou do cocô, náuseas, vômitos ou diarreia."
+        },
+        {
+          "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+          "informacao": "Doenças crônicas: Nenhuma.\nCirurgias prévias: Nenhuma.\nInternações: Nenhuma.\nAlergias: Nenhuma.\nMedicamentos em uso contínuo: Anticoncepcional oral."
+        },
+        {
+          "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+          "informacao": "Atividade física: Sou sedentária.\nTabagismo: Não fumo.\nEtilismo: Não bebo.\nDrogas ilícitas: Não uso."
+        },
+        {
+          "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+          "informacao": "Pai: Hipertenso.\nMãe: Não sei de doenças.\nOutras doenças na família: Desconheço."
+        },
+        {
+          "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+          "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+        }
+      ],
+      "impressos": [
+        {
+          "idImpresso": "est1_exame_fisico_geral",
+          "tituloImpresso": "IMPRESSO – EXAME FÍSICO GERAL",
+          "tipoConteudo": "lista_chave_valor_secoes",
+          "conteudo": {
+            "secoes": [
+              {
+                "tituloSecao": "SINAIS VITAIS E ANTROPOMETRIA",
+                "itens": [
+                  {"chave": "Frequência cardíaca", "valor": "68 bpm"},
+                  {"chave": "Pressão arterial", "valor": "115 x 65 mmHg"},
+                  {"chave": "Frequência respiratória", "valor": "16 irpm"},
+                  {"chave": "Temperatura axilar", "valor": "36,2 °C"},
+                  {"chave": "Saturação de oxigênio", "valor": "97% em ar ambiente"},
+                  {"chave": "IMC", "valor": "24 kg/m²"}
+                ]
+              },
+              {
+                "tituloSecao": "EXAME GERAL",
+                "itens": [
+                  {"chave": "Estado Geral", "valor": "Bom estado geral, afebril, corada, acianótica, anictérica e hidratada; alerta, orientada no tempo e espaço."},
+                  {"chave": "Pescoço", "valor": "Ausência de estase jugular (tronco entre 30° e 45°)."},
+                  {"chave": "Aparelho Respiratório", "valor": "Ausculta com murmúrio vesicular presente bilateralmente, sem ruídos adventícios."},
+                  {"chave": "Aparelho Cardiovascular", "valor": "Ritmo cardíaco regular em dois tempos, com bulhas normofonéticas; ausência de sopros."},
+                  {"chave": "Extremidades", "valor": "Bem perfundidas, sem edemas."}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idImpresso": "est1_exame_figado",
+          "tituloImpresso": "IMPRESSO – EXAME FÍSICO DO FÍGADO",
+          "tipoConteudo": "lista_chave_valor_secoes",
+          "conteudo": {
+            "secoes": [
+              {
+                "tituloSecao": "AVALIAÇÃO DO FÍGADO",
+                "itens": [
+                  {"chave": "Percussão", "valor": "Fígado com bordo superior ao nível do 6º espaço intercostal direito e inferior 2 cm abaixo do rebordo costal direito."},
+                  {"chave": "Palpação", "valor": "Fígado palpável 2 cm abaixo do rebordo costal direito, bordos regulares e lisos, levemente doloroso à palpação."}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idImpresso": "est1_exame_baco",
+          "tituloImpresso": "IMPRESSO - EXAME FÍSICO DO BAÇO",
+          "tipoConteudo": "lista_chave_valor_secoes",
+          "conteudo": {
+            "secoes": [
+              {
+                "tituloSecao": "AVALIAÇÃO DO BAÇO",
+                "itens": [
+                  {"chave": "Percussão", "valor": "Espaço de Traube maciço."},
+                  {"chave": "Palpação", "valor": "Baço não palpável."}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idImpresso": "est1_exame_ascite",
+          "tituloImpresso": "IMPRESSO – EXAME FÍSICO DA ASCITE",
+          "tipoConteudo": "lista_chave_valor_secoes",
+          "conteudo": {
+            "secoes": [
+              {
+                "tituloSecao": "PESQUISA DE ASCITE",
+                "itens": [
+                  {"chave": "Semicírculo de Skoda", "valor": "Positivo"},
+                  {"chave": "Macicez Móvel", "valor": "Positivo"},
+                  {"chave": "Piparote", "valor": "Negativo"}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idImpresso": "est1_usg_abdome",
+          "tituloImpresso": "IMPRESSO – ULTRASSONOGRAFIA DE ABDOME",
+          "tipoConteudo": "imagemComLaudo",
+          "conteudo": {
+            "urlImagem": "https://i.imgur.com/sY7w8qH.jpeg",
+            "laudo": "Fígado com padrão ecogênico levemente irregular, com aumento do lobo caudado. Irregularidade e difícil identificação das veias hepáticas. Impossibilidade de visibilização da junção com a veia cava inferior. Baço medindo 15 cm com dilatação da veia esplênica, veia esplênica com calibre de 23 mm (valor normal de 3 a 21 mm). Visualização de varizes perigástricas. Presença de ascite."
+          }
+        }
+      ],
+      "perguntasAtorSimulado": [
+        {
+          "contexto": "Após o diagnóstico",
+          "pergunta": "Doutor(a), o que eu tenho? É grave?"
+        },
+        {
+          "contexto": "Após a conduta",
+          "pergunta": "E qual o tratamento para isso?"
+        }
+      ]
+    },
+    "padraoEsperadoProcedimento": {
+      "idChecklistAssociado": "PEP_EST1_CM_BUDDCHIARI_2024V1_1",
+      "sinteseEstacao": {
+        "resumoCasoPEP": "Mulher de 26 anos, em uso de anticoncepcional oral, com aumento progressivo do volume abdominal há 3 meses e leve desconforto em hipocôndrio direito. Ultrassonografia sugestiva de Síndrome de Budd-Chiari com ascite moderada.",
+        "focoPrincipalDetalhado": [
+          "Realização de anamnese direcionada à queixa de aumento abdominal, investigando sintomas de hipertensão portal.",
+          "Realização das manobras de percussão e palpação de fígado e baço, e pesquisa de ascite.",
+          "Interpretação dos achados do exame físico e da ultrassonografia de abdome.",
+          "Formulação da hipótese diagnóstica de hipertensão portal com ascite (Síndrome de Budd-Chiari) e proposição de conduta (investigação etiológica e/ou encaminhamento)."
+        ]
+      },
+      "itensAvaliacao": [
+        {
+          "idItem": "pep_est1_item01",
+          "itemNumeroOficial": "1",
+          "descricaoItem": "Apresentação:\n(1) identifica-se; e,\n(2) cumprimenta a paciente simulado e pergunta seu nome.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.5},
+            "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.25},
+            "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item02",
+          "itemNumeroOficial": "2",
+          "descricaoItem": "Pergunta a existência de outros sinais, ou sintomas associados, que sejam relevantes para o estabelecimento de diagnósticos diferenciais:\n(1) dor;\n(2) náuseas;\n(3) vômitos;\n(4) diarreia OU alterações das fezes OU alterações do hábito intestinal OU mudança no cocô OU presença de sangue vivo ou escuro nas fezes;\n(5) disúria OU dor ao urinar OU ardência ao urinar OU oligúria;\n(6) febre OU sudorese OU calafrios;\n(7) icterícia OU pele amarela OU alterações da pele OU mudança da cor da pele OU prurido;\n(8) alteração na cor das fezes OU acolia OU fezes/cocô esbranquiçado; e,\n(9) alteração na cor do xixi OU colúria OU urina escurecida.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Investiga seis ou mais itens.", "pontos": 1.0},
+            "parcialmenteAdequado": {"criterio": "Investiga de um a cinco itens.", "pontos": 0.5},
+            "inadequado": {"criterio": "Não investiga item algum.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item03",
+          "itemNumeroOficial": "3",
+          "descricaoItem": "Pergunta sobre:\n(1) fatores de melhora ou atenuantes; e,\n(2) fatores de piora ou agravantes.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Pergunta os dois itens.", "pontos": 1.0},
+            "parcialmenteAdequado": {"criterio": "Pergunta apenas um item.", "pontos": 0.5},
+            "inadequado": {"criterio": "Não pergunta item algum.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item04",
+          "itemNumeroOficial": "4",
+          "descricaoItem": "Realiza o exame no fígado:\n(1) palpação; e,\n(2) percussão.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Realiza os dois itens.", "pontos": 1.5},
+            "parcialmenteAdequado": {"criterio": "Realiza apenas um item.", "pontos": 0.75},
+            "inadequado": {"criterio": "Não realiza item algum.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item05",
+          "itemNumeroOficial": "5",
+          "descricaoItem": "Realiza:\n(1) palpação esplênica; e,\n(2) percussão esplênica.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Realiza uma técnica de percussão esplênica e realiza uma técnica de palpação esplênica.", "pontos": 1.5},
+            "parcialmenteAdequado": {"criterio": "Realiza apenas a palpação esplênica OU realiza apenas a percussão esplênica.", "pontos": 0.75},
+            "inadequado": {"criterio": "Não realiza a palpação nem realiza a percussão esplênica.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item06",
+          "itemNumeroOficial": "6",
+          "descricaoItem": "Realiza pesquisa de ascite por pelo menos duas técnicas (Semicírculo de Skoda, Macicez Móvel, Piparote, Sinal da Poça).",
+          "pontuacoes": {
+            "adequado": {"criterio": "Realiza duas técnicas de pesquisa de ascite.", "pontos": 2.0},
+            "parcialmenteAdequado": {"criterio": "Realiza apenas uma técnica de pesquisa de ascite.", "pontos": 1.0},
+            "inadequado": {"criterio": "Não realiza nenhuma técnica de pesquisa de ascite.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item07",
+          "itemNumeroOficial": "7",
+          "descricaoItem": "Formula hipótese diagnóstica de:\n(1) ascite;\n(2) por hipertensão portal.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Formula o diagnóstico citando os dois itens.", "pontos": 1.5},
+            "parcialmenteAdequado": {"criterio": "Formula o diagnóstico citando um item.", "pontos": 0.75},
+            "inadequado": {"criterio": "Não formula diagnóstico OU formula diagnóstico não citando item algum.", "pontos": 0.0}
+          }
+        },
+        {
+          "idItem": "pep_est1_item08",
+          "itemNumeroOficial": "8",
+          "descricaoItem": "Elabora plano de seguimento da paciente:\n(1) solicita pelo menos um exame complementar dentre os seguintes: ultrassonografia com Doppler, ressonância magnética, tomografia, provas de função hepática (proteínas/albumina, coagulograma/INR, bilirrubinas), sorologias para hepatites virais, autoanticorpos, AST, ALT, perfil de ferro, dosagem de cobre sérico ou urinário, ceruloplasmina, paracentese, cálculo do GASA; e\n(2) encaminhamento para seguimento em avaliação terciária com gastroenterologia ou com hepatologista.",
+          "pontuacoes": {
+            "adequado": {"criterio": "Elabora plano de seguimento contendo o encaminhamento da paciente (2) e solicita pelo menos um dos exames relacionados (1).", "pontos": 1.0},
+            "parcialmenteAdequado": {"criterio": "Apenas solicita exame (1) OU apenas encaminha ao especialista (2)", "pontos": 0.5},
+            "inadequado": {"criterio": "Não encaminha a paciente na forma do item (2) nem solicita algum dos exames listados no item (1).", "pontos": 0.0}
+          }
+        }
+      ],
+      "pontuacaoTotalEstacao": 10.0
+    }
+  }

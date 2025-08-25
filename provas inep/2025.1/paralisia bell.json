@@ -1,0 +1,235 @@
+{
+  "idEstacao": "INEP_2025_1_EST6_CLINICA_MEDICA_PARALISIA_BELL",
+  "tituloEstacao": "Paralisia de Bell",
+  "numeroDaEstacao": 6,
+  "especialidade": "CLÍNICA MÉDICA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "paralisia facial periférica",
+    "paralisia de Bell",
+    "nervo facial",
+    "clínica médica",
+    "atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Demanda espontânea",
+      "infraestruturaUnidade": [
+        "Consultórios"
+      ]
+    },
+    "descricaoCasoCompleta": "Você é um médico atuando em uma UBSF e atenderá um paciente que se queixa de sentir o rosto diferente e não conseguir fechar o olho direito completamente, há cerca de 4 horas.",
+    "tarefasPrincipais": [
+      "Realizar anamnese direcionada à queixa do paciente;",
+      "Realizar exame físico direcionado à queixa do paciente;",
+      "Solicitar demais exames pertinentes ao caso;",
+      "Formular o diagnóstico específico mais provável;",
+      "Estabelecer a conduta adequada;",
+      "Explicar o prognóstico ao paciente."
+    ],
+    "avisosImportantes": [
+      "O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO.",
+      "NO CASO DO EXAME FÍSICO, VOCÊ DEVERÁ DESCREVER PARA O PACIENTE AS MANOBRAS A SEREM EXECUTADAS. O PACIENTE SIMULADO NÃO REAGIRÁ E, AO FINAL, VOCÊ RECEBERÁ O RESULTADO DESSE EXAME."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Carlos.\nTenho 30 anos.\nSou solteiro.\nTrabalho como administrador em uma empresa de consultoria."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Acordei hoje sentindo meu rosto estranho, não consigo fechar meu olho direito direito e, quando me olhei no espelho, vi que minha boca estava torta para um lado."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRIA DA DOENÇA ATUAL - ALTERAÇÃO FACIAL",
+        "informacao": "Início: Há 4 horas, quando acordei.\nEvolução: Vem piorando.\nSintomas associados: Percebi que o olho direito está mais seco e tive dificuldade de falar algumas palavras com 'P' e 'B'.\nOutros sintomas: Não senti mais nada além disso."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Nenhuma, sempre fui saudável.\nEventos similares: Nunca senti isso antes.\nTrauma ou lesão recente: Não sofri nenhum trauma.\nInfecções recentes: Não tive."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: Jogo futebol com os amigos uma ou duas vezes por semana.\nAlimentação: Não cometo excessos, sempre fui magro.\nTabagismo: Não fumo e nunca fumei.\nEtilismo: Não bebo e nunca bebi.\nSono e Estresse: Neste último mês, tenho dormido um pouco mais tarde e ando um pouco mais preocupado com o trabalho, pois é época de fechar o orçamento anual."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Não há histórico de doenças na família."
+      },
+      {
+        "contextoOuPerguntaChave": "MEDICAÇÕES",
+        "informacao": "Não faço uso de nenhum medicamento, vitamina ou suplemento."
+      },
+      {
+        "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR: Resposta a perguntas não previstas",
+        "informacao": "Se o candidato realizar outras perguntas não previstas no script, responder \"Não Consta no Script\"."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est6_exame_face",
+        "tituloImpresso": "IMPRESSO - EXAME DA FACE",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/example_face.png",
+          "laudo": "As imagens demonstram paralisia da hemiface direita, com incapacidade de enrugar a testa, fechar o olho, sorrir e assobiar do lado direito. Demais pares cranianos sem alterações."
+        }
+      },
+      {
+        "idImpresso": "est6_exame_neuro_geral",
+        "tituloImpresso": "IMPRESSO - EXAME NEUROLÓGICO GERAL",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "AVALIAÇÃO NEUROLÓGICA",
+              "itens": [
+                {"chave": "Pupilas", "valor": "Isocóricas e fotorreagentes."},
+                {"chave": "Força Muscular", "valor": "5/5 nos membros superiores (bíceps, tríceps) e membros inferiores (quadríceps, posterior da coxa, panturilha e tibial anterior)."},
+                {"chave": "Reflexos Tendinosos", "valor": "2/2 (bíceps, tríceps, patelar e aquileu)."},
+                {"chave": "Manobra de Romberg", "valor": "Sem alterações."},
+                {"chave": "Marcha", "valor": "Normal."}
+              ]
+            },
+            {
+              "tituloSecao": "Observação",
+              "itens": [
+                {"chave": "Nota", "valor": "Essa avaliação não contempla o exame dos pares cranianos."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est6_otoscopia",
+        "tituloImpresso": "IMPRESSO - OTOSCOPIA",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "urlImagem": "https://i.imgur.com/example_otoscopy.png",
+          "laudo": "Otoscopia direita e esquerda sem alterações."
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST6_CM_PARALISIABELL_2025V1_01",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Homem de 30 anos apresenta-se com quadro agudo de paralisia facial periférica à direita, sem outros déficits neurológicos. O caso foca no diagnóstico diferencial, na conduta terapêutica e na orientação sobre o prognóstico.",
+      "focoPrincipalDetalhado": [
+        "Realizar anamnese para diferenciar paralisia facial periférica de central.",
+        "Executar exame neurológico focado no VII par craniano.",
+        "Formular o diagnóstico de Paralisia de Bell (paralisia facial periférica idiopática).",
+        "Estabelecer a conduta com corticoterapia, cuidados oculares e orientação para reavaliação.",
+        "Explicar o prognóstico geralmente favorável da condição."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est6_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta o paciente;\n(2) identifica-se e pergunta o nome do paciente;\n(3) pergunta o motivo da consulta ou a queixa principal do paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as três ações.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Realiza apenas uma ou duas ações.", "pontos": 0.25},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pesquisa a existência de outros sinais ou sintomas relacionados à queixa principal:\n(1) perda de força em outros segmentos;\n(2) parestesias;\n(3) alterações auditivas;\n(4) cefaleia;\n(5) febre.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Investiga a existência de três ou mais itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Investiga a existência de apenas dois itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Investiga a existência de apenas um item ou não investiga a existência de item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pesquisa sobre antecedentes:\n(1) lesão ou trauma recente;\n(2) eventos similares prévios;\n(3) infecção recente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pesquisa a existência dos três itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pesquisa a existência de apenas dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pesquisa a existência de apenas um item ou não pesquisa a existência de item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre os hábitos de vida:\n(1) atividade física;\n(2) hábitos alimentares;\n(3) tabagismo;\n(4) etilismo;\n(5) estresse;\n(6) sono.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta sobre três ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta sobre apenas dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta sobre apenas um item ou não pergunta sobre item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Realiza o exame neurológico do VII par craniano. Solicita ao paciente:\n(1) fechar os olhos ou franzir a testa ou realizar manobras que avaliem a motricidade da porção superior da face;\n(2) soprar ou sorrir ou mostrar os dentes ou assoviar ou realizar manobras que avaliem a motricidade da porção inferior da face.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita a realização dos dois itens.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Solicita a realização de apenas um dos itens.", "pontos": 0.75},
+          "inadequado": {"criterio": "Não solicita a realização de item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita a realização do exame neurológico geral.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita a realização da otoscopia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Solicita.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Formula a hipótese diagnóstica específica mais provável.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Paralisia facial periférica (ou paralisia do VII par ou paralisia de Bell).", "pontos": 2.5},
+          "parcialmenteAdequado": {"criterio": "Paralisia facial (sem especificação).", "pontos": 1.25},
+          "inadequado": {"criterio": "Paralisia facial central ou diagnóstico diferente de paralisia facial.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Orienta o paciente a respeito da conduta terapêutica:\n(1) prescreve corticoide oral;\n(2) prescreve colírio lubrificante;\n(3) orienta oclusão ocular noturna;\n(4) orienta necessidade de reavaliação.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta todos os itens.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Orienta dois ou três itens.", "pontos": 0.75},
+          "inadequado": {"criterio": "Orienta um ou nenhum item.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est6_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Orienta o paciente sobre o prognóstico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa que a maior probabilidade é de reversão do quadro.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não aplicável.", "pontos": 0.0},
+          "inadequado": {"criterio": "Informa a certeza de reversibilidade ou de irreversibilidade total do quadro ou não informa sobre o prognóstico.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

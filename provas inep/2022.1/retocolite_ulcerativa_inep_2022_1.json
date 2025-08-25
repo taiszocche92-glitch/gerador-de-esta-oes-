@@ -1,0 +1,250 @@
+{
+  "idEstacao": "INEP_2022_1_EST21_CLINICA_MEDICA_RETOCOLITE_ULCERATIVA",
+  "tituloEstacao": "Retocolite Ulcerativa",
+  "numeroDaEstacao": 21,
+  "especialidade": "CLÍNICA MÉDICA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": ["retocolite ulcerativa", "diarreia", "sangue", "dor abdominal", "doença inflamatória intestinal", "atenção terciária"],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção terciária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultórios",
+        "Setor de endoscopia",
+        "Laboratório de análise clínica"
+      ]
+    },
+    "descricaoCasoCompleta": "Paciente de 60 anos com queixa de diarreia há três meses e dor abdominal.",
+    "tarefasPrincipais": [
+      "Anamnese da paciente",
+      "Solicitar qualquer exame físico e/ou complementar que seja pertinente ao caso",
+      "Decidir sobre investigação complementar",
+      "Formular hipóteses diagnósticas",
+      "Elaborar plano terapêutico"
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Fátima.\nTenho 60 anos de idade.\nSou casada."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Estou tendo muita diarreia e dor de barriga."
+      },
+      {
+        "contextoOuPerguntaChave": "DIARREIA",
+        "informacao": "Início: há 3 meses\nFrequência das evacuações: várias vezes ao dia\nConsistência das fezes: na maioria das vezes é líquida ou pastosa\nPresença de sangue: algumas vezes sim\nPresença de pus: que eu tenha visto não\nPresença de alimentos não digeridos: não"
+      },
+      {
+        "contextoOuPerguntaChave": "DOR ABDOMINAL",
+        "informacao": "Início: há 3 meses\nLocalização: no meio da barriga\nIntensidade: dor forte (7/10)\nCaracterística: cólicas\nIrradiação: não"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: nega\nCirurgias prévias: nega\nInternações: nega\nAlergias: nega\nMedicamentos em uso contínuo: nega"
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: não informado\nTabagismo: 1 maço por dia desde os 35 anos de idade\nEtilismo: nega\nDrogas ilícitas: nega\nSono: durmo umas 6 horas por noite\nAlimentação: como um pouco de tudo\nHabitos urinarios: nega alterações\nPeso corporal: sinto que diminuiu bastante meu peso, sem ter mudado a dieta"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Pai: diabético\nMãe: faleceu de acidente de carro mas tinha um problema no intestino (não sei dizer o que era)"
+      },
+      {
+        "contextoOuPerguntaChave": "ACESSO A SANEAMENTO BÁSICO OU ÁGUA POTÁVEL",
+        "informacao": "Se perguntado por acesso a saneamento básico ou água potável: responder que sim."
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "est21_exame_fisico",
+        "tituloImpresso": "EXAME FÍSICO",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "SINAIS VITAIS",
+              "itens": [
+                {"chave": "Pressão arterial", "valor": "115 × 70 mmHg"},
+                {"chave": "Frequência cardíaca", "valor": "76 bpm"},
+                {"chave": "Frequência respiratória", "valor": "14 irpm"},
+                {"chave": "Temperatura", "valor": "36,5 °C"}
+              ]
+            },
+            {
+              "tituloSecao": "DADOS ANTROPOMÉTRICOS",
+              "itens": [
+                {"chave": "Peso atual", "valor": "55 kg"}
+              ]
+            },
+            {
+              "tituloSecao": "ESTADO GERAL",
+              "itens": [
+                {"chave": "Estado geral", "valor": "Paciente em bom estado geral, afebril, acianótica, anictérica, hidratada. Mucosas hipocoradas."}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME RESPIRATÓRIO",
+              "itens": [
+                {"chave": "Ausculta pulmonar", "valor": "Murmúrio vesicular presente em ambos os hemitórax, sem ruídos adventícios."}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME CARDIOVASCULAR",
+              "itens": [
+                {"chave": "Ausculta cardíaca", "valor": "Ritmo cardíaco regular em dois tempos, com bulhas normofonéticas. Ausência de sopros."}
+              ]
+            },
+            {
+              "tituloSecao": "EXAME ABDOMINAL",
+              "itens": [
+                {"chave": "Inspeção e palpação", "valor": "Abdome flácido, normotenso, ruídos hidroaéreos normoativos; dor à palpação profunda em fossa ilíaca e flanco esquerdos, sem dor à descompressão e sem visceromegalias."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est21_laboratorio",
+        "tituloImpresso": "LABORATÓRIO",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "imagemUrl": "https://app.penserevalida.com/impressos/old/retocolite.jpeg",
+          "laudoDescricao": "OLHE PARA A CÂMERA E DESCREVA O EXAME."
+        }
+      },
+      {
+        "idImpresso": "est21_colonoscopia",
+        "tituloImpresso": "COLONOSCOPIA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "LAUDO",
+              "itens": [
+                {"chave": "Achados endoscópicos", "valor": "A partir do reto, observa-se intensa hiperemia da mucosa, com friabilidade ao toque do aparelho. O aspecto estende-se aos cólons sigmoide e descendente, em que se observam erosões, com fibrina central, não confluentes, sem áreas de mucosa poupadas. Restantes dos segmentos sem alterações endoscópicas, incluído o íleo terminal (foi colhido material para estudo histopatológico de todos os segmentos do cólon e do íleo)."},
+                {"chave": "Conclusão", "valor": "Colite esquerda em atividade endoscópica moderada."}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idImpresso": "est21_biopsia",
+        "tituloImpresso": "BIÓPSIA",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "EXAME HISTOPATOLÓGICO",
+              "itens": [
+                {"chave": "Resultado", "valor": "Presença de processo inflamatório na mucosa, com irregularidade da superfície vilosa, com discreta distorção da arquitetura das criptas; criptas encurtadas e aumento do número de linfócitos e plasmócitos (plasmocitose basal) na lâmina própria. Sem ulcerações. Depleção de mucina e metaplasia de células de Paneth."}
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST21_CM_RETOCOLITE_ULCERATIVA_2022V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Paciente feminina de 60 anos com quadro de diarreia com sangue há 3 meses, dor abdominal em cólicas e perda de peso. História familiar de doença intestinal. Exames complementares evidenciam colite esquerda em atividade endoscópica moderada compatível com retocolite ulcerativa.",
+      "focoPrincipalDetalhado": [
+        "Anamnese direcionada para características da diarreia e manifestações clínicas associadas",
+        "Exame físico abdominal e avaliação do estado geral",
+        "Solicitação de exames laboratoriais e colonoscopia com biópsia",
+        "Diagnóstico diferencial de doença inflamatória intestinal e prescrição de tratamento específico"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est21_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) Apresenta-se e (2) cumprimenta a paciente simulada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "realiza as duas ações", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "realiza apenas uma ação", "pontos": 0.25},
+          "inadequado": {"criterio": "não realiza nenhuma das ações", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Realiza anamnese, perguntando sobre as características da diarreia:\n(1) Frequência da diarreia;\n(2) Número de evacuações por dia;\n(3) Consistência das fezes;\n(4) Presença de muco;\n(5) Presença de sangue;\n(6) Despertar noturno;\n(7) Presença de alimentos não digeridos.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta cinco ou mais características", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "pergunta apenas três ou quatro características", "pontos": 0.75},
+          "inadequado": {"criterio": "não pergunta ou pergunta apenas duas ou menos características", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Pergunta manifestações clínicas associadas ao quadro:\n(1) Febre;\n(2) Perda de peso;\n(3) Anorexia (perda de apetite);\n(4) Artralgia;\n(5) Dor abdominal;\n(6) Distensão abdominal;\n(7) Fadiga (fraqueza, cansaço ou indisposição);\n(8) Sinais sugestivos de anemia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "pergunta cinco ou mais características", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "pergunta apenas três ou quatro características", "pontos": 0.25},
+          "inadequado": {"criterio": "não pergunta ou pergunta apenas duas ou menos características", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Solicita exame físico.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 0.5},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Solicita exames laboratoriais.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita", "pontos": 1.0},
+          "inadequado": {"criterio": "não solicita", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Solicita colonoscopia (endoscopia digestiva baixa) e o resultado da biópsia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "solicita a colonoscopia (endoscopia digestiva baixa) e a biópsia", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "solicita apenas a colonoscopia (endoscopia digestiva baixa)", "pontos": 1.5},
+          "inadequado": {"criterio": "não solicita nenhum dos dois", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Estabelece o diagnóstico de retocolite ulcerativa (RCUI).",
+        "pontuacoes": {
+          "adequado": {"criterio": "estabelece o diagnóstico de RCUI", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "não estabelece o diagnóstico de RCUI, mas estabelece o diagnóstico de doença de Crohn ou doença inflamatória intestinal", "pontos": 0.5},
+          "inadequado": {"criterio": "lista qualquer outro diagnóstico que não seja RCUI, doença de Crohn ou doença inflamatória intestinal", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est21_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Prescreve tratamento específico para retocolite ulcerativa de intensidade leve a moderada.",
+        "pontuacoes": {
+          "adequado": {"criterio": "propõe somente derivados do 5-ASA (mesalazina ou sulfasalazina) OU propõe derivados do 5-ASA (mesalazina ou sulfasalazina) com corticoide via oral", "pontos": 2.0},
+          "inadequado": {"criterio": "não propõe o tratamento adequado conforme os esquemas mencionados ou propõe só o corticoide via oral", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}

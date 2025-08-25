@@ -1,0 +1,219 @@
+{
+  "idEstacao": "INEP_2024_1_EST9_GINECOLOGIA_OBSTETRICIA_CLIMATERIO",
+  "tituloEstacao": "Síndrome Climatérica",
+  "numeroDaEstacao": 9,
+  "especialidade": "GINECOLOGIA E OBSTETRÍCIA",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": [
+    "Climatério",
+    "Menopausa",
+    "Terapia hormonal",
+    "Fogachos",
+    "Ginecologia e Obstetrícia",
+    "Atenção primária"
+  ],
+  "nivelDificuldade": "Médio",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "Atenção primária à saúde",
+      "tipoAtendimento": "Ambulatorial",
+      "infraestruturaUnidade": [
+        "Consultório ginecológico"
+      ]
+    },
+    "descricaoCasoCompleta": "Você é médico de uma UBS e deverá atender, no ambulatório, a uma paciente chamada Maria, de 50 anos, G3 P3 A0. A data da última menstruação (DUM) dessa paciente foi há cerca de 1 ano.",
+    "tarefasPrincipais": [
+      "Realizar o atendimento da paciente com anamnese completa;",
+      "Verbalizar o diagnóstico do quadro;",
+      "Informar a paciente sobre os possíveis planos diagnósticos;",
+      "Informar a paciente sobre os possíveis planos terapêuticos respondendo-a e orientando-a de forma completa."
+    ],
+    "avisosImportantes": [
+      "CONSIDERE O EXAME FÍSICO REALIZADO DE FORMA COMPLETA E QUE ESTÁ SEM ALTERAÇÕES."
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+        "informacao": "Meu nome é Maria.\nTenho 50 anos.\nSou casada.\nTrabalho em um escritório de contabilidade."
+      },
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "Vim porque estou sentindo umas ondas de calor muito fortes (fogachos) que atrapalham meu sono, e também tenho sentido ressecamento vaginal, dor na relação, queda de cabelo e a pele mais seca."
+      },
+      {
+        "contextoOuPerguntaChave": "HISTÓRICO MENSTRUAL",
+        "informacao": "Minha última menstruação foi há um ano. Antes disso, ela estava toda desregulada, com muitos atrasos."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS",
+        "informacao": "Fiz meus exames de rotina há 3 anos e estava tudo normal."
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Atividade física: Sou sedentária.\nAlimentação: Tenho uma dieta regular, mas percebi que ganhei um pouco de peso nos últimos anos.\nTabagismo: Não fumo.\nEtilismo: Bebo pouco, socialmente.\nEstresse: Não tive aumento no nível de estresse.\nSono: Tenho tido noites de insônia."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+        "informacao": "Doenças crônicas: Nenhuma.\nEventos tromboembólicos: Nunca tive.\nCirurgias prévias: Nenhuma.\nAlergias: Nenhuma.\nMedicamentos em uso contínuo: Não uso nenhum medicamento, vitamina ou suplemento."
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Nego antecedentes mórbidos familiares."
+      }
+    ],
+    "impressos": [],
+    "perguntasAtorSimulado": [
+      {"contexto": "Após a anamnese", "pergunta": "Doutor(a), o que eu tenho? Precisa fazer algum exame para confirmar?"},
+      {"contexto": "Durante a orientação", "pergunta": "Vou precisar mudar meus hábitos de vida? Quais são as opções de tratamento?"},
+      {"contexto": "Discutindo tratamento", "pergunta": "Eu posso fazer reposição hormonal? Quais os benefícios e os riscos? E se eu não quiser usar hormônios, tem outra opção?"},
+      {"contexto": "Sobre o acompanhamento", "pergunta": "Como será meu acompanhamento ginecológico a partir de agora?"}
+    ]
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST9_GO_CLIMATERIO_2024V1_1",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "Mulher de 50 anos, em amenorreia há 1 ano, com sintomas vasomotores (fogachos) e urogenitais (ressecamento, dispareunia). O objetivo é diagnosticar a síndrome climatérica, investigar contraindicações à terapia hormonal (TH) e orientar sobre mudanças no estilo de vida e opções de tratamento (hormonais e não hormonais).",
+      "focoPrincipalDetalhado": [
+        "Formular a hipótese diagnóstica de síndrome climatérica.",
+        "Investigar possíveis contraindicações à terapia hormonal.",
+        "Realizar o manejo adequado indicando mudanças no estilo de vida.",
+        "Informar sobre opções de tratamentos hormonais e não hormonais, seus benefícios e riscos."
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est9_item01",
+        "itemNumeroOficial": "1",
+        "descricaoItem": "Apresentação:\n(1) cumprimenta a paciente e/ou fala o seu nome;\n(2) pergunta o motivo da consulta ou a queixa principal da paciente.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Realiza as duas ações.", "pontos": 0.2},
+          "parcialmenteAdequado": {"criterio": "Realiza uma ação.", "pontos": 0.1},
+          "inadequado": {"criterio": "Não realiza ação alguma.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item02",
+        "itemNumeroOficial": "2",
+        "descricaoItem": "Pergunta sobre outros sinais ou sintomas:\n(1) ressecamento vaginal;\n(2) dispareunia (dor ou desconforto na relação sexual) OU mudança no desejo sexual;\n(3) ressecamento de pele;\n(4) queda de cabelo;\n(5) sintomas emocionais, alterações cognitivas e depressão.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta três ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Pergunta um item OU não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item03",
+        "itemNumeroOficial": "3",
+        "descricaoItem": "Indica exames ginecológicos e/ou questiona se a paciente os fez recentemente:\n(1) mamografia;\n(2) citologia oncótica cervical (ou papanicolaou ou preventivo);\n(3) ecografia endovaginal (USG sinônimos).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica ou questiona os três itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Indica ou questiona um ou dois itens OU não indica ou questiona item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item04",
+        "itemNumeroOficial": "4",
+        "descricaoItem": "Pergunta sobre os hábitos de vida:\n(1) atividade física;\n(2) alimentação;\n(3) tabagismo;\n(4) etilismo;\n(5) estresse.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta três ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Pergunta um ou dois itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Não pergunta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item05",
+        "itemNumeroOficial": "5",
+        "descricaoItem": "Pergunta sobre possíveis comorbidades e doenças pré-existentes que podem influenciar o tipo de prescrição médica:\n(1) fenômenos tromboembólicos (ou fenômenos cardiovasculares ou enxaqueca com aura);\n(2) câncer de mama (ou câncer de endométrio);\n(3) hipertensão arterial sistêmica;\n(4) diabetes;\n(5) doenças hepáticas (qualquer doença hepática);\n(6) câncer de ovário.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Pergunta três ou mais itens.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Pergunta um ou dois itens.", "pontos": 0.5},
+          "inadequado": {"criterio": "Não se aplica.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item06",
+        "itemNumeroOficial": "6",
+        "descricaoItem": "Define a condição clínica de climatério (OU menopausa OU síndrome climatérica OU sintomas vasomotores do estado menopausal).",
+        "pontuacoes": {
+          "adequado": {"criterio": "Define.", "pontos": 1.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não define.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item07",
+        "itemNumeroOficial": "7",
+        "descricaoItem": "Solicita exames hormonais para a confirmação de síndrome climatérica.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Não solicita.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Solicita.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item08",
+        "itemNumeroOficial": "8",
+        "descricaoItem": "Orienta a paciente sobre:\n(1) alimentação equilibrada;\n(2) prática de atividade física.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta os dois itens.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Orienta um item OU não orienta item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item09",
+        "itemNumeroOficial": "9",
+        "descricaoItem": "Informa sobre os possíveis benefícios da TH, que pode ajudar a melhorar os seguintes pontos:\n(1) fogachos;\n(2) síndrome urogenital;\n(3) labilidade emocional;\n(4) padrão de sono;\n(5) perfil lipídico;\n(6) prevenção da osteoporose.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa quatro ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Informa três itens.", "pontos": 0.25},
+          "inadequado": {"criterio": "Informa dois ou menos itens OU não informa item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item10",
+        "itemNumeroOficial": "10",
+        "descricaoItem": "Informa a paciente sobre os principais efeitos adversos da TH:\n(1) mastalgia;\n(2) sangramento uterino irregular;\n(3) cefaleia.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa dois ou mais itens.", "pontos": 0.5},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Informa um item OU não informa item algum.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item11",
+        "itemNumeroOficial": "11",
+        "descricaoItem": "Informa a paciente sobre a necessidade de realização de controle ginecológico anual com realização de mamografia e de ultrassonografia endovaginal.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Informa.", "pontos": 1.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não informa.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item12",
+        "itemNumeroOficial": "12",
+        "descricaoItem": "Indica terapêutica da seguinte maneira: Estrogênio e progesterona (progestágeno contínuo ou cíclico), sendo aceita prescrição que oriente administração por via oral ou por via transdérmica para estrogênio e por via oral para progesterona.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Indica o uso de (1) estrogênio + progesterona OU (2) Tibolona.", "pontos": 2.0},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não indica progesterona associada ao estrogênio.", "pontos": 0.0}
+        }
+      },
+      {
+        "idItem": "pep_est9_item13",
+        "itemNumeroOficial": "13",
+        "descricaoItem": "Orienta que, caso ela não deseje usar TH, existe a possibilidade de uso de neuromoduladores ou de fitoterápicos para alívio dos sintomas.",
+        "pontuacoes": {
+          "adequado": {"criterio": "Orienta.", "pontos": 0.4},
+          "parcialmenteAdequado": {"criterio": "Não se aplica.", "pontos": 0.0},
+          "inadequado": {"criterio": "Não orienta.", "pontos": 0.0}
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10.0
+  }
+}
