@@ -1,0 +1,10 @@
+# pyproject.toml
+[tool.pylance]
+reportPrivateImportUsage = false
+reportAttributeAccessIssue = false
+reportOptionalMemberAccess = false
+
+[tool.pyright]
+reportPrivateImportUsage = false
+reportAttributeAccessIssue = false  
+reportOptionalMemberAccess = false

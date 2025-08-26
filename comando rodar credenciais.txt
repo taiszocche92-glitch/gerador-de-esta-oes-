@@ -1,0 +1,1 @@
+$env:GOOGLE_APPLICATION_CREDENTIALS = "D:\Site arquivos\Projeto vs code\meuapp\backend-python-agent\memoria\serviceAccountKey.json"; & "D:\Site arquivos\Projeto vs code\meuapp\backend-python-agent\.venv\Scripts\Activate.ps1"; python main.py

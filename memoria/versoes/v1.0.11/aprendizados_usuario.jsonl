@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488484\"}}",
+    "rule": "Sempre usar sistema híbrido para economia de tokens",
+    "context": "Otimização de performance",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488487\"}}",
+    "rule": "Nunca incluir informações entre parênteses no PEP",
+    "context": "Padrão de formatação INEP",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488491\"}}",
+    "rule": "Preferir arquivos locais ao invés de Firestore para templates",
+    "context": "Sistema híbrido",
+    "category": "preferencia",
+    "source": "user_feedback"
+  }
+]

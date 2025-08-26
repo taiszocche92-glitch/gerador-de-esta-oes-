@@ -16,9 +16,11 @@ import fitz  # PyMuPDF para processamento de PDF
 import time
 import psutil  # Para métricas do sistema
 import threading
+import asyncio
 from datetime import datetime, timedelta
 from collections import defaultdict, deque
 import logging
+from typing import Optional, Dict, Any, List, Union
 
 # --- Carregamento de Variáveis de Ambiente ---
 load_dotenv()
@@ -42,12 +44,12 @@ FINISH_REASON_NAMES = {
 # --- Variáveis Globais ---
 db = None
 firebase_mock_mode = False
-AGENT_RULES = {}
-PARSED_REFERENCIAS = {}  # Nova variável para armazenar seções parsed
-GEMINI_CONFIGS = []
-LOCAL_MEMORY_SYSTEM = {}  # Nova variável para sistema de memória local
-VERSION_SYSTEM = {}  # Nova variável para sistema de versionamento
-MONITORING_SYSTEM = {}  # Nova variável para sistema de monitoramento
+AGENT_RULES: Dict[str, Any] = {}
+PARSED_REFERENCIAS: Dict[str, str] = {}  # Nova variável para armazenar seções parsed
+GEMINI_CONFIGS: Dict[str, List[Dict[str, str]]] = {}
+LOCAL_MEMORY_SYSTEM: Dict[str, Any] = {}  # Nova variável para sistema de memória local
+VERSION_SYSTEM: Dict[str, Any] = {}  # Nova variável para sistema de versionamento
+MONITORING_SYSTEM: Dict[str, Any] = {}  # Nova variável para sistema de monitoramento
 
 # --- Modelos de Dados (Pydantic) ---
 class CreateStationRequest(BaseModel):
@@ -88,7 +90,7 @@ def extract_pdf_content_structured(pdf_bytes: bytes, tema: str) -> str:
         toc_text = ""
         
         # Tentar extrair o índice/sumário se existir
-        toc = doc.get_toc()
+        toc = doc.get_toc()  # type: ignore
         if toc:
             toc_text = "ÍNDICE/SUMÁRIO ENCONTRADO:\n"
             for level, title, page in toc:
@@ -98,7 +100,7 @@ def extract_pdf_content_structured(pdf_bytes: bytes, tema: str) -> str:
         # Extrair texto de todas as páginas
         for page_num in range(len(doc)):
             page = doc.load_page(page_num)
-            page_text = page.get_text()
+            page_text = page.get_text()  # type: ignore
             full_text += f"\n--- PÁGINA {page_num + 1} ---\n"
             full_text += page_text
         
@@ -365,7 +367,7 @@ def get_gabarito_template():
     return LOCAL_MEMORY_SYSTEM.get('gabarito_template', '{}')
 
 # --- Sistema de Aprendizado Automático ---
-def categorize_learning(new_rule: str, context: str = None) -> str:
+def categorize_learning(new_rule: str, context: Optional[str] = None) -> str:
     """Categoriza automaticamente um novo aprendizado"""
     rule_lower = new_rule.lower()
     
@@ -385,7 +387,7 @@ def categorize_learning(new_rule: str, context: str = None) -> str:
     else:
         return "geral"
 
-def save_learning(new_rule: str, context: str = None, category: str = None) -> bool:
+def save_learning(new_rule: str, context: Optional[str] = None, category: Optional[str] = None) -> bool:
     """Salva um novo aprendizado no sistema local"""
     try:
         if not LOCAL_MEMORY_SYSTEM:
@@ -750,24 +752,94 @@ def rollback_to_version(version_number):
 def initialize_firebase():
     global db, firebase_mock_mode
     try:
-        cred = credentials.ApplicationDefault()
-        if not firebase_admin._apps:
-            firebase_admin.initialize_app(cred, {'projectId': os.getenv('FIREBASE_PROJECT_ID', 'revalida-companion')})
-        db = firestore.client()
-        print("✅ Firebase Admin SDK inicializado com sucesso no ambiente Cloud.")
-        return True
-    except Exception:
+        # Preferir arquivo de credenciais local (evita erro de ADC quando não configurado)
+        service_account_paths = [
+            os.path.join('memoria', 'serviceAccountKey.json'),
+            'serviceAccountKey.json'
+        ]
+
+        # Se houver variável de ambiente apontando para um arquivo, tentar usá-la primeiro
+        env_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+        if env_path and os.path.exists(env_path):
+            try:
+                cred = credentials.Certificate(env_path)
+                if not firebase_admin._apps:
+                    firebase_admin.initialize_app(cred)
+                
+                # Teste de conectividade com timeout curto
+                import signal
+                def timeout_handler(signum, frame):
+                    raise TimeoutError("Timeout na inicialização Firebase")
+                
+                # Configurar timeout apenas no Linux/Unix que suportam SIGALRM
+                timeout_supported = hasattr(signal, 'SIGALRM') and os.name != 'nt'
+                if timeout_supported:
+                    signal.signal(signal.SIGALRM, timeout_handler)  # type: ignore
+                    signal.alarm(15)  # type: ignore # 15 segundos timeout
+                
+                try:
+                    db = firestore.client()
+                    # Teste rápido de conectividade
+                    test_collections = list(db.collections())
+                    if timeout_supported:
+                        signal.alarm(0)  # type: ignore # Cancelar timeout
+                    print(f"✅ Firebase Admin SDK inicializado com arquivo apontado por GOOGLE_APPLICATION_CREDENTIALS: {env_path}")
+                    return True
+                except (TimeoutError, Exception) as timeout_err:
+                    if timeout_supported:
+                        signal.alarm(0)  # type: ignore
+                    print(f"⚠️ Timeout ou erro na conectividade Firebase: {timeout_err}")
+                    # Continuar com db = None, mas não falhar completamente
+                    db = None
+                    firebase_mock_mode = True
+                    print("🔄 Continuando em modo local (Firebase indisponível)")
+                    return False
+                    
+            except Exception as e_env:
+                print(f"⚠️ Falha ao inicializar com GOOGLE_APPLICATION_CREDENTIALS={env_path}: {e_env}")
+
+        # Tentar arquivos locais conhecidos
+        for path in service_account_paths:
+            if os.path.exists(path):
+                try:
+                    cred = credentials.Certificate(path)
+                    if not firebase_admin._apps:
+                        firebase_admin.initialize_app(cred)
+                    
+                    # Teste de conectividade com timeout
+                    try:
+                        db = firestore.client()
+                        print(f"✅ Firebase Admin SDK inicializado com arquivo local: {path}")
+                        return True
+                    except Exception as connectivity_err:
+                        print(f"⚠️ Firebase inicializado mas sem conectividade: {connectivity_err}")
+                        db = None
+                        firebase_mock_mode = True
+                        return False
+                        
+                except Exception as e_local:
+                    print(f"⚠️ Falha ao inicializar com arquivo local {path}: {e_local}")
+
+        # Por fim, tentar Application Default Credentials (padrão GCP)
         try:
-            cred = credentials.Certificate("serviceAccountKey.json")
+            cred = credentials.ApplicationDefault()
             if not firebase_admin._apps:
-                firebase_admin.initialize_app(cred)
+                firebase_admin.initialize_app(cred, {'projectId': os.getenv('FIREBASE_PROJECT_ID', 'revalida-companion')})
             db = firestore.client()
-            print("✅ Firebase Admin SDK inicializado com arquivo local.")
+            print("✅ Firebase Admin SDK inicializado com Application Default Credentials.")
             return True
-        except Exception as e_local:
-            print(f"⚠️ Erro ao inicializar Firebase Admin SDK: {e_local}")
-            firebase_mock_mode = True
-            return False
+        except Exception as adc_error:
+            print(f"⚠️ Falha com Application Default Credentials: {adc_error}")
+            
+    except Exception as e_final:
+        print(f"⚠️ Erro geral ao inicializar Firebase Admin SDK: {e_final}")
+    
+    # Se chegou aqui, todas as tentativas falharam
+    print(f"🔄 Ativando modo híbrido local (sem sincronização Firestore)")
+    print(f"✅ Sistema local funcionando normalmente!")
+    firebase_mock_mode = True
+    db = None
+    return False
 
 # ====================================
 # 📊 SISTEMA DE MONITORAMENTO EM TEMPO REAL
@@ -794,8 +866,12 @@ def initialize_monitoring_system():
             'system_uptime': time.time(),
             'tokens_saved': 0,
             'versions_created': 0,
-            'learning_events': 0
+            'learning_events': 0,
+            'search_count': 0
         }
+        
+        # Lista de eventos de busca (sanitizados) para telemetria — manter tamanho limitado
+        MONITORING_SYSTEM['search_events'] = deque(maxlen=200)
         
         MONITORING_SYSTEM['alerts'] = []
         MONITORING_SYSTEM['active'] = True
@@ -862,6 +938,27 @@ def create_alert(alert_type, message):
     
     MONITORING_SYSTEM['alerts'].append(alert)
     print(f"🚨 ALERT [{alert_type}]: {message}")
+
+def log_search_event(query: str, hit: dict):
+    """
+    Registra evento de busca sanitizado na estrutura de monitoramento.
+    hit: {'title','snippet','link','query'}
+    """
+    try:
+        if not MONITORING_SYSTEM.get('active'):
+            return
+        event = {
+            "timestamp": datetime.now().isoformat(),
+            "query": query,
+            "title": hit.get("title", "")[:200],
+            "snippet": hit.get("snippet", "")[:1000],  # já sanitizado pelo web_search
+            "link": hit.get("link", "")[:500]
+        }
+        # incrementar métricas simples
+        MONITORING_SYSTEM['metrics']['search_count'] = MONITORING_SYSTEM['metrics'].get('search_count', 0) + 1
+        MONITORING_SYSTEM['search_events'].append(event)
+    except Exception as e:
+        print(f"⚠️ Erro ao logar evento de busca: {e}")
 
 def log_request_metric(endpoint, response_time, status_code):
     """Registra métricas de requisição"""
@@ -961,22 +1058,21 @@ def load_rules_from_firestore():
             print(f"⚠️ Erro ao inicializar sistema de monitoramento: {e}")
             MONITORING_SYSTEM['active'] = False
         
-        # Ainda precisamos carregar algumas configs do Firestore para compatibilidade
-        if not firebase_mock_mode and db:
-            try:
-                doc_ref = db.collection('agent_config').document('rules')
-                doc = doc_ref.get()
-                if doc.exists:
-                    # Manter apenas configurações específicas do Firestore
-                    firestore_data = doc.to_dict()
-                    AGENT_RULES = {
-                        # Manter configs que não estão no sistema local
-                        key: value for key, value in firestore_data.items() 
-                        if key not in ['referencias_md', 'gabarito_json']
-                    }
-                    print("✅ Configurações complementares carregadas do Firestore")
-            except Exception as e:
-                print(f"⚠️ Erro ao carregar configs do Firestore: {e}")
+        # Sistema híbrido local está ativo - pular Firestore
+        print("ℹ️ Sistema híbrido local ativo - pulando carregamento Firestore")
+        
+        # ✅ CORREÇÃO: Popular AGENT_RULES com dados do sistema local
+        global AGENT_RULES
+        if LOCAL_MEMORY_SYSTEM.get('referencias_base'):
+            AGENT_RULES = {
+                'referencias_md': LOCAL_MEMORY_SYSTEM.get('referencias_base', ''),
+                'gabarito_json': LOCAL_MEMORY_SYSTEM.get('gabarito_template', '{}'),
+                'config': LOCAL_MEMORY_SYSTEM.get('config', {}),
+                'aprendizados': LOCAL_MEMORY_SYSTEM.get('aprendizados', [])
+            }
+            print(f"✅ AGENT_RULES populado com {len(AGENT_RULES.get('referencias_md', ''))} caracteres de referências")
+        
+        print("✅ Inicialização completa do sistema híbrido!")
         return
     
     # Fallback para sistema antigo se sistema local falhar
@@ -987,7 +1083,7 @@ def load_rules_from_firestore():
         doc_ref = db.collection('agent_config').document('rules')
         doc = doc_ref.get()
         if doc.exists:
-            AGENT_RULES = doc.to_dict()
+            AGENT_RULES = doc.to_dict() or {}  # Garantir que nunca seja None
             print("✅ Regras carregadas na memória com sucesso!")
             
             # Fazer parse do referencias_md para otimização
@@ -1040,11 +1136,11 @@ def configure_gemini_keys():
         'all': [{"key": key, "model_name": model} for key, model in all_configs if key]
     }
     
-    if not GEMINI_CONFIGS['all']:
+    if not GEMINI_CONFIGS.get('all'):
         print("🔴 Nenhuma chave de API do Gemini foi encontrada.")
     else:
-        flash_count = len(GEMINI_CONFIGS['flash'])
-        pro_count = len(GEMINI_CONFIGS['pro'])
+        flash_count = len(GEMINI_CONFIGS.get('flash', []))
+        pro_count = len(GEMINI_CONFIGS.get('pro', []))
         print(f"✅ Configuradas {flash_count} chave(s) Flash e {pro_count} chave(s) Pro do Gemini.")
 
 # --- Gerenciador de Ciclo de Vida ---
@@ -1064,6 +1160,9 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, 
 try:
     from rag_agent import router as rag_router
     app.include_router(rag_router)
+    print("✅ Rota RAG incluída com sucesso!")
+except ImportError as e:
+    print(f"⚠️ Não foi possível incluir rota RAG: erro de importação - {e}")
 except Exception as e:
     print(f"⚠️ Não foi possível incluir rota RAG: {e}")
 
@@ -1189,10 +1288,10 @@ def build_prompt_fase_2(tema: str, especialidade: str, resumo_clinico: str) -> s
                 if secao in PARSED_REFERENCIAS:
                     contexto_otimizado += f"\n\n--- {secao.upper().replace('_', ' ')} ---\n"
                     contexto_otimizado += PARSED_REFERENCIAS[secao]
-            print(f"📊 Fase 2: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', ''))} originais)")
+            print(f"📊 Fase 2: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', '') if AGENT_RULES else '')} originais)")
         else:
             print("⚠️ PARSED_REFERENCIAS não disponível, usando conteúdo completo como fallback")
-            contexto_otimizado = AGENT_RULES.get('referencias_md', "")
+            contexto_otimizado = AGENT_RULES.get('referencias_md', "") if AGENT_RULES else ""
     
     return f"""# FASE 2: GERAÇÃO DE ESTRATÉGIAS
 
@@ -1237,12 +1336,12 @@ def build_prompt_fase_3(request: GenerateFinalStationRequest) -> str:
                 if secao in PARSED_REFERENCIAS:
                     contexto_otimizado += f"\n\n--- {secao.upper().replace('_', ' ')} ---\n"
                     contexto_otimizado += PARSED_REFERENCIAS[secao]
-            print(f"📊 Fase 3: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', ''))} originais)")
+            print(f"📊 Fase 3: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', '') if AGENT_RULES else '')} originais)")
         else:
             print("⚠️ PARSED_REFERENCIAS não disponível, usando conteúdo completo como fallback")
-            contexto_otimizado = AGENT_RULES.get('referencias_md', "")
+            contexto_otimizado = AGENT_RULES.get('referencias_md', "") if AGENT_RULES else ""
         
-        gabarito_json = AGENT_RULES.get('gabarito_json', "{}")
+        gabarito_json = AGENT_RULES.get('gabarito_json', "{}") if AGENT_RULES else "{}"
     
     return f"""# FASE 3: GERAÇÃO DO JSON COMPLETO
 
@@ -1285,10 +1384,10 @@ def build_prompt_analise(station_json_str: str, feedback: str | None) -> str:
                 if secao in PARSED_REFERENCIAS:
                     contexto_otimizado += f"\n\n--- {secao.upper().replace('_', ' ')} ---\n"
                     contexto_otimizado += PARSED_REFERENCIAS[secao]
-            print(f"📊 Fase 4: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', ''))} originais)")
+            print(f"📊 Fase 4: {len(contexto_otimizado)} caracteres (vs {len(AGENT_RULES.get('referencias_md', '') if AGENT_RULES else '')} originais)")
         else:
             print("⚠️ PARSED_REFERENCIAS não disponível, usando conteúdo completo como fallback")
-            contexto_otimizado = AGENT_RULES.get('referencias_md', "Regras de criação não carregadas.")
+            contexto_otimizado = AGENT_RULES.get('referencias_md', "Regras de criação não carregadas.") if AGENT_RULES else "Regras de criação não carregadas."
     
     feedback_section = f"\n\n**DIRETRIZES ADICIONAIS DO USUÁRIO:**\n{feedback}\n" if feedback else ""
     
@@ -1324,21 +1423,21 @@ async def call_gemini_api(prompt: str, preferred_model: str = 'pro'):
     
     # Determina a ordem de tentativa baseada na preferência
     if preferred_model == 'flash':
-        configs_to_try = GEMINI_CONFIGS['flash'] + GEMINI_CONFIGS['pro']
+        configs_to_try = GEMINI_CONFIGS.get('flash', []) + GEMINI_CONFIGS.get('pro', [])
         print(f"🚀 Usando Gemini 2.5 Flash para processamento rápido...")
     else:  # 'pro' ou qualquer outro valor
-        configs_to_try = GEMINI_CONFIGS['pro'] + GEMINI_CONFIGS['flash']
+        configs_to_try = GEMINI_CONFIGS.get('pro', []) + GEMINI_CONFIGS.get('flash', [])
         print(f"🧠 Usando Gemini 2.5 Pro para processamento avançado...")
     
     # Se não tiver configurações específicas, usa todas disponíveis
     if not configs_to_try:
-        configs_to_try = GEMINI_CONFIGS['all']
+        configs_to_try = GEMINI_CONFIGS.get('all', [])
     
     for i, config in enumerate(configs_to_try):
         try:
             print(f"➡️  Tentando API Key #{i+1} com modelo {config['model_name']}...")
-            genai.configure(api_key=config['key'])
-            model = genai.GenerativeModel(config['model_name'])
+            genai.configure(api_key=config['key'])  # type: ignore
+            model = genai.GenerativeModel(config['model_name'])  # type: ignore
             response = await model.generate_content_async(prompt)
             
             # Verifica se a resposta tem candidatos válidos
@@ -1421,10 +1520,10 @@ async def test_gemini():
     
     try:
         # Testa primeiro com Flash (usado na Fase 1)
-        if GEMINI_CONFIGS['flash']:
+        if GEMINI_CONFIGS.get('flash'):
             config = GEMINI_CONFIGS['flash'][0]
-            genai.configure(api_key=config['key'])
-            model = genai.GenerativeModel(config['model_name'])
+            genai.configure(api_key=config['key'])  # type: ignore
+            model = genai.GenerativeModel(config['model_name'])  # type: ignore
             response = await model.generate_content_async("Responda apenas: 'Gemini Flash funcionando!'")
             
             # Verifica se a resposta é válida antes de acessar response.text
@@ -1432,8 +1531,8 @@ async def test_gemini():
                 return {
                     "status": "success",
                     "flash_model": config['model_name'],
-                    "pro_models_available": len(GEMINI_CONFIGS['pro']),
-                    "flash_models_available": len(GEMINI_CONFIGS['flash']),
+                    "pro_models_available": len(GEMINI_CONFIGS.get('pro', [])),
+                    "flash_models_available": len(GEMINI_CONFIGS.get('flash', [])),
                     "response": response.text,
                     "message": "Gemini configurado corretamente - Flash para Fase 1, Pro para Fases 2-4!"
                 }
@@ -1450,9 +1549,9 @@ async def test_gemini():
                 }
         else:
             # Fallback para Pro se Flash não estiver disponível
-            config = GEMINI_CONFIGS['pro'][0] if GEMINI_CONFIGS['pro'] else GEMINI_CONFIGS['all'][0]
-            genai.configure(api_key=config['key'])
-            model = genai.GenerativeModel(config['model_name'])
+            config = GEMINI_CONFIGS.get('pro', [{}])[0] if GEMINI_CONFIGS.get('pro') else GEMINI_CONFIGS.get('all', [{}])[0]
+            genai.configure(api_key=config['key'])  # type: ignore
+            model = genai.GenerativeModel(config['model_name'])  # type: ignore
             response = await model.generate_content_async("Responda apenas: 'Gemini funcionando!'")
             
             # Verifica se a resposta é válida antes de acessar response.text
@@ -1503,8 +1602,8 @@ async def gemini_diagnostic():
                 
             config = GEMINI_CONFIGS[model_type][0]
             try:
-                genai.configure(api_key=config['key'])
-                model = genai.GenerativeModel(config['model_name'])
+                genai.configure(api_key=config['key'])  # type: ignore
+                model = genai.GenerativeModel(config['model_name'])  # type: ignore
                 response = await model.generate_content_async(prompt_test["text"])
                 
                 # Análise detalhada da resposta
@@ -1566,14 +1665,16 @@ async def gemini_diagnostic():
 async def start_creation_process(
     tema: str = Form(...),
     especialidade: str = Form(...),
-    pdf_reference: UploadFile = File(None) # O arquivo é opcional
+    pdf_reference: UploadFile = File(None), # O arquivo é opcional
+    enable_web_search: str = Form("0")      # Recebe '1' ou '0' do frontend
 ):
     """
     Orquestra as Fases 1 e 2, agora aceitando um PDF de referência opcional.
+    O parâmetro enable_web_search controla se a busca web será executada (valor '1' habilita).
     """
     if not AGENT_RULES:
         raise HTTPException(status_code=503, detail="Regras do agente não carregadas.")
-
+    
     pdf_content_str = None
     if pdf_reference:
         try:
@@ -1594,25 +1695,30 @@ async def start_creation_process(
     
     # --- BUSCA WEB EM TEMPO REAL (opcional) ---
     web_search_summary = ""
+    hits = []
     try:
-        # Só tenta buscar se a chave estiver configurada
+        # Interpretar flag enviada pelo frontend
+        enabled_flag = str(enable_web_search).lower() in ("1", "true", "yes")
         serp_key = os.getenv("SERPAPI_KEY")
-        if serp_key:
+        if enabled_flag and serp_key:
             queries = [
                 f"diretrizes atualizadas {tema} {especialidade} Brasil",
                 f"protocolo clínico {tema} Revalida",
                 f"consenso {tema} sociedade brasileira de {especialidade}"
             ]
-            hits = []
             for q in queries:
                 try:
-                    res = search_web(q, max_results=3)
+                    # search_web é síncrono — executar em thread para não bloquear o loop async
+                    res = await asyncio.to_thread(search_web, q, 3, True)
                     for r in res:
                         hits.append({"query": q, **r})
                 except Exception as we:
                     print(f"⚠️ Falha na busca web para query '{q}': {we}")
         else:
-            # Ambiente sem chave SerpAPI - não realizar busca
+            if not enabled_flag:
+                print("ℹ️ Busca web desabilitada por flag do frontend.")
+            else:
+                print("⚠️ SERPAPI_KEY não configurado — pulando buscas web.")
             hits = []
     except Exception as e:
         print(f"⚠️ Módulo de busca web não disponível: {e}")
@@ -1626,6 +1732,14 @@ async def start_creation_process(
             link = h.get("link", "").strip()
             web_lines.append(f"- {title}: {snippet} ({link})")
         web_search_summary = "\n".join(web_lines)
+
+        # Registrar telemetria: eventos de busca sanitizados (não incluir PII adicional)
+        try:
+            for h in hits:
+                # cada hit já contém 'query' adicionado anteriormente
+                log_search_event(h.get("query", ""), h)
+        except Exception as te:
+            print(f"⚠️ Erro ao registrar telemetria de busca: {te}")
     
     # Combinar contexto do PDF (se houver) com resultados da busca web
     if pdf_content_str and web_search_summary:
@@ -1777,7 +1891,7 @@ async def update_rules(request: Request):
                 current_doc = doc_ref.get()
                 
                 if current_doc.exists:
-                    current_md = current_doc.to_dict().get('referencias_md', '')
+                    current_md = (current_doc.to_dict() or {}).get('referencias_md', '')
                     new_rule_md = f"\n\n---\n\n## REGRA APRENDIDA (Feedback do Usuário):\n\n- {feedback}\n"
                     doc_ref.update({'referencias_md': current_md + new_rule_md})
                     print("✅ Backup salvo no Firestore também")
@@ -2066,6 +2180,17 @@ def get_monitoring_dashboard():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao obter dados de monitoramento: {e}")
 
+@app.get("/api/agent/monitoring/search-events", tags=["Agente - Monitoramento"])
+def get_search_events(limit: int = 20):
+    """Retorna os eventos de busca mais recentes (sanitizados)"""
+    try:
+        if not MONITORING_SYSTEM.get('active'):
+            raise HTTPException(status_code=503, detail="Sistema de monitoramento não está ativo")
+        events = list(MONITORING_SYSTEM.get('search_events', []))[-limit:]
+        return {"status": "success", "events": events, "total": len(events)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao obter eventos de busca: {e}")
+
 @app.get("/api/agent/monitoring/metrics", tags=["Agente - Monitoramento"])
 def get_current_metrics():
     """Retorna métricas atuais do sistema"""
@@ -2085,12 +2210,12 @@ def get_current_metrics():
                 },
                 "requests": {
                     "total": metrics['requests_count'],
-                    "errors": metrics['errors_count'],
+                    "errors_count": metrics['errors_count'],
                     "error_rate": round((metrics['errors_count'] / max(metrics['requests_count'], 1)) * 100, 2)
                 },
                 "performance": {
                     "avg_response_time": round(
-                        sum(rt['response_time'] for rt in list(metrics['response_times'])[-10:]) / 
+                        sum(rt['response_time'] for rt in list(metrics['response_times'])[-10:]) /
                         max(len(list(metrics['response_times'])[-10:]), 1), 2
                     ),
                     "recent_requests": len(metrics['response_times'])
@@ -2098,7 +2223,8 @@ def get_current_metrics():
                 "business": {
                     "tokens_saved": metrics['tokens_saved'],
                     "versions_created": metrics['versions_created'],
-                    "learning_events": metrics['learning_events']
+                    "learning_events": metrics['learning_events'],
+                    "search_count": metrics.get('search_count', 0)
                 }
             },
             "timestamp": datetime.now().isoformat()

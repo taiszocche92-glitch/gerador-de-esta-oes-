@@ -8,3 +8,5 @@ PyMuPDF>=1.26.4
 numpy>=1.25.0
 tqdm>=4.66.1
 psutil>=5.9.0
+pytest>=7.0
+pytest-mock>=3.0

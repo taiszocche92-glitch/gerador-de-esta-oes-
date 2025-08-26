@@ -1,11 +1,4 @@
-try:
-    from .main import configure_gemini_keys
-except ImportError:
-    import sys
-    import os
-    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-    from main import configure_gemini_keys
-
+import google.generativeai as genai
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from pathlib import Path
@@ -13,6 +6,11 @@ import numpy as np
 import json
 from typing import List
 import threading
+import os
+from dotenv import load_dotenv
+
+# Carregar variáveis de ambiente
+load_dotenv()
 
 # Lista de modelos permitidos (conforme MODELOS_GEMINI_ATUAIS.md)
 ALLOWED_MODELS = {
@@ -90,7 +88,35 @@ def _load_vectors(base_path: Path):
         except Exception:
             _config = None
 
+def configure_gemini_keys():
+    """Configuração simples das chaves Gemini para RAG"""
+    try:
+        # Usar a primeira chave disponível
+        api_key = (os.getenv("GEMINI_API_KEY_1") or 
+                  os.getenv("GEMINI_API_KEY_2") or 
+                  os.getenv("GEMINI_API_KEY_3") or 
+                  os.getenv("GEMINI_API_KEY_4"))
+        
+        if api_key:
+            genai.configure(api_key=api_key)
+            print("✅ Gemini configurado para RAG")
+            return True
+        else:
+            print("⚠️ Nenhuma chave Gemini encontrada para RAG")
+            return False
+    except Exception as e:
+        print(f"❌ Erro ao configurar Gemini para RAG: {e}")
+        return False
+
 def _cosine_similarity(a: np.ndarray, b: np.ndarray):
+    # a: (d,), b: (n,d)
+    if a.ndim==1:
+        a = a.reshape(1, -1)
+    # normalize
+    an = a / np.linalg.norm(a, axis=1, keepdims=True)
+    bn = b / np.linalg.norm(b, axis=1, keepdims=True)
+    sims = (an @ bn.T).squeeze(0)
+    return sims
     # a: (d,), b: (n,d)
     if a.ndim==1:
         a = a.reshape(1, -1)
