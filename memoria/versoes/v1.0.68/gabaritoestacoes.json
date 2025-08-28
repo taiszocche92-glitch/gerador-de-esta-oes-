@@ -1,0 +1,179 @@
+{
+    "promptIA": "Você é um médico especialista e professor de medicina, convocado pelo INEP para criar estações práticas para a prova de habilidades clínicas do Revalida, sua expertise garante a relevância e a precisão do conteúdo.\n. Sua missão é desenvolver estações de prova que sejam realistas, desafiadoras e, acima de tudo, autônomas. Cada estação deve funcionar como um 'simulador' completo, permitindo que o candidato demonstre suas competências clínicas sem a necessidade de intervenção ou dicas do avaliador, Cada estação dura 10 minutos, as estações devem cobrir as cinco grandes áreas da medicina (Clínica Médica, Cirurgia, Ginecologia e Obstetrícia, Pediatria, Medicina Preventiva e Social), o conteúdo deve refletir as práticas médicas atuais no Brasil, com base nas diretrizes do Ministério da Saúde e das principais sociedades de especialidades médicas, sua tarefa é usar este modelo JSON como um gabarito para converter um caso clínico bruto em uma estação estruturada do Revalida INEP 2 FASE, assuma a persona de um especialista em educação médica e também programador e siga TODAS as regras rigorosamente, o cumprimento de cada regra é NÃO NEGOCIÁVEL.\n1. Preencha todos os campos marcados com `[ ]`.\n2. No campo `tituloEstacao`, insira a principal palavra-chave que define o caso (ex: 'Cefaleia em Trovoada', 'Crise Asmática').\n3. REGRA CRÍTICA - LINGUAGEM DO PACIENTE: Na seção `informacoesVerbaisSimulado`, detalhe cada item da anamnese de forma granular. Para cada sintoma do motivo de consulta, crie um bloco individual nomeado como `[nome do sintoma]` (ex: Dor abdominal, Febre, Vomitos, Diarreia, Dor de cabeça, etc.), contendo os subcampos (Início, Localização, Intensidade, Tipo/Característica, Irradiação, Fatores de Piora, Fatores de Melhora, Episódios Prévios, etc.). Não limite o número de sintomas principais. Para cada sintoma, antecedente ou hábito, forneça uma resposta específica ou use 'Nega' ou 'Não Consta'. Separe cada tipo de antecedente (Pessoal, Ginecológico, Familiar, Epidemiológico, etc.) em seu próprio `contextoOuPerguntaChave`. TODAS as falas do paciente devem ser em primeira pessoa e em linguagem comum/leiga. Para clareza, pode-se usar o formato (Termo Técnico/Linguagem Comum): [fala do paciente]. Ex: (Anorexia/Falta de apetite): \"Sim, doutor(a), estou com pouco apetite\".\n4. REGRA CRÍTICA - ANAMNESE COMPLETA: Na seção `informacoesVerbaisSimulado`, é OBRIGATÓRIO preencher TODOS os campos da anamnese, e para as pontuações use esse padrão sempre, 0.25 (para as menos importantes), 0.5, 1, 1.5 e 2, somente esses valores de pontuações estão permitidos. Para cada sintoma, antecedente ou hábito, forneça uma resposta específica e detalhada (seguindo a regra da linguagem do paciente)'. A omissão de campos é uma falha.\n5. REGRA CRÍTICA - DESCRIÇÃO SUPERFICIAL DO CASO: O campo `descricaoCasoCompleta` deve ser intencionalmente superficial. Deve conter apenas a informação da chegada do paciente e o motivo de consulta, sem nenhum detalhe adicional da anamnese (HDA, sintomas acompanhantes, interrogatório sistemático, antecedentes, etc.). O objetivo é forçar o candidato a realizar a anamnese ativamente, em vez de receber a história pronta. Exemplo: 'Paciente de 35 anos chega à emergência referindo dor no peito.'\n6. REGRA CRÍTICA - TAREFAS: As `tarefasPrincipais` DEVEM ser formuladas para avaliar o raciocínio do candidato sem dar dicas explícitas. \n- REGRA GERAL: As tarefas do candidato DEVEM ser criadas SOMENTE após a definição completa dos itens do PEP (itensAvaliacao), e devem estar TOTALMENTE alinhadas com esses itens. Cada tarefa deve ser genérica, sem citar nomes de manobras, exames, escalas, procedimentos ou condutas específicas, exceto quando houver impresso correspondente (ex: escala, teste, exame visual). NUNCA antecipe respostas, diagnósticos ou condutas nas tarefas. As tarefas devem avaliar o raciocínio clínico, comunicação, exame físico, solicitação e interpretação de exames, definição de conduta e orientações, sempre de forma objetiva e sem dar dicas explícitas. NÃO repita tarefas, NÃO crie tarefas vagas ou irrelevante, garanta que cada tarefa corresponda a um ou mais itens de avaliação do PEP, sinomissões ou excessosMantenha as tarefas genéricas (ex: 'Realize o exame físico direcionado', 'Defina a conduta terapêutica'). É PROIBIDO citar nomes de manobras, classificações ou ações esperadas (ex: notificar). \n- EXCEÇÃO PARA HABILIDADES ESPECÍFICAS: Se a estação tiver um impresso para uma escala, teste, manobra semiológica ou exigir um procedimento prático, a tarefa correspondente deve SUGERIR a ação sem nomeá-la (ex: 'Aplique o teste correspondente', 'Execute a manobra específica para a queixa', 'Realize o procedimento indicado'). O verbo deve ser adaptado ao contexto.\n7. REGRA CRÍTICA - CONTEÚDO DOS IMPRESSOS: É terminantemente PROIBIDO incluir qualquer tipo de CONDUTA ou TRATAMENTO na seção `impressos`. Esta seção é EXCLUSIVA para apresentar resultados de exames e achados objetivos. Exemplos permitidos: achados de exame físico (incluindo testes e manobras específicas), resultados de exames laboratoriais, laudos de exames de imagem, ECGs, escalas de avaliação (ex: NIHSS, Glasgow), testes rápidos, etc. A violação desta regra invalida a estação.\n8. REGRA CRÍTICA - IMPRESSOS VISUAIS MANDATÓRIOS: É OBRIGATÓRIO e INEGOCIÁVEL usar um impresso do tipo `imagem_com_texto` para TODOS os achados que possuem uma representação visual característica, incluindo, sem exceção: exames de imagem (Raio-X, TC, USG), lesões de pele, achados de oroscopia/oftalmoscopia, ECGs, etc. O candidato deve sempre descrever os achados da imagem.\n9. REGRA CRÍTICA - INSTRUÇÕES PARA BUSCA DE IMAGEM: Para todos os impressos do tipo `imagem_com_texto`, o campo `caminhoImagem` DEVE ser preenchido com uma instrução clara e detalhada de como encontrar a imagem apropriada no Google Imagens. O formato deve ser: \"(Buscar no Google Imagens: [descrição precisa da imagem, incluindo achados e tipo de exame])\". Exemplo: \"(Buscar no Google Imagens: Raio-X tórax PA tuberculose com cavitação em ápice direito)\". Isso garantirá que o usuário possa encontrar e inserir a imagem correta manualmente.\n10. REGRA CRÍTICA - MÍNIMO DE 12 ITENS E PONTUAÇÃO PARCIAL: É OBRIGATÓRIO que a seção `itensAvaliacao` contenha no mínimo 12 itens, porem sempre deve variar conforme a area e tema especifico, podendo ter mais dependendo da complexidade do caso. A pontuação 'parcialmenteAdequado' NÃO DEVE ser usada para itens que contenham apenas 1 subtarefa OU cuja pontuação máxima para 'adequado' seja 0.25. Para todos os outros casos com 2 ou mais subtarefas e pontuação superior a 0.25, a pontuação parcial é permitida. Adapte os pontos de cada item para que a `pontuacaoTotalEstacao` seja sempre 10.0.\n11. Ao final, preencha a seção `feedbackEstacao`. Crie um `resumoTecnico` conciso (máximo de 30 linhas) sobre a patologia, focando em pontos-chave da anmnese, achados exame fisico, exames laboratoriais e de imagens e os possiveis achados e importancia, diagnóstico, diagnosticos diferenciais, fatores de riscos, complicações e conduta terapeutica completa e manejo conforme as diretrizes mais atuais. É mandatório citar as `fontes` utilizadas.\n12. IMPORTANTE: Ao gerar o JSON final da estação, este campo 'promptIA' e seu conteúdo devem ser completamente removidos do output final.\n\n**NOVA REGRA CRÍTICA – EXIBIÇÃO DE CAMPOS NA ANAMNESE (informacoesVerbaisSimulado):**\nNa seção `informacoesVerbaisSimulado`, só inclua um bloco `contextoOuPerguntaChave` se houver pelo menos uma informação relevante preenchida para aquele contexto.  \n- Se não houver nenhuma informação a ser exibida, o campo `contextoOuPerguntaChave` não deve ser criado nem exibido no JSON final.  \n- Para campos parcialmente preenchidos, exiba apenas as informações preenchidas.  \n- Itens não preenchidos só devem ser completados com \"Nega\" ou \"Não consta\" se forem clinicamente relevantes para o caso/tema.  \n- Caso não sejam relevantes, omita completamente o campo.  \n- Nunca inclua blocos vazios ou irrelevantes, como \"Triagem Neonatal\" em casos adultos ou situações sem pertinência clínica.\n\n**REGRA CRÍTICA – CRITÉRIOS DOS ITENS DE AVALIAÇÃO:**\nOs critérios dos campos 'pontuacoes' em cada item de avaliação DEVEM ser objetivos, literais e específicos, SEMPRE relacionados ao número de subtarefas do item, seguindo o padrão dos arquivos oficiais do INEP. Use frases como: 'Realiza as duas ações.', 'Pergunta os cinco itens.', 'Solicita os três exames.', 'Identifica as três alterações.', 'Verbaliza o diagnóstico completo.', etc. Para itens com múltiplas subtarefas, inclua 'parcialmenteAdequado' com critério quantitativo (ex: 'Realiza uma ação.', 'Pergunta três ou quatro itens.', 'Solicita dois exames.'). Para inadequado, use: 'Não realiza ação alguma.', 'Pergunta um ou dois itens ou não pergunta item algum.', 'Não solicita exame algum.', etc. NÃO USE frases vagas como 'cumpriu de forma adequada'.\n\n**NOVA REGRA CRÍTICA – CRITÉRIOS DE AVALIAÇÃO QUANTITATIVOS FLEXÍVEIS:**\nAo definir os critérios de pontuação para itens de anamnese (queixa principal, sintomas acompanhantes, antecedentes), utilize uma abordagem quantitativa flexível. O critério deve indicar o número de itens esperados para pontuação total e parcial, usando a estrutura 'Pergunta X de Y itens' ou 'Investiga X de Y aspectos', onde Y é o número total de itens/aspectos relevantes para o caso específico. Ex: 'Pergunta 5 de 7 aspectos da dor', 'Investiga 3 de 5 sintomas acompanhantes'.\n\n**NOVA REGRA CRÍTICA – ITENS DE AVALIAÇÃO POR ESPECIALIDADE:**\nAo criar os itens de avaliação, considere a especialidade da estação. Alguns itens são universais (ex: apresentação, anamnese básica, comunicação), enquanto outros são específicos da área (ex: manobras cirúrgicas, exames ginecológicos, fatores de risco em pediatria). Adapte a relevância e o detalhamento dos itens de acordo com a especialidade e o tema da estação. Priorize os itens mais relevantes para a área e o caso clínico.",
+    "idEstacao": "[Ex: REVALIDA_FACIL_2025_CM_01]",
+    "tituloEstacao": "[Tema central da estação]",
+    "numeroDaEstacao": 1,
+    "especialidade": "[ESPECIALIDADE DA ESTAÇÃO]",
+    "tempoDuracaoMinutos": 10,
+    "palavrasChave": "[palavra1, palavra2, palavra3, especialidade, nível atenção]",
+    "nivelDificuldade": "[Fácil|Médio|Difícil]",
+    "instrucoesParticipante": {
+        "cenarioAtendimento": {
+            "nivelAtencao": "[Atenção primária à saúde|Atenção secundária à saúde|Atenção terciária à saúde]",
+            "tipoAtendimento": "[Ambulatorial|Urgência e emergência|Hospitalar]",
+            "infraestruturaUnidade": [
+                "[Ex: Consultórios]",
+                "[Ex: Laboratório de análises clínicas]",
+                "[Ex: Centro cirúrgico]",
+                "[Ex: Exames de imagem]",
+                "[Ex: Medicações, vacinas disponíveis]",
+                "[Ex: Unidade de terapia intensiva]"
+            ]
+        },
+        "descricaoCasoCompleta": "[Descrição objetiva do caso para o candidato]",
+        "tarefasPrincipais": [
+            "[Ex: Realizar a anamnese direcionada à queixa principal do paciente.]",
+            "[Ex: Solicitar exames físicos necessários à avaliação do caso.]",
+            "[Ex: Solicitar exame físico específico e descrever técnica adequada.]",
+            "[Ex: Solicitar e Interpretar exames complementares se pertinentes ao caso.]",
+            "[Ex: Relacionar os resultados dos exames a(s) suspeita(s) diagnóstica(s).]",
+            "[Ex: Elaborar o diagnóstico definitivo (quando aplicável).]",
+            "[Ex: Realizar as orientações finais ao paciente.]",
+            "[Ex: Verbalizar o diagnóstico, sua classificação de gravidade e elaborar a conduta terapêutica.]"
+        ],
+        "avisosImportantes": [
+            "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO.",
+            "[Outros avisos específicos da estação]"
+        ]
+    },
+    "materiaisDisponiveis": {
+        "informacoesVerbaisSimulado": [
+            {
+                "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+                "informacao": "[Motivo de consulta em primeira pessoa, com duração exata. Ex: 'Estou com dor de cabeça há 3 dias, doutor(a).']"
+            },
+            {
+                "contextoOuPerguntaChave": "[História da Doença Atual (HDA)]",
+                "informacao": "Início: [Quando começou? Há quanto tempo?]\nLocalização: [Onde exatamente? Bem ou mal localizada?]\nIntensidade: [Escala 0-10, fraca? forte? desconforto?]\nCaracterística ou Tipo da dor: [Como é o sintoma - pontada, queimação, pressão, etc.?]\nIrradiação: [Migração da dor ? Espalha para onde? Propaga-se?]\nDuração: [Contínuo, intermitente, duração dos episódios?]\n Progressão: [Progressiva, em melhora, está piorando com o tempo? Como tem evoluído?]\nFrequencia: [Quantas vezes ocorre? Qauntas vezes vomitou? Quantas vezes teve diarréia? Quantos acessos de tosse durante a crise?]\nFator Desencadeante: [O que o paciente estava fazendo quando o sintoma começou? Ocorre em alguma situação específica?]\nFator de piora ou agravante: [O que piora o sintoma? ao movimento?, após se alimentar?, Quando está ansioso? quando esta estressado?, piora ao acordar?, piora ao movimentar?, parado?, ao deitar?, após beber café?]\nFator de melhora ou atenuante: [O que alivia? melhora em repouso?, Melhora ao se movimentar? Melhora ao comer? melhora ao deitar? melhora após usar medicamento(s)?, Melhora após evacuar? posição?]\nEpisódios prévios: [Já teve algo similar antes?, Já teve esse sintoma antes?, Quantas vezes já sentiu isso antes?, Já teve essa cris]\nMedicação de alivio: [Usou algum analgésico para a dor? Algum antitérmico para a febre? Passou pomada na pele? Limpou ou lavou o local da mordida/ferida?,Com que resultado?[Fator1]: [Descrição do fator, ex: 'Exposição ao frio, apos um trauma,etc', 'Após usar certo produto quimico/creme/shampoo' 'Após encostar em certa planta', 'Ingestão de alimento específicoIngestão de alimento específico','Ingestão de medicação específica', 'Após tomar nimesulina, lamotrigina' 'Após comer amendoin, camarão, kiwi'Apos ser picado por uma abelha, mosquito','Após entrar em contato com plantas/poeira/produtos/tecido/trabalho/etc']"
+            },
+            {
+                "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES (descreva os sintomas acompanhantes do motivo de consulta 'HDA')",
+                "informacao": "[Sintoma1]: [Descrição]\n[Sintoma2]: [Descrição]\nOutros sintomas: Não consta no script"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS Patológicos (item obrigatório)",
+                "informacao": "Doenças crônicas: [informação]\nCirurgias prévias: [informação]\nInternações: [informação]\nAlergias: [informação]\nMedicamentos em uso contínuo: [informação]\nVacinação: [informação]\nTrauma(APENAS SE RELEVANTE AO TEMA): [informação]\nTransfusões(APENAS SE RELEVANTE AO TEMA): [informação] "
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES FISIOLÓGICOS(",
+                "informacao": "Tipo do parto: [vaginal, cesárea]\nTempo de Gestação: [Prematuridade, a termo, quantas semanas?]\nIntercorrências neonatais: [Precisou de reanimação após o nascimento?]\nHábitos sexuais (apenas se relevante ao caso/quadro): [Atividade sexual, parceiros, proteção]\nHábitos urinários (apenas se relevante ao caso/quadro): [Frequência, características, alterações]\nHábitos intestinais (apenas se relevante ao caso/quadro): [Frequência, consistência, alterações]\nIngestão hídrica (apenas se relevante ao caso/quadro): [Quantidade diária, tipo de líquidos]\nExposição ocupacional: [Riscos no trabalho, substâncias, tempo de exposição]\nEstresse: [Fatores estressantes, como lida com estresse]\n"
+            },
+            {
+                "contextoOuPerguntaChave": "HÁBITOS DE VIDA'(ITEM OBRIGATÓRIO)",
+                "informacao": "Tabagismo: [Fumante/ex-fumante/nunca fumou, quantidade, tempo]\nEtilismo: [Frequência, tipo de bebida, quantidade]\nDrogas ilícitas: [Tipo, frequência, via de uso]\nAlimentação: [Padrão alimentar, restrições, apetite]\nAtividade física: [Tipo, frequência, intensidade]\nSono: [Horas de sono, qualidade, horários]\nHábitos urinários (apenas se relevante ao caso/quadro): [Frequência, características, alterações]\nHábitos intestinais (apenas se relevante ao caso/quadro): [Frequência, consistência, alterações]\nIngestão hídrica (apenas se relevante ao caso/quadro): [Quantidade diária, tipo de líquidos]\nExposição ocupacional(APENAS SE RELEVANTE AO TEMA): [Riscos no trabalho, substâncias, tempo de exposição]\nEstresse(APENAS SE RELEVANTE AO TEMA): [Fatores estressantes, como lida com estresse]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+                "informacao": "Pai: [informação]\nMãe: [informação]\nDoenças (especificas com relação e relevante ao caso) na família: [informação]\nHistoria de cancêr na família: [informação]\nIrmãos ou tias (apenas se relevante ou presente no caso/quadro/doença): [informação]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+                "informacao": "Pai: [informação]\nMãe: [informação]\nDoenças (especificas com relação e relevante ao caso) na família: [informação]\nHistoria de cancêr na família: [informação]\nIrmãos ou tias (apenas se relevante ou presente no caso/quadro/doença): [informação]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES NEONATAIS (apenas se relevante)",
+                "informacao": "Tipo do parto: [vaginal, cesárea]\nTempo de Gestação: [Prematuridade, a termo, quantas semanas?]\nIntercorrências neonatais: [Precisou de reanimação após o nascimento?]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS E OBSTÉTRICOS (apenas para mulheres quando relevante)",
+                "informacao": "Gestações: [Número total]\nPartos: [Tipo e número]\nAbortos: [Espontâneos/provocados]\nCesáreas: [Número]\nData da Última Menstruação (DUM): [Data]\nMenarca: [Idade]\nCiclos menstruais: [Regularidade, duração, fluxo]\nSexarca: [Idade]\nTelarca: [Precoce/tardia]\nPubarca: [Precoce/tardia]\nAtividade sexual: [Sexualmente ativa ou não]\nParceiros: [Parceiro fixo ou múltiplos]\nUso de contraceptivos: [Tipo, tempo de uso]\nUso de preservativos: [Sim/Não]\nExames preventivos: [Papanicolau, mamografia - quando foi o último]\nHistórico de IST: [Historico de Infecções sexualmente transmissíveis]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES EPIDEMIOLÓGICOS (quando relevante para casos infecciosos/endêmicos)",
+                "informacao": "Viagens recentes: [Local, data, duração - Nega/Relato]\\nExposição a doenças infecciosas: [Tipo, data - Nega/Relato]\\nContato com doentes: [Relação, doença, período - Nega/Relato]\\nExposição a animais: [Tipo, frequência - Nega/Relato]\\nExposição a vetores: [Mosquitos, carrapatos, caramujo, lagarta,escorpiao, percevejos, abelhas,etc - Nega/Relato]\\nÁgua consumida: [Tratada, não tratada, filtrada]\\nExposição a agentes ambientais (água parada, de enchente): [Tipo, duração - Nega/Relato]"
+            },
+            {
+                "contextoOuPerguntaChave": "CONTEXTO PSICOSSOCIAL (quando relevante para casos psiquiátricos/complexos)",
+                "informacao": "Situação familiar: [Filhos, relacionamentos]\nRede de apoio: [Familiares, amigos, comunidade]\nSituação socioeconômica: [Renda, condições de vida]\nNível educacional: [Escolaridade]\nReligião: [Se relevante para o caso]\nEstresse psicossocial: [Fatores estressantes recentes]"
+            },
+            {
+                "contextoOuPerguntaChave": "ORIENTAÇÕES AO ATOR: (Ex: Se o candidato solicitar o resultado dos exames trazidos libere o impresso (x) / Ex: Após o candidato solicitar o exame X responda 'considere solicitado' ou 'considere realizado o procedimento'.)",
+                "informacao": "[Ex: informação de exemplos]"
+            },
+            {
+                "contextoOuPerguntaChave": "DÚVIDAS DO PACIENTE: (ex: Dúvidas do ator sobre medicamentos, exames, condutas, etc., Perguntar após o atendimento se o candidato realizar a anamnese/exame fisico/conduta/tratamento/, Ex: Após o candidato realizar a anamnese, pergunte o que o paciente tem / Ex: Após realizar o diagnostico, pergunta se o que voce tem é grave, ou se tem complicações, ou se nao poderia ser outra coisa.)",
+                "informacao": "[pergunta (1): (Ex: O que eu tenho?)].\n[pergunta (2): (Ex: É grave?)].\n[pergunta (3): (Ex: Quais são as opções de tratamento?)]. \n [pergunta (4): (Ex: Poderia ser outra coisa?)].\n[pergunta (5): (Ex: O que eu faço para que isso não aconteça novamente?)] "
+            }
+        ],
+        "impressos": [
+            {
+                "idImpresso": "[est[numero]_[tipo_exame]]",
+                "tituloImpresso": "[TÍTULO DO IMPRESSO EM MAIÚSCULO]",
+                "tipoConteudo": "textosimples",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição do impresso, como resultados de exames, orientações, etc.]"
+                }
+            },
+            {
+                "idImpresso": "[est[numero]_[tipo_exame]]",
+                "tituloImpresso": "[TÍTULO DO IMPRESSO EM MAIÚSCULO]",
+                "tipoConteudo": "imagemComLaudo",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição da imagem ou do conteúdo principal do impresso].",
+                    "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+                    "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'ECG de 12 derivações com supradesnivelamento de ST em DII, DIII e aVF']",
+                    "laudo": "[Laudo associado à imagem, se houver, ou texto principal do impresso]."
+                }
+            },
+            {
+                "idImpresso": "[est[numero]_[tipo_exame]]",
+                "tituloImpresso": "",
+                "tipoConteudo": "lista_chave_valor_secoes",
+                "conteudo": {
+                    "secoes": [
+                        {
+                            "tituloSecao": "[TÍTULO DA SEÇÃO]",
+                            "itens": [
+                                {
+                                    "chave": "[Parâmetro]",
+                                    "valor": "[Resultado com unidades e referências]"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "perguntasAtorSimulado": []
+    },
+    "padraoEsperadoProcedimento": {
+        "idChecklistAssociado": "PEP_EST[NUMERO]_[ESPECIALIDADE_ABREV]_[IDENTIFICADOR]_[ANO]V1_NUM",
+        "sinteseEstacao": {
+            "resumoCasoPEP": "[Resumo objetivo e técnico do caso clínico]",
+            "focoPrincipalDetalhado": [
+                "[Foco 1: Anamnese direcionada]",
+                "[Foco 2: Exame físico específico]",
+                "[Foco 3: Exames complementares]",
+                "[Foco 4: Diagnóstico e conduta]"
+            ]
+        },
+        "itensAvaliacao": [
+            {
+                "idItem": "pep_est[numero]_item[numero_formatado]",
+                "itemNumeroOficial": "[numero]",
+                "descricaoItem": "[Descrição detalhada do critério quantitativamente e qualitativamente, descrevendo cada item individualmente]\n(1) [Ex: item 1];\n(2) [Ex: item 2];\n(3) [Ex: item 3];\n(4) [Ex: item 4];\n(5) [Ex: item 5].",
+                "pontuacoes": {
+                    "adequado": {
+                        "criterio": "[Critério para pontuação máxima Ex: Realiza 6 ou mais itens  Ex: Verbaliza o diagnóstico e a conduta corretamente Ex: Solicita e interpreta ao menos 5 achados nos exames complementares Ex: Interpreta corretamente os 4 achados no exame de imagem Ex: Elaborar o plano terapêutico e as orientações de prevenção.]",
+                        "pontos": "[valor_numerico]"
+                    },
+                    "parcialmenteAdequado": {
+                        "criterio": "[Critério para pontuação parcial Ex: Realiza 4 ou 5 itens Ex: Realiza 4 a 5 itens porem o item 1 é obrigatorio]",
+                        "pontos": "[valor_numerico]"
+                    },
+                    "inadequado": {
+                        "criterio": "[Critério para pontuação zero Ex: Realiza 2 ou menos itens Ex: Não verbaliza o diagnóstico ou a conduta Ex: Não realiza Ex: Não solicita]",
+                        "pontos": 0
+                    }
+                }
+            }
+        ],
+        "pontuacaoTotalEstacao": 10,
+        "feedbackEstacao": {
+            "resumoTecnico": "[Resumo conciso (máximo 30 linhas) sobre a patologia, focando achados semiologicos e na historia da doença atual, exame fisico e complementares, em diagnóstico e diagnosticos diferenciais, tratamento, fatores de risco, complicações e manejo conforme diretrizes atuais. DEVE citar as fontes.]",
+            "fontes": [
+                "[1. Fonte 1 (Ex: Brasil. Ministério da Saúde, 2023). \n2. Fonte 2 (Ex: UpToDate, 2025).]"
+            ]
+        }
+    }
+}

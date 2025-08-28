@@ -1,0 +1,22 @@
+{
+  "version": "v1.0.87",
+  "timestamp": "2025-08-28T06:11:04.191072",
+  "change_type": "auto",
+  "description": "Inicialização do sistema híbrido",
+  "total_size_bytes": 237186,
+  "files_count": 7,
+  "files": [
+    "referencias_base.md",
+    "aprendizados_usuario.jsonl",
+    "config_memoria.json",
+    "gabaritoestacoes.json",
+    "fase1_analise_planejamento.md",
+    "fase2_roteiros_anamnese.md",
+    "fase3_impressos_exames.md"
+  ],
+  "system_state": {
+    "hybrid_active": true,
+    "learnings_count": 13,
+    "contexts_count": 4
+  }
+}

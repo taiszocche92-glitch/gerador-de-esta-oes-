@@ -1,14 +1,14 @@
 {
   "sistema_versionamento": {
     "versao": "3.1-versionamento",
-    "versao_atual": "v1.0.19",
+    "versao_atual": "v1.0.98",
     "historico_versoes": [
       {
-        "version": "v1.0.0",
-        "timestamp": "2025-08-19T17:05:07.120367",
-        "change_type": "major",
-        "description": "Versão inicial do sistema híbrido",
-        "total_size_bytes": 26168,
+        "version": "v1.0.49",
+        "timestamp": "2025-08-27T17:16:27.094556",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -18,20 +18,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.1",
-        "timestamp": "2025-08-21T15:18:26.270829",
+        "version": "v1.0.50",
+        "timestamp": "2025-08-27T18:37:51.367439",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -41,20 +41,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.2",
-        "timestamp": "2025-08-21T15:22:54.201720",
+        "version": "v1.0.51",
+        "timestamp": "2025-08-27T18:41:30.771199",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -64,20 +64,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.3",
-        "timestamp": "2025-08-21T16:53:13.091979",
+        "version": "v1.0.52",
+        "timestamp": "2025-08-27T18:47:24.214355",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -87,20 +87,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.4",
-        "timestamp": "2025-08-21T16:56:12.705910",
+        "version": "v1.0.53",
+        "timestamp": "2025-08-27T19:01:51.859682",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -110,20 +110,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.5",
-        "timestamp": "2025-08-21T20:49:18.595399",
+        "version": "v1.0.54",
+        "timestamp": "2025-08-27T20:38:39.692252",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -133,20 +133,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.6",
-        "timestamp": "2025-08-21T21:18:30.063797",
+        "version": "v1.0.55",
+        "timestamp": "2025-08-27T20:56:35.201445",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -156,20 +156,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.7",
-        "timestamp": "2025-08-21T21:39:52.787143",
+        "version": "v1.0.56",
+        "timestamp": "2025-08-27T21:09:23.897402",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26170,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -179,20 +179,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.8",
-        "timestamp": "2025-08-25T22:32:08.043432",
+        "version": "v1.0.57",
+        "timestamp": "2025-08-27T21:16:06.144766",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26471,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -202,20 +202,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.9",
-        "timestamp": "2025-08-25T23:06:43.061152",
+        "version": "v1.0.58",
+        "timestamp": "2025-08-27T21:17:01.257071",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -225,20 +225,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.10",
-        "timestamp": "2025-08-25T23:13:21.651658",
+        "version": "v1.0.59",
+        "timestamp": "2025-08-27T21:21:36.572769",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -248,20 +248,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.11",
-        "timestamp": "2025-08-25T23:14:07.988633",
+        "version": "v1.0.60",
+        "timestamp": "2025-08-27T21:21:44.487846",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -271,20 +271,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.12",
-        "timestamp": "2025-08-25T23:32:08.777696",
+        "version": "v1.0.61",
+        "timestamp": "2025-08-27T21:23:36.897177",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -294,20 +294,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.13",
-        "timestamp": "2025-08-25T23:47:14.027977",
+        "version": "v1.0.62",
+        "timestamp": "2025-08-27T21:32:02.811306",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -317,20 +317,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.14",
-        "timestamp": "2025-08-25T23:48:50.139055",
+        "version": "v1.0.63",
+        "timestamp": "2025-08-27T22:32:53.128207",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 205454,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -340,20 +340,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 9,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.15",
-        "timestamp": "2025-08-25T23:50:12.511170",
+        "version": "v1.0.64",
+        "timestamp": "2025-08-27T23:18:12.806222",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 211875,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -363,20 +363,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 10,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.16",
-        "timestamp": "2025-08-26T00:05:25.940899",
+        "version": "v1.0.65",
+        "timestamp": "2025-08-27T23:27:26.732114",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 211875,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -386,20 +386,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 10,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.17",
-        "timestamp": "2025-08-26T00:11:32.533542",
+        "version": "v1.0.66",
+        "timestamp": "2025-08-27T23:29:47.659949",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 211875,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -409,20 +409,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 10,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.18",
-        "timestamp": "2025-08-26T00:14:13.104605",
+        "version": "v1.0.67",
+        "timestamp": "2025-08-27T23:32:48.358903",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 211875,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -432,20 +432,20 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 10,
           "contexts_count": 4
         }
       },
       {
-        "version": "v1.0.19",
-        "timestamp": "2025-08-26T00:14:47.172479",
+        "version": "v1.0.68",
+        "timestamp": "2025-08-27T23:40:20.219394",
         "change_type": "auto",
         "description": "Inicialização do sistema híbrido",
-        "total_size_bytes": 26468,
+        "total_size_bytes": 211875,
         "files_count": 8,
         "files": [
           "referencias_base.md",
@@ -455,11 +455,699 @@
           "fase1_analise_planejamento.md",
           "fase2_roteiros_anamnese.md",
           "fase3_impressos_exames.md",
-          "fase4_checklist_pep.md"
+          "fase4_impressos_exames.md"
         ],
         "system_state": {
           "hybrid_active": true,
-          "learnings_count": 3,
+          "learnings_count": 10,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.69",
+        "timestamp": "2025-08-27T23:48:56.245964",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 211875,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 10,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.70",
+        "timestamp": "2025-08-28T00:47:46.268570",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 211875,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 10,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.71",
+        "timestamp": "2025-08-28T03:21:04.143716",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 223978,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 14,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.72",
+        "timestamp": "2025-08-28T03:21:20.705968",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 223978,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 14,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.73",
+        "timestamp": "2025-08-28T03:22:49.159316",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 223978,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 14,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.74",
+        "timestamp": "2025-08-28T03:25:29.270478",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 223978,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 14,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.75",
+        "timestamp": "2025-08-28T03:25:30.191062",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 223978,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 14,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.76",
+        "timestamp": "2025-08-28T03:27:48.981924",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 220328,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.77",
+        "timestamp": "2025-08-28T03:27:49.961354",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 220328,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.78",
+        "timestamp": "2025-08-28T03:32:19.532394",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 220328,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.79",
+        "timestamp": "2025-08-28T04:05:02.717440",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 244441,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.80",
+        "timestamp": "2025-08-28T04:16:51.938354",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.81",
+        "timestamp": "2025-08-28T05:24:43.121261",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.82",
+        "timestamp": "2025-08-28T05:30:01.503439",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.83",
+        "timestamp": "2025-08-28T05:38:40.253939",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.84",
+        "timestamp": "2025-08-28T05:42:45.991764",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.85",
+        "timestamp": "2025-08-28T05:54:22.862537",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.86",
+        "timestamp": "2025-08-28T06:10:52.837617",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 237186,
+        "files_count": 7,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.87",
+        "timestamp": "2025-08-28T06:11:04.191072",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 237186,
+        "files_count": 7,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.88",
+        "timestamp": "2025-08-28T06:30:00.240557",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.89",
+        "timestamp": "2025-08-28T06:46:17.502315",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.90",
+        "timestamp": "2025-08-28T06:46:37.351859",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.91",
+        "timestamp": "2025-08-28T06:46:55.067351",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.92",
+        "timestamp": "2025-08-28T06:47:50.102172",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.93",
+        "timestamp": "2025-08-28T06:48:03.004573",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.94",
+        "timestamp": "2025-08-28T06:54:26.424149",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.95",
+        "timestamp": "2025-08-28T07:07:05.888154",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.96",
+        "timestamp": "2025-08-28T07:17:20.394255",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.97",
+        "timestamp": "2025-08-28T07:33:28.566076",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 247343,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 13,
+          "contexts_count": 4
+        }
+      },
+      {
+        "version": "v1.0.98",
+        "timestamp": "2025-08-28T08:18:29.093012",
+        "change_type": "auto",
+        "description": "Inicialização do sistema híbrido",
+        "total_size_bytes": 248952,
+        "files_count": 8,
+        "files": [
+          "referencias_base.md",
+          "aprendizados_usuario.jsonl",
+          "config_memoria.json",
+          "gabaritoestacoes.json",
+          "fase1_analise_planejamento.md",
+          "fase2_roteiros_anamnese.md",
+          "fase3_impressos_exames.md",
+          "fase4_impressos_exames.md"
+        ],
+        "system_state": {
+          "hybrid_active": true,
+          "learnings_count": 0,
           "contexts_count": 4
         }
       }
@@ -477,11 +1165,13 @@
       ]
     },
     "metricas": {
-      "total_versoes": 20,
-      "ultima_atualizacao": "2025-08-26T00:14:47.172479",
+      "total_versoes": 50,
+      "ultima_atualizacao": "2025-08-28T08:18:29.093012",
       "tamanho_total_bytes": 26168,
       "economia_tokens_historica": []
     }
   },
-  "active": true
+  "active": true,
+  "base_path": "memoria/versoes",
+  "versions_path": "memoria/versoes"
 }

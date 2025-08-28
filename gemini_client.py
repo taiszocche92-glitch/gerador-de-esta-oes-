@@ -4,8 +4,8 @@ from typing import Optional
 
 load_dotenv()
 
-# Order of keys to try: prioriza GEMINI_API_KEY_4 (chave paga para geração), depois os demais
-KEY_SLOTS = ['GEMINI_API_KEY_4'] + [f'GEMINI_API_KEY_{i}' for i in range(1,9) if i != 4]
+# Order of keys to try: prioriza GOOGLE_API_KEY_5 (chave principal), depois os demais GOOGLE_API_KEY_*
+KEY_SLOTS = ['GOOGLE_API_KEY_5', 'GOOGLE_API_KEY_4', 'GOOGLE_API_KEY_3', 'GOOGLE_API_KEY_2', 'GOOGLE_API_KEY_1']
 
 # Heurística: keys que começam with 'AIza' são API keys (HTTP); preferi-las
 def _is_api_key(val: str) -> bool:
@@ -25,7 +25,13 @@ def configure_first_available():
         if _is_api_key(key):
             try:
                 # configurar diretamente como api_key (HTTP API)
-                genai.api_key = key
+                # O método correto é genai.configure, mas se não existir, usar genai.configure se disponível
+                if hasattr(genai, "configure"):
+                    # Pylance não reconhece configure, mas é o método correto segundo a documentação oficial.
+                    # Para evitar erro de linter, pode-se usar getattr.
+                    getattr(genai, "configure")(api_key=key)
+                else:
+                    raise RuntimeError("Não foi possível configurar a chave da API: método 'configure' não encontrado em google.generativeai")
                 return slot
             except Exception:
                 # se falhar, tentar métodos alternativos abaixo
@@ -39,14 +45,11 @@ def configure_first_available():
             continue
         try:
             # tentar configurar via client API
-            try:
-                genai.client.configure(api_key=key)
-            except Exception:
-                try:
-                    genai.configure(api_key=key)
-                except Exception:
-                    genai.api_key = key
-            return slot
+                if hasattr(genai, "configure"):
+                    getattr(genai, "configure")(api_key=key)
+                else:
+                    raise RuntimeError("Não foi possível configurar a chave da API: método 'configure' não encontrado em google.generativeai")
+                return slot
         except Exception:
             # se falhar, continue para a próxima chave
             continue
@@ -59,21 +62,12 @@ def configure_specific(slot_name: str) -> Optional[str]:
     if not key:
         return None
     try:
-        # Se for API key HTTP (ex: começa com 'AIza'), setar genai.api_key diretamente
-        if _is_api_key(key):
-            try:
-                genai.api_key = key
-                return slot_name
-            except Exception:
-                pass
-        try:
-            genai.client.configure(api_key=key)
-        except Exception:
-            try:
-                genai.configure(api_key=key)
-            except Exception:
-                genai.api_key = key
-        return slot_name
+        # Configuração única usando o método correto
+        if hasattr(genai, "configure"):
+            getattr(genai, "configure")(api_key=key)
+            return slot_name
+        else:
+            raise RuntimeError("Não foi possível configurar a chave da API: método 'configure' não encontrado em google.generativeai")
     except Exception:
         return None
 

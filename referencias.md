@@ -358,16 +358,6 @@ As tarefas são altamente adaptadas ao contexto da estação.
 - Sintomas associados: [Febre, dispneia, dor torácica]
 - Episódios prévios: [Já teve algo similar antes?]
 
-**Dispneia (Falta de ar)**
-- Início: [Súbito ou gradual]
-- Intensidade: [Leve, moderada, grave]
-- Gatilhos: [Em repouso ou aos esforços? Quais atividades causam?]
-- Classificação NYHA: [I-IV - detalhar quais atividades causam dispneia]
-- Ortopneia: [Necessita de quantos travesseiros para dormir?]
-- Dispneia paroxística noturna: [Acorda à noite sufocado? Com que frequência?]
-- Sintomas associados: [Tosse, chiado, dor torácica, edema de MMII]
-- Episódios prévios: [Já teve algo similar antes?]
-
 **Dor Torácica**
 - Início: [Súbito ou gradual]
 - Localização: [Onde exatamente no peito? Precordial, retroesternal?]
@@ -402,8 +392,10 @@ As tarefas são altamente adaptadas ao contexto da estação.
 - Irradiação: [A dor se espalha para algum outro local?]
 - Caráter: [Cólica, queimação, pontada, peso]
 - Intensidade: [Escala 0-10]
-- Relação com funções: [Piora ou melhora com alimentação, evacuação, micção?]
-- Fatores de melhora/piora: [O que alivia ou piora a dor?]
+- Fator de piora: [Piora ou melhora com alimentação, evacuação, micção?]
+- Fatores de melhora: [O que alivia a dor? Melhora ao evacuar, melhora ao tomar analgésico?]
+- Progressão: [A dor esta piorando com o passar dos dias?messes?anos?]
+- Frequencia: [Dói quantas vezes ao dia? tem predominio de horario?]
 - Sintomas associados: [Náuseas, vômitos, febre, alteração do hábito intestinal]
 - Sinais de Alarme: [Febre alta, vômitos com sangue, fezes pretas ou com sangue, parada de eliminação de gases e fezes, icterícia, piora súbita e intensa da dor?]
 - Relação com ciclo menstrual: [A dor tem relação com a menstruação?]

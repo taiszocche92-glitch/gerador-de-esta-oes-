@@ -68,7 +68,8 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
     doc = fitz.open(str(pdf_path))
     for page in doc:
         try:
-            text = page.get_text("text")
+            # PyMuPDF: get_text é o método correto; fallback para extrair texto bruto se não existir
+            text = getattr(page, "get_text", lambda: "")()
         except Exception:
             text = ""
         if text:
@@ -98,17 +99,20 @@ def ensure_dir(p: Path):
     p.mkdir(parents=True, exist_ok=True)
 
 
-def init_firebase(service_account_path: Path = None):
+from typing import Optional
+
+def init_firebase(service_account_path: Optional[Path] = None):
     if firebase_admin is None:
         print("firebase_admin não instalado; pulando ingestão de estações do Firestore.")
         return None
     try:
         if not firebase_admin._apps:
-            if service_account_path and service_account_path.exists():
+            if isinstance(service_account_path, Path) and service_account_path and service_account_path.exists():
                 cred = credentials.Certificate(str(service_account_path))
                 firebase_admin.initialize_app(cred)
             else:
-                firebase_admin.initialize_app()
+                if not firebase_admin._apps:
+                    firebase_admin.initialize_app()
         db = firestore.client()
         return db
     except Exception as e:
@@ -154,12 +158,9 @@ def index_documents(items, model_name, out_dir: Path, rebuild=False):
 
     # configurar cliente
     try:
-        genai.configure(api_key=api_key)
+        getattr(genai, "configure")(api_key=api_key)
     except Exception:
-        try:
-            genai.client.configure(api_key=api_key)
-        except Exception:
-            pass
+        print("Erro ao configurar a chave da API do Gemini.")
 
     print("Gerando embeddings via API — isso consome créditos do Google Cloud.")
 
@@ -187,7 +188,7 @@ def index_documents(items, model_name, out_dir: Path, rebuild=False):
     for cand in candidates:
         try:
             print(f"Testando modelo de embeddings: {cand}")
-            resp_test = genai.embed_content(model=cand, content=test_input)
+            resp_test = getattr(genai, "embed_content")(model=cand, content=test_input)
             if isinstance(resp_test, dict) and resp_test.get('embedding'):
                 chosen_model = cand
                 break
@@ -209,11 +210,11 @@ def index_documents(items, model_name, out_dir: Path, rebuild=False):
     for i in tqdm(range(0, len(texts), batch_size), desc="Chamando API de embeddings"):
         batch = texts[i:i+batch_size]
         try:
-            resp = genai.embed_content(model=chosen_model, content=batch)
+            resp = getattr(genai, "embed_content")(model=chosen_model, content=batch)
             if isinstance(resp, dict) and 'embedding' in resp:
                 emb_vectors = resp['embedding']
             elif hasattr(resp, 'embedding'):
-                emb_vectors = resp.embedding
+                emb_vectors = resp.get('embedding', [])
             else:
                 emb_vectors = list(resp)
         except Exception as e:

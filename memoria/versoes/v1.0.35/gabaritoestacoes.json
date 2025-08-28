@@ -1,0 +1,327 @@
+
+{
+  "idEstacao": "REVALIDA_FACIL_[ANO]_[SEMESTRE]_EST[NUMERO]_[ESPECIALIDADE]_[IDENTIFICADOR_CASO]",
+  "tituloEstacao": "[NOME_EXATO_DA_CONDIÇÃO_MÉDICA]",
+  "numeroDaEstacao": "[NUMERO_INTEIRO]",
+  "especialidade": "[CLÍNICA MÉDICA|CIRURGIA GERAL|PEDIATRIA|GINECOLOGIA E OBSTETRÍCIA|MEDICINA DA FAMÍLIA E COMUNIDADE]",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": "[palavra1, palavra2, palavra3, especialidade, nível atenção]",
+  "nivelDificuldade": "[Fácil|Médio|Difícil]",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "[Atenção primária à saúde|Atenção secundária à saúde|Atenção terciária à saúde]",
+      "tipoAtendimento": "[Ambulatorial|Urgência e emergência|Hospitalar]",
+      "infraestruturaUnidade": [
+        "[Ex: Consultórios]",
+        "[Ex: Laboratório de análises clínicas]",
+        "[Ex: Centro cirúrgico]",
+        "[Ex: Exames de imagem]",
+        "[Ex: Medicações, vacinas disponíveis]",
+        "[Ex: Unidade de terapia intensiva]"
+      ]
+    },
+    "descricaoCasoCompleta": "[Descrição objetiva do caso para o candidato]",
+    "tarefasPrincipais": [
+      "[Ex: Realizar a anamnese direcionada à queixa principal do paciente.]",
+      "[Ex: Solicitar exames físicos necessários à avaliação do caso.]",
+      "[Ex: Solicitar exame físico específico e descrever técnica adequada.]",
+      "[Ex: Solicitar e Interpretar exames complementares se pertinentes ao caso.]",
+      "[Ex: Relacionar os resultados dos exames a(s) suspeita(s) diagnóstica(s).]",
+      "[Ex: Elaborar o diagnóstico definitivo (quando aplicável).]",
+      "[Ex: Realizar as orientações finais ao paciente.]",
+      "[Ex: Verbalizar o diagnóstico, sua classificação de gravidade e elaborar a conduta terapêutica.]"
+    ],
+    "avisosImportantes": [
+      "ATENÇÃO! CASO JULGUE NECESSÁRIO REALIZAR EXAME FÍSICO, VERBALIZE! O PACIENTE SIMULADO NÃO DEVERÁ SER TOCADO DURANTE O ATENDIMENTO.",
+      "[Outros avisos específicos da estação]"
+    ]
+  },
+  "materiaisDisponiveis": {
+    "informacoesVerbaisSimulado": [
+      {
+        "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+        "informacao": "[Motivo de consulta em primeira pessoa, com duração exata. Ex: 'Estou com dor de cabeça há 3 dias, doutor(a).']"
+      },
+      {
+        "contextoOuPerguntaChave": "[História da Doença Atual (HDA)]",
+        "informacao": "Início: [Quando começou? Há quanto tempo?]\nLocalização: [Onde exatamente? Bem ou mal localizada?]\nIntensidade: [Escala 0-10, fraca? forte? desconforto?]\nCaracterística ou Tipo da dor: [Como é o sintoma - pontada, queimação, pressão, etc.?]\nIrradiação: [Migração da dor ? Espalha para onde? Propaga-se?]\nDuração: [Contínuo, intermitente, duração dos episódios?]\n Progressão: [Progressiva, em melhora, está piorando com o tempo? Como tem evoluído?]\nFrequencia: [Quantas vezes ocorre? Qauntas vezes vomitou? Quantas vezes teve diarréia? Quantos acessos de tosse durante a crise?]\nFator Desencadeante: [O que o paciente estava fazendo quando o sintoma começou? Ocorre em alguma situação específica?]\nFator de piora ou agravante: [O que piora o sintoma? ao movimento?, após se alimentar?, Quando está ansioso? quando esta estressado?, piora ao acordar?, piora ao movimentar?, parado?, ao deitar?, após beber café?]\nFator de melhora ou atenuante: [O que alivia? melhora em repouso?, Melhora ao se movimentar? Melhora ao comer? melhora ao deitar? melhora após usar medicamento(s)?, Melhora após evacuar? posição?]\nEpisódios prévios: [Já teve algo similar antes?, Já teve esse sintoma antes?, Quantas vezes já sentiu isso antes?, Já teve essa cris]\nMedicação de alivio: [Usou algum analgésico para a dor? Algum antitérmico para a febre? Passou pomada na pele? Limpou ou lavou o local da mordida/ferida?,Com que resultado?[Fator1]: [Descrição do fator, ex: 'Exposição ao frio, apos um trauma,etc', 'Após usar certo produto quimico/creme/shampoo' 'Após encostar em certa planta', 'Ingestão de alimento específicoIngestão de alimento específico','Ingestão de medicação específica', 'Após tomar nimesulina, lamotrigina' 'Após comer amendoin, camarão, kiwi'Apos ser picado por uma abelha, mosquito','Após entrar em contato com plantas/poeira/produtos/tecido/trabalho/etc']"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor (qualquer localização)",
+        "informacao": "Início: [Quando começou? Há quanto tempo?]\nLocalização: [Onde exatamente? Bem ou mal localizada?]\nIntensidade: [Escala 0-10, fraca? forte? desconforto?]\nCaracterística ou Tipo da dor: [Como é o sintoma - pontada, queimação, pressão, etc.?]\nIrradiação: [Migração da dor ? Espalha para onde? Propaga-se?]\nDuração: [Contínuo, intermitente, duração dos episódios?]\n Progressão: [Progressiva, em melhora, está piorando com o tempo? Como tem evoluído?]\nFrequencia: [Quantas vezes ocorre? Qauntas vezes vomitou? Quantas vezes teve diarréia? Quantos acessos de tosse durante a crise?]\nFator de piora ou agravante: [O que piora o sintoma? ao movimento?, após se alimentar?, Quando está ansioso? quando esta estressado?, piora ao acordar?, piora ao movimentar?, parado?, ao deitar?, após beber café?]\nFator de melhora ou atenuante: [O que alivia? melhora em repouso?, Melhora ao se movimentar? Melhora ao comer? melhora ao deitar? melhora após usar medicamento(s)?, Melhora após evacuar? posição?]\nEpisódios prévios: [Já teve algo similar antes?, Já teve esse sintoma antes?, Quantas vezes já sentiu isso antes?, Já teve essa cris]\nMedicação de alivio: [Usou algum analgésico para a dor?,Com que resultado?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dispneia",
+        "informacao": "Início: [Quando começou? Foi súbito ou gradual?]\nDuração: [Há quanto tempo está com falta de ar?]\nPadrão: [Contínua ou episódica? Frequência dos episódios?]\nIntensidade: [Escala 0-10, limita atividades diárias?]\nImpacto nas Atividades de Vida Diária (AVDs): [O que o(a) senhor(a) deixou de fazer por causa da falta de ar?]\nOrtopneia e Dispneia Paroxística Noturna (DPN): [Precisa de quantos travesseiros para dormir? Acorda à noite com falta de ar?]\nFatores de piora: [Exercício físico, repouso, posição?]\nFatores de melhora: [Uso de medicação, repouso, mudança de posição?]\nSintomas associados: [Tosse, dor no peito, sibilos?]\nEpisódios prévios: [Já teve episódios semelhantes antes?]\nRelação com o ambiente: [Piora no trabalho ou em algum cômodo da casa?]\nHistórico de Tabagismo (quantificado): [Fuma ou já fumou? Quantos cigarros por dia e por quantos anos?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Febre",
+        "informacao": "Início: [Quando começou? Foi súbito com calafrios ou gradual?]\nDuração: [Há quantos dias está com febre?]\nPadrão: [Contínua ou tem picos? Em que período do dia é mais alta?]\nIntensidade: [Qual a temperatura mais alta medida?]\nSintomas associados: [Calafrios? Sudorese noturna?]\nResposta a antitérmicos: [Tomou algum remédio? Qual? A febre cedeu completamente?]\nHistórico de Viagens Recentes: [Viajou para algum lugar diferente no último mês? Onde?]\nContato com doentes ou animais: [Teve contato com alguém doente ou com animais recentemente?]\nUso de medicamentos recentes (incluindo antibióticos): [Está tomando algum remédio novo? Usou antibiótico recentemente?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações de Peso",
+        "informacao": "Início: [Quando começou a notar a alteração de peso?]\nTipo: [Perda ou ganho de peso]\nQuantificação: [Exemplo: 'Perdi 6 quilos nos últimos 3 meses']\nIntencionalidade: [Exemplo: 'Não foi intencional, não estou fazendo dieta']\nRelação com apetite: [Exemplo: 'Meu apetite diminuiu muito']\nTempo de evolução: [Exemplo: 'Notei a mudança de peso há cerca de 2 meses']\nSintomas associados: [Exemplo: 'Além da perda de peso, tenho sentido muito cansaço']\nEpisódios prévios: [Já teve alterações de peso semelhantes antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Astenia/Fadiga",
+        "informacao": "Início: [Exemplo: 'Começou há cerca de 1 mês']\nDiferenciação: [Exemplo: 'Sinto mais cansaço do que fraqueza']\nEvolução: [Exemplo: 'Tem piorado com o tempo']\nImpacto funcional: [Exemplo: 'Estou com dificuldade para fazer as tarefas de casa']\nRelação com atividade/repouso: [Exemplo: 'Piora quando faço esforço, melhora um pouco quando descanso']\nQualidade do sono: [Tem dormido bem? Ronca? Acorda cansado(a)?]\nSintomas de humor associados (tristeza, anedonia): [Tem se sentido triste ou desanimado(a)? Perdeu o interesse em coisas que gostava?]\nSintomas associados: [Exemplo: 'Tenho dormido mal e perdido peso']\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Lesões Cutâneas",
+        "informacao": "Início: [Exemplo: 'Apareceu há 5 dias']\nEvolução: [Exemplo: 'A lesão aumentou de tamanho e mudou de cor']\nLocalização: [Exemplo: 'Começou no braço']\nQuantidade: [Exemplo: 'Uma lesão única ou várias?']\nSintomas associados: [Exemplo: 'Coça e às vezes arde']\nFatores desencadeantes: [Exemplo: 'Apareceu depois que usei um creme novo']\nExposição: [Exemplo: 'Não tive contato com plantas ou animais diferentes']\nUso de medicamentos: [Exemplo: 'Estou usando um creme para a pele']\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Prurido (Coceira)",
+        "informacao": "Início: [Exemplo: 'Começou há 2 semanas']\nLocalização: [Exemplo: 'Coça mais nas pernas, mas às vezes no corpo todo']\nIntensidade: [Exemplo: 'É forte, nota 7 de 10']\nPiora/melhora: [Exemplo: 'Piora à noite, melhora um pouco com banho frio']\nLesões associadas: [Exemplo: 'Fica vermelho e com marcas de unha']\nSintomas sistêmicos: [Exemplo: 'Não notei febre nem amarelão nos olhos']\nContexto: [Exemplo: 'Ninguém mais em casa está com coceira']\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Cefaleia (Dor de Cabeça)",
+        "informacao": "Início: [Exemplo: 'Começou de repente, como uma explosão']\nLocalização: [Exemplo: 'Dói mais na nuca, mas pega a cabeça toda']\nIntensidade: [Exemplo: 'É a pior dor que já senti, nota 10 de 10']\nTipo/Característica: [Exemplo: 'É uma dor pulsátil, como se estivesse batendo']\nDuração/frequência: [Exemplo: 'Dura cerca de 2 horas, já tive 3 crises esta semana']\nFatores de piora: [Exemplo: 'Piora com luz forte e barulho']\nFatores de melhora: [Exemplo: 'Melhora quando fico deitado no escuro']\nSintomas associados: [Exemplo: 'Sinto enjoo e às vezes vejo luzes antes da dor começar']\nSinais de alarme: [Exemplo: 'Nunca tive dor assim antes']\nEpisódios prévios (padrão habitual): [Essa dor é igual às dores que o(a) senhor(a) costuma ter?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Tontura/Vertigem",
+        "informacao": "Início: [Exemplo: 'Começou de repente, enquanto estava em pé']\nTipo: [Exemplo: 'Sinto que tudo gira ao meu redor']\nDuração: [Exemplo: 'Dura alguns minutos e depois passa']\nFatores desencadeantes: [Exemplo: 'Piora quando viro a cabeça rápido']\nSintomas associados: [Exemplo: 'Às vezes fico com náusea e suor frio']\nImpacto funcional: [Exemplo: 'Já caí uma vez por causa da tontura']\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Tosse",
+        "informacao": "Início: [Quando a tosse começou?]\nDuração: [Aguda (<3 semanas), subaguda (3-8 semanas) ou crônica (>8 semanas)]\nCaracterística: [Seca ou produtiva com catarro]\nPadrão/Gatilhos: [Pior pela manhã, à noite, com exercício, exposição à poeira]\nExpectoração: [Cor, consistência, quantidade do catarro, se houver]\nPresença de sangue: [Se houve hemoptise, quantidade, frequência]\nSintomas associados: [Febre, dispneia, dor torácica]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dispneia (Falta de ar)",
+        "informacao": "Início: [Súbito ou gradual]\nIntensidade: [Leve, moderada, grave]\nGatilhos: [Em repouso ou aos esforços? Quais atividades causam?]\nClassificação NYHA: [I-IV - detalhar quais atividades causam dispneia]\nOrtopneia: [Necessita de quantos travesseiros para dormir?]\nDispneia paroxística noturna: [Acorda à noite sufocado? Com que frequência?]\nSintomas associados: [Tosse, chiado, dor torácica, edema de MMII]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor Torácica",
+        "informacao": "Início: [Súbito ou gradual]\nLocalização: [Onde exatamente no peito? Precordial, retroesternal?]\nIrradiação: [Para mandíbula, braço esquerdo, costas?]\nCaráter: [Aperto, peso, queimação, pontada]\nIntensidade: [Escala 0-10]\nDuração: [Quanto tempo dura cada episódio?]\nFatores desencadeantes: [Durante esforço, em repouso, com emoções?]\nFatores de alívio: [Repouso, posição, nitratos?]\nSintomas associados: [Dispneia, sudorese, náuseas, síncope]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Palpitações",
+        "informacao": "Início/Término: [Começa e termina subitamente ou gradualmente?]\nDescrição: [Como sente o coração bater? Rápido e regular, irregular?]\nDuração/Frequência: [Quanto tempo dura? Com que frequência ocorre?]\nFatores desencadeantes: [Esforço, estresse, café, álcool?]\nSintomas associados: [Tontura, pré-síncope, síncope, dor no peito]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Edema de Membros",
+        "informacao": "Início: [Quando começou?]\nLocalização: [Quais membros? Unilateral ou bilateral?]\nPadrão: [Pior no final do dia? Melhora ao elevar as pernas?]\nCaráter: [Forma cacifo/depressão quando aperta com o dedo?]\nSintomas associados: [Dispneia, ortopneia, DPN]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor Abdominal",
+        "informacao": "Início/Duração: [Súbito ou gradual? Contínua ou intermitente?]\nLocalização: [Em qual quadrante ou região?]\nIrradiação: [A dor se espalha para algum outro local?]\nCaráter: [Cólica, queimação, pontada, peso]\nIntensidade: [Escala 0-10]\nRelação com funções: [Piora ou melhora com alimentação, evacuação, micção?]\nFatores de melhora/piora: [O que alivia ou piora a dor?]\nSintomas associados: [Náuseas, vômitos, febre, alteração do hábito intestinal]\nSinais de Alarme: [Febre alta, vômitos com sangue, fezes pretas ou com sangue, parada de eliminação de gases e fezes, icterícia, piora súbita e intensa da dor?]\nRelação com ciclo menstrual: [A dor tem relação com a menstruação?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Náuseas e Vômitos",
+        "informacao": "Início: [Quando começou?]\nFrequência: [Quantos episódios por dia?]\nRelação temporal: [Ocorre em jejum, após alimentação?]\nConteúdo: [Alimentar recente, bilioso, com sangue, fecaloide?]\nFatores de alívio: [O que melhora? Algum medicamento usado?]\nSintomas associados: [Dor abdominal, diarreia, febre]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações Intestinais",
+        "informacao": "Início: [Quando começou?]\nTipo: [Diarreia ou constipação]\nDuração: [Aguda ou crônica]\nFrequência: [Quantas evacuações por dia/semana?]\nConsistência: [Líquida, pastosa, endurecida, em cíbalos]\nCor: [Normal, clara, escura, com sangue, com muco]\nVolume: [Grande ou pequeno volume em cada evacuação]\nSintomas associados: [Dor, distensão abdominal, tenesmo, urgência]\nPadrão: [Contínua ou intermitente? Também ocorre à noite?]\nFatores de melhora/piora: [Alimentos específicos, estresse, medicamentos]\nUso de medicamentos recentes (especialmente antibióticos e laxantes): [Usou algum remédio novo recentemente?]\nHistórico de viagens recentes: [Viajou recentemente? Para onde?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Icterícia/Colúria/Acolia",
+        "informacao": "Início: [Quando notou o amarelão? Foi súbito ou gradual?]\nIntensidade: [Leve, moderada, intensa]\nPrurido: [Presença de coceira associada? Intensidade?]\nColúria: [Urina escura como Coca-Cola?]\nAcolia fecal: [Fezes claras, esbranquiçadas?]\nSintomas associados: [Dor abdominal, febre, perda de peso]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Sintomas Urinários",
+        "informacao": "Início: [Quando começaram os sintomas?]\nDisúria: [Dor ou ardência ao urinar]\nPolaciúria: [Aumento da frequência urinária]\nUrgência: [Vontade súbita e incontrolável de urinar]\nNictúria: [Necessidade de levantar à noite para urinar]\nHesitação: [Demora para iniciar o jato]\nJato fraco: [Diminuição da força do jato]\nGotejamento terminal: [Continua pingando após terminar]\nSensação de esvaziamento incompleto: [Sente que não esvaziou tudo]\nAlterações na urina: [Presença de sangue, cheiro forte, espuma]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor Lombar",
+        "informacao": "Início: [Quando começou a dor?]\nLocalização: [Lombar bilateral ou unilateral (flanco)?]\nIrradiação: [Para região inguinal, genitais?]\nCaráter: [Em cólica? Peso? Contínua?]\nIntensidade: [Escala 0-10]\nFatores de melhora/piora: [Repouso, posição, movimentos?]\nSintomas urinários associados: [Disúria, hematúria, febre]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Corrimento Vaginal/Uretral",
+        "informacao": "Início: [Quando começou?]\nCor: [Branco, amarelado, esverdeado, acinzentado]\nOdor: [Presença de odor forte ou desagradável]\nQuantidade: [Pequena, moderada, grande]\nConsistência: [Espesso tipo 'nata', bolhoso, fluido]\nSintomas associados: [Coceira, ardor, dispareunia, disúria]\nRelação com ciclo menstrual: [Piora antes/depois da menstruação]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor Articular/Rigidez",
+        "informacao": "Início: [Quando começou? Súbito ou gradual?]\nLocalização: [Quais articulações? Padrão simétrico?]\nNúmero de articulações acometidas: [Uma, poucas (2-4) ou muitas (>4)?]\nCaráter: [Tipo de dor: latejante, em peso, em pontada]\nIntensidade: [Escala 0-10]\nPadrão da dor: [Pior pela manhã (inflamatório) ou no fim do dia (mecânico)?]\nFator de melhora com atividade física: [A dor melhora com o movimento inicial?]\nRigidez matinal: [Presente? Duração? >1h sugere inflamação]\nSinais inflamatórios: [Articulações ficam inchadas, quentes, vermelhas?]\nLimitação funcional: [Impacto nas atividades diárias]\nSintomas sistêmicos: [Febre, perda de peso, lesões cutâneas]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações Neurológicas",
+        "informacao": "Início: [Súbito ou gradual? Quando iniciou?]\nTipo: [Fraqueza (paresia), alteração de sensibilidade (parestesia)]\nLocalização: [Onde exatamente? Padrão de distribuição? Lado do corpo?]\nEvolução: [Está piorando, melhorando ou estável?]\nFatores desencadeantes: [Trauma, posição, movimento?]\nSintomas associados: [Alteração visual, fala, marcha, consciência]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Crises Convulsivas",
+        "informacao": "Início: [Quando foi a primeira crise?]\nFrequência: [Primeira crise ou recorrente? Quantas crises?]\nFatores desencadeantes: [Privação de sono, estresse, febre, álcool?]\nAura: [Sensação prévia? Qual tipo?]\nDescrição da crise (relato de testemunha): [Início súbito? Perda de consciência? Movimentos? Mordedura de língua? Liberação esfincteriana?]\nDuração: [Tempo dos movimentos convulsivos]\nFase pós-ictal: [Confusão após a crise? Por quanto tempo?]\nRecuperação: [Rápida ou lenta? Dor de cabeça ou fraqueza após?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações de Memória",
+        "informacao": "Início e progressão: [Quando começou? Tem piorado?]\nTipo: [Memória recente ou remota mais afetada?]\nImpacto funcional: [Afeta atividades diárias? Quais?]\nSintomas associados: [Alterações de comportamento, linguagem, marcha]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Distúrbios do Sono",
+        "informacao": "Início: [Quando começou o problema de sono?]\nDuração: [Há quanto tempo?]\nTipo: [Insônia inicial, de manutenção, despertar precoce]\nQualidade do sono: [Sensação de sono não reparador?]\nSintomas diurnos: [Sonolência excessiva durante o dia?]\nEventos noturnos: [Ronco, pausas respiratórias, pernas inquietas]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações de Humor",
+        "informacao": "Início: [Quando começou a se sentir assim?]\nHumor predominante: [Triste, ansioso, irritável, eufórico]\nAnedonia: [Perda de interesse ou prazer em atividades antes prazerosas]\nEnergia: [Cansaço, fadiga constante]\nAlterações de sono: [Insônia ou hipersonia]\nAlterações de apetite: [Aumento ou diminuição]\nConcentração: [Dificuldade para se concentrar ou tomar decisões]\nSentimentos negativos: [Culpa, inutilidade, desesperança]\nIdeação suicida: [Pensamentos de morte ou suicídio]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Sangramento Anormal (Ginecológico/Geral)",
+        "informacao": "Início: [Quando começou o sangramento?]\nTipo/Origem: [Menstrual (aumentado, irregular), intermenstrual, pós-coito, gastrointestinal (hematoquezia, melena), urinário (hematúria)]\nVolume: [Leve (gotas), moderado, intenso (com coágulos, necessidade de múltiplas trocas de absorvente/fralda)]\nDuração: [Há quantos dias/horas está sangrando?]\nCor: [Vermelho vivo, vinhoso, escuro ('borra de café')]\nRelação com ciclo menstrual: [Ocorre junto com a menstruação ou fora do período?]\nSintomas associados: [Dor, tontura, palpitações, febre, massa abdominal]\nFatores desencadeantes: [Trauma, uso de medicamentos (anticoagulantes), pós-procedimento]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Síncope / Pré-síncope (Perda de Consciência)",
+        "informacao": "Início: [Quando foi o primeiro episódio?]\nContexto/Gatilho: [Ao levantar-se (ortostática), após estresse/dor (vasovagal), durante exercício (cardíaca), sem gatilho aparente?]\nPródromos: [Sentiu algo antes de desmaiar? (Tontura, escurecimento visual, palpitações, sudorese, náuseas)]\nDescrição do evento (por testemunha): [Houve queda? Movimentos anormais (sugere crise convulsiva)? Palidez? Cianose? Tempo de duração da perda de consciência?]\nRecuperação: [Foi rápida e completa? Houve confusão mental após o evento (pós-ictal)?]\nSintomas associados: [Dor torácica, palpitações, dispneia, sintomas neurológicos focais]\nEpisódios prévios: [Já desmaiou antes? Com que frequência?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Queixas Cognitivas (Além de Memória)",
+        "informacao": "Início e Curso: [Agudo (horas/dias - sugere delirium) ou insidioso e progressivo (semanas/meses - sugere demência)? Flutuante ao longo do dia?]\nTipo de Dificuldade: [Para manter o foco em tarefas, seguir conversas, tomar decisões, ou uma sensação de 'estar aéreo'?]\nImpacto Funcional: [Está afetando o trabalho, as finanças, a capacidade de se cuidar?]\nFatores associados: [Houve alguma infecção recente, internação, mudança de medicamento, queda ou trauma?]\nSintomas associados: [Alterações de sono/vigília, agitação, alucinações, alterações de humor ou comportamento?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Disfagia (Dificuldade para Engolir)",
+        "informacao": "Início e Progressão: [Começou de repente ou foi piorando aos poucos? Progressiva de sólidos para líquidos?]\nLocalização da Dificuldade: [No início da deglutição, na garganta (disfagia de transferência) ou sente que a comida 'entala' no peito (disfagia de condução)?]\nTipo de Alimento: [A dificuldade é maior para líquidos, sólidos ou ambos?]\nSintomas Associados: [Engasgos, tosse ao engolir, regurgitação de alimentos, dor ao engolir (odinofagia), perda de peso, azia, rouquidão]\nEpisódios Prévios: [Já teve episódios semelhantes antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Alterações Visuais",
+        "informacao": "Início e Duração: [Súbito ou gradual? Constante ou intermitente?]\nTipo de Alteração: [Visão turva/embaçada, perda súbita da visão, visão dupla (diplopia), pontos cegos (escotomas), flashes de luz (fotopsias), 'moscas volantes'?]\nLocalização: [Em um olho (monocular) ou em ambos (binocular)? Perda de um campo visual específico (ex: só o lado direito)?]\nFatores Associados: [Acompanhado de dor de cabeça, dor ocular, vermelhidão, trauma, sintomas neurológicos?]\nContexto: [Piora ao ler, ao olhar para longe, em ambientes claros/escuros?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Mialgia (Dor Muscular/Dor no Corpo)",
+        "informacao": "Início e Duração: [Súbito ou gradual? Há quanto tempo?]\nLocalização: [É uma dor generalizada, 'no corpo todo', ou em grupos musculares específicos?]\nCaráter: [Peso, cansaço, pontada, cãibra?]\nIntensidade: [Escala 0-10]\nRelação com Atividade: [Piora com esforço ou é constante? Melhora com repouso?]\nSintomas Associados: [Febre, fadiga, rigidez, fraqueza muscular, urina escura (rabdomiólise)?]\nUso de Medicamentos: [Iniciou algum medicamento novo recentemente (ex: estatinas)?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Queixas Oftalmológicas (Conjuntivite/Olho Vermelho)",
+        "informacao": "Início: [Quando começou?]\nSintoma Principal: [Olho vermelho, coceira, ardência, sensação de areia nos olhos, lacrimejamento, secreção?]\nLocalização: [Unilateral ou bilateral?]\nTipo de Secreção: [Clara/aquosa (viral/alérgica), purulenta/amarelada (bacteriana)?]\nSintomas Associados: [Dor ocular, fotofobia (sensibilidade à luz), visão embaçada, edema periorbitário (inchaço ao redor dos olhos)?]\nContexto Epidemiológico: [Contato com pessoas com conjuntivite? Exposição a alérgenos (poeira, pólen)?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Edema Facial / Angioedema",
+        "informacao": "Início e Velocidade de Progressão: [Súbito, desenvolveu-se em minutos/horas?]\nLocalização do Inchaço: [Lábios, pálpebras, língua, face, extremidades?]\nSintomas Associados: [Urticária (placas vermelhas que coçam na pele), dificuldade para respirar, rouquidão, dor abdominal?]\nFatores Desencadeantes: [Uso de novo medicamento (especialmente IECA/BRA), ingestão de alimento específico, picada de inseto?]\nEpisódios Prévios: [Já teve inchaços semelhantes antes? Histórico familiar de angioedema?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Dor de Garganta (Odinofagia)",
+        "informacao": "Início e Duração: [Quando começou?]\nIntensidade: [Escala 0-10, impede a deglutição?]\nLocalização: [Difusa ou mais de um lado?]\nSintomas Associados: [Febre, tosse, coriza, rouquidão, presença de placas brancas ou pus nas amígdalas (visualização pelo paciente), gânglios aumentados no pescoço?]\nCritérios de Centor (para rastreio de faringite estreptocócica): [Ausência de tosse? Nódulos cervicais anteriores inchados e sensíveis? Exsudato amigdaliano? Febre?]\nEpisódios pr��vios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Coriza / Congestão Nasal",
+        "informacao": "Início e Duração: [Quando começou?]\nCaracterística da Coriza: [Clara/hialina (viral/alérgica) ou espessa/amarelada/esverdeada (pode sugerir bacteriana)?]\nSintomas Associados: [Espirros, tosse, dor de cabeça, dor facial (sinusite), febre, coceira no nariz/olhos (alergia)?]\nPadrão/Gatilhos: [Piora em algum período do dia? Desencadeada por poeira, pólen, mudança de tempo?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "[SINTOMA] Ansiedade / Nervosismo",
+        "informacao": "Início: [Quando os sintomas começaram a ser mais intensos?]\nTipo de Preocupação: [É uma preocupação excessiva e generalizada com várias coisas do dia a dia ou são ataques de pânico súbitos e intensos?]\nFrequência e Duração: [Ocorre na maior parte do dia, quase todos os dias? Quanto tempo duram as crises?]\nSintomas Físicos Associados: [Palpitações, falta de ar, tremores, sudorese, tontura, tensão muscular, boca seca, 'nó na garganta'?]\nSintomas Cognitivos: [Sensação de que algo ruim vai acontecer, medo de perder o controle ou enlouquecer, dificuldade de concentração?]\nImpacto Funcional: [Está evitando situações ou lugares por medo? Está atrapalhando seu trabalho ou relacionamentos?]\nGatilhos: [Existem situações específicas que desencadeiam a ansiedade?]\nEpisódios prévios: [Já teve algo similar antes?]"
+      },
+      {
+        "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+        "informacao": "[Sintoma1]: [Descrição]\n[Sintoma2]: [Descrição]\nOutros sintomas: Não consta no script"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS (Patológicos)",
+        "informacao": "Doenças crônicas: [informação]\nCirurgias prévias: [informação]\nInternações: [informação]\nAlergias: [informação]\nMedicamentos em uso contínuo: [informação]\nVacinação: [informação]\nTrauma: [informação]\nTransfusões: [informação]\n "
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FISIOLÓGICOS",
+        "informacao": "Tipo do parto: [vaginal, cesárea]\nTempo de Gestação: [Prematuridade, a termo, quantas semanas?]\nIntercorrências neonatais: [Precisou de reanimação após o nascimento?]\nTabagismo: [Fumante/ex-fumante/nunca fumou, quantidade, tempo]\nEtilismo: [Frequência, tipo de bebida, quantidade]\nDrogas ilícitas: [Tipo, frequência, via de uso]\nSono: [Horas de sono, qualidade, horários]\nAlimentação: [Padrão alimentar, restrições, apetite]\nHábitos sexuais (apenas se relevante ao caso/quadro): [Atividade sexual, parceiros, proteção]\nHábitos urinários (apenas se relevante ao caso/quadro): [Frequência, características, alterações]\nHábitos intestinais (apenas se relevante ao caso/quadro): [Frequência, consistência, alterações]\nIngestão hídrica (apenas se relevante ao caso/quadro): [Quantidade diária, tipo de líquidos]\nExposição ocupacional: [Riscos no trabalho, substâncias, tempo de exposição]\nEstresse: [Fatores estressantes, como lida com estresse]\n"
+      },
+      {
+        "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+        "informacao": "Tabagismo: [Fumante/ex-fumante/nunca fumou, quantidade, tempo]\nEtilismo: [Frequência, tipo de bebida, quantidade]\nDrogas ilícitas: [Tipo, frequência, via de uso]\nAlimentação: [Padrão alimentar, restrições, apetite]\nAtividade física: [Tipo, frequência, intensidade]\nSono: [Horas de sono, qualidade, horários]\nHábitos urinários (apenas se relevante ao caso/quadro): [Frequência, características, alterações]\nHábitos intestinais (apenas se relevante ao caso/quadro): [Frequência, consistência, alterações]\nIngestão hídrica (apenas se relevante ao caso/quadro): [Quantidade diária, tipo de líquidos]\nExposição ocupacional: [Riscos no trabalho, substâncias, tempo de exposição]\nEstresse: [Fatores estressantes, como lida com estresse]"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+        "informacao": "Pai: [informação]\nMãe: [informação]\nDoenças (especificas com relação e relevante ao caso) na família: [informação]\nHistoria de cancêr na família: [informação]\nIrmãos ou tias (apenas se relevante ou presente no caso/quadro/doença): [informação]"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS E OBSTÉTRICOS (apenas para mulheres quando relevante)",
+        "informacao": "Gestações: [Número total]\nPartos: [Tipo e número]\nAbortos: [Espontâneos/provocados]\nCesáreas: [Número]\nData da Última Menstruação (DUM): [Data]\nMenarca: [Idade]\nCiclos menstruais: [Regularidade, duração, fluxo]\nSexarca: [Idade]\nTelarca: [Precoce/tardia]\nPubarca: [Precoce/tardia]\nAtividade sexual: [Sexualmente ativa ou não]\nParceiros: [Parceiro fixo ou múltiplos]\nUso de contraceptivos: [Tipo, tempo de uso]\nUso de preservativos: [Sim/Não]\nExames preventivos: [Papanicolau, mamografia - quando foi o último]\nHistórico de IST: [Historico de Infecções sexualmente transmissíveis]"
+      },
+      {
+        "contextoOuPerguntaChave": "ANTECEDENTES EPIDEMIOLÓGICOS (quando relevante para casos infecciosos/endêmicos)",
+        "informacao": "Viagens recentes: [Local, data, duração - Nega/Relato]\\nExposição a doenças infecciosas: [Tipo, data - Nega/Relato]\\nContato com doentes: [Relação, doença, período - Nega/Relato]\\nExposição a animais: [Tipo, frequência - Nega/Relato]\\nExposição a vetores: [Mosquitos, carrapatos, caramujo, lagarta,escorpiao, percevejos, abelhas,etc - Nega/Relato]\\nÁgua consumida: [Tratada, não tratada, filtrada]\\nExposição a agentes ambientais (água parada, de enchente): [Tipo, duração - Nega/Relato]"
+      },
+      {
+        "contextoOuPerguntaChave": "CONTEXTO PSICOSSOCIAL (quando relevante para casos psiquiátricos/complexos)",
+        "informacao": "Situação familiar: [Filhos, relacionamentos]\nRede de apoio: [Familiares, amigos, comunidade]\nSituação socioeconômica: [Renda, condições de vida]\nNível educacional: [Escolaridade]\nReligião: [Se relevante para o caso]\nEstresse psicossocial: [Fatores estressantes recentes]"
+      },
+      {
+        "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS (apenas para casos complexos quando necessário)",
+        "informacao": "Sistema cardiovascular: [Palpitações, dor precordial, dispneia]\nSistema respiratório: [Tosse, expectoração, dispneia]\nSistema gastrointestinal: [Apetite, náuseas, alterações intestinais]\nSistema genitourinário: [Disúria, polaciúria, alterações urinárias]\nSistema nervoso: [Cefaleia, tonturas, alterações neurológicas]\nSistema musculoesquelético: [Dores articulares, limitações]\nSistema endócrino: [Alterações de peso, intolerância ao calor/frio]"
+      },
+      {
+        "contextoOuPerguntaChave": "ORIENTAÇÕES AO ATOR: (Ex: Se o candidato solicitar o resultado dos exames trazidos libere o impresso (x) / Ex: Após o candidato solicitar o exame X responda 'considere solicitado' ou 'considere realizado o procedimento'.)",
+        "informacao": "[Ex: informação de exemplos]"
+      },
+      {
+        "contextoOuPerguntaChave": "DÚVIDAS DO PACIENTE: (ex: Dúvidas do ator sobre medicamentos, exames, condutas, etc., Perguntar após o atendimento se o candidato realizar a anamnese/exame fisico/conduta/tratamento/, Ex: Após o candidato realizar a anamnese, pergunte o que o paciente tem / Ex: Após realizar o diagnostico, pergunta se o que voce tem é grave, ou se tem complicações, ou se nao poderia ser outra coisa.)",
+        "informacao": "[pergunta (1): (Ex: O que eu tenho?)].\n[pergunta (2): (Ex: É grave?)].\n[pergunta (3): (Ex: Quais são as opções de tratamento?)]. \n [pergunta (4): (Ex: Poderia ser outra coisa?)].\n[pergunta (5): (Ex: O que eu faço para que isso não aconteça novamente?)] "
+      }
+    ],
+    "impressos": [
+      {
+        "idImpresso": "[est[numero]_[tipo_exame]]",
+        "tituloImpresso": "[TÍTULO DO IMPRESSO EM MAIÚSCULO]",
+        "tipoConteudo": "textosimples",
+        "conteudo": {
+          "textoDescritivo": "[Descrição do impresso, como resultados de exames, orientações, etc.]"
+        }
+      },
+      {
+        "idImpresso": "[est[numero]_[tipo_exame]]",
+        "tituloImpresso": "[TÍTULO DO IMPRESSO EM MAIÚSCULO]",
+        "tipoConteudo": "imagemComLaudo",
+        "conteudo": {
+          "textoDescritivo": "[Descrição da imagem ou do conteúdo principal do impresso].",
+          "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+          "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'ECG de 12 derivações com supradesnivelamento de ST em DII, DIII e aVF']",
+          "laudo": "[Laudo associado à imagem, se houver, ou texto principal do impresso]."
+        }
+      },
+      {
+        "idImpresso": "[est[numero]_[tipo_exame]]",
+        "tituloImpresso": "",
+        "tipoConteudo": "lista_chave_valor_secoes",
+        "conteudo": {
+          "secoes": [
+            {
+              "tituloSecao": "[TÍTULO DA SEÇÃO]",
+              "itens": [
+                {
+                  "chave": "[Parâmetro]",
+                  "valor": "[Resultado com unidades e referências]"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "perguntasAtorSimulado": []
+  },
+  "padraoEsperadoProcedimento": {
+    "idChecklistAssociado": "PEP_EST[NUMERO]_[ESPECIALIDADE_ABREV]_[IDENTIFICADOR]_[ANO]V1_NUM",
+    "sinteseEstacao": {
+      "resumoCasoPEP": "[Resumo objetivo e técnico do caso clínico]",
+      "focoPrincipalDetalhado": [
+        "[Foco 1: Anamnese direcionada]",
+        "[Foco 2: Exame físico específico]",
+        "[Foco 3: Exames complementares]",
+        "[Foco 4: Diagnóstico e conduta]"
+      ]
+    },
+    "itensAvaliacao": [
+      {
+        "idItem": "pep_est[numero]_item[numero_formatado]",
+        "itemNumeroOficial": "[numero]",
+        "descricaoItem": "[Descrição detalhada do critério quantitativamente e qualitativamente, descrevendo cada item individualmente]\n(1) [Ex: item 1];\n(2) [Ex: item 2];\n(3) [Ex: item 3];\n(4) [Ex: item 4];\n(5) [Ex: item 5].",
+        "pontuacoes": {
+          "adequado": {
+            "criterio": "[Critério para pontuação máxima Ex: Realiza 6 ou mais itens  Ex: Verbaliza o diagnóstico e a conduta corretamente Ex: Solicita e interpreta ao menos 5 achados nos exames complementares Ex: Interpreta corretamente os 4 achados no exame de imagem Ex: Elaborar o plano terapêutico e as orientações de prevenção.]",
+            "pontos": "[valor_numerico]"
+          },
+          "parcialmenteAdequado": {
+            "criterio": "[Critério para pontuação parcial Ex: Realiza 4 ou 5 itens Ex: Realiza 4 a 5 itens porem o item 1 é obrigatorio]",
+            "pontos": "[valor_numerico]"
+          },
+          "inadequado": {
+            "criterio": "[Critério para pontuação zero Ex: Realiza 2 ou menos itens Ex: Não verbaliza o diagnóstico ou a conduta Ex: Não realiza Ex: Não solicita]",
+            "pontos": 0
+          }
+        }
+      }
+    ],
+    "pontuacaoTotalEstacao": 10,
+    "feedbackEstacao": {
+      "resumoTecnico": "[Resumo conciso (máximo 30 linhas) sobre a patologia, focando achados semiologicos e na historia da doença atual, exame fisico e complementares, em diagnóstico e diagnosticos diferenciais, tratamento, fatores de risco, complicações e manejo conforme diretrizes atuais. DEVE citar as fontes.]",
+      "fontes": [
+        "[1. Fonte 1 (Ex: Brasil. Ministério da Saúde, 2023). \n2. Fonte 2 (Ex: UpToDate, 2025).]"
+      ]
+    }
+  }
+}

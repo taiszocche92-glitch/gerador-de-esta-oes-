@@ -1,0 +1,925 @@
+{
+    "promptIA": "Você é um médico especialista e professor de medicina, convocado pelo INEP para criar estações práticas para a prova de habilidades clínicas do Revalida, sua expertise garante a relevância e a precisão do conteúdo.\n. Sua missão é desenvolver estações de prova que sejam realistas, desafiadoras e, acima de tudo, autônomas. Cada estação deve funcionar como um 'simulador' completo, permitindo que o candidato demonstre suas competências clínicas sem a necessidade de intervenção ou dicas do avaliador, Cada estação dura 10 minutos, as estações devem cobrir as cinco grandes áreas da medicina (Clínica Médica, Cirurgia, Ginecologia e Obstetrícia, Pediatria, Medicina Preventiva e Social), o conteúdo deve refletir as práticas médicas atuais no Brasil, com base nas diretrizes do Ministério da Saúde e das principais sociedades de especialidades médicas, sua tarefa é usar este modelo JSON como um gabarito para converter um caso clínico bruto em uma estação estruturada do Revalida INEP 2 FASE, assuma a persona de um especialista em educação médica e também programador e siga TODAS as regras rigorosamente, o cumprimento de cada regra é NÃO NEGOCIÁVEL.\n1. Preencha todos os campos marcados com `[ ]`.\n2. No campo `tituloEstacao`, insira a principal palavra-chave que define o caso (ex: 'Cefaleia em Trovoada', 'Crise Asmática').\n3. REGRA CRÍTICA - LINGUAGEM DO PACIENTE: Na seção `informacoesVerbaisSimulado`, detalhe cada item da anamnese de forma granular. Para cada sintoma do motivo de consulta, crie um bloco individual nomeado como `[nome do sintoma]` (ex: Dor abdominal, Febre, Vomitos, Diarreia, Dor de cabeça, etc.), contendo os subcampos (Início, Localização, Intensidade, Tipo/Característica, Irradiação, Fatores de Piora, Fatores de Melhora, Episódios Prévios, etc.). Não limite o número de sintomas principais. Para cada sintoma, antecedente ou hábito, forneça uma resposta específica ou use 'Nega' ou 'Não Consta'. Separe cada tipo de antecedente (Pessoal, Ginecológico, Familiar, Epidemiológico, etc.) em seu próprio `contextoOuPerguntaChave`. TODAS as falas do paciente devem ser em primeira pessoa e em linguagem comum/leiga. Para clareza, pode-se usar o formato (Termo Técnico/Linguagem Comum): [fala do paciente]. Ex: (Anorexia/Falta de apetite): \"Sim, doutor(a), estou com pouco apetite\".\n4. REGRA CRÍTICA - ANAMNESE COMPLETA: Na seção `informacoesVerbaisSimulado`, é OBRIGATÓRIO preencher TODOS os campos da anamnese, e para as pontuações use esse padrão sempre, 0.25 (para as menos importantes), 0.5, 1, 1.5 e 2, somente esses valores de pontuações estão permitidos. Para cada sintoma, antecedente ou hábito, forneça uma resposta específica e detalhada (seguindo a regra da linguagem do paciente)'. A omissão de campos é uma falha.\n5. REGRA CRÍTICA - DESCRIÇÃO SUPERFICIAL DO CASO: O campo `descricaoCasoCompleta` deve ser intencionalmente superficial. Deve conter apenas a informação da chegada do paciente e o motivo de consulta, sem nenhum detalhe adicional da anamnese (HDA, sintomas acompanhantes, interrogatório sistemático, antecedentes, etc.). O objetivo é forçar o candidato a realizar a anamnese ativamente, em vez de receber a história pronta. Exemplo: 'Paciente de 35 anos chega à emergência referindo dor no peito.'\n6. REGRA CRÍTICA - TAREFAS: As `tarefasPrincipais` DEVEM ser formuladas para avaliar o raciocínio do candidato sem dar dicas explícitas. \n- REGRA GERAL: As tarefas do candidato DEVEM ser criadas SOMENTE após a definição completa dos itens do PEP (itensAvaliacao), e devem estar TOTALMENTE alinhadas com esses itens. Cada tarefa deve ser genérica, sem citar nomes de manobras, exames, escalas, procedimentos ou condutas específicas, exceto quando houver impresso correspondente (ex: escala, teste, exame visual). NUNCA antecipe respostas, diagnósticos ou condutas nas tarefas. As tarefas devem avaliar o raciocínio clínico, comunicação, exame físico, solicitação e interpretação de exames, definição de conduta e orientações, sempre de forma objetiva e sem dar dicas explícitas. NÃO repita tarefas, NÃO crie tarefas vagas ou irrelevante, garanta que cada tarefa corresponda a um ou mais itens de avaliação do PEP, sinomissões ou excessosMantenha as tarefas genéricas (ex: 'Realize o exame físico direcionado', 'Defina a conduta terapêutica'). É PROIBIDO citar nomes de manobras, classificações ou ações esperadas (ex: notificar). \n- EXCEÇÃO PARA HABILIDADES ESPECÍFICAS: Se a estação tiver um impresso para uma escala, teste, manobra semiológica ou exigir um procedimento prático, a tarefa correspondente deve SUGERIR a ação sem nomeá-la (ex: 'Aplique o teste correspondente', 'Execute a manobra específica para a queixa', 'Realize o procedimento indicado'). O verbo deve ser adaptado ao contexto.\n7. REGRA CRÍTICA - CONTEÚDO DOS IMPRESSOS: É terminantemente PROIBIDO incluir qualquer tipo de CONDUTA ou TRATAMENTO na seção `impressos`. Esta seção é EXCLUSIVA para apresentar resultados de exames e achados objetivos. Exemplos permitidos: achados de exame físico (incluindo testes e manobras específicas), resultados de exames laboratoriais, laudos de exames de imagem, ECGs, escalas de avaliação (ex: NIHSS, Glasgow), testes rápidos, etc. A violação desta regra invalida a estação.\n8. REGRA CRÍTICA - IMPRESSOS VISUAIS MANDATÓRIOS: É OBRIGATÓRIO e INEGOCIÁVEL usar um impresso do tipo `imagem_com_texto` para TODOS os achados que possuem uma representação visual característica, incluindo, sem exceção: exames de imagem (Raio-X, TC, USG), lesões de pele, achados de oroscopia/oftalmoscopia, ECGs, etc. O candidato deve sempre descrever os achados da imagem.\n9. REGRA CRÍTICA - INSTRUÇÕES PARA BUSCA DE IMAGEM: Para todos os impressos do tipo `imagem_com_texto`, o campo `caminhoImagem` DEVE ser preenchido com uma instrução clara e detalhada de como encontrar a imagem apropriada no Google Imagens. O formato deve ser: \"(Buscar no Google Imagens: [descrição precisa da imagem, incluindo achados e tipo de exame])\". Exemplo: \"(Buscar no Google Imagens: Raio-X tórax PA tuberculose com cavitação em ápice direito)\". Isso garantirá que o usuário possa encontrar e inserir a imagem correta manualmente.\n10. REGRA CRÍTICA - MÍNIMO DE 12 ITENS E PONTUAÇÃO PARCIAL: É OBRIGATÓRIO que a seção `itensAvaliacao` contenha no mínimo 12 itens, porem sempre deve variar conforme a area e tema especifico, podendo ter mais dependendo da complexidade do caso. A pontuação 'parcialmenteAdequado' NÃO DEVE ser usada para itens que contenham apenas 1 subtarefa OU cuja pontuação máxima para 'adequado' seja 0.25. Para todos os outros casos com 2 ou mais subtarefas e pontuação superior a 0.25, a pontuação parcial é permitida. Adapte os pontos de cada item para que a `pontuacaoTotalEstacao` seja sempre 10.0.\n11. Ao final, preencha a seção `feedbackEstacao`. Crie um `resumoTecnico` conciso (máximo de 30 linhas) sobre a patologia, focando em pontos-chave da anmnese, achados exame fisico, exames laboratoriais e de imagens e os possiveis achados e importancia, diagnóstico, diagnosticos diferenciais, fatores de riscos, complicações e conduta terapeutica completa e manejo conforme as diretrizes mais atuais. É mandatório citar as `fontes` utilizadas.\n12. IMPORTANTE: Ao gerar o JSON final da estação, este campo 'promptIA' e seu conteúdo devem ser completamente removidos do output final.\n\n**NOVA REGRA CRÍTICA – EXIBIÇÃO DE CAMPOS NA ANAMNESE (informacoesVerbaisSimulado):**\nNa seção `informacoesVerbaisSimulado`, só inclua um bloco `contextoOuPerguntaChave` se houver pelo menos uma informação relevante preenchida para aquele contexto.  \n- Se não houver nenhuma informação a ser exibida, o campo `contextoOuPerguntaChave` não deve ser criado nem exibido no JSON final.  \n- Para campos parcialmente preenchidos, exiba apenas as informações preenchidas.  \n- Itens não preenchidos só devem ser completados com \"Nega\" ou \"Não consta\" se forem clinicamente relevantes para o caso/tema.  \n- Caso não sejam relevantes, omita completamente o campo.  \n- Nunca inclua blocos vazios ou irrelevantes, como \"Triagem Neonatal\" em casos adultos ou situações sem pertinência clínica.\n\n**REGRA CRÍTICA – CRITÉRIOS DOS ITENS DE AVALIAÇÃO:**\nOs critérios dos campos 'pontuacoes' em cada item de avaliação DEVEM ser objetivos, literais e específicos, SEMPRE relacionados ao número de subtarefas do item, seguindo o padrão dos arquivos oficiais do INEP. Use frases como: 'Realiza as duas ações.', 'Pergunta os cinco itens.', 'Solicita os três exames.', 'Identifica as três alterações.', 'Verbaliza o diagnóstico completo.', etc. Para itens com múltiplas subtarefas, inclua 'parcialmenteAdequado' com critério quantitativo (ex: 'Realiza uma ação.', 'Pergunta três ou quatro itens.', 'Solicita dois exames.'). Para inadequado, use: 'Não realiza ação alguma.', 'Pergunta um ou dois itens ou não pergunta item algum.', 'Não solicita exame algum.', etc. NÃO USE frases vagas como 'cumpriu de forma adequada'.\n\n**NOVA REGRA CRÍTICA – CRITÉRIOS DE AVALIAÇÃO QUANTITATIVOS FLEXÍVEIS:**\nAo definir os critérios de pontuação para itens de anamnese (queixa principal, sintomas acompanhantes, antecedentes), utilize uma abordagem quantitativa flexível. O critério deve indicar o número de itens esperados para pontuação total e parcial, usando a estrutura 'Pergunta X de Y itens' ou 'Investiga X de Y aspectos', onde Y é o número total de itens/aspectos relevantes para o caso específico. Ex: 'Pergunta 5 de 7 aspectos da dor', 'Investiga 3 de 5 sintomas acompanhantes'.\n\n**NOVA REGRA CRÍTICA – ITENS DE AVALIAÇÃO POR ESPECIALIDADE:**\nAo criar os itens de avaliação, considere a especialidade da estação. Alguns itens são universais (ex: apresentação, anamnese básica, comunicação), enquanto outros são específicos da área (ex: manobras cirúrgicas, exames ginecológicos, fatores de risco em pediatria). Adapte a relevância e o detalhamento dos itens de acordo com a especialidade e o tema da estação. Priorize os itens mais relevantes para a área e o caso clínico.",
+    "idEstacao": "[Ex: REVALIDA_FACIL_2025_CM_01]",
+  "tituloEstacao": "[Tema central da estação]",
+  "numeroDaEstacao": 1,
+  "especialidade": "[ESPECIALIDADE DA ESTAÇÃO]",
+  "tempoDuracaoMinutos": 10,
+  "palavrasChave": "[Tema central da estação], [Palavra-chave 2], [etc.]",
+  "nivelDificuldade": "Médio",
+  "origem": "REVALIDA_FACIL",
+  "instrucoesParticipante": {
+    "cenarioAtendimento": {
+      "nivelAtencao": "[Nível de atenção: Primária, Secundária, etc.]",
+      "tipoAtendimento": "[Tipo de atendimento: UPA, UBS, etc.]",
+      "infraestruturaUnidade": [
+        "[Descrição genérica da infraestrutura disponível, sem detalhar itens específicos]"
+            ]
+        },
+        "orientacao": "ATENÇÃO: As tarefas do candidato DEVEM ser criadas SOMENTE após a definição completa dos itens do PEP (itensAvaliacao), devem ser adaptadas conforme a especialidade da estação, e também estar TOTALMENTE alinhadas com esses itens. Cada tarefa deve ser genérica, sem citar nomes de manobras, exames, escalas, procedimentos ou condutas específicas, exceto quando houver impresso correspondente (ex: escala, teste, exame visual). NUNCA antecipe respostas, diagnósticos ou condutas nas tarefas. As tarefas devem avaliar o raciocínio clínico, comunicação, exame físico, solicitação e interpretação de exames, definição de conduta e orientações, sempre de forma objetiva e sem dar dicas explícitas. NÃO repita tarefas, NÃO crie tarefas vagas ou irrelevantes. Siga rigorosamente as regras do promptIA e garanta que cada tarefa corresponda a um ou mais itens de avaliação do PEP, sinomissões ou excessos.",
+        "descricaoCasoCompleta": "[Descrição superficial da chegada do paciente e seu motivo de consulta, sem detalhes de anamnese. Ex: 'Paciente 45 anos chega à UPA trazido por familiares, queixando-se de 'uma dor de cabeça muito forte que começou de repente'.']",
+        "orientacoesETarefasExemplo": {
+            "orientacoesGerais": "As tarefas principais devem ser adaptadas conforme a especialidade da estação. Utilize apenas o bloco correspondente à especialidade definida no campo 'especialidade'. Não inclua tarefas de outras áreas. As tarefas devem ser genéricas, alinhadas aos itens de avaliação (PEP), sem citar nomes de manobras, exames ou condutas específicas, exceto quando houver impresso correspondente. Não antecipe diagnósticos ou condutas. Mantenha a objetividade e evite repetições.",
+            "ClinicaMedica": [
+                "Realizar anamnese detalhada da queixa principal e sintomas associados.",
+                "Executar exame físico geral e do sistema acometido.",
+                "Formular hipóteses diagnósticas e diagnósticos diferenciais.",
+                "Solicitar exames complementares pertinentes ao quadro clínico.",
+                "Interpretar resultados dos exames fornecidos.",
+                "Definir conduta terapêutica inicial e plano de acompanhamento.",
+                "Orientar o paciente sobre a condição, sinais de alarme e necessidade de retorno."
+            ],
+            "CirurgiaGeral": [
+                "Realizar anamnese dirigida à queixa cirúrgica.",
+                "Executar exame físico da região afetada e avaliação hemodinâmica.",
+                "Formular hipóteses diagnósticas e avaliar necessidade de intervenção cirúrgica.",
+                "Solicitar exames complementares e interpretar resultados.",
+                "Definir conduta cirúrgica ou conservadora conforme o caso.",
+                "Orientar sobre cuidados pré e pós-operatórios, quando aplicável."
+            ],
+            "GinecologiaObstetricia": [
+                "Realizar anamnese específica para a queixa ginecológica ou obstétrica.",
+                "Investigar histórico menstrual, gestacional e ginecológico relevante.",
+                "Executar exame físico adequado à condição apresentada.",
+                "Interpretar exames e documentos fornecidos (ex: cartão de pré-natal).",
+                "Identificar sinais de alerta e fatores de risco.",
+                "Definir conduta e orientações conforme protocolos vigentes."
+            ],
+            "Pediatria": [
+                "Realizar anamnese pediátrica completa, incluindo antecedentes e desenvolvimento.",
+                "Verificar situação vacinal e dados do período neonatal, se pertinente.",
+                "Executar exame físico pediátrico apropriado à idade.",
+                "Avaliar crescimento e desenvolvimento.",
+                "Solicitar e interpretar exames complementares relevantes.",
+                "Definir conduta terapêutica adequada ao peso e idade.",
+                "Orientar pais ou responsáveis sobre cuidados e sinais de alerta."
+            ],
+            "MedicinaPreventiva": [
+                "Realizar escuta ativa e acolhimento do paciente.",
+                "Investigar contexto familiar, social e epidemiológico relevante.",
+                "Identificar determinantes e fatores de risco para o problema apresentado.",
+                "Elaborar plano de cuidados compartilhado com o paciente/comunidade.",
+                "Orientar sobre promoção da saúde, prevenção de doenças e recursos disponíveis.",
+                "Verificar necessidade de notificação ou vigilância epidemiológica."
+            ]
+        },
+        "tarefasPrincipais": [
+            "Realize a anamnese do paciente, investigando detalhadamente a queixa principal e antecedentes relevantes.",
+            "Execute o exame físico direcionado para a queixa apresentada.",
+            "Formule hipóteses diagnósticas com base nos achados.",
+            "Solicite exames complementares pertinentes e interprete os resultados fornecidos.",
+            "Defina o diagnóstico e a conduta inicial para o paciente.",
+            "Forneça orientações pertinentes sobre a condição e o plano de cuidados."
+        ]
+    },
+    "avisosImportantes": [
+        "[Aviso 1: Preencher com avisos importantes para o participante.]",
+        "[Aviso 2: Ex: Não toque no paciente, apenas se necessário.]",
+        "[Aviso 3: Ex: Comunique ao avaliador os exames que solicitaria e interprete os resultados disponíveis.]"
+    ],
+    "materiaisDisponiveis": {
+        "informacoesVerbaisSimulado": [
+            {
+                "informacao": "Comportamento: [Instrução geral de atuação do ator].\\nAções Específicas: [Ações físicas a serem realizadas pelo ator]."
+            },
+            {
+                "contextoOuPerguntaChave": "IDENTIFICAÇÃO DO PACIENTE",
+                "informacao": "Nome: [Nome]\\nIdade: [Idade]\\nGênero: [Gênero]\\nOcupação: [Ocupação - detalhar riscos ocupacionais]\\nEstado Civil: [Estado Civil]\\nNaturalidade: [Naturalidade]\\nProcedência: [Procedência]\\nRaça/Cor/Etnia: [Raça/Cor]\\nEscolaridade: [Escolaridade]"
+            },
+            {
+                "contextoOuPerguntaChave": "MOTIVO DE CONSULTA",
+                "informacao": "[Motivo de consulta em primeira pessoa, com duração exata. Ex: 'Estou com dor de cabeça há 3 dias, doutor(a)']."
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA(s) PRINCIPAL] Caracterização completa de acordo com o sintoma (pode ser mais de um sintoma principal)",
+                "informacao": "1. Localização: [Onde exatamente ocorre o sintoma? Bem ou mal localizado?]\\n2. Qualidade/Caráter: [Como é o sintoma? Ex: em queimação, pontada, pressão]\\n3. Intensidade: [De 0 a 10, qual a intensidade?]\\n4. Duração: [Quando começou? É contínuo ou intermitente? Se em crises, quanto dura cada uma?]\\n5. Evolução: [Manteve-se igual, piorou, melhorou?]\\n6. Irradiação: [O sintoma se espalha para outro lugar?]\\n7. Relação com funções orgânicas: [Relação com respiração, alimentação, evacuação, etc.]\\n8. Fatores desencadeantes/agravantes: [O que faz aparecer ou piorar?]\\n9. Fatores atenuantes: [O que alivia?]\\n10. Manifestações concomitantes: [Quais outros sintomas ocorrem junto?]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dor (qualquer localização)",
+                "informacao": "[Detalhes do sintoma(s) com \\n para organizar informações]\nInício: [Quando começou? Como começou - súbito/gradual? Há quanto tempo?]\nLocalização: [Onde exatamente? Bem ou mal localizada?]\nIntensidade: [Escala 0-10, limitação funcional que causa]\nCaracterística ou Tipo da dor: [Como é o sintoma - pontada, queimação, pressão, etc.?]\nIrradiação: [Migração da dor ? Espalha para onde? Propaga-se?]\nDuração: [Contínuo, intermitente, duração dos episódios?]\n Progressão: [Progressiva, em melhora, está piorando com o tempo? Como tem evoluído?]\nFrequencia: [Quantas vezes ocorre? Qauntas vezes vomitou? Quantas vezes teve diarréia? Quantos acessos de tosse durante a crise?]\nFator de piora ou agravante: [O que piora o sintoma? ao movimento?, após se alimentar?, Quando está ansioso? quando esta estressado?, piora ao acordar?, piora ao movimentar?, parado?, ao deitar?, após beber café?]\nFator de melhora ou atenuante: [O que alivia? melhora em repouso?, Melhora ao se movimentar? Melhora ao comer? melhora ao deitar? melhora após usar medicamento(s)?, Melhora após evacuar? posição?]\nEpisódios prévios: [Já teve algo similar antes?, Já teve esse sintoma antes?, Quantas vezes já sentiu isso antes?, Já teve essa cris]\nMedicação de alivio: [Usou algum analgésico para a dor?,Com que resultado?]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Febre",
+                "informacao": "Início: [Quando começou? Foi súbito com calafrios ou gradual?]\\nDuração: [Há quantos dias está com febre?]\\nPadrão: [Contínua ou tem picos? Em que período do dia é mais alta?]\\nIntensidade: [Qual a temperatura mais alta medida?]\\nSintomas associados: [Calafrios? Sudorese noturna?]\\nResposta a antitérmicos: [Tomou algum remédio? Qual? A febre cedeu completamente?]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Alterações de Peso",
+                "informacao": "Tipo: [Perda ou ganho de peso]\\nQuantificação: [Exemplo: 'Perdi 6 quilos nos últimos 3 meses']\\nIntencionalidade: [Exemplo: 'Não foi intencional, não estou fazendo dieta']\\nRelação com apetite: [Exemplo: 'Meu apetite diminuiu muito']\\nTempo de evolução: [Exemplo: 'Notei a mudança de peso há cerca de 2 meses']\\nSintomas associados: [Exemplo: 'Além da perda de peso, tenho sentido muito cansaço']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Astenia/Fadiga",
+                "informacao": "Diferenciação: [Exemplo: 'Sinto mais cansaço do que fraqueza']\\nInício: [Exemplo: 'Começou há cerca de 1 mês']\\nEvolução: [Exemplo: 'Tem piorado com o tempo']\\nImpacto funcional: [Exemplo: 'Estou com dificuldade para fazer as tarefas de casa']\\nRelação com atividade/repouso: [Exemplo: 'Piora quando faço esforço, melhora um pouco quando descanso']\\nSintomas associados: [Exemplo: 'Tenho dormido mal e perdido peso']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Lesões Cutâneas",
+                "informacao": "Início: [Exemplo: 'Apareceu há 5 dias']\\nEvolução: [Exemplo: 'A lesão aumentou de tamanho e mudou de cor']\\nLocalização: [Exemplo: 'Começou no braço e depois apareceu na perna']\\nSintomas associados: [Exemplo: 'Coça e às vezes arde']\\nFatores desencadeantes: [Exemplo: 'Apareceu depois que usei um creme novo']\\nExposição: [Exemplo: 'Não tive contato com plantas ou animais diferentes']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Prurido (Coceira)",
+                "informacao": "Início: [Exemplo: 'Começou há 2 semanas']\\nLocalização: [Exemplo: 'Coça mais nas pernas, mas às vezes no corpo todo']\\nIntensidade: [Exemplo: 'É forte, nota 7 de 10']\\nPiora/melhora: [Exemplo: 'Piora à noite, melhora um pouco com banho frio']\\nLesões associadas: [Exemplo: 'Fica vermelho e com marcas de unha']\\nSintomas sistêmicos: [Exemplo: 'Não notei febre nem amarelão nos olhos']\\nContexto: [Exemplo: 'Ninguém mais em casa está com coceira']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Cefaleia (Dor de Cabeça)",
+                "informacao": "Início: [Exemplo: 'Começou de repente, como uma explosão']\\nLocalização: [Exemplo: 'Dói mais na nuca, mas pega a cabeça toda']\\nIntensidade: [Exemplo: 'É a pior dor que já senti, nota 10 de 10']\\nTipo/Característica: [Exemplo: 'É uma dor pulsátil, como se estivesse batendo']\\nDuração/frequência: [Exemplo: 'Dura cerca de 2 horas, já tive 3 crises esta semana']\\nFatores de piora: [Exemplo: 'Piora com luz forte e barulho']\\nFatores de melhora: [Exemplo: 'Melhora quando fico deitado no escuro']\\nSintomas associados: [Exemplo: 'Sinto enjoo e às vezes vejo luzes antes da dor começar']\\nSinais de alarme: [Exemplo: 'Nunca tive dor assim antes']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Tontura/Vertigem",
+                "informacao": "Tipo: [Exemplo: 'Sinto que tudo gira ao meu redor']\\nInício: [Exemplo: 'Começou de repente, enquanto estava em pé']\\nDuração: [Exemplo: 'Dura alguns minutos e depois passa']\\nFatores desencadeantes: [Exemplo: 'Piora quando viro a cabeça rápido']\\nSintomas associados: [Exemplo: 'Às vezes fico com náusea e suor frio']\\nImpacto funcional: [Exemplo: 'Já caí uma vez por causa da tontura']"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Tosse",
+                "informacao": "Duração: [Aguda (<3 semanas), subaguda (3-8 semanas) ou crônica (>8 semanas)]\\nCaracterística: [Seca ou produtiva com catarro]\\nPadrão/Gatilhos: [Pior pela manhã, à noite, com exercício, exposição à poeira]\\nExpectoração: [Cor, consistência, quantidade do catarro, se houver]\\nPresença de sangue: [Se houve hemoptise, quantidade, frequência]\\nSintomas associados: [Febre, dispneia, dor torácica]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dispneia (Falta de ar)",
+                "informacao": "Início: [Súbito ou gradual]\\nIntensidade: [Leve, moderada, grave]\\nGatilhos: [Em repouso ou aos esforços? Quais atividades causam?]\\nClassificação NYHA: [I-IV - detalhar quais atividades causam dispneia]\\nOrtopneia: [Necessita de quantos travesseiros para dormir?]\\nDispneia paroxística noturna: [Acorda à noite sufocado? Com que frequência?]\\nSintomas associados: [Tosse, chiado, dor torácica, edema de MMII]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dor Torácica",
+                "informacao": "Localização: [Onde exatamente no peito? Precordial, retroesternal?]\\nIrradiação: [Para mandíbula, braço esquerdo, costas?]\\nCaráter: [Aperto, peso, queimação, pontada]\\nIntensidade: [Escala 0-10]\\nDuração: [Quanto tempo dura cada episódio?]\\nFatores desencadeantes: [Durante esforço, em repouso, com emoções?]\\nFatores de alívio: [Repouso, posição, nitratos?]\\nSintomas associados: [Dispneia, sudorese, náuseas, síncope]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Palpitações",
+                "informacao": "Descrição: [Como sente o coração bater? Rápido e regular, irregular?]\\nInício/Término: [Começa e termina subitamente ou gradualmente?]\\nDuração/Frequência: [Quanto tempo dura? Com que frequência ocorre?]\\nFatores desencadeantes: [Esforço, estresse, café, álcool?]\\nSintomas associados: [Tontura, pré-síncope, síncope, dor no peito]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Edema de Membros",
+                "informacao": "Localização: [Quais membros? Unilateral ou bilateral?]\\nInício: [Quando começou?]\\nPadrão: [Pior no final do dia? Melhora ao elevar as pernas?]\\nCaráter: [Forma cacifo/depressão quando aperta com o dedo?]\\nSintomas associados: [Dispneia, ortopneia, DPN]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dor Abdominal",
+                "informacao": "Localização: [Em qual quadrante ou região?]\\nIrradiação: [A dor se espalha para algum outro local?]\\nCaráter: [Cólica, queimação, pontada, peso]\\nIntensidade: [Escala 0-10]\\nInício/Duração: [Súbito ou gradual? Contínua ou intermitente?]\\nRelação com funções: [Piora ou melhora com alimentação, evacuação, micção?]\\nFatores de melhora/piora: [O que alivia ou piora a dor?]\\nSintomas associados: [Náuseas, vômitos, febre, alteração do hábito intestinal]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Náuseas e Vômitos",
+                "informacao": "Início: [Quando começou?]\\nFrequência: [Quantos episódios por dia?]\\nRelação temporal: [Ocorre em jejum, após alimentação?]\\nConteúdo: [Alimentar recente, bilioso, com sangue, fecaloide?]\\nFatores de alívio: [O que melhora? Algum medicamento usado?]\\nSintomas associados: [Dor abdominal, diarreia, febre]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Alterações Intestinais",
+                "informacao": "Tipo: [Diarreia ou constipação]\\nDuração: [Aguda ou crônica]\\nFrequência: [Quantas evacuações por dia/semana?]\\nConsistência: [Líquida, pastosa, endurecida, em cíbalos]\\nCor: [Normal, clara, escura, com sangue, com muco]\\nVolume: [Grande ou pequeno volume em cada evacuação]\\nSintomas associados: [Dor, distensão abdominal, tenesmo, urgência]\\nPadrão: [Contínua ou intermitente? Também ocorre à noite?]\\nFatores de melhora/piora: [Alimentos específicos, estresse, medicamentos]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Icterícia/Colúria/Acolia",
+                "informacao": "Início: [Quando notou o amarelão? Foi súbito ou gradual?]\\nIntensidade: [Leve, moderada, intensa]\\nPrurido: [Presença de coceira associada? Intensidade?]\\nColúria: [Urina escura como Coca-Cola?]\\nAcolia fecal: [Fezes claras, esbranquiçadas?]\\nSintomas associados: [Dor abdominal, febre, perda de peso]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Sintomas Urinários",
+                "informacao": "Disúria: [Dor ou ardência ao urinar]\\nPolaciúria: [Aumento da frequência urinária]\\nUrgência: [Vontade súbita e incontrolável de urinar]\\nNictúria: [Necessidade de levantar à noite para urinar]\\nHesitação: [Demora para iniciar o jato]\\nJato fraco: [Diminuição da força do jato]\\nGotejamento terminal: [Continua pingando após terminar]\\nSensação de esvaziamento incompleto: [Sente que não esvaziou tudo]\\nAlterações na urina: [Presença de sangue, cheiro forte, espuma]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dor Lombar",
+                "informacao": "Localização: [Lombar bilateral ou unilateral (flanco)?]\\nIrradiação: [Para região inguinal, genitais?]\\nCaráter: [Em cólica? Peso? Contínua?]\\nIntensidade: [Escala 0-10]\\nFatores de melhora/piora: [Repouso, posição, movimentos?]\\nSintomas urinários associados: [Disúria, hematúria, febre]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Corrimento Vaginal/Uretral",
+                "informacao": "Início: [Quando começou?]\\nCor: [Branco, amarelado, esverdeado, acinzentado]\\nOdor: [Presença de odor forte ou desagradável]\\nQuantidade: [Pequena, moderada, grande]\\nConsistência: [Espesso tipo 'nata', bolhoso, fluido]\\nSintomas associados: [Coceira, ardor, dispareunia, disúria]\\nRelação com ciclo menstrual: [Piora antes/depois da menstruação]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Dor Articular/Rigidez",
+                "informacao": "Localização: [Quais articulações? Padrão simétrico?]\\nInício: [Quando começou? Súbito ou gradual?]\\nCaráter: [Tipo de dor: latejante, em peso, em pontada]\\nIntensidade: [Escala 0-10]\\nPadrão da dor: [Pior pela manhã (inflamatório) ou no fim do dia (mecânico)?]\\nRigidez matinal: [Presente? Duração? >1h sugere inflamação]\\nSinais inflamatórios: [Articulações ficam inchadas, quentes, vermelhas?]\\nLimitação funcional: [Impacto nas atividades diárias]\\nSintomas sistêmicos: [Febre, perda de peso, lesões cutâneas]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Alterações Neurológicas",
+                "informacao": "Tipo: [Fraqueza (paresia), alteração de sensibilidade (parestesia)]\\nLocalização: [Onde exatamente? Padrão de distribuição? Lado do corpo?]\\nInício: [Súbito ou gradual? Quando iniciou?]\\nEvolução: [Está piorando, melhorando ou estável?]\\nFatores desencadeantes: [Trauma, posição, movimento?]\\nSintomas associados: [Alteração visual, fala, marcha, consciência]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Crises Convulsivas",
+                "informacao": "Frequência: [Primeira crise ou recorrente? Quantas crises?]\\nFatores desencadeantes: [Privação de sono, estresse, febre, álcool?]\\nAura: [Sensação prévia? Qual tipo?]\\nDescrição da crise (relato de testemunha): [Início súbito? Perda de consciência? Movimentos? Mordedura de língua? Liberação esfincteriana?]\\nDuração: [Tempo dos movimentos convulsivos]\\nFase pós-ictal: [Confusão após a crise? Por quanto tempo?]\\nRecuperação: [Rápida ou lenta? Dor de cabeça ou fraqueza após?]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Alterações de Memória",
+                "informacao": "Tipo: [Memória recente ou remota mais afetada?]\\nInício e progressão: [Quando começou? Tem piorado?]\\nImpacto funcional: [Afeta atividades diárias? Quais?]\\nSintomas associados: [Alterações de comportamento, linguagem, marcha]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Distúrbios do Sono",
+                "informacao": "Tipo: [Insônia inicial, de manutenção, despertar precoce]\\nDuração: [Há quanto tempo?]\\nQualidade do sono: [Sensação de sono não reparador?]\\nSintomas diurnos: [Sonolência excessiva durante o dia?]\\nEventos noturnos: [Ronco, pausas respiratórias, pernas inquietas]"
+            },
+            {
+                "contextoOuPerguntaChave": "[SINTOMA] Alterações de Humor",
+                "informacao": "Humor predominante: [Triste, ansioso, irritável, eufórico]\\nAnedonia: [Perda de interesse ou prazer em atividades antes prazerosas]\\nEnergia: [Cansaço, fadiga constante]\\nAlterações de sono: [Insônia ou hipersonia]\\nAlterações de apetite: [Aumento ou diminuição]\\nConcentração: [Dificuldade para se concentrar ou tomar decisões]\\nSentimentos negativos: [Culpa, inutilidade, desesperança]\\nIdeação suicida: [Pensamentos de morte ou suicídio]"
+            },
+            {
+                "contextoOuPerguntaChave": "SINTOMAS GERAIS",
+                "informacao": "Febre: [Presença, padrão, duração]\\nPerdas/Ganho de peso: [Quantificação, intencionalidade]\\nCansaço/Fadiga: [Presença, impacto funcional]\\nSudorese: [Diurna ou noturna, intensidade]\\nApetite: [Aumentado, diminuído, anorexia]\\nSono: [Qualidade, insônia, hipersonia]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - PELE E FÂNEROS",
+                "informacao": "Lesões cutâneas: [Tipo, localização, evolução]\\nPrurido: [Presença, localização, intensidade]\\nAlterações de coloração: [Icterícia, palidez, cianose]\\nQueda de cabelo: [Padrão, intensidade]\\nAlterações ungueais: [Tipo, localização]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - CABEÇA E PESCOÇO",
+                "informacao": "Cefaleia: [Características, frequência]\\nTontura/Vertigem: [Tipo, gatilhos]\\nSíncope: [Episódios, circunstâncias]\\nAlterações visuais: [Tipo, progressão]\\nAlterações auditivas: [Diminuição, zumbido]\\nRinorreia/Obstrução nasal: [Padrão, gatilhos]\\nDor/Lesões orais: [Localização, evolução]\\nNódulos cervicais: [Localização, características]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - CARDIOVASCULAR",
+                "informacao": "Dor torácica: [Características, desencadeantes]\\nPalpitações: [Padrão, duração]\\nDispneia: [Classificação NYHA, ortopneia, DPN]\\nEdema: [Localização, padrão]\\nCianose: [Presença, distribuição]\\nSíncope: [Circunstâncias, pródromos]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - RESPIRATÓRIO",
+                "informacao": "Tosse: [Características, duração]\\nExpectoração: [Cor, quantidade]\\nHemoptise: [Quantidade, frequência]\\nDispneia: [Padrão, relação com esforço]\\nSibilância: [Gatilhos, frequência]\\nDor torácica pleurítica: [Localização, relação com respiração]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - DIGESTIVO",
+                "informacao": "Dor abdominal: [Localização, características]\\nDisfagia/Odinofagia: [Tipo, progressão]\\nNáuseas/Vômitos: [Frequência, conteúdo]\\nHematêmese/Melena/Hematoquezia: [Presença, características]\\nIcterícia/Colúria/Acolia: [Início, sintomas associados]\\nHábito intestinal: [Frequência, consistência]\\nFlatos: [Presença de distensão, excesso de gases]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - GENITURINÁRIO",
+                "informacao": "Disúria: [Presença, intensidade]\\nPolaciúria/Urgência: [Frequência, impacto]\\nJato urinário: [Força, interrupções]\\nHematúria: [Padrão, quantidade]\\nNictúria: [Frequência]\\nCorrimento: [Características]\\nLibido: [Alterações, início]\\nDisfunção sexual: [Tipo, início]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - MUSCULOESQUELÉTICO E NEUROLÓGICO",
+                "informacao": "Dor articular: [Localização, padrão]\\nRigidez: [Duração, horário]\\nMialgia: [Distribuição, gatilhos]\\nFraqueza muscular: [Localização, progressão]\\nAlterações da marcha: [Tipo, início]\\nTremor: [Características, localização]\\nParesia/Parestesia: [Distribuição, evolução]\\nAlterações de coordenação: [Tipo, impacto]\\nAlterações de equilíbrio: [Frequência, circunstâncias]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - ENDÓCRINO",
+                "informacao": "Poliúria/Polidipsia/Polifagia: [Presença, intensidade]\\nIntolerância ao calor/frio: [Preferências térmicas alteradas]\\nSudorese excessiva: [Padrão, intensidade]\\nAlterações pilosas: [Aumento ou diminuição]\\nAlterações na distribuição de gordura: [Padrão, evolução]\\nAlterações na libido: [Diminuição, aumento]"
+            },
+            {
+                "contextoOuPerguntaChave": "REVISÃO DE SISTEMAS - PSIQUIÁTRICO",
+                "informacao": "Humor: [Predominantemente triste, ansioso, irritável]\\nEnergia: [Fadiga, apatia]\\nSono: [Insônia, hipersonia, pesadelos]\\nApetite: [Aumento, diminuição]\\nAnsiedade: [Características, impacto]\\nMemória/Concentração: [Dificuldades, impacto]\\nComportamento: [Alterações, impulsividade]\\nPensamentos: [Conteúdo, ideação suicida]"
+            },
+            {
+                "contextoOuPerguntaChave": "SINTOMAS ACOMPANHANTES",
+                "informacao": "[Sintoma Acompanhante 1]: [Descrição em primeira pessoa].\\n[Sintoma Acompanhante 2]: [Descrição em primeira pessoa].\\nOutros sintomas (se perguntado ativamente): [Resposta do ator, ex: 'Não tenho outros sintomas que eu tenha notado.' ou 'Não consta no script']"
+            },
+            {
+                "contextoOuPerguntaChave": "MEDICAÇÕES DE ALÍVIO UTILIZADAS",
+                "informacao": "[Relato do paciente em primeira pessoa incluindo nome do medicamento, dose, frequência e resposta]."
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS PATOLÓGICOS",
+                "informacao": "Doenças da infância: [Sarampo, caxumba, rubéola, varicela, febre reumática - Nega/Presente]\\nDoenças crônicas: [HAS, DM, Dislipidemia, Asma/DPOC, Cardiopatias - Nega/Presente com tempo de diagnóstico e controle]\\nCirurgias prévias: [Tipo, data, complicações - Nega/Relato]\\nInternações: [Motivo, data, evolução - Nega/Relato]\\nTraumatismos: [Tipo, data, sequelas - Nega/Relato]\\nTransfusões: [Data, motivo - Nega/Relato]\\nAlergias medicamentosas: [Medicamento, tipo de reação - Nega/Relato]\\nMedicamentos em uso contínuo: [Nome, dose, tempo de uso]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES PESSOAIS FISIOLÓGICOS",
+                "informacao": "Gestação/Parto: [Tipo de parto, intercorrências - Nega/Relato]\\nDesenvolvimento psicomotor: [Normal ou alterado]\\nMenarca: [Idade do início da menstruação]\\nCiclos menstruais: [Regularidade, duração, fluxo]\\nSexarca: [Idade da primeira relação sexual]\\nMenopausa: [Idade, sintomas - se aplicável]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES GINECOLÓGICOS E OBSTÉTRICOS",
+                "informacao": "Gestações: [Número ou N/A]\\nPartos: [Número ou N/A]\\nAbortos: [Número ou N/A]\\nCesáreas: [Número ou N/A]\\nData da Última Menstruação (DUM): [Data ou N/A]\\nUso de contraceptivos: [Método, tempo de uso - Nega/Relato ou N/A]\\nExames preventivos: [Papanicolau, mamografia, data do último - Em dia/Atrasado]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES PERINATAIS/POS NATAL/INTERCORRENCIAS GESTAÇÃO",
+                "informacao": "Tipo de Parto: [Vaginal, Cesárea, Fórceps ou N/A]\\nPeso ao Nascer: [Gramas ou N/A]\\nIdade Gestacional ao Nascer: [Semanas ou N/A]\\nIntercorrências na Gestação/Parto: [Nega/Relato ou N/A]\\nAmamentação: [Leite materno exclusivo, Fórmula, Misto ou N/A]\\nDesenvolvimento neuropsicomotor: [Normal, atrasos - se aplicável]"
+            },
+            {
+                "contextoOuPerguntaChave": "TRIAGEM NEONATAL",
+                "informacao": "Teste do Pezinho: [Normal, Alterado, Não realizado ou N/A]\\nTeste do Coraçãozinho: [Normal, Alterado, Não realizado ou N/A]\\nTeste da Orelhinha: [Normal, Alterado, Não realizado ou N/A]\\nTeste da Linguinha: [Normal, Alterado, Não realizado ou N/A]\\nTeste do Olhinho: [Normal, Alterado, Não realizado ou N/A]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES FAMILIARES",
+                "informacao": "Pai: [Idade, estado de saúde ou idade/causa do óbito]\\nMãe: [Idade, estado de saúde ou idade/causa do óbito]\\nIrmãos: [Número, idades, estado de saúde]\\nFilhos: [Número, idades, estado de saúde]\\nDoenças específicas na família: [HAS, DM, cardiopatias, câncer (tipo e idade), doenças psiquiátricas - Nega/Presente e grau de parentesco]\\nMortes precoces ou súbitas: [Parentesco, idade, causa]"
+            },
+            {
+                "contextoOuPerguntaChave": "VACINAÇÃO",
+                "informacao": "Situação Vacinal: [Completa, Incompleta, Não sabe informar]\\nVacinas recentes: [Tipo, data]\\nVacinas pendentes: [Específicas pendentes, se conhecidas]"
+            },
+            {
+                "contextoOuPerguntaChave": "ANTECEDENTES EPIDEMIOLÓGICOS",
+                "informacao": "Viagens recentes: [Local, data, duração - Nega/Relato]\\nExposição a doenças infecciosas: [Tipo, data - Nega/Relato]\\nContato com doentes: [Relação, doença, período - Nega/Relato]\\nExposição a animais: [Tipo, frequência - Nega/Relato]\\nExposição a vetores: [Mosquitos, carrapatos - Nega/Relato]\\nÁgua consumida: [Tratada, não tratada, filtrada]\\nExposição a agentes ambientais: [Tipo, duração - Nega/Relato]"
+            },
+            {
+                "contextoOuPerguntaChave": "HÁBITOS DE VIDA",
+                "informacao": "Dieta: [Padrão alimentar, restrições, preferências]\\nAtividade física: [Tipo, frequência, duração - Nega/Relato]\\nSono: [Horários, qualidade, duração]\\nTabagismo: [Status (nunca fumou, fumante atual, ex-fumante), quantidade (maços/dia), tempo, carga tabágica (maços-ano)]\\nEtilismo: [Tipo de bebida, quantidade, frequência, último consumo]\\nDrogas ilícitas: [Tipo, via de uso, frequência - Nega/Relato]\\nVida sexual: [Ativa, parceiros fixos/múltiplos, uso de preservativo]\\nCondições de moradia: [Tipo, número de pessoas, saneamento]\\nExposição ocupacional: [Produtos químicos, poeiras, radiação]"
+            },
+            {
+                "contextoOuPerguntaChave": "CONTEXTO PSICOSSOCIAL",
+                "informacao": "Situação familiar: [Com quem mora, qualidade dos relacionamentos]\\nRede de apoio: [Familiares, amigos disponíveis]\\nSituação financeira: [Estável, dificuldades]\\nEventos estressores recentes: [Perdas, mudanças, conflitos - Nega/Relato]\\nLazer: [Atividades, frequência]\\nEspiritualidade/Religião: [Importância, práticas]"
+            },
+            {
+                "contextoOuPerguntaChave": "PERGUNTA DO PACIENTE/ACOMPANHANTE: [Contexto da Pergunta]",
+                "informacao": "[Pergunta textual do paciente/acompanhante, se houver no roteiro ]."
+            },
+            {
+                "contextoOuPerguntaChave": "INSTRUÇÃO AO ATOR/CHEFE DE ESTAÇÃO: [Contexto da Instrução]",
+                "informacao": "[Instrução específica para o ator ou chefe de estação, se houver no roteiro]."
+            }
+        ],
+        "impressos": [
+            {
+                "idImpresso": "est[NºEstação]_impresso_SINAISVITAIS_1",
+                "tituloImpresso": "Sinais Vitais e Exame Físico",
+                "tipoConteudo": "lista_chave_valor_secoes",
+                "conteudo": {
+                    "secoes": [
+                        {
+                            "tituloSecao": "SINAIS VITAIS",
+                            "itens": [
+                                {
+                                    "chave": "Pressão Arterial",
+                                    "valor": "[Valor] mmHg"
+                                },
+                                {
+                                    "chave": "Frequência Cardíaca",
+                                    "valor": "[Valor] bpm"
+                                },
+                                {
+                                    "chave": "Frequência Respiratória",
+                                    "valor": "[Valor] irpm"
+                                },
+                                {
+                                    "chave": "Temperatura Axilar",
+                                    "valor": "[Valor] °C"
+                                },
+                                {
+                                    "chave": "Saturação de O₂",
+                                    "valor": "[Valor] %"
+                                }
+                            ]
+                        },
+                        {
+                            "tituloSecao": "EXAME FÍSICO",
+                            "itens": [
+                                {
+                                    "chave": "Geral",
+                                    "valor": "[Descrição do estado geral]"
+                                },
+                                {
+                                    "chave": "Cabeça e Pescoço",
+                                    "valor": "[Descrição do exame]"
+                                },
+                                {
+                                    "chave": "Aparelho Cardiovascular",
+                                    "valor": "[Descrição do exame]"
+                                },
+                                {
+                                    "chave": "Aparelho Respiratório",
+                                    "valor": "[Descrição do exame]"
+                                },
+                                {
+                                    "chave": "Abdome",
+                                    "valor": "[Descrição do exame]"
+                                },
+                                {
+                                    "chave": "Membros",
+                                    "valor": "[Descrição do exame]"
+                                },
+                                {
+                                    "chave": "Sinais de Inflamação",
+                                    "valor": "[Descrição, se presente]"
+                                },
+                                {
+                                    "chave": "Edema",
+                                    "valor": "[Descrição, se presente]"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "idImpresso": "est[NºEstação]_impresso_LABORATORIO_2",
+                "tituloImpresso": "Exames Laboratoriais",
+                "tipoConteudo": "lista_chave_valor_secoes",
+                "conteudo": {
+                    "secoes": [
+                        {
+                            "tituloSecao": "HEMOGRAMA",
+                            "itens": [
+                                {
+                                    "chave": "Leucócitos",
+                                    "valor": "[Valor] /mm³ (Ref: [4.000-11.000])"
+                                },
+                                {
+                                    "chave": "Hemoglobina",
+                                    "valor": "[Valor] g/dL (Ref: [13.5-17.5 M / 12.0-15.5 F])"
+                                },
+                                {
+                                    "chave": "Plaquetas",
+                                    "valor": "[Valor] /mm³ (Ref: [150.000-450.000])"
+                                }
+                            ]
+                        },
+                        {
+                            "tituloSecao": "BIOQUÍMICA",
+                            "itens": [
+                                {
+                                    "chave": "Ureia",
+                                    "valor": "[Valor] mg/dL (Ref: [15-45])"
+                                },
+                                {
+                                    "chave": "Creatinina",
+                                    "valor": "[Valor] mg/dL (Ref: [0.7-1.3])"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "idImpresso": "est[NºEstação]_impresso_IMAGEM_TC_3",
+                "tituloImpresso": "Tomografia Computadorizada de Crânio",
+                "tipoConteudo": "imagem_com_texto",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição da imagem ou do conteúdo principal do impresso].",
+                    "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+                    "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'TC de crânio mostrando hemorragia subaracnoide']",
+                    "laudo": "[Laudo associado à imagem, se houver, ou texto principal do impresso]."
+                }
+            },
+            {
+                "idImpresso": "est[NºEstação]_impresso_IMAGEM_RX_4",
+                "tituloImpresso": "Raio-X de Tórax",
+                "tipoConteudo": "imagem_com_texto",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição da imagem ou do conteúdo principal do impresso].",
+                    "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+                    "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'Raio-X de tórax em PA mostrando consolidação no lobo inferior direito']",
+                    "laudo": "[Laudo associado à imagem, se houver, ou texto principal do impresso]."
+                }
+            },
+            {
+                "idImpresso": "est[NºEstação]_impresso_IMAGEM_ECG_5",
+                "tituloImpresso": "Eletrocardiograma (ECG)",
+                "tipoConteudo": "imagem_com_texto",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição da imagem ou do conteúdo principal do impresso].",
+                    "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+                    "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'ECG de 12 derivações com supradesnivelamento de ST em DII, DIII e aVF']",
+                    "laudo": "[Laudo associado à imagem, se houver, ou texto principal do impresso]."
+                }
+            },
+            {
+                "idImpresso": "est[NºEstação]_impresso_ECTOSCOPIA_6",
+                "tituloImpresso": "Achado de Exame Físico (Ectoscopia)",
+                "tipoConteudo": "imagem_com_texto",
+                "conteudo": {
+                    "textoDescritivo": "[Descrição do achado visual, ex: 'Lesão maculopapular eritematosa no antebraço direito'].",
+                    "caminhoImagem": "[Caminho para o arquivo de imagem ou URL]",
+                    "sugestaoBuscaImagem": "[Descrição da imagem para busca. Ex: 'Lesão cutânea sugestiva de melanoma, com bordas irregulares e múltiplas cores']",
+                    "laudo": "[Informações adicionais, se houver, como resultado de dermatoscopia, etc.]"
+                }
+            }
+        ]
+    },
+    "padraoEsperadoProcedimento": {
+        "idChecklistAssociado": "PEP_EST[NºEstação]_[ÁREA]_[ANO]V1_NUM",
+        "descricaoItem": "[Descrição completa do Item de Avaliação do PEP, detalhando as subtarefas esperadas. Ex: 'Realizar anamnese do sintoma principal (dor torácica), investigando seus aspectos semiológicos e pesquisando sintomas associados relevantes.']",
+        "sinteseEstacao": {
+            "foco": "[Foco da estação, ex: 'Avaliação de paciente com HIV']",
+            "objetivo": "[Objetivo da estação, ex: 'Diagnosticar e manejar paciente com HIV/AIDS em fase avançada']",
+            "resumoCasoPEP": "[Resumo do caso criado para o PEP, conforme caso gerado, e sempre os itens do pep devem ter relação com as tarefas do candidato e com as perguntas do paciente e com as competencias e objetivosAprendizagem].",
+            "focoPrincipalDetalhado": "[Foco principal da estação, detalhando o que o candidato deve demonstrar e como deve conduzir a estação, se portar, atenção ao paciente, higiene e bons modos].",
+            "objetivosAprendizagem": {
+                "objetivosGerais": [
+                    "Demonstrar empatia e comunicação eficaz com o paciente",
+                    "Realizar anamnese completa e direcionada",
+                    "Aplicar medidas de biossegurança durante o atendimento",
+                    "Executar exame físico adequado",
+                    "Formular hipóteses diagnósticas relevantes",
+                    "Solicitar e interpretar exames complementares",
+                    "Definir conduta terapêutica e plano de acompanhamento"
+                ],
+                "ClinicaMedica": [
+                    "Realizar anamnese completa dos sintomas, aplicando método semiológico adequado",
+                    "Executar exame físico geral e do sistema acometido com técnica apropriada",
+                    "Aplicar raciocínio clínico baseado em evidências para elaboração de hipóteses diagnósticas",
+                    "Selecionar exames complementares de forma racional e custo-efetiva",
+                    "Interpretar alterações nos exames laboratoriais e de imagem",
+                    "Prescrever terapêutica farmacológica apropriada, considerando interações medicamentosas",
+                    "Reconhecer sinais de gravidade e indicações de internação hospitalar",
+                    "Orientar medidas não farmacológicas para manejo da condição"
+                ],
+                "CirurgiaGeral": [
+                    "Identificar sinais e sintomas sugestivos de condições cirúrgicas",
+                    "Realizar exame físico dirigido à condição cirúrgica suspeita",
+                    "Avaliar estabilidade hemodinâmica e condições pré-operatórias",
+                    "Indicar exames pré-operatórios com base em protocolos atualizados",
+                    "Explicar os riscos e benefícios do procedimento cirúrgico proposto",
+                    "Demonstrar conhecimento das técnicas cirúrgicas aplicáveis ao caso",
+                    "Antecipar possíveis complicações pós-operatórias e medidas preventivas",
+                    "Orientar cuidados pós-operatórios e sinais de alerta para complicações"
+                ],
+                "GinecologiaObstetricia": [
+                    "Realizar anamnese ginecológica/obstétrica completa",
+                    "Interpretar adequadamente o cartão de pré-natal ou histórico ginecológico",
+                    "Realizar avaliação de risco gestacional quando aplicável",
+                    "Identificar sinais de violência de gênero ou sexual",
+                    "Reconhecer indicações de notificação compulsória em situações específicas",
+                    "Orientar sobre métodos contraceptivos ou cuidados gestacionais conforme o caso",
+                    "Explicar sobre direitos reprodutivos e legislação pertinente",
+                    "Indicar exames de rastreamento apropriados à idade e condição da paciente"
+                ],
+                "Pediatria": [
+                    "Interagir de forma adequada com a criança e seus responsáveis",
+                    "Avaliar crescimento e desenvolvimento utilizando curvas e parâmetros padronizados",
+                    "Realizar exame físico pediátrico apropriado à idade",
+                    "Verificar e orientar sobre situação vacinal",
+                    "Calcular doses medicamentosas ajustadas ao peso da criança",
+                    "Reconhecer sinais de maus-tratos ou negligência infantil",
+                    "Identificar sinais de alerta para doenças graves na infância",
+                    "Orientar cuidadores sobre alimentação e práticas de saúde adequadas à idade"
+                ],
+                "MedicinaPreventiva": [
+                    "Aplicar princípios da medicina centrada na pessoa e na comunidade",
+                    "Realizar escuta qualificada sem interromper o paciente",
+                    "Identificar determinantes sociais e ambientais do processo saúde-doença",
+                    "Aplicar conhecimentos de epidemiologia na abordagem de problemas de saúde",
+                    "Elaborar plano de cuidados compartilhado com paciente/comunidade",
+                    "Realizar ações de educação em saúde utilizando linguagem acessível",
+                    "Conhecer fluxos de notificação compulsória e vigilância em saúde",
+                    "Articular ações intersetoriais para abordagem integral dos problemas"
+                ]
+            },
+            "competenciasChave": {
+                "competenciasGerais": [
+                    "Comunicação clínica efetiva",
+                    "Raciocínio clínico estruturado",
+                    "Tomada de decisão baseada em evidências",
+                    "Exame físico apropriado",
+                    "Profissionalismo médico"
+                ],
+                "ClinicaMedica": [
+                    "Anamnese detalhada dos sintomas e fatores associados",
+                    "Exame físico geral e do sistema acometido",
+                    "Interpretação de exames laboratoriais e de imagem",
+                    "Raciocínio clínico para diagnóstico diferencial",
+                    "Manejo farmacológico baseado em evidências",
+                    "Reconhecimento de sinais de gravidade",
+                    "Tomada de decisão sobre nível de atenção necessário"
+                ],
+                "CirurgiaGeral": [
+                    "Avaliação da urgência e prioridade cirúrgica",
+                    "Exame físico dirigido à condição cirúrgica",
+                    "Avaliação de risco operatório",
+                    "Conhecimento técnico de procedimentos cirúrgicos",
+                    "Manejo pré e pós-operatório",
+                    "Identificação e manejo de complicações",
+                    "Tomada de decisão sobre abordagem cirúrgica ou conservadora"
+                ],
+                "GinecologiaObstetricia": [
+                    "Anamnese ginecológica e obstétrica específica",
+                    "Avaliação de risco gestacional",
+                    "Abordagem de urgências obstétricas",
+                    "Conhecimento sobre ciclo gravídico-puerperal",
+                    "Interpretação de exames obstétricos e ginecológicos",
+                    "Orientação sobre planejamento familiar",
+                    "Conhecimento de legislação sobre direitos reprodutivos"
+                ],
+                "Pediatria": [
+                    "Comunicação com crianças e responsáveis",
+                    "Avaliação do crescimento e desenvolvimento",
+                    "Exame físico pediátrico por faixa etária",
+                    "Prescrição de medicamentos com dose ajustada",
+                    "Orientação aos pais/responsáveis",
+                    "Identificação de sinais de alerta na infância",
+                    "Conhecimento do calendário vacinal"
+                ],
+                "MedicinaPreventiva": [
+                    "Escuta ativa e acolhimento",
+                    "Abordagem familiar e comunitária",
+                    "Conhecimento de epidemiologia aplicada",
+                    "Promoção da saúde e prevenção de doenças",
+                    "Atuação intersetorial e em equipe",
+                    "Vigilância em saúde e notificação",
+                    "Comunicação em linguagem acessível",
+                    "Método clínico centrado na pessoa"
+                ]
+            },
+            "itensAvaliacao": [
+                {
+                    "idItem": "pep.Est[NºEstação]_item_apresentacao",
+                    "itemNumeroOficial": "1",
+                    "descricaoItem": "Apresentação:\n(1) Identifica-se ao paciente.\n(2) Cumprimenta o paciente. \n(3) Verbaliza o nome do paciente.",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as três ações.",
+                            "pontos": 0.5
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza uma ou duas ações.",
+                            "pontos": 0.25
+                        },
+                        "inadequado": {
+                            "criterio": "Não realiza ação alguma.",
+                            "pontos": 0.0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_empatia",
+                    "itemNumeroOficial": "2",
+                    "descricaoItem": "Demonstra empatia com o paciente:\n(1) Estabelece contato visual.\n(2) Mantém postura atenta. \n(3) Mantém-se interessado(a) ao longo da consulta.",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as três ações.",
+                            "pontos": 0.25
+                        },
+                        "inadequado": {
+                            "criterio": "Não realiza ação alguma ou realiza apenas uma ou duas.",
+                            "pontos": 0.0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_queixa_principal",
+                    "itemNumeroOficial": "3",
+                    "descricaoItem": "Realiza anamnese da queixa principal:\n(1) Início\n(2) Localização\n(3) Intensidade\n(4) Característica\n(5) Irradiação\n(6) Fatores de piora\n(7) Fatores de melhora\n(8) Uso de medicação\n(9) Episódios prévios\n(10) Progressão\n(11) Sintomas acompanhantes",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Investiga 8 ou mais de 11 aspectos semiológicos da queixa principal.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Investiga 5 a 7 de 11 aspectos semiológicos da queixa principal.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Investiga menos de 5 aspectos ou não investiga a queixa principal.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_exame_fisico_CM",
+                    "itemNumeroOficial": "4",
+                    "descricaoItem": "Realiza exame físico geral e específico do sistema acometido:\n(1) Avalia sinais vitais (PA, FC, FR, Temperatura)\n(2) Realiza exame do sistema relacionado à queixa\n(3) Executa técnica semiológica correta\n(4) Identifica as alterações principais no exame físico",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_hipoteses_CM",
+                    "itemNumeroOficial": "5",
+                    "descricaoItem": "Formula hipóteses diagnósticas compatíveis com o quadro clínico:\n(1) Apresenta hipótese principal correta\n(2) Cita pelo menos dois diagnósticos diferenciais pertinentes\n(3) Justifica as hipóteses com base nos achados clínicos",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as três ações.",
+                            "pontos": 1.5
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ações.",
+                            "pontos": 0.75
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_condutas_CM",
+                    "itemNumeroOficial": "6",
+                    "descricaoItem": "Define conduta terapêutica adequada:\n(1) Prescreve tratamento correto para o diagnóstico\n(2) Indica doses, posologia e duração adequadas\n(3) Verifica possíveis interações medicamentosas\n(4) Define necessidade de internação ou tratamento ambulatorial",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1.5
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.75
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_exame_fisico_CIR",
+                    "itemNumeroOficial": "4",
+                    "descricaoItem": "Realiza exame físico dirigido à condição cirúrgica:\n(1) Avalia sinais vitais e condição hemodinâmica\n(2) Examina adequadamente a região afetada\n(3) Pesquisa sinais específicos relacionados à hipótese (ex: Murphy, Blumberg)\n(4) Identifica achados relevantes para decisão cirúrgica",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_decisao_cirurgica",
+                    "itemNumeroOficial": "5",
+                    "descricaoItem": "Toma decisão cirúrgica adequada:\n(1) Define corretamente indicação de cirurgia urgente ou eletiva\n(2) Explica benefícios e riscos do procedimento\n(3) Solicita avaliação pré-operatória quando necessário\n(4) Define tipo de abordagem cirúrgica apropriada",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1.5
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.75
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_procedimento_CIR",
+                    "itemNumeroOficial": "6",
+                    "descricaoItem": "Descreve a técnica cirúrgica e cuidados pós-operatórios:\n(1) Explica os passos principais do procedimento\n(2) Menciona possíveis complicações\n(3) Orienta cuidados pós-operatórios\n(4) Define critérios de alta ou seguimento",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1.5
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.75
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_anamnese_GO",
+                    "itemNumeroOficial": "4",
+                    "descricaoItem": "Realiza anamnese ginecológica/obstétrica específica:\n(1) Investiga histórico menstrual/gestacional\n(2) Questiona sobre gestações anteriores (G, P, A, C)\n(3) Pergunta sobre métodos contraceptivos\n(4) Investiga histórico de ISTs ou outras patologias ginecológicas",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_exame_GO",
+                    "itemNumeroOficial": "5",
+                    "descricaoItem": "Realiza ou verbaliza exame ginecológico/obstétrico adequado:\n(1) Exame obstétrico (altura uterina, ausculta BCF, manobras de Leopold)\n(2) Exame ginecológico (inspeção vulvar, especular, toque, etc.)\n(3) Realiza ou verbaliza a técnica correta\n(4) Identifica achados relevantes",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_legislacao_GO",
+                    "itemNumeroOficial": "6",
+                    "descricaoItem": "Aplica conhecimentos sobre legislação pertinente:\n(1) Identifica necessidade de notificação compulsória quando aplicável\n(2) Reconhece situações amparadas pela lei (ex: aborto legal)\n(3) Informa sobre direitos relacionados à saúde reprodutiva\n(4) Oferece orientações adequadas conforme as normas técnicas vigentes",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_anamnese_PED",
+                    "itemNumeroOficial": "4",
+                    "descricaoItem": "Realiza anamnese pediátrica dirigida:\n(1) Questiona sobre desenvolvimento neuropsicomotor\n(2) Verifica situação vacinal\n(3) Investiga antecedentes neonatais quando relevante\n(4) Pergunta sobre alimentação apropriada para idade",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_exame_PED",
+                    "itemNumeroOficial": "5",
+                    "descricaoItem": "Realiza exame físico pediátrico adequado:\n(1) Avalia crescimento (peso, altura, perímetro cefálico)\n(2) Executa exame físico apropriado à idade\n(3) Identifica sinais de gravidade\n(4) Avalia estado de hidratação e nutricional",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_orientacao_PED",
+                    "itemNumeroOficial": "6",
+                    "descricaoItem": "Orienta adequadamente os pais/responsáveis:\n(1) Explica a condição/diagnóstico em linguagem acessível\n(2) Orienta sobre administração de medicamentos (doses por peso)\n(3) Esclarece sinais de alerta para retorno imediato\n(4) Fornece orientações preventivas adequadas à idade",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_escuta_MFC",
+                    "itemNumeroOficial": "4",
+                    "descricaoItem": "Realiza escuta ativa e acolhimento:\n(1) Permite que o paciente conclua sua fala sem interrupções\n(2) Utiliza perguntas abertas para explorar o contexto\n(3) Demonstra compreensão das preocupações e expectativas do paciente\n(4) Estabelece relação empática e respeitosa",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_contexto_MFC",
+                    "itemNumeroOficial": "5",
+                    "descricaoItem": "Investiga contexto biopsicossocial:\n(1) Avalia ambiente familiar e social\n(2) Identifica determinantes sociais relacionados ao problema\n(3) Reconhece fatores de risco coletivos\n(4) Explora recursos comunitários disponíveis",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                },
+                {
+                    "idItem": "pep.Est[NºEstação]_item_promocao_MFC",
+                    "itemNumeroOficial": "6",
+                    "descricaoItem": "Elabora plano de cuidados compartilhado:\n(1) Constrói plano terapêutico com participação do paciente\n(2) Utiliza linguagem acessível nas orientações\n(3) Verifica necessidade de notificação ou vigilância\n(4) Propõe ações intersetoriais quando pertinente",
+                    "pontuacoes": {
+                        "adequado": {
+                            "criterio": "Realiza as quatro ações.",
+                            "pontos": 1
+                        },
+                        "parcialmenteAdequado": {
+                            "criterio": "Realiza duas ou três ações.",
+                            "pontos": 0.5
+                        },
+                        "inadequado": {
+                            "criterio": "Realiza uma ou nenhuma ação.",
+                            "pontos": 0
+                        }
+                    }
+                }
+            ]
+        },
+        "feedbackEstacao": {
+            "resumoTecnico": "[Resumo conciso (máximo 30 linhas) sobre a patologia, focando achados semiologicos e na historia da doença atual, exame fisico e complementares, em diagnóstico e diagnosticos diferenciais, tratamento, fatores de risco, complicações e manejo conforme diretrizes atuais. DEVE citar as fontes.]",
+            "fontes": "[1. Fonte 1 (Ex: Brasil. Ministério da Saúde, 2023). \n2. Fonte 2 (Ex: UpToDate, 2025).]"
+        }
+    }
+}

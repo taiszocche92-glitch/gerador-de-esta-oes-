@@ -13,10 +13,9 @@ import json
 import requests
 import re
 import random
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, cast
 
 CACHE_PATH = os.getenv("WEB_SEARCH_CACHE_PATH", "memoria/web_search_cache.json")
-SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 TTL_SECONDS = int(os.getenv("WEB_SEARCH_CACHE_TTL", str(24*3600)))  # default 24h
 SERPAPI_URL = "https://serpapi.com/search"
 
@@ -55,7 +54,7 @@ def _sanitize_text(text: Optional[str]) -> str:
     protect_clinical = str(protect_clinical_flag).lower() not in ("0", "false", "no")
 
     # Protegendo padrões clínicos antes da redação
-    protected_map = {}
+    protected_map: dict[str, str] = {}
     if protect_clinical and txt:
         clinical_patterns = [
             r'\b\d{1,3}\s?mmHg\b',
@@ -109,6 +108,8 @@ def search_web(query: str, max_results: int = 5, use_cache: bool = True) -> List
     Implements simple retry/backoff with jitter and returns cached results on persistent failure.
     Raises RuntimeError if SERPAPI_KEY not configured.
     """
+    # Obter chave dinamicamente para garantir que load_dotenv() seja considerado
+    SERPAPI_KEY = os.getenv("SERPAPI_KEY")
     if not SERPAPI_KEY:
         raise RuntimeError("SERPAPI_KEY not configured in environment")
  
@@ -119,13 +120,13 @@ def search_web(query: str, max_results: int = 5, use_cache: bool = True) -> List
         if entry and (time.time() - entry.get("ts", 0) < TTL_SECONDS):
             return entry.get("results", [])[:max_results]
  
-    params = {
+    params = cast(dict[str, str | int], {
         "q": query,
         "api_key": SERPAPI_KEY,
         "num": max_results,
         "location": "Brazil",
         "hl": "pt"
-    }
+    })
  
     # Retry/backoff configuration (env vars)
     try:
@@ -195,3 +196,5 @@ def search_web(query: str, max_results: int = 5, use_cache: bool = True) -> List
             sleep_time = sleep_seconds + jitter
             time.sleep(sleep_time)
             continue
+    # This should never be reached, but added to satisfy mypy
+    return []

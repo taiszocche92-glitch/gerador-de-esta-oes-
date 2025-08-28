@@ -1,10 +1,12 @@
 import google.generativeai as genai
+from google.generativeai.generative_models import GenerativeModel
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from pathlib import Path
 import numpy as np
 import json
 from typing import List
+import re
 import threading
 import os
 from dotenv import load_dotenv
@@ -21,6 +23,8 @@ ALLOWED_MODELS = {
     'models/gemini-1.5-flash-8b',
     'models/gemini-1.5-flash-8b-001',
     'models/gemini-2.5-flash',
+    'models/gemini-2.5-flash-lite',
+    'models/gemini-2.0-flash-exp',
     'models/gemini-2.5-pro',
     'models/gemini-2.0-flash',
     'models/gemini-2.0-flash-001',
@@ -92,13 +96,29 @@ def configure_gemini_keys():
     """Configuração simples das chaves Gemini para RAG"""
     try:
         # Usar a primeira chave disponível
-        api_key = (os.getenv("GEMINI_API_KEY_1") or 
-                  os.getenv("GEMINI_API_KEY_2") or 
-                  os.getenv("GEMINI_API_KEY_3") or 
-                  os.getenv("GEMINI_API_KEY_4"))
+        print(f"DEBUG: Tentando GOOGLE_API_KEY: {os.getenv('GOOGLE_API_KEY')}")
+        print(f"DEBUG: Tentando GOOGLE_API_KEY_1: {os.getenv('GOOGLE_API_KEY_1')}")
+        print(f"DEBUG: Tentando GOOGLE_API_KEY_2: {os.getenv('GOOGLE_API_KEY_2')}")
+        print(f"DEBUG: Tentando GOOGLE_API_KEY_3: {os.getenv('GOOGLE_API_KEY_3')}")
+        print(f"DEBUG: Tentando GOOGLE_API_KEY_4: {os.getenv('GOOGLE_API_KEY_4')}")
+        print(f"DEBUG: Tentando GOOGLE_API_KEY_5: {os.getenv('GOOGLE_API_KEY_5')}")
+        print(f"DEBUG: Tentando GEMINI_API_KEY_1: {os.getenv('GEMINI_API_KEY_1')}")
+        print(f"DEBUG: Tentando GEMINI_API_KEY_2: {os.getenv('GEMINI_API_KEY_2')}")
+        print(f"DEBUG: Tentando GEMINI_API_KEY_3: {os.getenv('GEMINI_API_KEY_3')}")
+        print(f"DEBUG: Tentando GEMINI_API_KEY_4: {os.getenv('GEMINI_API_KEY_4')}")
+
+        api_key = (os.getenv("GOOGLE_API_KEY") or
+                   os.getenv("GOOGLE_API_KEY_1") or # Adicionado para corresponder ao .env
+                   os.getenv("GOOGLE_API_KEY_2") or # Adicionado para corresponder ao .env
+                   os.getenv("GOOGLE_API_KEY_3") or # Adicionado para corresponder ao .env
+                   os.getenv("GOOGLE_API_KEY_4") or # Adicionado para corresponder ao .env
+                   os.getenv("GOOGLE_API_KEY_5") or # Adicionado para corresponder ao .env
+                   os.getenv("GEMINI_API_KEY_1") or
+                   os.getenv("GEMINI_API_KEY_2") or
+                   os.getenv("GEMINI_API_KEY_3") or
+                   os.getenv("GEMINI_API_KEY_4"))
         
         if api_key:
-            genai.configure(api_key=api_key)
             print("✅ Gemini configurado para RAG")
             return True
         else:
@@ -109,14 +129,6 @@ def configure_gemini_keys():
         return False
 
 def _cosine_similarity(a: np.ndarray, b: np.ndarray):
-    # a: (d,), b: (n,d)
-    if a.ndim==1:
-        a = a.reshape(1, -1)
-    # normalize
-    an = a / np.linalg.norm(a, axis=1, keepdims=True)
-    bn = b / np.linalg.norm(b, axis=1, keepdims=True)
-    sims = (an @ bn.T).squeeze(0)
-    return sims
     # a: (d,), b: (n,d)
     if a.ndim==1:
         a = a.reshape(1, -1)
@@ -154,6 +166,8 @@ async def rag_query(body: RAGQuery):
         'models/gemini-1.5-flash-8b',
         'models/gemini-1.5-flash-8b-001',
         'models/gemini-2.5-flash',
+        'models/gemini-2.5-flash-lite',
+        'models/gemini-2.0-flash-exp',
         'models/gemini-2.5-pro',
         'models/gemini-2.0-flash',
         'models/gemini-2.0-flash-001',
@@ -183,77 +197,127 @@ async def rag_query(body: RAGQuery):
     except Exception:
         pass
 
-    # generate embedding for the query using genai.embed_content with key rotation
-
-        # Validação do modelo de embedding
-        if model_name not in ALLOWED_MODELS:
-            raise HTTPException(status_code=400, detail=f"Modelo de embedding '{model_name}' não permitido. Consulte MODELOS_GEMINI_ATUAIS.md.")
-    try:
-        from gemini_client import KEY_SLOTS, configure_specific
-    except Exception:
-        KEY_SLOTS = [f'GEMINI_API_KEY_{i}' for i in range(1,9)]
-        def configure_specific(slot):
-            try:
-                import gemini_client as gc
-                return gc.configure_specific(slot)
-            except Exception:
-                # attempt to set env variable fallback
-                return None
-
+    # Tentar gerar embedding da query usando genai configurado por gemini_client (se disponível).
     q_emb = None
-    last_err = None
     used_embed_slot = None
-    for slot in KEY_SLOTS:
-        # try configure this slot
+    target_dim = None
+    try:
+        if _embeddings is not None:
+            try:
+                target_dim = int(_embeddings.shape[1])
+            except Exception:
+                target_dim = None
+
+        # Configure a primeira chave disponível via gemini_client (se existir)
         try:
-            configured = configure_specific(slot)
+            from gemini_client import configure_first_available
+            slot = configure_first_available()
+            if slot:
+                used_embed_slot = slot
         except Exception:
-            configured = None
-        if not configured:
-            continue
+            # fallback: try specific KEY_SLOTS later
+            slot = None
+
+        # Tentar diversos nomes públicos de função de embeddings no pacote genai
+        emb_fn_names = ['get_embeddings', 'get_embedding', 'embed_text', 'embed', 'embeddings']
+        emb_resp = None
+        for name in emb_fn_names:
+            fn = getattr(genai, name, None)
+            if not fn:
+                continue
+            try:
+                # tentar chamada comum (modelo, input)
+                try:
+                    emb_resp = fn(model=model_name, input=body.query)
+                except TypeError:
+                    # alguns wrappers esperam (input, model)
+                    emb_resp = fn(body.query, model=model_name)
+                except Exception:
+                    emb_resp = fn(body.query)
+                # extrair embedding de resposta
+                def _extract_embedding(resp):
+                    if resp is None:
+                        return None
+                    if isinstance(resp, dict):
+                        if 'data' in resp and resp['data']:
+                            first = resp['data'][0]
+                            if isinstance(first, dict) and 'embedding' in first:
+                                return np.array(first['embedding'], dtype=float)
+                        if 'embedding' in resp:
+                            return np.array(resp['embedding'], dtype=float)
+                    if hasattr(resp, 'embedding'):
+                        attr = getattr(resp, 'embedding')
+                        try:
+                            arr = np.array(attr, dtype=float)
+                            if arr.ndim == 1:
+                                return arr
+                            if arr.ndim > 1:
+                                return arr[0]
+                        except Exception:
+                            pass
+                    # última tentativa: transformar em array direto
+                    try:
+                        arr = np.array(resp, dtype=float)
+                        if arr.ndim == 1:
+                            return arr
+                        if arr.ndim > 1:
+                            return arr[0]
+                    except Exception:
+                        return None
+
+                candidate = _extract_embedding(emb_resp)
+                if candidate is not None and candidate.size > 0:
+                    q_emb = candidate.astype(float)
+                    break
+            except Exception:
+                continue
+
+    except Exception:
+        q_emb = None
+
+    # Se obtivemos embedding, validar dimensão contra o index
+    if q_emb is not None and target_dim is not None:
         try:
-            resp = genai.embed_content(model=model_name, content=[body.query])
-            emb_list = None
-            if isinstance(resp, dict):
-                if 'embedding' in resp:
-                    val = resp['embedding']
-                    if isinstance(val, list) and val and isinstance(val[0], list):
-                        emb_list = val
-                    else:
-                        emb_list = [val]
-                elif 'embedding' in resp.get('data', {}):
-                    val = resp['data']['embedding']
-                    if isinstance(val, list) and val and isinstance(val[0], list):
-                        emb_list = val
-                    else:
-                        emb_list = [val]
-            elif hasattr(resp, 'embedding'):
-                attr = resp.embedding
-                if isinstance(attr, list) and attr and isinstance(attr[0], list):
-                    emb_list = attr
-                else:
-                    emb_list = [attr]
-            else:
-                emb_list = list(resp)
+            if q_emb.shape[0] != target_dim:
+                # informar que é necessário reindexar com o modelo atual
+                return {
+                    'query': body.query,
+                    'reindex_required': True,
+                    'expected_dim': target_dim,
+                    'got_dim': int(q_emb.shape[0]),
+                    'generation_model': None,
+                    'generation_key_slot': used_embed_slot,
+                    'answer': None,
+                    'evidence': [],
+                    'generation_error': 'embedding_dimension_mismatch'
+                }
+        except Exception:
+            pass
 
-            q_emb = np.array(emb_list[0], dtype=float)
-            used_embed_slot = slot
-            break
-        except Exception as e:
-            last_err = e
-            msg = str(e).lower()
-            # rotate on expired/invalid API key or permission errors
-            if any(x in msg for x in ('api_key_invalid', 'api key expired', 'expired', 'access_token_scope_insufficient', 'permissiondenied', '403')):
-                continue
-            else:
-                continue
-
+    # Se não conseguimos embedding via API, usar fallback por similaridade de tokens/strings
     if q_emb is None:
-        raise HTTPException(status_code=500, detail=f'Embedding error: {last_err}')
+        def tokenize_text(t: str):
+            if not t:
+                return set()
+            return set(re.findall(r"\w+", t.lower()))
 
-    sims = _cosine_similarity(q_emb, _embeddings)
+        q_tokens = tokenize_text(body.query)
+        sims_list = []
+        for md in (_metadata or []):
+            text_candidate = md.get('text_preview') or md.get('text') or json.dumps(md.get('meta', {}))
+            doc_tokens = tokenize_text(text_candidate)
+            if not q_tokens or not doc_tokens:
+                score = 0.0
+            else:
+                overlap = q_tokens.intersection(doc_tokens)
+                score = len(overlap) / (len(q_tokens) + 1)
+            sims_list.append(score)
+        sims = np.array(sims_list, dtype=float)
+    else:
+        sims = _cosine_similarity(q_emb, _embeddings)
     topk = int(body.top_k)
     if topk <=0: topk = 5
+    sims = np.array(sims, dtype=float)
     idx = np.argsort(-sims)[:topk]
 
     results = []
@@ -290,10 +354,17 @@ async def rag_query(body: RAGQuery):
 
     # chamar gerador com rotação automática de chaves
     try:
-        from gemini_client import KEY_SLOTS, configure_specific
+        from gemini_client import KEY_SLOTS
+        # Ajuste: configure_specific deve aceitar 'slot' como parâmetro
+        def configure_specific(slot):
+            try:
+                import gemini_client as gc
+                return gc.configure_specific(slot)
+            except Exception:
+                return None
     except Exception:
         # fallback para ordem simples
-        KEY_SLOTS = [f'GEMINI_API_KEY_{i}' for i in range(1,9)]
+        KEY_SLOTS = ['GOOGLE_API_KEY_5', 'GOOGLE_API_KEY_4', 'GOOGLE_API_KEY_3', 'GOOGLE_API_KEY_2', 'GOOGLE_API_KEY_1']
 
         # Validação do modelo de geração
         if f"models/{chosen_gen}" not in ALLOWED_MODELS:
@@ -308,49 +379,22 @@ async def rag_query(body: RAGQuery):
     import google.generativeai as genai
 
     def _try_generate_with_client():
-        """Tenta as várias camadas de geração e retorna (text, error)."""
-        messages = [
-            {"role": "system", "content": prompt_system},
-            {"role": "user", "content": prompt_user},
-        ]
-        # 1) genai.generate_answer
+        """Tenta geração usando genai.generate_content (método oficial)."""
         try:
-            gen_resp = genai.generate_answer(model=chosen_gen, messages=messages, max_output_tokens=body.max_output_tokens)
-            if isinstance(gen_resp, dict):
-                text = gen_resp.get('answer') or (gen_resp.get('candidates') and gen_resp['candidates'][0].get('content'))
-            else:
-                text = getattr(gen_resp, 'answer', None) or getattr(gen_resp, 'output', None) or str(gen_resp)
-                if hasattr(text, 'text'):
-                    text = text.text
-            return text, None
-        except Exception:
-            pass
+            # Usar o método oficial generate_content
+            model = GenerativeModel(chosen_gen)
+            response = model.generate_content(prompt_system + "\n\n" + prompt_user)
 
-        # 2) genai.generate
-        try:
-            gen_resp = genai.generate(model=chosen_gen, prompt=[{"role": "system", "content": prompt_system}, {"role": "user", "content": prompt_user}], max_output_tokens=body.max_output_tokens)
-            if isinstance(gen_resp, dict):
-                text = gen_resp.get('candidates', [{}])[0].get('content') or str(gen_resp)
-            else:
-                text = getattr(gen_resp, 'output', None) or str(gen_resp)
-            return text, None
-        except Exception:
-            pass
+            # Extrair texto da resposta
+            if response and response.candidates:
+                candidate = response.candidates[0]
+                if hasattr(candidate, 'content') and hasattr(candidate.content, 'parts'):
+                    text = ''.join([part.text for part in candidate.content.parts if hasattr(part, 'text')])
+                    return text, None
+                elif hasattr(candidate, 'text'):
+                    return candidate.text, None
 
-        # 3) TextServiceClient.generate_text
-        try:
-            from google.ai.generativelanguage import TextServiceClient, GenerateTextRequest, TextPrompt
-            client = TextServiceClient()
-            prompt = TextPrompt(text=prompt_system + "\n\n" + prompt_user)
-            req = GenerateTextRequest(model=chosen_gen, prompt=prompt, max_output_tokens=body.max_output_tokens)
-            gen_resp = client.generate_text(req)
-            if hasattr(gen_resp, 'candidates') and gen_resp.candidates:
-                text = gen_resp.candidates[0].content
-            elif hasattr(gen_resp, 'output'):
-                text = str(gen_resp.output)
-            else:
-                text = str(gen_resp)
-            return text, None
+            return None, Exception("Resposta inválida do modelo")
         except Exception as e:
             return None, e
 

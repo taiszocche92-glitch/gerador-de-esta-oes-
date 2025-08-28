@@ -1,0 +1,100 @@
+[
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488484\"}}",
+    "rule": "Sempre usar sistema híbrido para economia de tokens",
+    "context": "Otimização de performance",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488487\"}}",
+    "rule": "Nunca incluir informações entre parênteses no PEP",
+    "context": "Padrão de formatação INEP",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1755626488491\"}}",
+    "rule": "Preferir arquivos locais ao invés de Firestore para templates",
+    "context": "Sistema híbrido",
+    "category": "preferencia",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756178941281\"}}",
+    "rule": "FASE 4: sempre verificar o arquivo gabaritoestacoes.json e validar ao final para ver se esta de acordo e com os arquivos .json da prova do inep anteriores",
+    "context": "Feedback do usuário via interface",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756180741205\"}}",
+    "rule": "FASE 3: NAS TAREFAS NUNCA JAMAIIS DE DICAS DO QUE SOLICITAR, QUAIS EXAMES, TUDO QUE ESTA ENTRE PARENTESES TANTO NAS TAREFAS QUANTO NA INFRAESTRUTURA QUANTO NA DESCRILCAÇÃO DO CASO, SEJA GENERICO, NAO DE PISTAS AO CANDIDATO, POR EXEMPLO : \"Acionar formalmente o \"Código AVC\" ou a equipe multidisciplinar de AVC, verbalizando a urgência.\" ,ISSO NAO É TAREFA, VOCE ESTA DIZENDO AO CANDIDATO O QUE ELE DEVE FAZER, NUNCA INCLUA NADA PARECIDO NAS NTAREFAS, ISSO É UM ITEM DE AVALIAÇÃO E NAO TAREFA, esse outro exemplo: \" Solicitar os exames laboratoriais essenciais para o protocolo de AVC (glicemia capilar urgente, coagulograma completo, eletrólitos).\" AQUI VOCE JÁ ESTA DIZENDO QUAIS EXAMES COMPLEMENTARES ELE TEM QUE PEDIR E DANDO O DIAGNOSTICO!!!!!!!!!!!!!!!!!!!!!!, OUTRO EXEMPLO : \"Requisitar a Tomografia Computadorizada de Crânio sem contraste de urgência.\" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! AS TAREFAS ESTAO TOTALMENTE ERRADAS, ANALISE O HISTORICO DAS ESTAÇÕES DO INEP EM .JSON. NO CONTEXTO CLINICO COLOQUYE NO MAXIMO 2 SINTOMAS E O TEMPO APENAS, NAO DE MUITAS INFORMAÇOES, COLOQUE APENAS OS 2 OU NO MAXIMO 3 (SOMENTE SE FOR REALMENTE NECESSARIO E COMPATIVEL COM O TEMA) E QUE SEJAM OS SINTOMAS/SINAIS PRINCIPAIS.... POR FAVOR, E NA INFRAESTRUTURA MESMMA COISA, NUNCA SEJA ESPECIFICO NOS COMPONENTES, POR EXEMPLO, COLOQUE \"EXAMES DE IMAGEM DISPONIVEIS\"  E NUNCA COLOQUE \"TOMOGRAFIA DISPONIVEL\", OU \"HEMOGRAMA, PCR, ETC DISPONIVEL\" COLOQUE \"EXAMES DE LABORATORIO DISPONIVEL\"",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756181280546\"}}",
+    "rule": "FASE 3: sempre verifique se o arquivo.json gerado segue os pdroes do arquivo modelo gabaritoestacoes.json e tambem as estacoes das provas anteriores do inep em .json da sua memoria",
+    "context": "Feedback do usuário via interface",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756184364876\"}}",
+    "rule": "FASE 4: na descricaoCasoCompleta\": \"Você está de plantão na sala de emergência de um hospital terciário quando um paciente de 68 anos é trazido pela família com queixa de desorientação e fraqueza no lado esquerdo do corpo com início há 1 hora. Seu papel é realizar o atendimento inicial completo.\"  **QUERO QUE RETIRE E NUNCA INCLUA TAREFAS NA DESCRIÇÃO DO CASO EX: \"Seu papel é realizar o atendimento inicial completo\" ISSOO É UMA TAREFA!! , nos itens de avaliação quero no minio 12 itens de avaliação e vvce estta escrevendo nos criterios de pontuação o que deveria ir na descrição dos itens, exemplo: \"descricaoItem\": \"MEDIDAS INICIAIS DE SUPORTE\\nVerbaliza as medidas de suporte essenciais para o paciente com suspeita de AVC.\", \"criterio\": \"Verbaliza a realização do ABC, monitorização cardíaca e de oximetria, e obtenção de 2 acessos venosos periféricos calibrosos.\",       a descrião deveria ficar assim: \" Verbaliza as medidas de suporte essenciais para o paciente com suspeita de AVC: (1) monitorização cardíaca ; (2) oximetria  ; (3) obtenção de 2 acessos venosos periféricos calibrosos . SEMPRE DESCREVER OS ITENS NA DESCRIÇÃO DOS ITENS SEGUIDO DE DOIS PONTOS E CADA ITENS TERMINADO EM PONTO E VIRGULA, MENOS O ULTIMO QUE DEVE TERMINAR SEM PONTUAÇÃO NENHUMA CONFORME EXEMPLO, E NOS CRITERIOS DE PONTUAÇÃO SEMPRE SIGA O PADRAO DAS PROVAS DO INEP, EX: Indicou 3 itens corretamente, etcc , nunca descrevendo os itens nos criterios!!!!!!!!!!!",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756189736703\"}}",
+    "rule": "FASE 3: nunca na fase 2 faça isso \"* Materiais Disponíveis (Infraestrutura):\n* Ficha do paciente com informações básicas (nome, idade, chegada).\n* Materiais para exame neurológico (martelo de reflexos, oftalmoscópio, etc.).\n* Exames de laboratório disponíveis.\n* Exames de imagem disponíveis.\n* Prontuário.\"                nao coloque nada entre parenteses nem de dicas por favor !!!!!! por exemplo \"Materiais para exame neurológico (martelo de reflexos, oftalmoscópio, etc.).\" apenas materiais para exame neurológico, nao quero nada entre paranteses ou dicas por favor, esses dados de infraestrutura nao sao compativeis com as do inep",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756199657557\"}}",
+    "rule": "FASE 4: exame fisico faltando no impressos!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! por favor ele e orbigatorio praticamento em 100% das vezes",
+    "context": "Feedback do usuário via interface",
+    "category": "geral",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756346915970\"}}",
+    "rule": "FASE 4: os impressos devem seguir esse padrao e tipo por favor, voce esta criando impressos errados, foram de padrao, e tambem esta criando exames de imagem com tipoConteudo lista e seçoes ao inves de imagemcomlaudo, segue a estrutura de como deve ser os impressos por favor!!!\n\n**Hemograma Completo:**\n```json\n{\n  \"secoes\": [\n    {\n      \"tituloSecao\": \"SÉRIE VERMELHA\",\n      \"itens\": [\n        {\"chave\": \"Hemoglobina\", \"valor\": \"X g/dL (VR: X - X g/dL)\"},\n        {\"chave\": \"Hematócrito\", \"valor\": \"X% (VR: X - X%)\"},\n        {\"chave\": \"VCM\", \"valor\": \"X fL (VR: X - X fL)\"}\n      ]\n    },\n    {\n      \"tituloSecao\": \"SÉRIE BRANCA\",\n      \"itens\": [\n        {\"chave\": \"Leucócitos\", \"valor\": \"X.XXX/mm³ (VR: X.XXX - X.XXX/mm³)\"},\n        {\"chave\": \"Segmentados\", \"valor\": \"X% (VR: X - X%)\"}\n      ]\n    }\n  ]\n}\n```\n\n**Bioquímica Básica:**\n```json\n{\n  \"secoes\": [\n    {\n      \"tituloSecao\": \"FUNÇÃO RENAL\",\n      \"itens\": [\n        { \"chave\": \"Ureia\", \"valor\": \"X mg/dL (VR: X - X mg/dL)\" },\n        { \"chave\": \"Creatinina\", \"valor\": \"X mg/dL (VR: X - X mg/dL)\" }\n      ]\n    },\n    {\n      \"tituloSecao\": \"GLICEMIA\",\n      \"itens\": [\n        { \"chave\": \"Glicose jejum\", \"valor\": \"X mg/dL (VR: X - X mg/dL)\" }\n      ]\n    },\n    {\n      \"tituloSecao\": \"GASOMETRIA\",\n      \"itens\": [\n        { \"chave\": \"pH\", \"valor\": \"[Valor] (Ref: [7.35-7.45])\" },\n        { \"chave\": \"pCO2\", \"valor\": \"[Valor] mmHg (Ref: [35-45])\" },\n        { \"chave\": \"pO2\", \"valor\": \"[Valor] mmHg (Ref: [75-100])\" },\n        { \"chave\": \"HCO3\", \"valor\": \"[Valor] mEq/L (Ref: [22-26])\" }\n      ]\n    }\n  ]\n}\n```\n\n### EXAMES DE IMAGEM (tipoConteudo: \"imagemComLaudo\")\n\n```\n```\n**Radiografia Simples:**\n\n```json\n\n{\n                \"idImpresso\": \"[]\",\n                \"tituloImpresso\": \"Radiografia de [região] em [incidência]\",\n                \"tipoConteudo\": \"imagemComLaudo\",\n                \"conteudo\": {\n                    \"textoDescritivo\": \"[ATENÇÃO: DIRIJA-SE PARA A CÂMERA E EXPLIQUE OS ACHADOS NA IMAGEM].\",\n                    \"caminhoImagem\": \"[BUSQUE NA INTERNET UMA IMAGEM RELACIONADA A IMAGEM EM QUESTAO DO IMPRESSO E COPIE O LINK DO SITE QUE CONTEM A IMAGEM E NAO O LINK DA IMAGEM EM SI, E DE REFERENCIAIS DE QUAL LOCAL DO SITE OU DOCUMENTO ENCONTRAR]\",\n                    \"laudo\": \"[descreva o laudo da imagem pesquisada].\"\n               \n   }\n}\n\n```\n\n**Tomografia Computadorizada:**\n\n\n```json\n{\n                \"idImpresso\": \"[]\",\n                \"tituloImpresso\": \"Tomografia Computadorizada de [região] em [incidência]\",\n                \"tipoConteudo\": \"imagemComLaudo\",\n                \"conteudo\": {\n                    \"textoDescritivo\": \"[ATENÇÃO: DIRIJA-SE PARA A CÂMERA E EXPLIQUE OS ACHADOS NA IMAGEM].\",\n                    \"urlImagem\": \"[BUSQUE NA INTERNET UMA IMAGEM RELACIONADA A IMAGEM EM QUESTAO DO IMPRESSO E COPIE O LINK DO SITE QUE CONTEM A IMAGEM E NAO O LINK DA IMAGEM EM SI, E DE REFERENCIAIS DE QUAL LOCAL DO SITE OU DOCUMENTO ENCONTRAR]\",\n                    \"laudo\": \"[descreva o laudo da imagem pesquisada].\"\n  }\n}\n```\n\n**Ultrassonografia:**\n```json\n{\n  \"idImpresso\": \"[]\",\n                \"tituloImpresso\": \"Ultrassonografia de [região/órgão] em [incidência]\",\n                \"tipoConteudo\": \"imagemComLaudo\",\n                \"conteudo\": {\n                    \"textoDescritivo\": \"[ATENÇÃO: DIRIJA-SE PARA A CÂMERA E EXPLIQUE OS ACHADOS NA IMAGEM].\",\n                    \"urlImagem\": \"[BUSQUE NA INTERNET UMA IMAGEM RELACIONADA A IMAGEM EM QUESTAO DO IMPRESSO E COPIE O LINK DO SITE QUE CONTEM A IMAGEM E NAO O LINK DA IMAGEM EM SI, E DE REFERENCIAIS DE QUAL LOCAL DO SITE OU DOCUMENTO ENCONTRAR]\",\n                    \"laudo\": \"[descreva o laudo da imagem pesquisada].\"\n  }\n}\n```\n\n### EXAMES FÍSICOS (tipoConteudo: \"lista_chave_valor_secoes\")\n\n**Sinais Vitais Padrão:**\n```json\n{\n  \"secoes\": [\n    {\n      \"tituloSecao\": \"SINAIS VITAIS\",\n      \"itens\": [\n        {\"chave\": \"Pressão arterial\", \"valor\": \"XXX × XX mmHg\"},\n        {\"chave\": \"Frequência cardíaca\", \"valor\": \"XX bpm\"},\n        {\"chave\": \"Frequência respiratória\", \"valor\": \"XX irpm\"},\n        {\"chave\": \"Temperatura\", \"valor\": \"XX,X °C\"},\n        {\"chave\": \"Saturação O2\", \"valor\": \"XX% em ar ambiente\"}\n      ]\n    }\n  ]\n}\n```\n\n**Exame Físico por Sistemas:**\n```json\n{\n  \"secoes\": [\n    {\n      \"tituloSecao\": \"ESTADO GERAL\",\n      \"itens\": [\n        {\"chave\": \"Estado geral\", \"valor\": \"[Descrição completa do aspecto geral]\"}\n      ]\n    },\n    {\n      \"tituloSecao\": \"APARELHO CARDIOVASCULAR\",\n      \"itens\": [\n        {\"chave\": \"Ausculta cardíaca\", \"valor\": \"[Achados específicos]\"}\n      ]\n    },\n    {\n      \"tituloSecao\": \"APARELHO RESPIRATÓRIO\",\n      \"itens\": [\n        {\"chave\": \"Ausculta pulmonar\", \"valor\": \"[Achados específicos]\"}\n      ]\n    }\n  ]\n}   e esse campo \"\"_validation_issues\": {\n    \"is_valid\": false,\n    \"missing_required_fields\": [],\n    \"invalid_field_types\": [],\n    \"structural_issues\": [\n      \"padraoEsperadoProcedimento.sinteseEstacao.itensAvaliacao ausente\",\n      \"impressos[0].conteudo contém aninhamento excessivo (>2 níveis)\",\n      \"impressos[1].conteudo contém aninhamento excessivo (>2 níveis)\",\n      \"impressos[4].conteudo contém aninhamento excessivo (>2 níveis)\"\n    ],\n    \"warnings\": [\n      \"Item 1: pontuação total (1.5) excede 1.0\",\n      \"Item 2: pontuação total (1.5) excede 1.0\",\n      \"Item 3: pontuação total (1.5) excede 1.0\",\n      \"Item 6: pontuação total (2.25) excede 1.0\",\n      \"Item 7: pontuação total (2.25) excede 1.0\",\n      \"Item 9: pontuação total (1.5) excede 1.0\"\n    ],\n    \"corrections_applied\": []\n  }\n}\" nao deve estar presente no.json criado ao fim da fase 3 !!!!!!!!!!!!!!!!!!!!!",
+    "context": "Feedback do usuário via interface",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756358738140\"}}",
+    "rule": "FASE 2: sempre quando indicar tratamento medicamentoso, sempre cite o(s) nomes dos medicamentos e a via pelo menos, e se pertinente ao caso as dosagens, nunca crie um item do pep com diagnostico definitivo e diagnostico diferenciais juntos, crie uma para cada",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756359172107\"}}",
+    "rule": "FASE 4: NÃO DE DICAS NAS TAREFAS POR FAVOR, SEJA GENERICO, DEIXE O CANDIDATO RACIOCINAR, DIFICULTE\n* Elaborar a conduta terapêutica inicial e as próximas etapas diagnósticas.",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756360557356\"}}",
+    "rule": "FASE 4: quero que quando a descrição de um item do PEP estiver  assim : \"(1) Indica medidas de suporte (monitorização cardíaca, oximetria, repouso no leito)\" , como as medidas se suporte sao 3 e sao seguindas de \"virgula\" e não de \"ou\", quero que oculte o que vem antes do entre parenteses, no caso acima \"Indica medidas de suporte e desmenbre o que tem entre parenteses pois ira ficar dificil avaliar o candidato nesse item pois ele tem que falar os 3 para o item (1) ser valido, entao quero que nesse caso, quando nao sao seguidos de \"ou\" e sim \"virgula\" o conteudo entre parenteses, que seja assim conforme o exemplo : (1) Monitorização cardíaca; (2) oximetria; (3) repouso no leito; (4) ........; , e isso pra qualquer item quantitativo do PEP, e evite por entre parenteses \"Exemplos\", apenas coloque entre parenteses quando o item aceitar mais de uma opção valida, ou seja, que seja seguido de \"ou\" apenas.",
+    "context": "Feedback do usuário via interface",
+    "category": "restricao",
+    "source": "user_feedback"
+  },
+  {
+    "timestamp": "{\"$date\": {\"$numberLong\": \"1756361111280\"}}",
+    "rule": "FASE 4: exclua esse campo quando for gerar a estação, nao escreva ela no arquivo.json gerado ao fim da fase 3, este : \",\n  \"_validation_issues\": {\n    \"is_valid\": false,\n    \"missing_required_fields\": [],\n    \"invalid_field_types\": [],\n    \"structural_issues\": [\n      \"padraoEsperadoProcedimento.sinteseEstacao.itensAvaliacao ausente\",\n      \"impressos[0].conteudo contém aninhamento excessivo (>2 níveis)\",\n      \"impressos[1].conteudo contém aninhamento excessivo (>2 níveis)\",\n      \"impressos[2].conteudo contém aninhamento excessivo (>2 níveis)\",\n      \"impressos[5].conteudo contém aninhamento excessivo (>2 níveis)\"\n    ],\n    \"warnings\": [\n      \"Item 1: pontuação total (1.5) excede 1.0\",\n      \"Item 2: pontuação total (1.5) excede 1.0\",\n      \"Item 3: pontuação total (1.15) excede 1.0\",\n      \"Item 4: pontuação total (1.15) excede 1.0\",\n      \"Item 5: pontuação total (2.25) excede 1.0\",\n      \"Item 6: pontuação total (2.25) excede 1.0\",\n      \"Item 7: pontuação total (1.5) excede 1.0\",\n      \"Item 8: pontuação total (1.5) excede 1.0\",\n      \"Item 9: pontuação total (1.5) excede 1.0\",\n      \"Item 10: pontuação total (3.0) excede 1.0\",\n      \"Item 11: pontuação total (1.15) excede 1.0\",\n      \"Item 12: pontuação total (1.5) excede 1.0\"\n    ],\n    \"corrections_applied\": []\n  }\n}\"  a estação deve acabar aqui >  \"feedbackEstacao\": {\n      \"resumoTecnico\": \"O Acidente Vascular Cerebral Isquêmico (AVCI) ocorre pela interrupção do fluxo sanguíneo para uma área do cérebro, levando a déficit neurológico focal súbito. A causa mais comum é a tromboembólica, originada principalmente de placas ateroscleróticas em carótidas ou cardioembolia (fibrilação atrial). Fatores de risco incluem HAS, DM, dislipidemia, tabagismo e idade avançada.\\n\\nA anamnese deve focar no tempo de início dos sintomas (\\\"última vez visto bem\\\"), características do déficit (motor, sensitivo, linguagem, visual), sintomas associados (cefaleia, náuseas) e história pregressa. O exame físico inclui avaliação do nível de consciência (Glasgow), pares cranianos, força motora, sensibilidade, coordenação, linguagem e reflexos. A escala NIHSS quantifica o déficit neurológico.\\n\\nA TC de crânio sem contraste é o exame inicial para excluir hemorragia. O ECG identifica arritmias cardíacas. Exames laboratoriais (hemograma, coagulograma, glicemia, eletrólitos) auxiliam no diagnóstico e manejo. Diagnósticos diferenciais incluem AIT, hipoglicemia, crise convulsiva e enxaqueca.\\n\\nO tratamento na fase aguda visa restaurar o fluxo sanguíneo o mais rápido possível. A trombólise intravenosa com alteplase é indicada em pacientes selecionados dentro da janela terapêutica (até 4,5 horas do início dos sintomas). A trombectomia mecânica pode ser considerada em casos de oclusão de grandes vasos. Após a fase aguda, o tratamento inclui antiagregantes plaquetários, anticoagulantes (se cardioembólico) e controle dos fatores de risco.\",\n      \"fontes\": [\n        \"1. Brasil. Ministério da Saúde. Diretrizes para o tratamento do Acidente Vascular Cerebral. 2019.\",\n        \"2. Powers WJ, Rabinstein AA, Ackerson T, et al; American Heart Association Stroke Council. 2018 Guidelines for the Early Management of Patients With Acute Ischemic Stroke: A Guideline for Healthcare Professionals From the American Heart Association/American Stroke Association. Stroke. 2018;49(3):e46-e110.\"\n      ]\n    }\n  }\n}",
+    "context": "Feedback do usuário via interface",
+    "category": "obrigatorio",
+    "source": "user_feedback"
+  }
+]
