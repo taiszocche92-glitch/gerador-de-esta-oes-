@@ -1,458 +1,329 @@
-# -*- coding: utf-8 -*-
 """
-Sistema de Validação de Impressos Médicos
-Validação avançada para impressos antes do salvamento no Firestore
+Módulo de Validação de Impressos Médicos
+Sistema de validação especializada para impressos médicos em estações REVALIDA
 """
 
-import re
-from typing import Dict, List, Tuple, Any, Optional
-from datetime import datetime
-import logging
 import json
+import logging
+from typing import Dict, Any, List, Tuple, Optional
+from datetime import datetime
 
-logger = logging.getLogger(__name__)
+# Configuração de logging
+logger = logging.getLogger("impressos_validator")
 
 class ImpressosValidator:
-    """Validador especializado para impressos médicos"""
-    
+    """
+    Validador especializado para impressos médicos em estações clínicas REVALIDA
+    """
+
     def __init__(self):
-        self.regras_formatacao = {
-            'laboratorio': {
-                'formato_valores': r'^[\d,.\s]+\s*[a-zA-ZµΩ/\s%]*$',
-                'intervalos_obrigatorios': True,
-                'unidades_obrigatorias': True,
-                'campos_obrigatorios': ['chave', 'valor']
+        """Inicializa o validador com regras específicas para impressos médicos"""
+        self.validation_rules = {
+            "tipos_validos": [
+                "receita_medica",
+                "atestado_medico",
+                "laudo_medico",
+                "relatorio_medico",
+                "solicitacao_exames",
+                "encaminhamento_medico",
+                "declaracao_medica",
+                "prescricao_medicamentosa",
+                "lista_chave_valor_secoes",
+                "formulario_clinico"
+            ],
+            "campos_obrigatorios": {
+                "tituloImpresso": str,
+                "tipo": str,
+                "conteudo": dict
             },
-            'imagem': {
-                'descricao_minima': 50,
-                'laudo_obrigatorio': True,
-                'palavras_chave_obrigatorias': ['achados', 'conclusão', 'impressão'],
-                'formato_laudo': r'(ACHADOS?|DESCRIÇÃO|CONCLUSÃO|IMPRESSÃO DIAGNÓSTICA?):'
-            },
-            'exame_fisico': {
-                'formato_manobras': r'(positiv[oa]|negativ[oa]|ausente|presente)',
-                'sistemas_obrigatorios': ['cardiovascular', 'respiratório', 'neurológico'],
-                'formato_sinais_vitais': r'PA:\s*\d+x\d+|FC:\s*\d+|FR:\s*\d+|T:\s*\d+[,.]?\d*'
+            "validacoes_conteudo": {
+                "lista_chave_valor_secoes": self._validar_lista_chave_valor_secoes,
+                "receita_medica": self._validar_receita_medica,
+                "atestado_medico": self._validar_atestado_medico,
+                "laudo_medico": self._validar_laudo_medico
             }
         }
-    
-    def validar_impressos(self, estacao_data: Dict[str, Any]) -> Tuple[bool, List[str], List[Dict]]:
+
+        logger.info("ImpressosValidator inicializado com sucesso")
+
+    def validar_impressos_estacao(self, estacao_data: Dict[str, Any]) -> Tuple[bool, List[str], Dict[str, Any]]:
         """
-        Valida todos os impressos de uma estação
-        
+        Valida todos os impressos de uma estação clínica
+
+        Args:
+            estacao_data: Dados completos da estação
+
         Returns:
-            - is_valid: bool
-            - errors: List[str] 
-            - impressos_corrigidos: List[Dict]
+            Tuple: (is_valid, errors_list, corrected_station_data)
         """
         try:
-            materiais = estacao_data.get('materiaisDisponiveis', {})
-            impressos = materiais.get('impressos', [])
-            
-            if not impressos:
-                return True, [], []
-            
+            logger.info("Iniciando validação de impressos da estação")
+
+            is_valid = True
             errors = []
+            estacao_corrigida = estacao_data.copy()
+
+            # Verificar se há materiais disponíveis
+            if "materiaisDisponiveis" not in estacao_data:
+                errors.append("Campo 'materiaisDisponiveis' ausente na estação")
+                is_valid = False
+                return is_valid, errors, estacao_corrigida
+
+            materiais = estacao_data["materiaisDisponiveis"]
+
+            # Verificar se há impressos
+            if "impressos" not in materiais:
+                errors.append("Campo 'impressos' ausente em materiaisDisponiveis")
+                is_valid = False
+                return is_valid, errors, estacao_corrigida
+
+            impressos = materiais["impressos"]
+
+            if not isinstance(impressos, list):
+                errors.append("Campo 'impressos' deve ser uma lista")
+                is_valid = False
+                return is_valid, errors, estacao_corrigida
+
+            if len(impressos) == 0:
+                logger.info("Nenhum impresso encontrado para validação")
+                return True, [], estacao_data
+
+            # Validar cada impresso
             impressos_corrigidos = []
-            
             for i, impresso in enumerate(impressos):
-                # Validar estrutura básica
-                basic_errors = self._validar_estrutura_basica(impresso, i)
-                errors.extend(basic_errors)
-                
-                if basic_errors:
-                    continue
-                
-                # Determinar tipo de exame e validar
-                tipo_exame = self._determinar_tipo_exame(impresso)
-                impresso_corrigido = self._validar_por_tipo(impresso, tipo_exame, i, errors)
+                logger.info(f"Validando impresso {i+1}/{len(impressos)}")
+
+                impresso_valid, impresso_errors, impresso_corrigido = self._validar_impresso_individual(impresso, i)
+
+                if not impresso_valid:
+                    is_valid = False
+                    errors.extend(impresso_errors)
+
                 impressos_corrigidos.append(impresso_corrigido)
-            
-            is_valid = len(errors) == 0
-            
-            if is_valid:
-                logger.info(f"✅ Validação de impressos: {len(impressos)} impressos válidos")
-            else:
-                logger.warning(f"⚠️ Validação de impressos: {len(errors)} erros encontrados")
-                
-            return is_valid, errors, impressos_corrigidos
-            
+
+            # Atualizar estação com impressos corrigidos
+            if impressos_corrigidos != impressos:
+                estacao_corrigida["materiaisDisponiveis"]["impressos"] = impressos_corrigidos
+                logger.info("Impressos corrigidos aplicados à estação")
+
+            logger.info(f"Validação concluída: {len(errors)} erros encontrados")
+            return is_valid, errors, estacao_corrigida
+
         except Exception as e:
-            logger.error(f"Erro na validação de impressos: {e}")
-            return False, [f"Erro interno na validação: {str(e)}"], []
-    
-    def _validar_estrutura_basica(self, impresso: Dict, index: int) -> List[str]:
-        """Valida estrutura básica do impresso"""
+            error_msg = f"Erro crítico na validação de impressos: {str(e)}"
+            logger.error(error_msg)
+            return False, [error_msg], estacao_data
+
+    def _validar_impresso_individual(self, impresso: Dict[str, Any], index: int) -> Tuple[bool, List[str], Dict[str, Any]]:
+        """
+        Valida um impresso individual
+
+        Args:
+            impresso: Dados do impresso
+            index: Índice do impresso na lista
+
+        Returns:
+            Tuple: (is_valid, errors_list, corrected_impresso)
+        """
         errors = []
-        
-        # Campos obrigatórios
-        campos_obrigatorios = ['idImpresso', 'tituloImpresso', 'tipoConteudo', 'conteudo']
-        for campo in campos_obrigatorios:
-            if not impresso.get(campo):
-                errors.append(f"Impresso {index + 1}: Campo '{campo}' é obrigatório")
-        
-        # Validar ID único
-        id_impresso = impresso.get('idImpresso', '')
-        if id_impresso and not re.match(r'^[a-zA-Z0-9_-]+$', id_impresso):
-            errors.append(f"Impresso {index + 1}: ID deve conter apenas letras, números, _ e -")
-        
-        # Validar título
-        titulo = impresso.get('tituloImpresso', '')
-        if titulo and len(titulo.strip()) < 5:
-            errors.append(f"Impresso {index + 1}: Título deve ter pelo menos 5 caracteres")
-        
-        # Corrigir tipos de conteúdo inválidos automaticamente
-        tipo = impresso.get('tipoConteudo')
-        tipos_validos = ['texto_simples', 'imagem_com_texto', 'lista_chave_valor_secoes', 'sinais_vitais']
-        
-        # Mapeamento de correções automáticas
-        mapeamento_tipos = {
-            'imagemComLaudo': 'imagem_com_texto',
-            'textosimples': 'texto_simples',
-            'imagemComTexto': 'imagem_com_texto',
-            'tabela': 'lista_chave_valor_secoes'
-        }
-        
-        if tipo in mapeamento_tipos:
-            tipo_corrigido = mapeamento_tipos[tipo]
-            impresso['tipoConteudo'] = tipo_corrigido
-            logger.info(f"Impresso {index + 1}: Tipo corrigido automaticamente: {tipo} → {tipo_corrigido}")
-        elif tipo not in tipos_validos:
-            errors.append(f"Impresso {index + 1}: Tipo '{tipo}' inválido. Tipos válidos: {tipos_validos}")
-        
-        return errors
-    
-    def _corrigir_strings_json(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Corrige strings JSON no conteúdo dos impressos"""
-        if not isinstance(impresso, dict):
-            return impresso
-        
         impresso_corrigido = impresso.copy()
-        conteudo = impresso.get('conteudo', {})
-        
-        if not isinstance(conteudo, dict):
-            return impresso_corrigido
-        
-        # Verificar se há strings JSON nas seções
-        secoes = conteudo.get('secoes', [])
-        if isinstance(secoes, list):
-            secoes_corrigidas = []
-            strings_json_encontradas = False
-            
-            for secao in secoes:
-                if isinstance(secao, str):
-                    try:
-                        # Tentar converter string JSON de volta para objeto
-                        secao_obj = json.loads(secao)
-                        secoes_corrigidas.append(secao_obj)
-                        strings_json_encontradas = True
-                    except (json.JSONDecodeError, TypeError):
-                        # Se não conseguir fazer parse, manter como string
-                        secoes_corrigidas.append(secao)
-                else:
-                    secoes_corrigidas.append(secao)
-            
-            if strings_json_encontradas:
-                logger.info(f"Impresso {index + 1}: Strings JSON convertidas de volta para objetos")
-                conteudo_corrigido = conteudo.copy()
-                conteudo_corrigido['secoes'] = secoes_corrigidas
-                impresso_corrigido['conteudo'] = conteudo_corrigido
-        
-        return impresso_corrigido
-    
-    def _determinar_tipo_exame(self, impresso: Dict) -> str:
-        """Determina o tipo de exame baseado no título e conteúdo"""
-        titulo = impresso.get('tituloImpresso', '').lower()
-        conteudo = str(impresso.get('conteudo', '')).lower()
-        
-        # Exames de laboratório
-        if any(palavra in titulo for palavra in ['hemograma', 'bioquímica', 'urina', 'fezes', 
-                                                'glicemia', 'creatinina', 'tgo', 'tgp', 'colesterol']):
-            return 'laboratorio'
-        
-        # Exames de imagem
-        if any(palavra in titulo for palavra in ['raio-x', 'rx', 'tomografia', 'tc', 'ressonância', 
-                                                'rm', 'ultrassom', 'us', 'ecg', 'ecocardiograma']):
-            return 'imagem'
-        
-        # Exame físico
-        if any(palavra in titulo for palavra in ['exame físico', 'semiologia', 'ausculta', 
-                                                'palpação', 'inspeção']) and 'sinais vitais' not in titulo.lower():
-            return 'exame_fisico'
-        
-        # Verificar pelo conteúdo se não identificou pelo título
-        if 'valor de referência' in conteudo or 'vr:' in conteudo:
-            return 'laboratorio'
-        
-        if 'achados' in conteudo and 'conclusão' in conteudo:
-            return 'imagem'
-        
-        return 'geral'
-    
-    def _validar_por_tipo(self, impresso: Dict, tipo_exame: str, index: int, errors: List[str]) -> Dict:
-        """Valida impresso baseado no tipo de exame identificado"""
-        # Verificar se impresso é um dicionário
-        if not isinstance(impresso, dict):
-            errors.append(f"Impresso {index + 1}: Deve ser um dicionário, recebido {type(impresso)}")
-            return impresso
-        
-        impresso_corrigido = impresso.copy()
-        
-        # Corrigir strings JSON no conteúdo
-        impresso_corrigido = self._corrigir_strings_json(impresso_corrigido, index, errors)
-        
-        if tipo_exame == 'laboratorio':
-            impresso_corrigido = self._validar_exame_laboratorio(impresso_corrigido, index, errors)
-        elif tipo_exame == 'imagem':
-            impresso_corrigido = self._validar_exame_imagem(impresso_corrigido, index, errors)
-        elif tipo_exame == 'exame_fisico':
-            impresso_corrigido = self._validar_exame_fisico(impresso_corrigido, index, errors)
-        elif impresso.get('tipoConteudo') == 'sinais_vitais' or 'sinais vitais' in impresso.get('tituloImpresso', '').lower():
-            impresso_corrigido = self._validar_sinais_vitais(impresso_corrigido, index, errors)
+        is_valid = True
+
+        # Verificar campos obrigatórios
+        for campo, tipo_esperado in self.validation_rules["campos_obrigatorios"].items():
+            if campo not in impresso:
+                errors.append(f"Impresso {index+1}: Campo obrigatório '{campo}' ausente")
+                is_valid = False
+            elif not isinstance(impresso[campo], tipo_esperado):
+                errors.append(f"Impresso {index+1}: Campo '{campo}' deve ser do tipo {tipo_esperado.__name__}")
+                is_valid = False
+
+        if not is_valid:
+            return is_valid, errors, impresso_corrigido
+
+        # Validar tipo do impresso
+        tipo = impresso.get("tipo", "")
+        if tipo not in self.validation_rules["tipos_validos"]:
+            errors.append(f"Impresso {index+1}: Tipo '{tipo}' não é válido. Tipos válidos: {self.validation_rules['tipos_validos']}")
+            is_valid = False
         else:
-            # Validação geral para outros tipos
-            impresso_corrigido = self._validar_geral(impresso_corrigido, index, errors)
-        
-        return impresso_corrigido
-    
-    def _validar_exame_laboratorio(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Validação específica para exames de laboratório"""
-        if not isinstance(impresso, dict):
-            return impresso
-        
+            # Aplicar validação específica do tipo
+            if tipo in self.validation_rules["validacoes_conteudo"]:
+                tipo_valid, tipo_errors, tipo_corrigido = self.validation_rules["validacoes_conteudo"][tipo](impresso, index)
+                if not tipo_valid:
+                    errors.extend(tipo_errors)
+                    is_valid = False
+                impresso_corrigido = tipo_corrigido
+
+        return is_valid, errors, impresso_corrigido
+
+    def _validar_lista_chave_valor_secoes(self, impresso: Dict[str, Any], index: int) -> Tuple[bool, List[str], Dict[str, Any]]:
+        """Valida impresso do tipo lista_chave_valor_secoes"""
+        errors = []
         impresso_corrigido = impresso.copy()
-        conteudo = impresso.get('conteudo', {})
-        
-        if impresso.get('tipoConteudo') == 'lista_chave_valor_secoes':
-            secoes = conteudo.get('secoes', [])
-            secoes_corrigidas = []
-            
-            for secao in secoes:
-                if not isinstance(secao, dict):
-                    continue
-                
-                secao_corrigida = secao.copy()
-                itens_corrigidos = []
-                
-                for item in secao.get('itens', []):
-                    if isinstance(item, dict):
-                        item_corrigido = self._validar_item_laboratorio(item, index, errors)
-                        itens_corrigidos.append(item_corrigido)
-                
-                secao_corrigida['itens'] = itens_corrigidos
-                secoes_corrigidas.append(secao_corrigida)
-            
-            impresso_corrigido['conteudo'] = {'secoes': secoes_corrigidas}
-        
-        return impresso_corrigido
-    
-    def _validar_item_laboratorio(self, item: Dict, index: int, errors: List[str]) -> Dict:
-        """Valida item individual de laboratório"""
-        item_corrigido = item.copy()
-        chave = item.get('chave', '')
-        valor = item.get('valor', '')
-        
-        if not chave or not valor:
-            return item_corrigido
-        
-        # Validar formato do valor
-        regras = self.regras_formatacao['laboratorio']
-        
-        # Verificar se tem valor de referência
-        if 'VR:' not in valor and 'Referência:' not in valor and 'mg/dL' in valor:
-            # Tentar adicionar valor de referência baseado no exame
-            vr = self._obter_valor_referencia(chave.lower())
-            if vr:
-                item_corrigido['valor'] = f"{valor} (VR: {vr})"
-        
-        # Validar formato numérico
-        valor_numerico = re.search(r'[\d,.]+ ', valor)
-        if valor_numerico and not re.match(regras['formato_valores'], valor_numerico.group()):
-            errors.append(f"Impresso {index + 1}: Formato inválido para '{chave}': {valor}")
-        
-        return item_corrigido
-    
-    def _validar_exame_imagem(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Validação específica para exames de imagem"""
+        is_valid = True
+
+        conteudo = impresso.get("conteudo", {})
+
+        if "secoes" not in conteudo:
+            errors.append(f"Impresso {index+1}: Campo 'secoes' ausente no conteúdo")
+            is_valid = False
+        else:
+            secoes = conteudo["secoes"]
+            if not isinstance(secoes, list):
+                errors.append(f"Impresso {index+1}: Campo 'secoes' deve ser uma lista")
+                is_valid = False
+            elif len(secoes) == 0:
+                errors.append(f"Impresso {index+1}: Lista 'secoes' não pode estar vazia")
+                is_valid = False
+            else:
+                # Validar cada seção
+                secoes_corrigidas = []
+                for i, secao in enumerate(secoes):
+                    if isinstance(secao, dict):
+                        secoes_corrigidas.append(secao)
+                    elif isinstance(secao, str):
+                        # Tentar converter string JSON para dict
+                        try:
+                            secao_dict = json.loads(secao)
+                            secoes_corrigidas.append(secao_dict)
+                        except json.JSONDecodeError:
+                            errors.append(f"Impresso {index+1}: Seção {i+1} não é um JSON válido")
+                            is_valid = False
+                            secoes_corrigidas.append(secao)
+                    else:
+                        errors.append(f"Impresso {index+1}: Seção {i+1} deve ser dict ou string JSON")
+                        is_valid = False
+                        secoes_corrigidas.append(secao)
+
+                if secoes_corrigidas != secoes:
+                    impresso_corrigido["conteudo"]["secoes"] = secoes_corrigidas
+
+        return is_valid, errors, impresso_corrigido
+
+    def _validar_receita_medica(self, impresso: Dict[str, Any], index: int) -> Tuple[bool, List[str], Dict[str, Any]]:
+        """Valida impresso do tipo receita_medica"""
+        errors = []
         impresso_corrigido = impresso.copy()
-        conteudo = impresso.get('conteudo', {})
-        
-        if impresso.get('tipoConteudo') == 'imagem_com_texto':
-            # Validar laudo obrigatório
-            laudo = conteudo.get('laudo', '')
-            if not laudo or len(laudo.strip()) < 50:
-                errors.append(f"Impresso {index + 1}: Laudo deve ter pelo menos 50 caracteres")
-            
-            # Validar estrutura do laudo
-            regras = self.regras_formatacao['imagem']
-            if laudo and not re.search(regras['formato_laudo'], laudo, re.IGNORECASE):
-                # Corrigir automaticamente adicionando estrutura
-                laudo_corrigido = self._estruturar_laudo(laudo)
-                impresso_corrigido['conteudo']['laudo'] = laudo_corrigido
-            
-            # Validar descrição mínima
-            descricao = conteudo.get('textoDescritivo', '')
-            if descricao and len(descricao.strip()) < regras['descricao_minima']:
-                errors.append(f"Impresso {index + 1}: Descrição deve ter pelo menos {regras['descricao_minima']} caracteres")
-        
-        return impresso_corrigido
-    
-    def _validar_exame_fisico(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Validação específica para exames físicos"""
-        if not isinstance(impresso, dict):
-            return impresso
-        
+        is_valid = True
+
+        conteudo = impresso.get("conteudo", {})
+
+        # Campos obrigatórios para receita médica
+        campos_obrigatorios = ["paciente", "medicamentos", "data", "crm_medico"]
+        for campo in campos_obrigatorios:
+            if campo not in conteudo:
+                errors.append(f"Impresso {index+1}: Campo obrigatório '{campo}' ausente na receita médica")
+                is_valid = False
+
+        # Validar medicamentos
+        if "medicamentos" in conteudo:
+            medicamentos = conteudo["medicamentos"]
+            if not isinstance(medicamentos, list):
+                errors.append(f"Impresso {index+1}: Campo 'medicamentos' deve ser uma lista")
+                is_valid = False
+            elif len(medicamentos) == 0:
+                errors.append(f"Impresso {index+1}: Lista 'medicamentos' não pode estar vazia")
+                is_valid = False
+
+        return is_valid, errors, impresso_corrigido
+
+    def _validar_atestado_medico(self, impresso: Dict[str, Any], index: int) -> Tuple[bool, List[str], Dict[str, Any]]:
+        """Valida impresso do tipo atestado_medico"""
+        errors = []
         impresso_corrigido = impresso.copy()
-        conteudo = impresso.get('conteudo', {})
-        
-        if impresso.get('tipoConteudo') == 'lista_chave_valor_secoes':
-            secoes = conteudo.get('secoes', [])
-            
-            # Verificar se tem sistemas obrigatórios
-            regras = self.regras_formatacao['exame_fisico']
-            sistemas_encontrados = []
-            
-            for secao in secoes:
-                if isinstance(secao, dict):
-                    titulo_secao = secao.get('tituloSecao', '').lower()
-                    sistemas_encontrados.extend([s for s in regras['sistemas_obrigatorios'] 
-                                               if s in titulo_secao])
-            
-            sistemas_faltando = set(regras['sistemas_obrigatorios']) - set(sistemas_encontrados)
-            if sistemas_faltando:
-                errors.append(f"Impresso {index + 1}: Sistemas obrigatórios ausentes: {list(sistemas_faltando)}")
-        
-        return impresso_corrigido
-    
-    def _validar_sinais_vitais(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Validação específica para sinais vitais"""
-        if not isinstance(impresso, dict):
-            return impresso
-        
+        is_valid = True
+
+        conteudo = impresso.get("conteudo", {})
+
+        # Campos obrigatórios para atestado médico
+        campos_obrigatorios = ["paciente", "cid", "dias_afastamento", "data", "crm_medico"]
+        for campo in campos_obrigatorios:
+            if campo not in conteudo:
+                errors.append(f"Impresso {index+1}: Campo obrigatório '{campo}' ausente no atestado médico")
+                is_valid = False
+
+        return is_valid, errors, impresso_corrigido
+
+    def _validar_laudo_medico(self, impresso: Dict[str, Any], index: int) -> Tuple[bool, List[str], Dict[str, Any]]:
+        """Valida impresso do tipo laudo_medico"""
+        errors = []
         impresso_corrigido = impresso.copy()
-        conteudo = impresso.get('conteudo', {})
-        
-        if impresso.get('tipoConteudo') == 'sinais_vitais':
-            secoes = conteudo.get('secoes', [])
-            
-            # Verificar se tem os sinais vitais básicos
-            sinais_obrigatorios = ['pressão arterial', 'frequência cardíaca', 'frequência respiratória', 'temperatura']
-            sinais_encontrados = []
-            
-            for secao in secoes:
-                if isinstance(secao, dict):
-                    for item in secao.get('itens', []):
-                        if isinstance(item, dict):
-                            chave = item.get('chave', '').lower()
-                            sinais_encontrados.extend([s for s in sinais_obrigatorios if s in chave])
-            
-            sinais_faltando = set(sinais_obrigatorios) - set(sinais_encontrados)
-            if sinais_faltando:
-                errors.append(f"Impresso {index + 1}: Sinais vitais obrigatórios ausentes: {list(sinais_faltando)}")
-        
-        return impresso_corrigido
-    
-    def _validar_geral(self, impresso: Dict, index: int, errors: List[str]) -> Dict:
-        """Validação geral para outros tipos de impresso"""
-        if not isinstance(impresso, dict):
-            return impresso
-        
-        impresso_corrigido = impresso.copy()
-        
-        # Validações básicas de conteúdo
-        tipo = impresso.get('tipoConteudo')
-        conteudo = impresso.get('conteudo', {})
-        
-        if tipo == 'texto_simples':
-            texto = conteudo.get('texto', '')
-            if texto and len(texto.strip()) < 10:
-                errors.append(f"Impresso {index + 1}: Texto muito curto (mínimo 10 caracteres)")
-        
-        return impresso_corrigido
-    
-    def _obter_valor_referencia(self, nome_exame: str) -> Optional[str]:
-        """Retorna valor de referência padrão para exames comuns"""
-        valores_referencia = {
-            'hemoglobina': '12-16 g/dL',
-            'hematócrito': '36-46%',
-            'leucócitos': '4.000-11.000/mm³',
-            'plaquetas': '150.000-450.000/mm³',
-            'glicemia': '70-99 mg/dL',
-            'creatinina': '0,6-1,2 mg/dL',
-            'ureia': '15-40 mg/dL',
-            'colesterol total': '<200 mg/dL',
-            'tgo': '10-40 U/L',
-            'tgp': '7-41 U/L'
-        }
-        
-        for exame, vr in valores_referencia.items():
-            if exame in nome_exame:
-                return vr
-        return None
-    
-    def _estruturar_laudo(self, laudo_original: str) -> str:
-        """Estrutura automaticamente um laudo de exame de imagem"""
-        if not laudo_original:
-            return laudo_original
-        
-        # Se já tem estrutura, retorna como está
-        if re.search(r'(ACHADOS?|CONCLUSÃO|IMPRESSÃO):', laudo_original, re.IGNORECASE):
-            return laudo_original
-        
-        # Adiciona estrutura básica
-        return f"ACHADOS:\n{laudo_original}\n\nCONCLUSÃO:\n[A ser preenchida conforme achados]"
+        is_valid = True
+
+        conteudo = impresso.get("conteudo", {})
+
+        # Campos obrigatórios para laudo médico
+        campos_obrigatorios = ["paciente", "exame", "conclusao", "data", "crm_medico"]
+        for campo in campos_obrigatorios:
+            if campo not in conteudo:
+                errors.append(f"Impresso {index+1}: Campo obrigatório '{campo}' ausente no laudo médico")
+                is_valid = False
+
+        return is_valid, errors, impresso_corrigido
+
+
+# Instância global do validador
+_validator_instance = None
+
+def get_validator() -> ImpressosValidator:
+    """Retorna instância singleton do validador"""
+    global _validator_instance
+    if _validator_instance is None:
+        _validator_instance = ImpressosValidator()
+    return _validator_instance
 
 def validar_impressos_estacao(estacao_data: Dict[str, Any]) -> Tuple[bool, List[str], Dict[str, Any]]:
     """
-    Função principal para validação de impressos
-    
-    Args:
-        estacao_data: Dados completos da estação
-        
-    Returns:
-        - is_valid: bool
-        - errors: List[str]
-        - estacao_corrigida: Dict com impressos corrigidos
-    """
-    validator = ImpressosValidator()
-    is_valid, errors, impressos_corrigidos = validator.validar_impressos(estacao_data)
-    
-    if impressos_corrigidos:
-        estacao_corrigida = estacao_data.copy()
-        if 'materiaisDisponiveis' not in estacao_corrigida:
-            estacao_corrigida['materiaisDisponiveis'] = {}
-        estacao_corrigida['materiaisDisponiveis']['impressos'] = impressos_corrigidos
-    else:
-        estacao_corrigida = estacao_data
-    
-    return is_valid, errors, estacao_corrigida
+    Função principal para validar impressos de uma estação
+    Interface compatível com o código existente em main.py
 
-# Exemplo de uso
+    Args:
+        estacao_data: Dados da estação a ser validada
+
+    Returns:
+        Tuple: (is_valid, errors_list, corrected_station_data)
+    """
+    try:
+        validator = get_validator()
+        return validator.validar_impressos_estacao(estacao_data)
+    except Exception as e:
+        logger.error(f"Erro na função validar_impressos_estacao: {e}")
+        return False, [f"Erro interno do validador: {str(e)}"], estacao_data
+
+# Função de compatibilidade para testes
+def validar_impresso_test(impresso_data: Dict[str, Any]) -> Tuple[bool, List[str], Dict[str, Any]]:
+    """
+    Função para testar validação de um impresso individual
+    """
+    validator = get_validator()
+    return validator._validar_impresso_individual(impresso_data, 0)
+
 if __name__ == "__main__":
-    # Teste básico
-    estacao_exemplo = {
-        "materiaisDisponiveis": {
-            "impressos": [
-                {
-                    "idImpresso": "hemograma_001",
-                    "tituloImpresso": "Hemograma Completo",
-                    "tipoConteudo": "lista_chave_valor_secoes",
-                    "conteudo": {
-                        "secoes": [
-                            {
-                                "tituloSecao": "Série Vermelha",
-                                "itens": [
-                                    {"chave": "Hemoglobina", "valor": "12.5"},
-                                    {"chave": "Hematócrito", "valor": "38%"}
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
+    # Exemplo de uso para testes
+    print("Testando ImpressosValidator...")
+
+    # Exemplo de impresso válido
+    exemplo_impresso = {
+        "tituloImpresso": "Receita Médica Modelo",
+        "tipo": "receita_medica",
+        "conteudo": {
+            "paciente": "João Silva",
+            "medicamentos": ["Paracetamol 500mg", "Ibuprofeno 400mg"],
+            "data": "2024-01-15",
+            "crm_medico": "CRM/SP 123456"
         }
     }
-    
-    is_valid, errors, corrigida = validar_impressos_estacao(estacao_exemplo)
-    print(f"Válido: {is_valid}")
-    print(f"Erros: {errors}")
+
+    validator = get_validator()
+    is_valid, errors, corrigido = validator._validar_impresso_individual(exemplo_impresso, 0)
+
+    print(f"Impresso válido: {is_valid}")
+    if errors:
+        print("Erros encontrados:")
+        for error in errors:
+            print(f"  - {error}")
+    else:
+        print("Nenhum erro encontrado!")
+
+    print("Teste concluído!")

@@ -1,7 +1,8 @@
 # Ignore local environment and secrets
 .env
 .env.*
-
+.env.local*
+.env.local
 # Python virtual env
 .venv/
 
@@ -13,10 +14,10 @@ __pycache__/
 memoria/serviceAccountKey.json
 
 # Persisted embeddings and vectors
-memoria/vectors/
+# memoria/vectors/
 
 # Monitoring/configs with secrets
-memoria/monitoring/
+# memoria/monitoring/
 
 # OS files
 .DS_Store
